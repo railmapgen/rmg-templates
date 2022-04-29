@@ -12,7 +12,7 @@ export default function WindowHeader() {
     return (
         <Flex pl={2} pr={2} pb={1} pt={1} align="center">
             <Heading as="h4" size="md" mr="auto">
-                {t('Seed Project')}
+                {t('RMG Templates')}
                 <RmgEnvBadge environment={environment} version={getVersion()} />
             </Heading>
         </Flex>

@@ -33,7 +33,7 @@ i18n.use(LanguageDetector)
         resources,
     })
     .then(t => {
-        document.title = t('Seed Project');
+        document.title = t('RMG Templates');
         document.documentElement.lang = i18n.language;
     });
 
