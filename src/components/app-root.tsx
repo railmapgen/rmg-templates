@@ -1,8 +1,9 @@
-import { Button, Flex } from '@chakra-ui/react';
+import { Button, Flex, List, ListItem } from '@chakra-ui/react';
 import React from 'react';
 import WindowHeader from './window-header';
 import { useRootDispatch, useRootSelector } from '../redux';
 import { bumpCounter } from '../redux/app/app-slice';
+import { companyConfig, templateList } from '@railmapgen/rmg-templates-resources';
 
 export default function AppRoot() {
     const dispatch = useRootDispatch();
@@ -18,6 +19,18 @@ export default function AppRoot() {
             Chakra UI and Redux store are setup already. Here's an example state: {counter}.
             <br />
             <Button onClick={() => dispatch(bumpCounter())}>Bump</Button>
+            <List>
+                {companyConfig.map(company => (
+                    <ListItem key={company.id}>
+                        {company.name.en}
+                        <List>
+                            {templateList[company.id].map(template => (
+                                <ListItem key={template.filename}>{template.filename}</ListItem>
+                            ))}
+                        </List>
+                    </ListItem>
+                ))}
+            </List>
         </Flex>
     );
 }

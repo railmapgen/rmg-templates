@@ -8,7 +8,7 @@
     },
     "version": "0.1.4",
     "description": "",
-    "main": "./index.js",
+    "main": "./dist/index.js",
     "scripts": {
         "build": "node --loader ts-node/esm --experimental-specifier-resolution=node src/prebuild.ts && npx tsc"
     },
@@ -25,5 +25,7 @@
         ".": "./dist/index.js",
         "./": "./dist"
     },
-    "type": "module"
+    "file": [
+        "dist"
+    ]
 }

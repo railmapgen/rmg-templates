@@ -25,6 +25,11 @@ else
   echo skipped
 fi
 
+# Add type: module field
+cp package.json package.json.backup
+node -p "const packageJson = require('./package.json'); JSON.stringify({...packageJson, type: 'module'})" > package-new.json
+cp package-new.json package.json
+
 # build
 npm run build
 
@@ -36,6 +41,9 @@ then
   git push
 fi
 
+# Remove type: module field
+cp package.json.backup package.json
+
 # Set up .npmrc for publishing
 cat >> ./.npmrc << EOF
 //registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}
@@ -44,11 +52,11 @@ always-auth=true
 EOF
 
 # Check if it is a patch version
-#PREV_VER=$(npm show @railmapgen/rmg-templates-resources version | head -n1)
-#PATTERN='\([0-9]\+\.\)\{2\}'
-#PREV_MAJ_MIN=$(echo $PREV_VER | grep --colour=never -o $PATTERN)
-#CUR_MAJ_MIN=$(echo $RMG_VER | grep --colour=never -o $PATTERN)
-#[ $PREV_MAJ_MIN == $CUR_MAJ_MIN ] && IS_PATCH=true || IS_PATCH=false
-#echo "IS_PATCH=${IS_PATCH}" >> $GITHUB_ENV
+PREV_VER=$(npm show @railmapgen/rmg-templates-resources version | head -n1)
+PATTERN='\([0-9]\+\.\)\{2\}'
+PREV_MAJ_MIN=$(echo $PREV_VER | grep --colour=never -o $PATTERN)
+CUR_MAJ_MIN=$(echo $RMG_VER | grep --colour=never -o $PATTERN)
+[ $PREV_MAJ_MIN == $CUR_MAJ_MIN ] && IS_PATCH=true || IS_PATCH=false
+echo "IS_PATCH=${IS_PATCH}" >> $GITHUB_ENV
 
 # going to publish package
