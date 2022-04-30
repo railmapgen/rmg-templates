@@ -1,9 +1,9 @@
 // node --loader ts-node/esm .\builder\build.ts
 
 import path from 'path';
-import {fileURLToPath} from 'url';
-import {readFile, mkdir, writeFile, copyFile} from 'fs/promises';
-import {CompanyEntry, TemplateEntry} from "../src";
+import { fileURLToPath } from 'url';
+import { readFile, mkdir, writeFile } from 'fs/promises';
+import { CompanyEntry, TemplateEntry } from './index';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -15,7 +15,7 @@ const copyCompanyIdList = async () => {
     const companyConfig = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
 
     // copy to target dir
-    await mkdir(targetPath, {recursive: true});
+    await mkdir(targetPath, { recursive: true });
     await writeFile(path.join(targetPath, 'company-config.json'), companyConfig);
 };
 
@@ -33,20 +33,20 @@ const createTemplateConfigsFile = async (): Promise<Record<string, TemplateEntry
     }
 
     // write template configs
-    await mkdir(targetPath, {recursive: true});
+    await mkdir(targetPath, { recursive: true });
     await writeFile(path.join(targetPath, 'template-configs.json'), JSON.stringify(templateConfigs));
 
     return templateConfigs;
-}
+};
 
 const copyTemplate = async (companyId: string, filename: string) => {
     // read source file
     const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
 
     // copy to target dir
-    await mkdir(path.join(targetPath, companyId), {recursive: true});
+    await mkdir(path.join(targetPath, companyId), { recursive: true });
     await writeFile(path.join(targetPath, companyId, filename + '.json'), templateStr);
-}
+};
 
 const prebuild = async () => {
     await copyCompanyIdList();
@@ -57,6 +57,6 @@ const prebuild = async () => {
             await copyTemplate(companyId, template.filename);
         }
     }
-}
+};
 
 prebuild().then();
