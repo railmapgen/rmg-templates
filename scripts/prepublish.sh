@@ -25,11 +25,6 @@ else
   echo skipped
 fi
 
-# Add type: module field
-cp package.json package.json.backup
-node -p "const packageJson = require('./package.json'); JSON.stringify({...packageJson, type: 'module'})" > package-new.json
-cp package-new.json package.json
-
 # build
 npm run build
 
@@ -41,11 +36,8 @@ then
   git push
 fi
 
-# Remove type: module field
-cp package.json.backup package.json
-
 # Set up .npmrc for publishing
-cat >> ./.npmrc << EOF
+cat >> ./dist/.npmrc << EOF
 //registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}
 registry=https://registry.npmjs.org/
 always-auth=true

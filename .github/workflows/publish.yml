@@ -25,7 +25,11 @@ jobs:
 
       - name: Pulish to npm
         run: |
-          cd ./package
+          cd ./package/dist
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RMG_NPM_PUBLISH }}
+
+      - name: Trigger RMG Templates rebuild
+        run: |
+          curl -XPOST -u "wongchito:${{ secrets.RMG_BUILD_AND_RELEASE }}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/railmapgen/rmg-templates/actions/workflows/build.yml/dispatches --data '{"ref": "main"}'

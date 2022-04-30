@@ -49,6 +49,15 @@ const copyTemplate = async (companyId: string, filename: string) => {
     await writeFile(path.join(distTargetPath, companyId, filename + '.json'), templateStr);
 };
 
+const writePackageJson = async () => {
+    // read source file
+    const packageJsonStr = await readFile(path.join(__dirname, '..', 'package.json'), 'utf-8');
+    const { type: _, ...others } = JSON.parse(packageJsonStr);
+
+    await mkdir(path.join(distTargetPath), { recursive: true });
+    await writeFile(path.join(distTargetPath, '..', 'package.json'), JSON.stringify(others));
+};
+
 const prebuild = async () => {
     await copyCompanyIdList();
     const templateConfigs = await createTemplateConfigsFile();
@@ -58,6 +67,8 @@ const prebuild = async () => {
             await copyTemplate(companyId, template.filename);
         }
     }
+
+    await writePackageJson();
 };
 
 prebuild().then();
