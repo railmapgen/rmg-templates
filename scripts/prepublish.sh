@@ -15,7 +15,7 @@ npm config set tag-version-prefix "${APP_NAME}-"
 cd ./package
 
 ### BUMP VERSION
-if [ "$BRANCH" = "master" ]
+if [ "$BRANCH" = "main" ]
 then
   # build with a normal version
   npm --no-git-tag-version version patch
@@ -29,7 +29,7 @@ fi
 npm run build
 
 ### PUSH TAG AND COMMIT
-if [ "$BRANCH" = "master" ]
+if [ "$BRANCH" = "main" ]
 then
   git add ..
   git commit -m "${APP_NAME}-${RMG_VER} release"
@@ -44,11 +44,11 @@ always-auth=true
 EOF
 
 # Check if it is a patch version
-PREV_VER=$(npm show @railmapgen/rmg-templates-resources version | head -n1)
-PATTERN='\([0-9]\+\.\)\{2\}'
-PREV_MAJ_MIN=$(echo $PREV_VER | grep --colour=never -o $PATTERN)
-CUR_MAJ_MIN=$(echo $RMG_VER | grep --colour=never -o $PATTERN)
-[ $PREV_MAJ_MIN == $CUR_MAJ_MIN ] && IS_PATCH=true || IS_PATCH=false
-echo "IS_PATCH=${IS_PATCH}" >> $GITHUB_ENV
+#PREV_VER=$(npm show @railmapgen/rmg-templates-resources version | head -n1)
+#PATTERN='\([0-9]\+\.\)\{2\}'
+#PREV_MAJ_MIN=$(echo $PREV_VER | grep --colour=never -o $PATTERN)
+#CUR_MAJ_MIN=$(echo $RMG_VER | grep --colour=never -o $PATTERN)
+#[ $PREV_MAJ_MIN == $CUR_MAJ_MIN ] && IS_PATCH=true || IS_PATCH=false
+#echo "IS_PATCH=${IS_PATCH}" >> $GITHUB_ENV
 
 # going to publish package
