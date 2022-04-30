@@ -9,6 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const sourcePath = path.join(__dirname, '../../public/resources/templates');
 const targetPath = path.join(__dirname, '../src/templates');
+const distTargetPath = path.join(__dirname, '../dist/templates');
 
 const copyCompanyIdList = async () => {
     // read source file
@@ -44,8 +45,8 @@ const copyTemplate = async (companyId: string, filename: string) => {
     const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
 
     // copy to target dir
-    await mkdir(path.join(targetPath, companyId), { recursive: true });
-    await writeFile(path.join(targetPath, companyId, filename + '.json'), templateStr);
+    await mkdir(path.join(distTargetPath, companyId), { recursive: true });
+    await writeFile(path.join(distTargetPath, companyId, filename + '.json'), templateStr);
 };
 
 const prebuild = async () => {
