@@ -37,7 +37,7 @@ then
 fi
 
 # Set up .npmrc for publishing
-cat >> ./dist/.npmrc << EOF
+cat >> ./.npmrc << EOF
 //registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}
 registry=https://registry.npmjs.org/
 always-auth=true

@@ -25,7 +25,7 @@ jobs:
 
       - name: Pulish to npm
         run: |
-          cd ./package/dist
+          cd ./package
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RMG_NPM_PUBLISH }}
