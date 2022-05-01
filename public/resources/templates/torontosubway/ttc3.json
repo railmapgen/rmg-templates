@@ -1,24 +1,23 @@
 {
-    "style": "shmetro",
-    "svg_height": 400,
-    "padding": 8.750201061605276,
+    "style": "mtr",
+    "svg_height": 350,
+    "padding": 5.09,
     "y_pc": 40,
     "branch_spacing": 45,
     "theme": [
-        "shanghai",
-        "sh3",
-        "#FFD100",
-        "#000"
+        "toronto",
+        "l3",
+        "#0082C9",
+        "#fff"
     ],
     "direction": "r",
-    "current_stn_idx": "s9tt",
+    "current_stn_idx": "l1mz",
     "platform_num": "2",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "vzv2",
-                "s9tt"
+                "l1mz"
             ],
             "name": [
                 "路綫左端",
@@ -26,10 +25,7 @@
             ],
             "branch": {
                 "left": [],
-                "right": [
-                    "through",
-                    "s9tt"
-                ]
+                "right": []
             },
             "transfer": {
                 "tick_direc": "r",
@@ -48,8 +44,7 @@
         },
         "lineend": {
             "parents": [
-                "l9j9",
-                "fcqo"
+                "ssez"
             ],
             "children": [],
             "name": [
@@ -57,10 +52,7 @@
                 "RIGHT END"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "fcqo"
-                ],
+                "left": [],
                 "right": []
             },
             "transfer": {
@@ -75,26 +67,52 @@
                 "local"
             ],
             "facility": "",
-            "num": "00",
+            "num": "07",
             "secondaryName": false
         },
         "l1mz": {
             "parents": [
-                "vzv2",
-                "syq7"
+                "linestart"
             ],
             "children": [
-                "ll8u"
+                "iwf6"
             ],
             "name": [
-                "l1mz",
-                "1"
+                "麦高云",
+                "McCowan"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "syq7"
-                ],
+                "left": [],
+                "right": []
+            },
+            "num": "01",
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
+                    []
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "secondaryName": false
+        },
+        "iwf6": {
+            "children": [
+                "9rwu"
+            ],
+            "parents": [
+                "l1mz"
+            ],
+            "name": [
+                "士嘉堡中心",
+                "Scarborough Centre"
+            ],
+            "branch": {
+                "left": [],
                 "right": []
             },
             "num": "02",
@@ -112,55 +130,21 @@
             "facility": "",
             "secondaryName": false
         },
-        "iwf6": {
-            "children": [
-                "l9j9",
-                "fmlo"
-            ],
-            "parents": [
-                "ll8u"
-            ],
+        "9rwu": {
             "name": [
-                "iwf6",
-                "1"
-            ],
-            "branch": {
-                "left": [],
-                "right": [
-                    "through",
-                    "fmlo"
-                ]
-            },
-            "num": "01",
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "secondaryName": false
-        },
-        "vzv2": {
-            "name": [
-                "vzv2",
-                "1"
+                "美兰",
+                "Midland"
             ],
             "secondaryName": false,
-            "num": "00",
+            "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "linestart"
+                "iwf6"
             ],
             "children": [
-                "l1mz"
+                "jsko"
             ],
             "branch": {
                 "left": [],
@@ -176,18 +160,78 @@
             },
             "facility": ""
         },
-        "l9j9": {
+        "jsko": {
             "name": [
-                "l9j9",
-                "1"
+                "艾斯美",
+                "Ellesmere"
             ],
             "secondaryName": false,
-            "num": "00",
+            "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "iwf6"
+                "9rwu"
+            ],
+            "children": [
+                "modb"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "modb": {
+            "name": [
+                "罗伦斯东",
+                "Lawrence East"
+            ],
+            "secondaryName": false,
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "jsko"
+            ],
+            "children": [
+                "ssez"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "ssez": {
+            "name": [
+                "坚尼地",
+                "Kennedy"
+            ],
+            "secondaryName": false,
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "modb"
             ],
             "children": [
                 "lineend"
@@ -198,156 +242,16 @@
             },
             "transfer": {
                 "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "ll8u": {
-            "name": [
-                "ll8u",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "l1mz"
-            ],
-            "children": [
-                "iwf6"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "syq7": {
-            "name": [
-                "syq7",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "s9tt"
-            ],
-            "children": [
-                "l1mz"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "fmlo": {
-            "name": [
-                "fmlo",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "fcqo"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "fcqo": {
-            "name": [
-                "fcqo",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "fmlo"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "s9tt": {
-            "name": [
-                "s9tt",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "syq7"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
+                    [
+                        [
+                            "toronto",
+                            "l2",
+                            "#00923F",
+                            "#fff",
+                            "3 布鲁亚－丹佛线",
+                            "Line 3\\ Bloor-Danforth"
+                        ]
+                    ],
                     []
                 ],
                 "tick_direc": "r",
@@ -358,12 +262,12 @@
         }
     },
     "line_name": [
-        "荃灣綫",
-        "Tsuen Wan Line"
+        "3 士嘉堡轻铁",
+        "Line 3\\ Scarborough"
     ],
     "psd_num": "1",
-    "line_num": "TW",
-    "info_panel_type": "sh2020",
+    "line_num": "3",
+    "info_panel_type": "gz28",
     "direction_gz_x": 50,
     "direction_gz_y": 70,
     "customiseMTRDest": {
@@ -371,61 +275,14 @@
         "terminal": false
     },
     "svgWidth": {
-        "destination": 1000,
-        "runin": 1000,
-        "railmap": 1000,
-        "indoor": 800
+        "destination": 1500,
+        "runin": 1500,
+        "railmap": 2000,
+        "indoor": 4000
     },
     "notesGZMTR": [],
     "namePosMTR": {
         "isStagger": true,
         "isFlip": false
-    },
-    "coline": [
-        {
-            "from": "iwf6",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh4",
-                    "#5F259F",
-                    "#fff",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "iwf6",
-            "to": "fcqo",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh7",
-                    "#FF6900",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "s9tt",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh2",
-                    "#97D700",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        }
-    ]
+    }
 }

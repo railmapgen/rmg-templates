@@ -1,24 +1,23 @@
 {
     "style": "shmetro",
     "svg_height": 400,
-    "padding": 8.750201061605276,
+    "padding": 8.75,
     "y_pc": 40,
     "branch_spacing": 45,
     "theme": [
         "shanghai",
-        "sh3",
-        "#FFD100",
-        "#000"
+        "sh4",
+        "#5F259F",
+        "#fff"
     ],
     "direction": "r",
-    "current_stn_idx": "s9tt",
-    "platform_num": "2",
+    "current_stn_idx": "fdwp",
+    "platform_num": "",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "vzv2",
-                "s9tt"
+                "l1mz"
             ],
             "name": [
                 "路綫左端",
@@ -26,10 +25,7 @@
             ],
             "branch": {
                 "left": [],
-                "right": [
-                    "through",
-                    "s9tt"
-                ]
+                "right": []
             },
             "transfer": {
                 "tick_direc": "r",
@@ -48,8 +44,7 @@
         },
         "lineend": {
             "parents": [
-                "l9j9",
-                "fcqo"
+                "iwf6"
             ],
             "children": [],
             "name": [
@@ -57,10 +52,7 @@
                 "RIGHT END"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "fcqo"
-                ],
+                "left": [],
                 "right": []
             },
             "transfer": {
@@ -80,21 +72,17 @@
         },
         "l1mz": {
             "parents": [
-                "vzv2",
-                "syq7"
+                "linestart"
             ],
             "children": [
-                "ll8u"
+                "fdwp"
             ],
             "name": [
                 "l1mz",
-                "1"
+                ""
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "syq7"
-                ],
+                "left": [],
                 "right": []
             },
             "num": "02",
@@ -114,22 +102,18 @@
         },
         "iwf6": {
             "children": [
-                "l9j9",
-                "fmlo"
+                "lineend"
             ],
             "parents": [
-                "ll8u"
+                "lt41"
             ],
             "name": [
-                "iwf6",
-                "1"
+                "iwf6天",
+                "iwf6"
             ],
             "branch": {
                 "left": [],
-                "right": [
-                    "through",
-                    "fmlo"
-                ]
+                "right": []
             },
             "num": "01",
             "transfer": {
@@ -146,70 +130,10 @@
             "facility": "",
             "secondaryName": false
         },
-        "vzv2": {
+        "fdwp": {
             "name": [
-                "vzv2",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "l1mz"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "l9j9": {
-            "name": [
-                "l9j9",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "ll8u": {
-            "name": [
-                "ll8u",
-                "1"
+                "fdwp",
+                ""
             ],
             "secondaryName": false,
             "num": "00",
@@ -220,127 +144,127 @@
                 "l1mz"
             ],
             "children": [
+                "etp0"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "etp0": {
+            "name": [
+                "etp0",
+                ""
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fdwp"
+            ],
+            "children": [
+                "56xk"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "56xk": {
+            "name": [
+                "56xk",
+                ""
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "etp0"
+            ],
+            "children": [
+                "768x"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "768x": {
+            "name": [
+                "768x",
+                ""
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "56xk"
+            ],
+            "children": [
+                "lt41"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "lt41": {
+            "name": [
+                "lt41",
+                ""
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "768x"
+            ],
+            "children": [
                 "iwf6"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "syq7": {
-            "name": [
-                "syq7",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "s9tt"
-            ],
-            "children": [
-                "l1mz"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "fmlo": {
-            "name": [
-                "fmlo",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "fcqo"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "fcqo": {
-            "name": [
-                "fcqo",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "fmlo"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "s9tt": {
-            "name": [
-                "s9tt",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "syq7"
             ],
             "branch": {
                 "left": [],
@@ -358,8 +282,8 @@
         }
     },
     "line_name": [
-        "荃灣綫",
-        "Tsuen Wan Line"
+        "4号线",
+        "Line 4"
     ],
     "psd_num": "1",
     "line_num": "TW",
@@ -374,58 +298,13 @@
         "destination": 1000,
         "runin": 1000,
         "railmap": 1000,
-        "indoor": 800
+        "indoor": 1000
     },
     "notesGZMTR": [],
     "namePosMTR": {
         "isStagger": true,
         "isFlip": false
     },
-    "coline": [
-        {
-            "from": "iwf6",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh4",
-                    "#5F259F",
-                    "#fff",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "iwf6",
-            "to": "fcqo",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh7",
-                    "#FF6900",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "s9tt",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh2",
-                    "#97D700",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        }
-    ]
+    "coline": [],
+    "loop": true
 }

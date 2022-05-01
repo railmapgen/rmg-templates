@@ -1,24 +1,23 @@
 {
-    "style": "shmetro",
-    "svg_height": 400,
+    "style": "gzmtr",
+    "svg_height": 300,
     "padding": 8.750201061605276,
     "y_pc": 40,
     "branch_spacing": 45,
     "theme": [
-        "shanghai",
-        "sh3",
-        "#FFD100",
-        "#000"
+        "guangzhou",
+        "apm",
+        "#00B5E2",
+        "#fff"
     ],
-    "direction": "r",
-    "current_stn_idx": "s9tt",
-    "platform_num": "2",
+    "direction": "l",
+    "current_stn_idx": "qbbb",
+    "platform_num": "3",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "vzv2",
-                "s9tt"
+                "egke"
             ],
             "name": [
                 "路綫左端",
@@ -26,10 +25,7 @@
             ],
             "branch": {
                 "left": [],
-                "right": [
-                    "through",
-                    "s9tt"
-                ]
+                "right": []
             },
             "transfer": {
                 "tick_direc": "r",
@@ -43,13 +39,12 @@
                 "local"
             ],
             "facility": "",
-            "num": "00",
+            "num": "10",
             "secondaryName": false
         },
         "lineend": {
             "parents": [
-                "l9j9",
-                "fcqo"
+                "qbbb"
             ],
             "children": [],
             "name": [
@@ -57,10 +52,7 @@
                 "RIGHT END"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "fcqo"
-                ],
+                "left": [],
                 "right": []
             },
             "transfer": {
@@ -80,24 +72,20 @@
         },
         "l1mz": {
             "parents": [
-                "vzv2",
-                "syq7"
+                "iwf6"
             ],
             "children": [
-                "ll8u"
+                "lyqw"
             ],
             "name": [
-                "l1mz",
-                "1"
+                "天河南",
+                "Tianhenan"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "syq7"
-                ],
+                "left": [],
                 "right": []
             },
-            "num": "02",
+            "num": "07",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -114,24 +102,20 @@
         },
         "iwf6": {
             "children": [
-                "l9j9",
-                "fmlo"
+                "l1mz"
             ],
             "parents": [
-                "ll8u"
+                "egke"
             ],
             "name": [
-                "iwf6",
-                "1"
+                "体育中心南",
+                "Tianhe Sport Center South"
             ],
             "branch": {
                 "left": [],
-                "right": [
-                    "through",
-                    "fmlo"
-                ]
+                "right": []
             },
-            "num": "01",
+            "num": "08",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -146,48 +130,9 @@
             "facility": "",
             "secondaryName": false
         },
-        "vzv2": {
-            "name": [
-                "vzv2",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
+        "qbbb": {
             "parents": [
-                "linestart"
-            ],
-            "children": [
-                "l1mz"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "l9j9": {
-            "name": [
-                "l9j9",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
+                "tgp4"
             ],
             "children": [
                 "lineend"
@@ -196,61 +141,169 @@
                 "left": [],
                 "right": []
             },
+            "name": [
+                "广州塔",
+                "Canton Tower"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "guangzhou",
+                            "gz3",
+                            "#ECA154",
+                            "#000",
+                            "3号线",
+                            "Line 3"
+                        ]
+                    ]
+                ],
+                "osi_names": [],
+                "paid_area": true,
+                "tick_direc": "r"
+            },
+            "secondaryName": false
+        },
+        "tgp4": {
+            "parents": [
+                "ecsx"
+            ],
+            "children": [
+                "qbbb"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "name": [
+                "海心沙",
+                "Haixinsha"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "facility": "",
             "transfer": {
                 "info": [
                     []
                 ],
-                "tick_direc": "r",
+                "osi_names": [],
                 "paid_area": true,
-                "osi_names": []
+                "tick_direc": "r"
             },
-            "facility": ""
+            "secondaryName": false
         },
-        "ll8u": {
-            "name": [
-                "ll8u",
-                "1"
+        "su3g": {
+            "parents": [
+                "9v64"
             ],
-            "secondaryName": false,
-            "num": "00",
+            "children": [
+                "ecsx"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "name": [
+                "花城大道",
+                "Huacheng Dadao"
+            ],
+            "num": "04",
             "services": [
                 "local"
             ],
+            "facility": "",
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "osi_names": [],
+                "paid_area": true,
+                "tick_direc": "r"
+            },
+            "secondaryName": false
+        },
+        "9v64": {
+            "parents": [
+                "lyqw"
+            ],
+            "children": [
+                "su3g"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "name": [
+                "妇儿中心",
+                "Guangzhou Women and\\Children's Medical Center"
+            ],
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "osi_names": [],
+                "paid_area": true,
+                "tick_direc": "r"
+            },
+            "secondaryName": false
+        },
+        "lyqw": {
             "parents": [
                 "l1mz"
             ],
             "children": [
-                "iwf6"
+                "9v64"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
+            "name": [
+                "黄埔大道",
+                "Huangpu Dadao"
+            ],
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "facility": "",
             "transfer": {
                 "info": [
                     []
                 ],
-                "tick_direc": "r",
+                "osi_names": [],
                 "paid_area": true,
-                "osi_names": []
+                "tick_direc": "r"
             },
-            "facility": ""
+            "secondaryName": false
         },
-        "syq7": {
+        "ecsx": {
             "name": [
-                "syq7",
-                "1"
+                "大剧院",
+                "Guangzhou\\Opera House"
             ],
             "secondaryName": false,
-            "num": "00",
+            "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "s9tt"
+                "su3g"
             ],
             "children": [
-                "l1mz"
+                "tgp4"
             ],
             "branch": {
                 "left": [],
@@ -266,73 +319,13 @@
             },
             "facility": ""
         },
-        "fmlo": {
+        "egke": {
             "name": [
-                "fmlo",
-                "1"
+                "林和西",
+                "Linhexi"
             ],
             "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "fcqo"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "fcqo": {
-            "name": [
-                "fcqo",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "fmlo"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "s9tt": {
-            "name": [
-                "s9tt",
-                "1"
-            ],
-            "secondaryName": false,
-            "num": "00",
+            "num": "09",
             "services": [
                 "local"
             ],
@@ -340,7 +333,7 @@
                 "linestart"
             ],
             "children": [
-                "syq7"
+                "iwf6"
             ],
             "branch": {
                 "left": [],
@@ -348,7 +341,16 @@
             },
             "transfer": {
                 "info": [
-                    []
+                    [
+                        [
+                            "guangzhou",
+                            "gz3",
+                            "#ECA154",
+                            "#000",
+                            "3号线",
+                            "Line 3"
+                        ]
+                    ]
                 ],
                 "tick_direc": "r",
                 "paid_area": true,
@@ -358,14 +360,14 @@
         }
     },
     "line_name": [
-        "荃灣綫",
-        "Tsuen Wan Line"
+        "APM线",
+        "APM Line"
     ],
-    "psd_num": "1",
-    "line_num": "TW",
-    "info_panel_type": "sh2020",
-    "direction_gz_x": 50,
-    "direction_gz_y": 70,
+    "psd_num": "2",
+    "line_num": "APM",
+    "info_panel_type": "gzgf",
+    "direction_gz_x": 45,
+    "direction_gz_y": 69.27,
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
@@ -373,59 +375,12 @@
     "svgWidth": {
         "destination": 1000,
         "runin": 1000,
-        "railmap": 1000,
-        "indoor": 800
+        "railmap": 1200,
+        "indoor": 1000
     },
     "notesGZMTR": [],
     "namePosMTR": {
         "isStagger": true,
         "isFlip": false
-    },
-    "coline": [
-        {
-            "from": "iwf6",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh4",
-                    "#5F259F",
-                    "#fff",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "iwf6",
-            "to": "fcqo",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh7",
-                    "#FF6900",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        },
-        {
-            "from": "s9tt",
-            "to": "l1mz",
-            "colors": [
-                [
-                    "shanghai",
-                    "sh2",
-                    "#97D700",
-                    "#000",
-                    "4号线",
-                    "Line 4"
-                ]
-            ],
-            "display": true
-        }
-    ]
+    }
 }
