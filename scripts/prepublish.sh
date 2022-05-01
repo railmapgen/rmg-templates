@@ -31,7 +31,7 @@ npm run build
 ### PUSH TAG AND COMMIT
 if [ "$BRANCH" = "main" ]
 then
-  git add ..
+  git add -u
   git commit -m "${APP_NAME}-${RMG_VER} release"
   git push
 fi
