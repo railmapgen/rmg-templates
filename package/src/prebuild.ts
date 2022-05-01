@@ -12,6 +12,8 @@ const targetPath = path.join(__dirname, '../src/templates');
 const distTargetPath = path.join(__dirname, '../dist/templates');
 
 const copyCompanyIdList = async () => {
+    console.log('Copying company ID list...');
+
     // read source file
     const companyConfig = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
 
@@ -21,6 +23,8 @@ const copyCompanyIdList = async () => {
 };
 
 const createTemplateConfigsFile = async (): Promise<Record<string, TemplateEntry[]>> => {
+    console.log('Creating template configs file...');
+
     // read company config
     const companyConfigStr = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
     const companyConfig = JSON.parse(companyConfigStr) as CompanyEntry[];
@@ -41,6 +45,8 @@ const createTemplateConfigsFile = async (): Promise<Record<string, TemplateEntry
 };
 
 const copyTemplate = async (companyId: string, filename: string) => {
+    console.log(`Copying template... company=${companyId}, filename=${filename}`);
+
     // read source file
     const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
 
@@ -50,6 +56,8 @@ const copyTemplate = async (companyId: string, filename: string) => {
 };
 
 const writePackageJson = async () => {
+    console.log('Writing package.json for dist...');
+
     // read source file
     const packageJsonStr = await readFile(path.join(__dirname, '..', 'package.json'), 'utf-8');
     const { type: _, ...others } = JSON.parse(packageJsonStr);
