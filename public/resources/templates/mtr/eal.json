@@ -1,12 +1,8 @@
 {
     "style": "mtr",
     "svg_height": 300,
-    "svg_width": 1000,
-    "svg_dest_width": 1050,
-    "show_outer": true,
-    "padding": 5.353925353925354,
+    "padding": 10,
     "y_pc": 42.5019305019305,
-    "strip_pc": 90,
     "branch_spacing": 43.160875160875165,
     "theme": [
         "hongkong",
@@ -14,65 +10,24 @@
         "#61b4e4",
         "#fff"
     ],
-    "direction": "l",
+    "direction": "r",
     "current_stn_idx": "iwf6",
-    "platform_num": "4",
-    "txt_bg_gap": 15,
-    "txt_flip": true,
+    "platform_num": "1",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "m2ot",
-                "fhq4"
+                "2It3ab"
             ],
-            "name": [
-                "路綫左端",
-                "LEFT END"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": [
-                    "through",
-                    "fhq4"
-                ]
-            },
-            "interchange": [
-                []
-            ],
-            "transfer": {
-                "type": "none",
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ]
-        },
-        "lineend": {
-            "parents": [
-                "iwf6"
-            ],
-            "children": [],
             "name": [
                 "路綫右端",
                 "RIGHT END"
             ],
-            "change_type": "none",
             "branch": {
                 "left": [],
                 "right": []
             },
-            "interchange": [
-                []
-            ],
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -82,30 +37,62 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "num": "00",
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
+        },
+        "lineend": {
+            "parents": [
+                "fhq4",
+                "m2ot"
+            ],
+            "children": [],
+            "name": [
+                "路綫左端",
+                "LEFT END"
+            ],
+            "branch": {
+                "left": [
+                    "through",
+                    "fhq4"
+                ],
+                "right": []
+            },
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
+                    []
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "num": "00",
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "l1mz": {
             "parents": [
-                "q027"
+                "iwf6"
             ],
             "children": [
-                "iwf6"
+                "q027"
             ],
             "name": [
                 "旺角東",
                 "Mong Kok East"
             ],
-            "change_type": "none",
             "branch": {
                 "left": [],
                 "right": []
             },
             "num": "02",
-            "interchange": [
-                []
-            ],
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -115,39 +102,28 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "iwf6": {
             "children": [
-                "lineend"
+                "l1mz"
             ],
             "parents": [
-                "l1mz"
+                "JW3KcT"
             ],
             "name": [
                 "紅磡",
                 "Hung Hom"
             ],
-            "change_type": "int2",
             "branch": {
                 "left": [],
                 "right": []
             },
             "num": "01",
-            "interchange": [
-                [
-                    [
-                        "hongkong",
-                        "wrl",
-                        "#b6008d",
-                        "#fff",
-                        "西鐵綫",
-                        "West Rail Line"
-                    ]
-                ]
-            ],
             "transfer": {
-                "type": "int2",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -155,25 +131,28 @@
                     [
                         [
                             "hongkong",
-                            "wrl",
-                            "#b6008d",
+                            "mol",
+                            "#9A3820",
                             "#fff",
-                            "西鐵綫",
-                            "West Rail Line"
+                            "屯馬綫",
+                            "Tuen Ma Line"
                         ]
                     ]
                 ]
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "q027": {
             "parents": [
-                "6r9r"
+                "l1mz"
             ],
             "children": [
-                "l1mz"
+                "6r9r"
             ],
             "branch": {
                 "left": [],
@@ -183,22 +162,8 @@
                 "九龍塘",
                 "Kowloon Tong"
             ],
-            "change_type": "int2",
             "num": "03",
-            "interchange": [
-                [
-                    [
-                        "hongkong",
-                        "ktl",
-                        "#00af41",
-                        "#fff",
-                        "觀塘綫",
-                        "Kwun Tong Line"
-                    ]
-                ]
-            ],
             "transfer": {
-                "type": "int2",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -217,14 +182,17 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "6r9r": {
             "parents": [
-                "u8xj"
+                "q027"
             ],
             "children": [
-                "q027"
+                "u8xj"
             ],
             "branch": {
                 "left": [],
@@ -234,22 +202,8 @@
                 "大圍",
                 "Tai Wai"
             ],
-            "change_type": "int2",
             "num": "04",
-            "interchange": [
-                [
-                    [
-                        "hongkong",
-                        "mol",
-                        "#9a3820",
-                        "#fff",
-                        "屯馬綫一期",
-                        "Tuen Ma Line Phase 1"
-                    ]
-                ]
-            ],
             "transfer": {
-                "type": "int2",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -260,93 +214,26 @@
                             "mol",
                             "#9a3820",
                             "#fff",
-                            "屯馬綫一期",
-                            "Tuen Ma Line Phase 1"
+                            "屯馬綫",
+                            "Tuen Ma Line"
                         ]
                     ]
                 ]
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "u8xj": {
             "parents": [
-                "hybz",
-                "7gy7"
-            ],
-            "children": [
                 "6r9r"
             ],
-            "branch": {
-                "left": [
-                    "through",
-                    "hybz"
-                ],
-                "right": []
-            },
-            "name": [
-                "沙田",
-                "Sha Tin"
-            ],
-            "change_type": "none",
-            "num": "05",
-            "interchange": [
-                []
-            ],
-            "transfer": {
-                "type": "none",
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ]
-        },
-        "7gy7": {
-            "parents": [
-                "rr8a"
-            ],
             "children": [
-                "u8xj"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "火炭",
-                "Fo Tan"
-            ],
-            "change_type": "none",
-            "num": "06",
-            "interchange": [
-                []
-            ],
-            "transfer": {
-                "type": "none",
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ]
-        },
-        "rr8a": {
-            "parents": [
-                "fwhz"
-            ],
-            "children": [
-                "hybz",
-                "7gy7"
+                "7gy7",
+                "hybz"
             ],
             "branch": {
                 "left": [],
@@ -356,16 +243,11 @@
                 ]
             },
             "name": [
-                "大學",
-                "University"
+                "沙田",
+                "Sha Tin"
             ],
-            "change_type": "none",
-            "num": "08",
-            "interchange": [
-                []
-            ],
+            "num": "05",
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -375,11 +257,14 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
-        "fwhz": {
+        "7gy7": {
             "parents": [
-                "7dwu"
+                "u8xj"
             ],
             "children": [
                 "rr8a"
@@ -389,16 +274,11 @@
                 "right": []
             },
             "name": [
-                "大埔墟",
-                "Tai Po Market"
+                "火炭",
+                "Fo Tan"
             ],
-            "change_type": "none",
-            "num": "09",
-            "interchange": [
-                []
-            ],
+            "num": "06",
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -408,30 +288,32 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
-        "7dwu": {
+        "rr8a": {
             "parents": [
-                "jce3"
+                "7gy7",
+                "hybz"
             ],
             "children": [
                 "fwhz"
             ],
             "branch": {
-                "left": [],
+                "left": [
+                    "through",
+                    "hybz"
+                ],
                 "right": []
             },
             "name": [
-                "太和",
-                "Tai Wo"
+                "大學",
+                "University"
             ],
-            "change_type": "none",
-            "num": "10",
-            "interchange": [
-                []
-            ],
+            "num": "08",
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -441,11 +323,14 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
-        "jce3": {
+        "fwhz": {
             "parents": [
-                "l116"
+                "rr8a"
             ],
             "children": [
                 "7dwu"
@@ -455,16 +340,11 @@
                 "right": []
             },
             "name": [
-                "粉嶺",
-                "Fanling"
+                "大埔墟",
+                "Tai Po Market"
             ],
-            "change_type": "none",
-            "num": "11",
-            "interchange": [
-                []
-            ],
+            "num": "09",
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -474,34 +354,28 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
-        "l116": {
+        "7dwu": {
             "parents": [
-                "m2ot",
-                "fhq4"
+                "fwhz"
             ],
             "children": [
                 "jce3"
             ],
             "branch": {
-                "left": [
-                    "through",
-                    "fhq4"
-                ],
+                "left": [],
                 "right": []
             },
             "name": [
-                "上水",
-                "Sheung Shui"
+                "太和",
+                "Tai Wo"
             ],
-            "change_type": "none",
-            "num": "12",
-            "interchange": [
-                []
-            ],
+            "num": "10",
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -511,11 +385,14 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
-        "m2ot": {
+        "jce3": {
             "parents": [
-                "linestart"
+                "7dwu"
             ],
             "children": [
                 "l116"
@@ -525,30 +402,77 @@
                 "right": []
             },
             "name": [
+                "粉嶺",
+                "Fanling"
+            ],
+            "num": "11",
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
+                    []
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
+        },
+        "l116": {
+            "parents": [
+                "jce3"
+            ],
+            "children": [
+                "fhq4",
+                "m2ot"
+            ],
+            "branch": {
+                "left": [],
+                "right": [
+                    "through",
+                    "fhq4"
+                ]
+            },
+            "name": [
+                "上水",
+                "Sheung Shui"
+            ],
+            "num": "12",
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
+                    []
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
+        },
+        "m2ot": {
+            "parents": [
+                "l116"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "name": [
                 "羅湖",
                 "Lo Wu"
             ],
-            "change_type": "osi11_ur",
             "num": "13",
-            "interchange": [
-                [],
-                [
-                    [
-                        "罗湖",
-                        "Luohu"
-                    ],
-                    [
-                        "shenzhen",
-                        "sz1",
-                        "#00b140",
-                        "#fff",
-                        "深圳罗宝线",
-                        "Shenzhen Luobao Line"
-                    ]
-                ]
-            ],
             "transfer": {
-                "type": "osi11",
                 "tick_direc": "r",
                 "paid_area": false,
                 "osi_names": [
@@ -573,7 +497,10 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "fhq4": {
             "branch": {
@@ -581,36 +508,17 @@
                 "right": []
             },
             "parents": [
-                "linestart"
+                "l116"
             ],
             "children": [
-                "l116"
+                "lineend"
             ],
             "name": [
                 "落馬洲",
                 "Lok Ma Chau"
             ],
-            "change_type": "osi11_ur",
             "num": "14",
-            "interchange": [
-                [],
-                [
-                    [
-                        "福田口岸",
-                        "Futian Checkpoint"
-                    ],
-                    [
-                        "shenzhen",
-                        "sz4",
-                        "#da291c",
-                        "#fff",
-                        "深圳龙华线",
-                        "Shenzhen Longhua Line"
-                    ]
-                ]
-            ],
             "transfer": {
-                "type": "osi11",
                 "tick_direc": "r",
                 "paid_area": false,
                 "osi_names": [
@@ -635,7 +543,10 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
         },
         "hybz": {
             "branch": {
@@ -643,22 +554,17 @@
                 "right": []
             },
             "parents": [
-                "rr8a"
+                "u8xj"
             ],
             "children": [
-                "u8xj"
+                "rr8a"
             ],
             "name": [
                 "馬場",
                 "Racecourse"
             ],
-            "change_type": "none",
             "num": "07",
-            "interchange": [
-                []
-            ],
             "transfer": {
-                "type": "none",
                 "tick_direc": "r",
                 "paid_area": true,
                 "osi_names": [],
@@ -668,18 +574,128 @@
             },
             "services": [
                 "local"
-            ]
+            ],
+            "facility": "",
+            "secondaryName": false,
+            "loop_pivot": false
+        },
+        "JW3KcT": {
+            "name": [
+                "會展",
+                "Exibition Centre"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "2It3ab"
+            ],
+            "children": [
+                "iwf6"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false
+        },
+        "2It3ab": {
+            "name": [
+                "金鐘",
+                "Admiralty"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "JW3KcT"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "hongkong",
+                            "twl",
+                            "#E2231A",
+                            "#fff",
+                            "荃灣綫",
+                            "Tsuen Wan Line"
+                        ],
+                        [
+                            "hongkong",
+                            "isl",
+                            "#0071CE",
+                            "#fff",
+                            "港島綫",
+                            "Island Line"
+                        ],
+                        [
+                            "hongkong",
+                            "sile",
+                            "#B6BD00",
+                            "#fff",
+                            "南港島綫",
+                            "South Island Line"
+                        ]
+                    ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false
         }
     },
     "line_name": [
         "東鐵綫",
         "East Rail Line"
     ],
-    "dest_legacy": false,
-    "char_form": "trad",
-    "psd_num": 1,
+    "psd_num": "1",
     "line_num": "ER",
     "info_panel_type": "gz28",
     "direction_gz_x": 50,
-    "direction_gz_y": 70
+    "direction_gz_y": 70,
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "svgWidth": {
+        "destination": 1500,
+        "runin": 1050,
+        "railmap": 1500,
+        "indoor": 1000
+    },
+    "notesGZMTR": [],
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": false
+    },
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 0,
+        "bottom_factor": 1
+    }
 }
