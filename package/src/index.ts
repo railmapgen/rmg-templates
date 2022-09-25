@@ -9,6 +9,7 @@ export interface CompanyEntry {
 export interface TemplateEntry {
     filename: string;
     name: Translation;
+    updatedBy?: string;
 }
 
 enum LanguageCode {
