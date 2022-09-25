@@ -26,7 +26,7 @@ export default function AppRoot() {
                         <List>
                             {templateList[company.id].map(template => (
                                 <ListItem key={template.filename}>
-                                    {template.filename}, author: {template.updatedBy ?? 'unknown'}
+                                    {template.filename}, author: {template.uploadBy ?? 'unknown'}
                                 </ListItem>
                             ))}
                         </List>
