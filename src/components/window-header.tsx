@@ -1,20 +1,40 @@
 import React from 'react';
-import { Flex, Heading } from '@chakra-ui/react';
-import { getEnvironment, getVersion } from '../util/config';
+import { Heading, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { RmgEnvBadge } from '@railmapgen/rmg-components';
+import { RmgEnvBadge, RmgWindowHeader } from '@railmapgen/rmg-components';
+import { LanguageCode } from '@railmapgen/rmg-translate';
+import { handleLanguageChange } from '../i18n/config';
+import rmgRuntime from '@railmapgen/rmg-runtime';
+import { MdTranslate } from 'react-icons/md';
 
 export default function WindowHeader() {
     const { t } = useTranslation();
 
-    const environment = getEnvironment();
+    const environment = rmgRuntime.getEnv();
+    const appVersion = rmgRuntime.getAppVersion();
+
+    const handleSelectLanguage = (language: LanguageCode) => {
+        rmgRuntime.setLanguage(language);
+        handleLanguageChange(language);
+    };
 
     return (
-        <Flex pl={2} pr={2} pb={1} pt={1} align="center">
-            <Heading as="h4" size="md" mr="auto">
-                {t('RMG Templates')}
-                <RmgEnvBadge environment={environment} version={getVersion()} />
+        <RmgWindowHeader>
+            <Heading as="h4" size="md">
+                {t('Templates')}
             </Heading>
-        </Flex>
+            <RmgEnvBadge environment={environment} version={appVersion} />
+
+            <HStack ml="auto">
+                <Menu>
+                    <MenuButton as={IconButton} icon={<MdTranslate />} variant="ghost" size="sm" />
+                    <MenuList>
+                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.English)}>English</MenuItem>
+                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.ChineseSimp)}>简体中文</MenuItem>
+                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.ChineseTrad)}>繁體中文</MenuItem>
+                    </MenuList>
+                </Menu>
+            </HStack>
+        </RmgWindowHeader>
     );
 }
