@@ -1,21 +1,16 @@
 import React from 'react';
 import WindowHeader from './window-header';
-import { useRootDispatch, useRootSelector } from '../redux';
-import { RmgDebouncedInput, RmgLabel, RmgPage, RmgPageHeader, RmgWindow } from '@railmapgen/rmg-components';
+import { RmgPage, RmgWindow } from '@railmapgen/rmg-components';
+import TemplatesGrid from './ag-grid/templates-grid';
+import PageHeader from './page-header';
 
 export default function AppRoot() {
-    const dispatch = useRootDispatch();
-    const counter = useRootSelector(state => state.app.counter);
-
     return (
         <RmgWindow>
             <WindowHeader />
             <RmgPage>
-                <RmgPageHeader>
-                    <RmgLabel label="Quick filter">
-                        <RmgDebouncedInput placeholder="Filter anything" />
-                    </RmgLabel>
-                </RmgPageHeader>
+                <PageHeader />
+                <TemplatesGrid />
             </RmgPage>
         </RmgWindow>
     );

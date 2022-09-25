@@ -9,6 +9,7 @@ import { createRoot, Root } from 'react-dom/client';
 import { rmgChakraTheme } from '@railmapgen/rmg-components';
 import { I18nextProvider } from 'react-i18next';
 import initStore from './redux/init';
+import './index.css';
 
 let root: Root;
 

@@ -1,5 +1,5 @@
-import {configureStore, createListenerMiddleware, TypedStartListening} from '@reduxjs/toolkit';
-import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
+import { configureStore, createListenerMiddleware, TypedStartListening } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import appReducer from './app/app-slice';
 
 const listenerMiddleware = createListenerMiddleware();
