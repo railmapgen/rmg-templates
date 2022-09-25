@@ -5,8 +5,8 @@ set -eux
 cd ./package && npm run build && cd ..
 
 # run tests
-npm run test
 npm run lint
+npm run test
 
 # git config
 git config --global user.name 'github-actions[bot]'
