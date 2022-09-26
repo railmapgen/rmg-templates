@@ -1,23 +1,35 @@
+import rmgRuntime from '@railmapgen/rmg-runtime';
 import { ChakraProvider } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
-import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRoot from './components/app-root';
-import chakraTheme from './theme/theme';
 import store from './redux';
-import './i18n/config';
+import i18n from './i18n/config';
+import { createRoot, Root } from 'react-dom/client';
+import { rmgChakraTheme } from '@railmapgen/rmg-components';
+import { I18nextProvider } from 'react-i18next';
+import initStore from './redux/init';
+import './index.css';
+
+let root: Root;
 
 const renderApp = () => {
-    ReactDOM.render(
-        <Provider store={store}>
-            <ChakraProvider theme={chakraTheme}>
-                <StrictMode>
-                    <AppRoot />
-                </StrictMode>
-            </ChakraProvider>
-        </Provider>,
-        document.getElementById('root')
+    root = createRoot(document.getElementById('root') as HTMLDivElement);
+    root.render(
+        <StrictMode>
+            <Provider store={store}>
+                <ChakraProvider theme={rmgChakraTheme}>
+                    <I18nextProvider i18n={i18n}>
+                        <AppRoot />
+                    </I18nextProvider>
+                </ChakraProvider>
+            </Provider>
+        </StrictMode>
     );
 };
 
-renderApp();
+rmgRuntime.ready().then(() => {
+    initStore(store);
+    renderApp();
+    rmgRuntime.injectCss();
+});

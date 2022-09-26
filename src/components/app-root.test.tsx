@@ -7,6 +7,6 @@ describe('AppRoot', () => {
     it('Can render window header', () => {
         render(<AppRoot />);
 
-        expect(screen.getByRole('heading').textContent).toContain('RMG Templates');
+        expect(screen.getByRole('heading').textContent).toContain('Templates');
     });
 });
