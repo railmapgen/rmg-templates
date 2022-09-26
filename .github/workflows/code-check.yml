@@ -15,10 +15,7 @@ jobs:
           node-version: '16'
       - run: npm ci
 
-      - name: Resources check
-        run: cd ./package && npm run check
-
-      - name: Code check
+      - name: Resources and code check
         run: |
           npm run build:resources
           npm run lint
