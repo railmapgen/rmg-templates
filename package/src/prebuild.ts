@@ -11,49 +11,59 @@ const sourcePath = path.join(__dirname, '../../public/resources/templates');
 const targetPath = path.join(__dirname, '../src/templates');
 const distTargetPath = path.join(__dirname, '../dist/templates');
 
-const copyCompanyIdList = async () => {
+let companyConfig: CompanyEntry[];
+let templateConfigs: Record<string, TemplateEntry[]> = {};
+
+const copyCompanyConfig = async () => {
     console.log('Copying company ID list...');
 
     // read source file
-    const companyConfig = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
+    const companyConfigStr = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
 
     // copy to target dir
     await mkdir(targetPath, { recursive: true });
-    await writeFile(path.join(targetPath, 'company-config.json'), companyConfig);
+    await writeFile(path.join(targetPath, 'company-config.json'), companyConfigStr);
+
+    companyConfig = JSON.parse(companyConfigStr);
 };
 
-const createTemplateConfigsFile = async (): Promise<Record<string, TemplateEntry[]>> => {
+const createTemplateConfigsFile = async () => {
     console.log('Creating template configs file...');
 
-    // read company config
-    const companyConfigStr = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
-    const companyConfig = JSON.parse(companyConfigStr) as CompanyEntry[];
-
-    // read config source file for each company
-    const templateConfigs: Record<string, TemplateEntry[]> = {};
     for (let company of companyConfig) {
-        const companyId = company.id;
-        const configStr = await readFile(path.join(sourcePath, companyId, '_config.json'), 'utf-8');
-        templateConfigs[companyId] = JSON.parse(configStr) as TemplateEntry[];
+        await copyTemplates(company.id);
     }
 
     // write template configs
     await mkdir(targetPath, { recursive: true });
     await writeFile(path.join(targetPath, 'template-configs.json'), JSON.stringify(templateConfigs));
-
-    return templateConfigs;
 };
 
-const copyTemplate = async (companyId: string, filename: string) => {
-    console.log(`Copying template... company=${companyId}, filename=${filename}`);
+const copyTemplates = async (companyId: string) => {
+    console.log(`Copying templates for company=${companyId}...`);
 
-    // read source file
-    const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
+    // read config source file
+    const configStr = await readFile(path.join(sourcePath, companyId, '_config.json'), 'utf-8');
+    const templateEntries: TemplateEntry[] = JSON.parse(configStr);
 
-    // copy to target dir
-    await mkdir(path.join(distTargetPath, companyId), { recursive: true });
-    await writeFile(path.join(distTargetPath, companyId, filename + '.json'), templateStr);
-};
+    // parse template
+    for (let template of templateEntries) {
+        const filename = template.filename;
+        console.log(`Parsing template filename=${filename}...`);
+
+        // read source file
+        const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
+        const templateObj = JSON.parse(templateStr);
+        template.style = templateObj.style;
+
+        // copy to target dir
+        await mkdir(path.join(distTargetPath, companyId), { recursive: true });
+        await writeFile(path.join(distTargetPath, companyId, filename + '.json'), templateStr);
+    }
+
+    // add template config
+    templateConfigs[companyId] = templateEntries;
+}
 
 const writePackageJson = async () => {
     console.log('Writing package.json for dist...');
@@ -67,15 +77,8 @@ const writePackageJson = async () => {
 };
 
 const prebuild = async () => {
-    await copyCompanyIdList();
-    const templateConfigs = await createTemplateConfigsFile();
-
-    for (let [companyId, templateList] of Object.entries(templateConfigs)) {
-        for (let template of templateList) {
-            await copyTemplate(companyId, template.filename);
-        }
-    }
-
+    await copyCompanyConfig();
+    await createTemplateConfigsFile();
     await writePackageJson();
 };
 

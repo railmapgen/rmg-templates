@@ -6,10 +6,17 @@ export interface CompanyEntry {
     name: Translation;
 }
 
+enum RmgStyle {
+    MTR = 'mtr',
+    GZMTR = 'gzmtr',
+    SHMetro = 'shmetro',
+}
+
 export interface TemplateEntry {
     filename: string;
     name: Translation;
     uploadBy?: string;
+    style?: RmgStyle;
 }
 
 enum LanguageCode {
