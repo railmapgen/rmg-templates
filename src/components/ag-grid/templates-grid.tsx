@@ -6,7 +6,7 @@ import { useRootSelector } from '../../redux';
 import { ColDef } from 'ag-grid-community';
 import { useTranslation } from 'react-i18next';
 import useTranslatedName from '../hooks/use-translated-name';
-import { Avatar, Tag, TagLabel } from '@chakra-ui/react';
+import { Avatar, Badge, Tag, TagLabel } from '@chakra-ui/react';
 
 export default function TemplatesGrid() {
     const { t, i18n } = useTranslation();
@@ -22,6 +22,7 @@ export default function TemplatesGrid() {
                 field: 'name',
                 valueFormatter: ({ value }: { value: TemplateEntry['name'] }) => translateName(value),
                 sortable: true,
+                flex: 1,
             },
             {
                 headerName: t('Uploader'),
@@ -32,7 +33,10 @@ export default function TemplatesGrid() {
                         size="lg"
                         borderRadius="full"
                         onClick={() =>
-                            window.open(`https://github.com/railmapgen/rmg/issues?q=is:issue+author:${value}`, '_blank')
+                            window.open(
+                                `https://github.com/railmapgen/rmg-templates/issues?q=is:issue+author:${value}`,
+                                '_blank'
+                            )
                         }
                         cursor="pointer"
                     >
@@ -40,6 +44,13 @@ export default function TemplatesGrid() {
                         <TagLabel>{value}</TagLabel>
                     </Tag>
                 ),
+                minWidth: 200,
+            },
+            {
+                headerName: t('Style'),
+                field: 'style',
+                cellRenderer: ({ value }: { value: TemplateEntry['style'] }) => <Badge>{value}</Badge>,
+                minWidth: 150,
             },
         ],
         [i18n.language]
