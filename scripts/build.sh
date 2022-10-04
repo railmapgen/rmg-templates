@@ -2,10 +2,11 @@
 set -eux
 
 # build local resources
-cd ./package && npm run build && cd ..
+npm run build:resources
 
 # run tests
-npm run test:no-watch
+npm run lint
+npm run test
 
 # git config
 git config --global user.name 'github-actions[bot]'

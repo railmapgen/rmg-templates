@@ -1,4 +1,4 @@
-name: Code Quality Check
+name: Resources and Code Check
 
 on:
   pull_request:
@@ -13,8 +13,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: npm i
-      - name: Check
+      - run: npm ci
+
+      - name: Resources and code check
         run: |
-          npm run lint:dev
-          npm run test:no-watch
+          npm run build:resources
+          npm run lint
+          npm run test

@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface AppState {
-    counter: number;
+    selectedCompany: string;
 }
 
 const initialState: AppState = {
-    counter: 0,
+    selectedCompany: '',
 };
 
 const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        bumpCounter: state => {
-            state.counter++;
+        setSelectedCompany: (state, action: PayloadAction<string>) => {
+            state.selectedCompany = action.payload;
         },
     },
 });
 
-export const { bumpCounter } = appSlice.actions;
+export const { setSelectedCompany } = appSlice.actions;
 export default appSlice.reducer;
