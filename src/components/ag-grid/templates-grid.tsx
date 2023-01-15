@@ -69,7 +69,7 @@ export default function TemplatesGrid() {
                 rowHeight={36}
                 suppressCellFocus={true}
                 suppressRowVirtualisation={true}
-                debug={process.env.NODE_ENV !== 'production'}
+                debug={import.meta.env.DEV}
             />
         </RmgAgGrid>
     );
