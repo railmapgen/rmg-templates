@@ -1,0 +1,42 @@
+name: Issue bot
+
+on:
+  issues:
+    type: [opened]
+
+jobs:
+  updateCities:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.body, 'Do not edit lines below, they are meant for bots only!!!') && !contains(github.event.issue.body, 'REPLACE ME')
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - run: npm ci
+        working-directory: ./package
+
+      - name: Dump payload
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT" > ./package/issuebot/issue.json
+
+      - name: Update and push
+        run: |
+          chmod +x ./scripts/issuebot.sh
+          ./scripts/issuebot.sh ${{ github.event.issue.number }} "${{ github.event.issue.title }}" "${{ github.event.issue.user.login }}" "${{ github.event.issue.user.id }}"
+        id: bot
+
+      - name: pull-request-action
+        uses: vsoch/pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "bot-"
+          PULL_REQUEST_FROM_BRANCH: bot-${{ github.event.issue.number }}
+          PULL_REQUEST_BRANCH: "master"
+          PULL_REQUEST_TOKEN: ${{ secrets.RMG_BUILD_AND_RELEASE }}
+          PULL_REQUEST_TITLE: ${{ github.event.issue.title }}
+          PULL_REQUEST_BODY: "Hi, I'm the rmg bot updating ${{ github.event.issue.title }} on behalf of ${{ github.event.issue.user.login }}.\nThis should fix #${{ github.event.issue.number }}\n${{ steps.bot.outputs.REVIEW_URLS }}"

@@ -1,0 +1,108 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { readFile, writeFile } from 'fs/promises';
+import { JSDOM } from 'jsdom';
+import { TemplateEntry } from '../src';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const templatesPath = path.join(__dirname, '../../public/resources/templates');
+
+let uploadBy: string;
+let templateConfig: TemplateEntry[];
+
+const readIssueBody = async (): Promise<HTMLDetailsElement[]> => {
+    const issueJsonStr = await readFile(__dirname + '/issue.json', 'utf-8');
+    const issueObj = JSON.parse(issueJsonStr);
+    const issueBody = issueObj.event.issue.body;
+    uploadBy = issueObj.event.issue.login;
+
+    const dom = new JSDOM(issueBody);
+    return Array.from(dom.window.document.querySelectorAll('details[repo="rmg-templates"]'));
+};
+
+const parseDetailsEl = (details: HTMLDetailsElement) => {
+    const company = details.getAttribute('company');
+    const line = details.getAttribute('line');
+
+    if (!company || !line) {
+        throw new Error('Missing required attributes.');
+    }
+
+    const nameEl = details.querySelector('details[type="name"]');
+    const name = nameEl ? JSON.parse(nameEl.innerHTML) : null;
+
+    const paramEl = details.querySelector('details[type="param"]');
+    const param = paramEl ? JSON.parse(paramEl.innerHTML) : null;
+
+    return { company, line, name, param };
+};
+
+const cacheTemplateConfig = async (company: string) => {
+    const configPath = path.join(templatesPath, company, '_config.json');
+    const configJsonStr = await readFile(configPath, 'utf-8');
+    templateConfig = JSON.parse(configJsonStr) as TemplateEntry[];
+};
+
+const writeTemplateConfig = async (company: string) => {
+    const configPath = path.join(templatesPath, company, '_config.json');
+    await writeFile(configPath, JSON.stringify(templateConfig, null, 4));
+};
+
+const updateConfig = (company: string, line: string, name: any) => {
+    console.log('Updating line config', line);
+    if (templateConfig.some(config => config.filename === line)) {
+        templateConfig = templateConfig.map(config => {
+            if (config.filename === line) {
+                return { ...config, name };
+            } else {
+                return config;
+            }
+        });
+    } else {
+        templateConfig.push({ filename: line, name, uploadBy });
+    }
+};
+
+const updateTemplate = async (company: string, line: string, param: any) => {
+    console.log('Updating line', line);
+    const filePath = path.join(templatesPath, company, line + '.json');
+    await writeFile(filePath, JSON.stringify(param, null, 4));
+};
+
+const start = async () => {
+    // parse issue
+    const detailsEls = await readIssueBody();
+    const items = detailsEls.map(parseDetailsEl);
+    console.log('Items found:', items.length);
+
+    // validate
+    const distinctCompanies = new Set(items.map(item => item.company));
+    if (distinctCompanies.size !== 1) {
+        throw new Error('Cannot handle more than 1 company in an issue. Companies found: ' + distinctCompanies);
+    }
+
+    // cache template config
+    const targetCompany = [...distinctCompanies][0];
+    console.log('Caching template config for', targetCompany);
+    await cacheTemplateConfig(targetCompany);
+
+    // perform insert/update
+    await Promise.all(
+        items.map(async item => {
+            const { line, name, param } = item;
+            if (name) {
+                updateConfig(targetCompany, line, name);
+            }
+            await updateTemplate(targetCompany, line, param);
+        })
+    );
+
+    // write updated template config
+    await writeTemplateConfig(targetCompany);
+
+    // print affected files
+    const affectedFiles = items.map(({ line }) => targetCompany + '/' + line + '.json');
+    console.log(`AFFECTED_FILES=(${affectedFiles})`);
+};
+
+start().then();
