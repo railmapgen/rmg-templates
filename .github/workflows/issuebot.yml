@@ -5,7 +5,7 @@ on:
     type: [opened]
 
 jobs:
-  updateCities:
+  updateTemplates:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.body, 'Do not edit lines below, they are meant for bots only!!!') && !contains(github.event.issue.body, 'REPLACE ME')
     steps:

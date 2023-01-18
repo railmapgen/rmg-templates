@@ -22,6 +22,7 @@ BRANCH_NAME="bot-$1"
 # Update templates
 cd package
 BOT_RUN_LOG=$(npm run issuebot)
+cd ..
 
 # Commit
 rm ./package/issuebot/issue.json
