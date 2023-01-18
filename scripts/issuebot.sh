@@ -39,3 +39,6 @@ CI='' npm run build
 GITHASH=$(git log -n 1 --pretty=%H)
 AFFECTED_FILES=$(echo $BOT_RUN_LOG | grep --color=never "AFFECTED_FILES")
 node ./issuebot/generate-review-url.js "$GITHASH" "$AFFECTED_FILES" >> $GITHUB_OUTPUT
+
+# Push
+git push --set-upstream origin $BRANCH_NAME
