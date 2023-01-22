@@ -14,7 +14,7 @@ const readIssueBody = async (): Promise<HTMLDetailsElement[]> => {
     const issueJsonStr = await readFile(__dirname + '/issue.json', 'utf-8');
     const issueObj = JSON.parse(issueJsonStr);
     const issueBody = issueObj.event.issue.body;
-    uploadBy = issueObj.event.issue.login;
+    uploadBy = issueObj.event.issue.user.login;
 
     const dom = new JSDOM(issueBody);
     return Array.from(dom.window.document.querySelectorAll('details[repo="rmg-templates"]'));
