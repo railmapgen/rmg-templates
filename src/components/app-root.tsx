@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import WindowHeader from './window-header';
-import { RmgPage, RmgWindow } from '@railmapgen/rmg-components';
-import TemplatesGrid from './ag-grid/templates-grid';
-import PageHeader from './page-header';
+import { RmgErrorBoundary, RmgLoader, RmgWindow } from '@railmapgen/rmg-components';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+const TemplatesView = lazy(() => import('./templates-view/templates-view'));
+const TicketView = lazy(() => import('./ticket-view/ticket-view'));
 
 export default function AppRoot() {
     return (
-        <RmgWindow>
-            <WindowHeader />
-            <RmgPage>
-                <PageHeader />
-                <TemplatesGrid />
-            </RmgPage>
-        </RmgWindow>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <RmgWindow>
+                <WindowHeader />
+                <Routes>
+                    <Route
+                        path="/new"
+                        element={
+                            <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                <TicketView />
+                            </RmgErrorBoundary>
+                        }
+                    />
+                    <Route
+                        path="/"
+                        element={
+                            <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                <TemplatesView />
+                            </RmgErrorBoundary>
+                        }
+                    />
+                </Routes>
+            </RmgWindow>
+        </BrowserRouter>
     );
 }

@@ -6,12 +6,17 @@ import { useRootSelector } from '../redux';
 import { useTranslation } from 'react-i18next';
 import useTranslatedName from './hooks/use-translated-name';
 import { companyConfig } from '@railmapgen/rmg-templates-resources';
+import { Button, HStack } from '@chakra-ui/react';
+import rmgRuntime from '@railmapgen/rmg-runtime';
+import { useNavigate } from 'react-router-dom';
+import { Events } from '../util/constant';
 
 export default function PageHeader() {
     const { t, i18n } = useTranslation();
     const translateName = useTranslatedName();
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const selectedCompany = useRootSelector(state => state.app.selectedCompany);
 
@@ -36,9 +41,20 @@ export default function PageHeader() {
         },
     ];
 
+    const handleUploadTemplates = () => {
+        navigate('/new');
+        rmgRuntime.event(Events.UPLOAD_TEMPLATES, {});
+    };
+
     return (
         <RmgPageHeader>
             <RmgFields fields={fields} />
+
+            <HStack ml="auto">
+                <Button variant="solid" size="sm" colorScheme="primary" onClick={handleUploadTemplates}>
+                    {t('Upload templates')}
+                </Button>
+            </HStack>
         </RmgPageHeader>
     );
 }
