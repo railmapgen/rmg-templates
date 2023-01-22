@@ -24,15 +24,15 @@ const parseDetailsEl = (details: HTMLDetailsElement) => {
     const company = details.getAttribute('company');
     const line = details.getAttribute('line');
 
-    if (!company || !line) {
-        throw new Error('Missing required attributes.');
+    const nameEl = details.querySelector('details[type="name"]');
+    const name = nameEl ? (JSON.parse(nameEl.innerHTML) as Record<string, any>) : null;
+
+    if (!company || !line || !name) {
+        throw new Error('Missing required attributes and/or data.');
     }
 
-    const nameEl = details.querySelector('details[type="name"]');
-    const name = nameEl ? JSON.parse(nameEl.innerHTML) : null;
-
     const paramEl = details.querySelector('details[type="param"]');
-    const param = paramEl ? JSON.parse(paramEl.innerHTML) : null;
+    const param = paramEl ? (JSON.parse(paramEl.innerHTML) as Record<string, any>) : null;
 
     return { company, line, name, param };
 };
@@ -63,13 +63,13 @@ const updateConfig = async (company: string, line: string, name: any) => {
     }
 };
 
-const updateCompanyConfig = async (company: string, name: any) => {
+const updateCompanyConfig = async (company: string, name: Record<string, any>) => {
     console.log('Updating company config', company);
     const configPath = path.join(templatesPath, 'company-config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
 
-    const config: CompanyEntry = { id: company, name: JSON.parse(name) };
+    const config: CompanyEntry = { id: company, name };
     const pinnedCompanies = ['basic', 'mtr', 'gzmtr', 'shmetro'];
     companyConfig = [...new Set(companyConfig.concat(config))].sort((a, b) => {
         if (pinnedCompanies.includes(a.id) && pinnedCompanies.includes(b.id)) {
