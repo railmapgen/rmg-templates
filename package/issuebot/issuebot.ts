@@ -1,6 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { readFile, writeFile } from 'fs/promises';
+import { mkdir, readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
 import { CompanyEntry, TemplateEntry } from '../src';
 
@@ -49,12 +49,6 @@ const writeTemplateConfig = async (company: string) => {
 };
 
 const updateConfig = async (company: string, line: string, name: any) => {
-    if (line === '_config') {
-        console.log('Updating company config', company);
-        await updateCompanyConfig(company, name);
-        return;
-    }
-
     console.log('Updating line config', line);
     if (templateConfig.some(config => config.filename === line)) {
         templateConfig = templateConfig.map(config => {
@@ -70,6 +64,7 @@ const updateConfig = async (company: string, line: string, name: any) => {
 };
 
 const updateCompanyConfig = async (company: string, name: any) => {
+    console.log('Updating company config', company);
     const configPath = path.join(templatesPath, 'company-config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
@@ -89,6 +84,18 @@ const updateCompanyConfig = async (company: string, name: any) => {
     });
 
     await writeFile(configPath, JSON.stringify(companyConfig, null, 4));
+
+    // create dir for new company
+    const companyPath = path.join(templatesPath, company);
+    try {
+        await mkdir(companyPath);
+
+        // create empty config if dir didn't exist
+        const templateConfigPath = path.join(templatesPath, company, '_config.json');
+        await writeFile(templateConfigPath, JSON.stringify([], null, 4));
+    } catch (err) {
+        console.warn('Failed to create directory for company=' + company);
+    }
 };
 
 const updateTemplate = async (company: string, line: string, param: any) => {
@@ -109,6 +116,13 @@ const start = async () => {
         throw new Error('Cannot handle more than 1 company in an issue. Companies found: ' + distinctCompanies);
     }
 
+    // add new company if needed
+    const newCompanyConfig = items.find(item => item.line === '_config');
+    if (newCompanyConfig) {
+        const { company, name } = newCompanyConfig;
+        await updateCompanyConfig(company, name);
+    }
+
     // cache template config
     const targetCompany = [...distinctCompanies][0];
     console.log('Caching template config for', targetCompany);
@@ -116,15 +130,17 @@ const start = async () => {
 
     // perform insert/update
     await Promise.all(
-        items.map(async item => {
-            const { line, name, param } = item;
-            if (name) {
-                await updateConfig(targetCompany, line, name);
-            }
-            if (param) {
-                await updateTemplate(targetCompany, line, param);
-            }
-        })
+        items
+            .filter(item => item.line !== '_config')
+            .map(async item => {
+                const { line, name, param } = item;
+                if (name) {
+                    await updateConfig(targetCompany, line, name);
+                }
+                if (param) {
+                    await updateTemplate(targetCompany, line, param);
+                }
+            })
     );
 
     // write updated template config
