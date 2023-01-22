@@ -147,7 +147,9 @@ const start = async () => {
     await writeTemplateConfig(targetCompany);
 
     // print affected files
-    const affectedFiles = items.map(({ line }) => targetCompany + '/' + line + '.json');
+    const affectedFiles = items
+        .filter(({ line }) => line !== '_config')
+        .map(({ line }) => targetCompany + '/' + line + '.json');
     console.log(`AFFECTED_FILES=(${affectedFiles})`);
 };
 
