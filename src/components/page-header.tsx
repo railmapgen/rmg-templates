@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import useTranslatedName from './hooks/use-translated-name';
 import { companyConfig } from '@railmapgen/rmg-templates-resources';
 import { Button, HStack } from '@chakra-ui/react';
-import rmgRuntime, { RmgEnv } from '@railmapgen/rmg-runtime';
+import rmgRuntime from '@railmapgen/rmg-runtime';
 import { useNavigate } from 'react-router-dom';
 import { Events } from '../util/constant';
 
@@ -50,13 +50,11 @@ export default function PageHeader() {
         <RmgPageHeader>
             <RmgFields fields={fields} />
 
-            {rmgRuntime.getEnv() !== RmgEnv.PRD && (
-                <HStack ml="auto">
-                    <Button variant="solid" size="sm" colorScheme="primary" onClick={handleUploadTemplates}>
-                        {t('Upload templates')}
-                    </Button>
-                </HStack>
-            )}
+            <HStack ml="auto">
+                <Button variant="solid" size="sm" colorScheme="primary" onClick={handleUploadTemplates}>
+                    {t('Upload templates')}
+                </Button>
+            </HStack>
         </RmgPageHeader>
     );
 }

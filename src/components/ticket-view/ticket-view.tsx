@@ -8,6 +8,8 @@ import { useRootDispatch } from '../../redux';
 import { resetTicket } from '../../redux/ticket/ticket-slice';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
+import { useState } from 'react';
+import SubmitModal from '../modal/submit-modal';
 
 const styles: SystemStyleObject = {
     px: 2,
@@ -30,6 +32,7 @@ export default function TicketView() {
     const navigate = useNavigate();
 
     const dispatch = useRootDispatch();
+    const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
 
     const handleReset = () => {
         dispatch(resetTicket());
@@ -51,11 +54,13 @@ export default function TicketView() {
                     <Button size="sm" variant="outline" onClick={handleReset}>
                         {t('Reset')}
                     </Button>
-                    <Button size="sm" colorScheme="primary">
+                    <Button size="sm" colorScheme="primary" onClick={() => setIsSubmitModalOpen(true)}>
                         {t('Submit')}
                     </Button>
                 </HStack>
             </Flex>
+
+            <SubmitModal isOpen={isSubmitModalOpen} onClose={() => setIsSubmitModalOpen(false)} />
         </RmgPage>
     );
 }

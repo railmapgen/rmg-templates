@@ -6,6 +6,7 @@ import {
     addTemplate,
     removeTemplate,
     setTemplateLineById,
+    setTemplateLineNameById,
     setTemplateNewLineById,
     setTemplateParamById,
 } from '../../redux/ticket/ticket-slice';
@@ -30,6 +31,7 @@ export default function TemplatesSection() {
                     templateEntry={entry}
                     onLineChange={line => dispatch(setTemplateLineById({ id: entry.id, line }))}
                     onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
+                    onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
                     onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
                     onRemove={() => dispatch(removeTemplate(entry.id))}
                 />

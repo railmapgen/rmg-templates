@@ -1,9 +1,8 @@
-import { AcceptedLang, ALL_ACCEPTED_LANGS, setCompanyNameByLang, TemplateEntry } from '../../redux/ticket/ticket-slice';
+import { AcceptedLang, ALL_ACCEPTED_LANGS, TemplateEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { templateList } from '@railmapgen/rmg-templates-resources';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
-import { useRootDispatch } from '../../redux';
 import { IconButton, Input } from '@chakra-ui/react';
 import { ChangeEvent } from 'react';
 import { readFileAsText } from '../../util/utils';
@@ -14,18 +13,17 @@ interface TemplateEntryCardProps {
     templateEntry: TemplateEntry;
     onLineChange: (line: string) => void;
     onNewLineChange: (newLine: string) => void;
+    onLineNameChange: (lang: string, name: string) => void;
     onParamChange: (param: Record<string, any>) => void;
     onRemove: () => void;
 }
 
 export default function TemplateEntryCard(props: TemplateEntryCardProps) {
-    const { company, templateEntry, onLineChange, onNewLineChange, onParamChange, onRemove } = props;
+    const { company, templateEntry, onLineChange, onNewLineChange, onLineNameChange, onParamChange, onRemove } = props;
     const { line, newLine, templateName } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
-
-    const dispatch = useRootDispatch();
 
     const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -93,7 +91,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             type: 'input',
             label: t(langName),
             value: templateName[langCode],
-            onChange: value => dispatch(setCompanyNameByLang({ lang: langCode, name: value })),
+            onChange: value => onLineNameChange(langCode, value),
         };
     });
 
