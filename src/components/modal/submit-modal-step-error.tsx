@@ -18,9 +18,7 @@ export default function SubmitModalStepError(props: SubmitModalStepErrorProps) {
     return (
         <>
             <ModalBody>
-                <Text>
-                    {t('Your inputs contain the following errors. Please consider fixing it before submitting.')}
-                </Text>
+                <Text>{t('Your inputs contain the following errors. Please fix it before submitting.')}</Text>
 
                 {companyErrors.length > 0 && (
                     <>

@@ -10,7 +10,7 @@ export default defineConfig({
     base: '/rmg-templates/',
     plugins: [
         react(),
-        // checker({ typescript: true, eslint: { lintCommand: 'eslint ./src' } }),
+        checker({ typescript: true, eslint: { lintCommand: 'eslint ./src' } }),
         legacy({
             targets: ['defaults', '>0.2%', 'not dead'],
             modernPolyfills: true,

@@ -19,10 +19,11 @@ interface SubmitModalStepSubmitProps {
     templateBlocks: HTMLDetailsElement[];
     justification: string;
     onPrev: () => void;
+    onClose: () => void;
 }
 
 export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps) {
-    const { companyName, companyBlock, templateBlocks, justification, onPrev } = props;
+    const { companyName, companyBlock, templateBlocks, justification, onPrev, onClose } = props;
 
     const { t } = useTranslation();
     const linkColour = useColorModeValue('primary.500', 'primary.300');
@@ -47,7 +48,7 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
     return (
         <>
             <ModalBody>
-                <Text>{t('Follow the instructions below:')}</Text>
+                <Text>{t('Follow the instructions below to open an Issue') + ':'}</Text>
                 <OrderedList>
                     <ListItem>
                         {t('Open')}{' '}
@@ -73,6 +74,9 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
             <ModalFooter>
                 <Button variant="ghost" onClick={onPrev} mr="auto" leftIcon={<MdChevronLeft />}>
                     {t('Previous')}
+                </Button>
+                <Button colorScheme="primary" onClick={onClose}>
+                    {t('Close')}
                 </Button>
             </ModalFooter>
         </>

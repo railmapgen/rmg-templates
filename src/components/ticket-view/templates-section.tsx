@@ -21,7 +21,7 @@ export default function TemplatesSection() {
     return (
         <Box as="section" mt={3}>
             <Heading as="h5" size="sm" mb={2}>
-                {t('New or updated templates')}
+                {t('Add or update templates')}
             </Heading>
 
             {templates.map(entry => (
@@ -39,7 +39,7 @@ export default function TemplatesSection() {
 
             <HStack justifyContent="flex-end">
                 <Button variant="ghost" size="sm" leftIcon={<MdAdd />} onClick={() => dispatch(addTemplate())}>
-                    Add item
+                    {t('Add item')}
                 </Button>
             </HStack>
         </Box>

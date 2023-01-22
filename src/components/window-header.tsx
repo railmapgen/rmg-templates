@@ -21,7 +21,7 @@ export default function WindowHeader() {
     return (
         <RmgWindowHeader>
             <Heading as="h4" size="md">
-                {t('Templates')}
+                {t('RMG Templates')}
             </Heading>
             <RmgEnvBadge environment={environment} version={appVersion} />
 

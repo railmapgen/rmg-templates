@@ -70,7 +70,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         },
         {
             type: 'custom',
-            label: 'Configuration file',
+            label: t('Configuration file'),
             component: <Input variant="flushed" size="xs" type="file" accept=".json" onChange={handleFileUpload} />,
             minW: 250,
         },

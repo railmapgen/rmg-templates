@@ -72,6 +72,7 @@ export default function SubmitModal(props: SubmitModalProps) {
                         templateBlocks={templateBlocks}
                         justification={justification}
                         onPrev={() => setIsFinishJustification(false)}
+                        onClose={onClose}
                     />
                 )}
             </ModalContent>
