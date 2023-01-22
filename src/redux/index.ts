@@ -1,12 +1,14 @@
 import { configureStore, createListenerMiddleware, TypedStartListening } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import appReducer from './app/app-slice';
+import ticketReducer from './ticket/ticket-slice';
 
 const listenerMiddleware = createListenerMiddleware();
 
 const store = configureStore({
     reducer: {
         app: appReducer,
+        ticket: ticketReducer,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
 });
