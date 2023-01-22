@@ -11,7 +11,10 @@ export const convertCompanyEntry = (companyEntry: CompanyEntry): HTMLDetailsElem
     summary.textContent = 'New company: ' + companyEntry.name.en;
     element.append(summary);
 
-    element.innerText += JSON.stringify(companyEntry.name);
+    const nameBlock = document.createElement('details');
+    nameBlock.setAttribute('type', 'name');
+    nameBlock.textContent = JSON.stringify(companyEntry.name);
+    element.append(nameBlock);
 
     return element;
 };

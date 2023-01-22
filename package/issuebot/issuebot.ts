@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
-import { TemplateEntry } from '../src';
+import { CompanyEntry, TemplateEntry } from '../src';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const templatesPath = path.join(__dirname, '../../public/resources/templates');
@@ -48,7 +48,13 @@ const writeTemplateConfig = async (company: string) => {
     await writeFile(configPath, JSON.stringify(templateConfig, null, 4));
 };
 
-const updateConfig = (company: string, line: string, name: any) => {
+const updateConfig = async (company: string, line: string, name: any) => {
+    if (line === '_config') {
+        console.log('Updating company config', company);
+        await updateCompanyConfig(company, name);
+        return;
+    }
+
     console.log('Updating line config', line);
     if (templateConfig.some(config => config.filename === line)) {
         templateConfig = templateConfig.map(config => {
@@ -61,6 +67,28 @@ const updateConfig = (company: string, line: string, name: any) => {
     } else {
         templateConfig.push({ filename: line, name, uploadBy });
     }
+};
+
+const updateCompanyConfig = async (company: string, name: any) => {
+    const configPath = path.join(templatesPath, 'company-config.json');
+    const configJsonStr = await readFile(configPath, 'utf-8');
+    let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
+
+    const config: CompanyEntry = { id: company, name: JSON.parse(name) };
+    const pinnedCompanies = ['basic', 'mtr', 'gzmtr', 'shmetro'];
+    companyConfig = [...new Set(companyConfig.concat(config))].sort((a, b) => {
+        if (pinnedCompanies.includes(a.id) && pinnedCompanies.includes(b.id)) {
+            return 0;
+        } else if (pinnedCompanies.includes(a.id)) {
+            return -1;
+        } else if (pinnedCompanies.includes(b.id)) {
+            return 1;
+        } else {
+            return a.id.localeCompare(b.id);
+        }
+    });
+
+    await writeFile(configPath, JSON.stringify(companyConfig, null, 4));
 };
 
 const updateTemplate = async (company: string, line: string, param: any) => {
@@ -91,9 +119,11 @@ const start = async () => {
         items.map(async item => {
             const { line, name, param } = item;
             if (name) {
-                updateConfig(targetCompany, line, name);
+                await updateConfig(targetCompany, line, name);
             }
-            await updateTemplate(targetCompany, line, param);
+            if (param) {
+                await updateTemplate(targetCompany, line, param);
+            }
         })
     );
 
