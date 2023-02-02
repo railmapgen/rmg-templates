@@ -13,14 +13,24 @@ interface TemplateEntryCardProps {
     templateEntry: TemplateEntry;
     onLineChange: (line: string) => void;
     onNewLineChange: (newLine: string) => void;
+    onMajorFlagChange: (majorUpdate: boolean) => void;
     onLineNameChange: (lang: string, name: string) => void;
     onParamChange: (param: Record<string, any>) => void;
     onRemove: () => void;
 }
 
 export default function TemplateEntryCard(props: TemplateEntryCardProps) {
-    const { company, templateEntry, onLineChange, onNewLineChange, onLineNameChange, onParamChange, onRemove } = props;
-    const { line, newLine, templateName } = templateEntry;
+    const {
+        company,
+        templateEntry,
+        onLineChange,
+        onNewLineChange,
+        onMajorFlagChange,
+        onLineNameChange,
+        onParamChange,
+        onRemove,
+    } = props;
+    const { line, newLine, majorUpdate, templateName } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
@@ -81,6 +91,14 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             value: newLine,
             onChange: value => onNewLineChange(value as string),
             hidden: line !== 'new',
+        },
+        {
+            type: 'switch',
+            label: t('Major update'),
+            isChecked: majorUpdate,
+            onChange: value => onMajorFlagChange(value),
+            hidden: line === 'new',
+            oneLine: true,
         },
     ];
 

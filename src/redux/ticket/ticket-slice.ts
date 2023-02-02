@@ -10,6 +10,7 @@ export interface TemplateEntry {
     id: string;
     line: string; // new, existing line
     newLine: string;
+    majorUpdate: boolean;
     templateName: typeof ALL_ACCEPTED_LANGS;
     param?: Record<string, any>;
 }
@@ -18,6 +19,7 @@ const initTemplateEntry = (): TemplateEntry => ({
     id: crypto.randomUUID(),
     line: '',
     newLine: '',
+    majorUpdate: false,
     templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
     param: undefined,
 });
@@ -85,6 +87,17 @@ const ticketSlice = createSlice({
             );
         },
 
+        setTemplateMajorFlagById: (state, action: PayloadAction<{ id: string; majorUpdate: boolean }>) => {
+            state.templates = state.templates.map(entry =>
+                entry.id === action.payload.id
+                    ? {
+                          ...entry,
+                          majorUpdate: action.payload.majorUpdate,
+                      }
+                    : entry
+            );
+        },
+
         setTemplateLineNameById: (state, action: PayloadAction<{ id: string; lang: string; name: string }>) => {
             state.templates = state.templates.map(entry =>
                 entry.id === action.payload.id
@@ -128,7 +141,8 @@ export const ticketSelectors = {
         const company = state.company === 'new' ? state.newCompany : state.company;
         return state.templates.map(entry => {
             const line = entry.line === 'new' ? entry.newLine : entry.line;
-            return convertTemplateEntry(company, line, entry.templateName, entry.param);
+            const major = entry.line !== 'new' && entry.majorUpdate;
+            return convertTemplateEntry(company, line, major, entry.templateName, entry.param);
         });
     },
 
@@ -180,6 +194,24 @@ export const ticketSelectors = {
 
         return result;
     },
+
+    getMajorUpdateNames: (state: TicketState): string[] => {
+        const { company, templates } = state;
+        if (company === 'new') {
+            return [];
+        }
+
+        return templates
+            .filter(entry => entry.majorUpdate && entry.line !== 'new')
+            .map(entry => {
+                const names = templateList[company].find(t => t.filename === entry.line)?.name;
+                if (names) {
+                    return Object.values(names).join('/');
+                } else {
+                    return entry.line;
+                }
+            });
+    },
 };
 
 export const {
@@ -189,6 +221,7 @@ export const {
     addTemplate,
     setTemplateLineById,
     setTemplateNewLineById,
+    setTemplateMajorFlagById,
     setTemplateLineNameById,
     setTemplateParamById,
     removeTemplate,

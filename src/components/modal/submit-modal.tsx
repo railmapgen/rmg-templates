@@ -21,6 +21,7 @@ export default function SubmitModal(props: SubmitModalProps) {
     const [companyErrors, setCompanyErrors] = useState<InvalidReasonType[]>([]);
     const [templateErrors, setTemplateErrors] = useState<Record<string, InvalidReasonType[]>>({});
     const [justification, setJustification] = useState('');
+    const [majorUpdateJustifications, setMajorUpdateJustifications] = useState<Record<string, string>>({});
     const [isFinishJustification, setIsFinishJustification] = useState(false);
 
     const ticket = useRootSelector(state => state.ticket);
@@ -32,9 +33,21 @@ export default function SubmitModal(props: SubmitModalProps) {
         if (isOpen) {
             setCompanyErrors(ticketSelectors.getCompanyErrors(ticket));
             setTemplateErrors(ticketSelectors.getTemplateErrors(ticket));
+
+            const majorJustificationsHolder = ticketSelectors
+                .getMajorUpdateNames(ticket)
+                .reduce<Record<string, string>>(
+                    (acc, cur) => ({
+                        ...acc,
+                        [cur]: '',
+                    }),
+                    {}
+                );
+            setMajorUpdateJustifications(majorJustificationsHolder);
         } else {
             // reset modal
             setJustification('');
+            setMajorUpdateJustifications({});
             setIsFinishJustification(false);
         }
     }, [isOpen]);
@@ -60,7 +73,14 @@ export default function SubmitModal(props: SubmitModalProps) {
                 {isShowStepJustification && (
                     <SubmitModalStepJustification
                         justification={justification}
+                        majorUpdateJustifications={majorUpdateJustifications}
                         onJustificationChange={setJustification}
+                        onMajorUpdateJustificationChange={(id, value) =>
+                            setMajorUpdateJustifications(prevState => ({
+                                ...prevState,
+                                [id]: value,
+                            }))
+                        }
                         onNext={() => setIsFinishJustification(true)}
                     />
                 )}
@@ -71,6 +91,7 @@ export default function SubmitModal(props: SubmitModalProps) {
                         companyBlock={companyBlock}
                         templateBlocks={templateBlocks}
                         justification={justification}
+                        majorUpdateJustifications={majorUpdateJustifications}
                         onPrev={() => setIsFinishJustification(false)}
                         onClose={onClose}
                     />

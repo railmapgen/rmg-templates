@@ -7,14 +7,14 @@ import { CompanyEntry, TemplateEntry } from '../src';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const templatesPath = path.join(__dirname, '../../public/resources/templates');
 
-let uploadBy: string;
+let issueUser: string;
 let templateConfig: TemplateEntry[];
 
 const readIssueBody = async (): Promise<HTMLDetailsElement[]> => {
     const issueJsonStr = await readFile(__dirname + '/issue.json', 'utf-8');
     const issueObj = JSON.parse(issueJsonStr);
     const issueBody = issueObj.event.issue.body;
-    uploadBy = issueObj.event.issue.user.login;
+    issueUser = issueObj.event.issue.user.login;
 
     const dom = new JSDOM(issueBody);
     return Array.from(dom.window.document.querySelectorAll('details[repo="rmg-templates"]'));
@@ -23,6 +23,7 @@ const readIssueBody = async (): Promise<HTMLDetailsElement[]> => {
 const parseDetailsEl = (details: HTMLDetailsElement) => {
     const company = details.getAttribute('company');
     const line = details.getAttribute('line');
+    const major = details.getAttribute('major') === 'true';
 
     const nameEl = details.querySelector('details[type="name"]');
     const name = nameEl ? (JSON.parse(nameEl.innerHTML) as Record<string, any>) : null;
@@ -34,7 +35,7 @@ const parseDetailsEl = (details: HTMLDetailsElement) => {
     const paramEl = details.querySelector('details[type="param"]');
     const param = paramEl ? (JSON.parse(paramEl.innerHTML) as Record<string, any>) : null;
 
-    return { company, line, name, param };
+    return { company, line, major, name, param };
 };
 
 const cacheTemplateConfig = async (company: string) => {
@@ -48,18 +49,18 @@ const writeTemplateConfig = async (company: string) => {
     await writeFile(configPath, JSON.stringify(templateConfig, null, 4));
 };
 
-const updateConfig = async (company: string, line: string, name: any) => {
+const updateConfig = async (company: string, line: string, major: boolean, name: any) => {
     console.log('Updating line config', line);
     if (templateConfig.some(config => config.filename === line)) {
         templateConfig = templateConfig.map(config => {
             if (config.filename === line) {
-                return { ...config, name };
+                return { ...config, name, uploadBy: major ? issueUser : config.uploadBy };
             } else {
                 return config;
             }
         });
     } else {
-        templateConfig.push({ filename: line, name, uploadBy });
+        templateConfig.push({ filename: line, name, uploadBy: issueUser });
     }
 };
 
@@ -133,9 +134,9 @@ const start = async () => {
         items
             .filter(item => item.line !== '_config')
             .map(async item => {
-                const { line, name, param } = item;
+                const { line, major, name, param } = item;
                 if (name) {
-                    await updateConfig(targetCompany, line, name);
+                    await updateConfig(targetCompany, line, major, name);
                 }
                 if (param) {
                     await updateTemplate(targetCompany, line, param);
