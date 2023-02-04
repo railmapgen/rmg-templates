@@ -27,7 +27,7 @@ i18n.use(initReactI18next)
         resources,
     })
     .then(t => {
-        document.title = t('Templates');
+        document.title = t('RMG Templates');
         document.documentElement.lang = i18n.language;
     });
 
@@ -35,7 +35,7 @@ export default i18n;
 
 export const handleLanguageChange = (language: string) => {
     i18n.changeLanguage(language).then();
-    document.title = i18n.t('Templates');
+    document.title = i18n.t('RMG Templates');
     document.documentElement.lang = language;
 };
 rmgRuntime.onLanguageChange(handleLanguageChange);

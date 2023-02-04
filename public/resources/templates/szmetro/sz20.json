@@ -1,32 +1,33 @@
 {
     "svgWidth": {
-        "destination": 1500,
+        "destination": 1200,
         "runin": 1200,
-        "railmap": 1500,
-        "indoor": 4000
+        "railmap": 1200,
+        "indoor": 1200
     },
     "svg_height": 300,
-    "style": "shmetro",
-    "y_pc": 40,
-    "padding": 8,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
     "direction": "l",
-    "platform_num": "2",
+    "platform_num": "",
     "theme": [
-        "beijing",
-        "bj11",
-        "#ED796B",
+        "shenzhen",
+        "sz20",
+        "#88DBDF",
         "#fff"
     ],
     "line_name": [
-        "11号线",
-        "Line 11"
+        "20号线",
+        "Line 20"
     ],
-    "current_stn_idx": "Uo1cC5",
+    "current_stn_idx": "nsgcXG",
     "stn_list": {
         "linestart": {
             "name": [
-                "RIGHT END",
-                "RIGHT END"
+                "LEFT END",
+                "LEFT END"
             ],
             "secondaryName": false,
             "num": "00",
@@ -35,7 +36,7 @@
             ],
             "parents": [],
             "children": [
-                "DlHKrr"
+                "aucsds"
             ],
             "branch": {
                 "left": [],
@@ -52,21 +53,53 @@
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225
+            "int_padding": 355
         },
-        "NrI7z9": {
+        "aucsds": {
             "name": [
-                "模式口",
-                "Moshikou"
+                "会展城",
+                "Convention &amp; Exhibition City"
             ],
-            "secondaryName": [
-                "暂缓开通",
-                "Opening soon"
-            ],
+            "secondaryName": false,
             "num": "01",
-            "services": [],
+            "services": [
+                "local"
+            ],
             "parents": [
-                "Uo1cC5"
+                "linestart"
+            ],
+            "children": [
+                "iGj_67"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "nsgcXG": {
+            "name": [
+                "机场北",
+                "Airport North"
+            ],
+            "secondaryName": false,
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Fu98_x"
             ],
             "children": [
                 "lineend"
@@ -77,7 +110,16 @@
             },
             "transfer": {
                 "info": [
-                    []
+                    [
+                        [
+                            "shenzhen",
+                            "sz11",
+                            "#672146",
+                            "#fff",
+                            "11号线",
+                            "Line 11"
+                        ]
+                    ]
                 ],
                 "tick_direc": "r",
                 "paid_area": true,
@@ -86,12 +128,12 @@
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225
+            "int_padding": 355
         },
         "lineend": {
             "name": [
-                "LEFT END",
-                "LEFT END"
+                "RIGHT END",
+                "RIGHT END"
             ],
             "secondaryName": false,
             "num": "00",
@@ -99,7 +141,7 @@
                 "local"
             ],
             "parents": [
-                "NrI7z9"
+                "nsgcXG"
             ],
             "children": [],
             "branch": {
@@ -117,23 +159,23 @@
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225
+            "int_padding": 355
         },
-        "Uo1cC5": {
+        "iGj_67": {
             "name": [
-                "金安桥",
-                "Jin'anqiao"
+                "国展北",
+                "Shenzhen World North"
             ],
             "secondaryName": false,
-            "num": "02",
+            "num": "00",
             "services": [
-                ""
+                "local"
             ],
             "parents": [
-                "fL5ELd"
+                "aucsds"
             ],
             "children": [
-                "NrI7z9"
+                "3nVaGd"
             ],
             "branch": {
                 "left": [],
@@ -143,20 +185,12 @@
                 "info": [
                     [
                         [
-                            "beijing",
-                            "bj6",
-                            "#d29700",
+                            "shenzhen",
+                            "sz12",
+                            "#A192B2",
                             "#fff",
-                            "6号线",
-                            "Line 6"
-                        ],
-                        [
-                            "beijing",
-                            "bj26s1",
-                            "#b35a20",
-                            "#fff",
-                            "S1线",
-                            "Line S1"
+                            "12号线",
+                            "Line 12"
                         ]
                     ]
                 ],
@@ -167,45 +201,12 @@
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225
+            "int_padding": 355
         },
-        "fL5ELd": {
+        "3nVaGd": {
             "name": [
-                "北辛安",
-                "Beixin'an"
-            ],
-            "secondaryName": false,
-            "num": "03",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "DlHKrr"
-            ],
-            "children": [
-                "Uo1cC5"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 225
-        },
-        "DlHKrr": {
-            "name": [
-                "新首钢",
-                "Xinshougang\\ (Shougang Park)"
+                "国展",
+                "Shenzhen World"
             ],
             "secondaryName": false,
             "num": "00",
@@ -213,10 +214,52 @@
                 "local"
             ],
             "parents": [
-                "linestart"
+                "iGj_67"
             ],
             "children": [
-                "fL5ELd"
+                "Fu98_x"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "shenzhen",
+                            "sz12",
+                            "#A192B2",
+                            "#fff",
+                            "12号线",
+                            "Line 12"
+                        ]
+                    ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Fu98_x": {
+            "name": [
+                "国展南",
+                "Shenzhen World South"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3nVaGd"
+            ],
+            "children": [
+                "nsgcXG"
             ],
             "branch": {
                 "left": [],
@@ -233,7 +276,7 @@
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225
+            "int_padding": 355
         }
     },
     "namePosMTR": {
@@ -244,18 +287,17 @@
         "isLegacy": false,
         "terminal": false
     },
-    "line_num": "11",
-    "psd_num": "15",
-    "info_panel_type": "sh2020",
+    "line_num": "1",
+    "psd_num": "1",
+    "info_panel_type": "gz1",
     "notesGZMTR": [],
-    "direction_gz_x": 3.666667,
-    "direction_gz_y": 79.666667,
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
     "coline": {},
     "loop": false,
     "loop_info": {
         "bank": true,
         "left_and_right_factor": 1,
         "bottom_factor": 1
-    },
-    "branchSpacingPct": 40
+    }
 }

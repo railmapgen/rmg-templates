@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Heading, HStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, HStack, Icon, Tooltip } from '@chakra-ui/react';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import TemplateEntryCard from './template-entry-card';
 import {
@@ -7,10 +7,11 @@ import {
     removeTemplate,
     setTemplateLineById,
     setTemplateLineNameById,
+    setTemplateMajorFlagById,
     setTemplateNewLineById,
     setTemplateParamById,
 } from '../../redux/ticket/ticket-slice';
-import { MdAdd } from 'react-icons/md';
+import { MdAdd, MdHelp } from 'react-icons/md';
 
 export default function TemplatesSection() {
     const { t } = useTranslation();
@@ -20,9 +21,21 @@ export default function TemplatesSection() {
 
     return (
         <Box as="section" mt={3}>
-            <Heading as="h5" size="sm" mb={2}>
-                {t('Add or update templates')}
-            </Heading>
+            <Flex>
+                <Heading as="h5" size="sm" mb={2}>
+                    {t('Add or update templates')}
+                </Heading>
+                <Tooltip
+                    hasArrow
+                    label={t(
+                        "Toggling on 'Major update' will update the uploader field of the template and you are required enter extra justification for it."
+                    )}
+                >
+                    <span>
+                        <Icon as={MdHelp} ml={1} />
+                    </span>
+                </Tooltip>
+            </Flex>
 
             {templates.map(entry => (
                 <TemplateEntryCard
@@ -31,6 +44,7 @@ export default function TemplatesSection() {
                     templateEntry={entry}
                     onLineChange={line => dispatch(setTemplateLineById({ id: entry.id, line }))}
                     onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
+                    onMajorFlagChange={majorUpdate => dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))}
                     onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
                     onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
                     onRemove={() => dispatch(removeTemplate(entry.id))}
