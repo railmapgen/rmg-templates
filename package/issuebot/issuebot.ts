@@ -26,14 +26,14 @@ const parseDetailsEl = (details: HTMLDetailsElement) => {
     const major = details.getAttribute('major') === 'true';
 
     const nameEl = details.querySelector('details[type="name"]');
-    const name = nameEl ? (JSON.parse(nameEl.innerHTML) as Record<string, any>) : null;
+    const name = nameEl ? (JSON.parse(nameEl.textContent as string) as Record<string, any>) : null;
 
     if (!company || !line || !name) {
         throw new Error('Missing required attributes and/or data.');
     }
 
     const paramEl = details.querySelector('details[type="param"]');
-    const param = paramEl ? (JSON.parse(paramEl.innerHTML) as Record<string, any>) : null;
+    const param = paramEl ? (JSON.parse(paramEl.textContent as string) as Record<string, any>) : null;
 
     return { company, line, major, name, param };
 };
