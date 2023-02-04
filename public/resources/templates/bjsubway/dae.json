@@ -1,158 +1,41 @@
 {
-    "svg_height": 450,
-    "padding": 8.750201061605276,
+    "svgWidth": {
+        "destination": 1500,
+        "runin": 1200,
+        "railmap": 1500,
+        "indoor": 4000
+    },
+    "svg_height": 300,
+    "style": "shmetro",
     "y_pc": 40,
-    "branch_spacing": 45,
+    "padding": 8,
+    "direction": "r",
+    "platform_num": "",
     "theme": [
         "beijing",
-        "dae",
-        "#0049A5",
+        "bj35dj",
+        "#004a9f",
         "#fff"
     ],
-    "direction": "r",
-    "current_stn_idx": "zc6u",
-    "platform_num": "2",
+    "line_name": [
+        "大兴机场线",
+        "Daxing Airport Express"
+    ],
+    "current_stn_idx": "NrI7z9",
     "stn_list": {
         "linestart": {
-            "parents": [],
-            "children": [
-                "zc6u"
-            ],
             "name": [
-                "路綫右端",
-                "RIGHT END"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "num": "00",
-            "secondaryName": false
-        },
-        "lineend": {
-            "parents": [
-                "l1mz"
-            ],
-            "children": [],
-            "name": [
-                "路綫左端",
+                "LEFT END",
                 "LEFT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "num": "04",
-            "secondaryName": false
-        },
-        "l1mz": {
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "name": [
-                "草桥",
-                "Cɑoqiɑo"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "num": "03",
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "beijing",
-                            "bj10",
-                            "#0092BC",
-                            "#fff",
-                            "10号线",
-                            "Line 10"
-                        ]
-                    ]
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "secondaryName": false
-        },
-        "iwf6": {
-            "children": [
-                "l1mz"
-            ],
-            "parents": [
-                "zc6u"
-            ],
-            "name": [
-                "大兴新城",
-                "Dɑxing Xincheng"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "num": "02",
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "secondaryName": false
-        },
-        "zc6u": {
-            "name": [
-                "大兴机场",
-                "Dɑxing Jichɑng\\(Daxing Airport)"
-            ],
             "secondaryName": false,
-            "num": "01",
+            "num": "00",
             "services": [
                 "local"
             ],
-            "parents": [
-                "linestart"
-            ],
+            "parents": [],
             "children": [
-                "iwf6"
+                "NrI7z9"
             ],
             "branch": {
                 "left": [],
@@ -166,32 +49,181 @@
                 "paid_area": true,
                 "osi_names": []
             },
-            "facility": "airport"
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 225
+        },
+        "NrI7z9": {
+            "name": [
+                "草桥",
+                "Caoqiao"
+            ],
+            "secondaryName": false,
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "Uo1cC5"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "beijing",
+                            "bj10",
+                            "#009bc0",
+                            "#fff",
+                            "10号线",
+                            "Line 10"
+                        ],
+                        [
+                            "beijing",
+                            "bj19",
+                            "#D6ABC1",
+                            "#000",
+                            "19号线",
+                            "Line 19"
+                        ]
+                    ],
+                    [],
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 100
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fL5ELd"
+            ],
+            "children": [],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 225
+        },
+        "Uo1cC5": {
+            "name": [
+                "大兴新城",
+                "Daxing Xincheng"
+            ],
+            "secondaryName": false,
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "NrI7z9"
+            ],
+            "children": [
+                "fL5ELd"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 225
+        },
+        "fL5ELd": {
+            "name": [
+                "大兴机场",
+                "Daxing Jichang \\(Daxing Airport)"
+            ],
+            "secondaryName": false,
+            "num": "03",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Uo1cC5"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 225
         }
     },
-    "line_name": [
-        "大兴机场线",
-        "Daxing Airport Express"
-    ],
-    "psd_num": "1",
-    "line_num": "DXAE",
-    "info_panel_type": "gz28",
-    "direction_gz_x": 50,
-    "direction_gz_y": 70,
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
     },
-    "svgWidth": {
-        "destination": 2000,
-        "runin": 2000,
-        "railmap": 2000,
-        "indoor": 2000
-    },
+    "line_num": "35",
+    "psd_num": "9",
+    "info_panel_type": "sh2020",
     "notesGZMTR": [],
-    "namePosMTR": {
-        "isStagger": true,
-        "isFlip": false
+    "direction_gz_x": 95,
+    "direction_gz_y": 79.666667,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
     },
-    "style": "shmetro"
+    "branchSpacingPct": 40
 }

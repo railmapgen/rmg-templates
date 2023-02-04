@@ -5,12 +5,20 @@ import { MdChevronRight } from 'react-icons/md';
 
 interface SubmitModalStepJustificationProps {
     justification: string;
+    majorUpdateJustifications: Record<string, string>;
     onJustificationChange: (value: string) => void;
+    onMajorUpdateJustificationChange: (line: string, value: string) => void;
     onNext: () => void;
 }
 
 export default function SubmitModalStepJustification(props: SubmitModalStepJustificationProps) {
-    const { justification, onJustificationChange, onNext } = props;
+    const {
+        justification,
+        majorUpdateJustifications,
+        onJustificationChange,
+        onMajorUpdateJustificationChange,
+        onNext,
+    } = props;
 
     const { t } = useTranslation();
 
@@ -24,13 +32,21 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
         },
     ];
 
-    const isNextDisabled = !justification;
+    const majorUpdateFields: RmgFieldsField[] = Object.entries(majorUpdateJustifications).map(([line, value]) => ({
+        type: 'textarea',
+        value,
+        label: t('Justification for major update of') + ' ' + line,
+        placeholder: t('Briefly describe your changes and provide justification'),
+        onChange: value => onMajorUpdateJustificationChange(line, value),
+    }));
+
+    const isNextDisabled = !justification || Object.values(majorUpdateJustifications).some(value => !value);
 
     return (
         <>
             <ModalBody>
                 <Text>{t('Please provide suitable source and justification.')}</Text>
-                <RmgFields fields={fields} minW="full" />
+                <RmgFields fields={[...fields, ...majorUpdateFields]} minW="full" />
             </ModalBody>
             <ModalFooter>
                 <Button

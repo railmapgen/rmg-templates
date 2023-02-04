@@ -19,14 +19,15 @@ export const convertCompanyEntry = (companyEntry: CompanyEntry): HTMLDetailsElem
     return element;
 };
 
-export const convertTemplateEntry = (company: string, line: string, name: Translation, param: any) => {
+export const convertTemplateEntry = (company: string, line: string, major: boolean, name: Translation, param: any) => {
     const element = document.createElement('details');
     element.setAttribute('repo', 'rmg-templates');
     element.setAttribute('company', company);
     element.setAttribute('line', line);
+    element.setAttribute('major', major.toString());
 
     const summary = document.createElement('summary');
-    summary.textContent = `${company}/${line}`;
+    summary.textContent = `${company}/${line}` + (major ? '(M)' : '');
     element.append(summary);
 
     const nameBlock = document.createElement('details');
