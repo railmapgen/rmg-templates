@@ -7,18 +7,18 @@ import { CompanyEntry, TemplateEntry } from './index';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const sourcePath = path.join(__dirname, '../../public/resources/templates');
+const sourcePath = path.join(__dirname, '../../public/resources');
 const targetPath = path.join(__dirname, '../src/templates');
 const distTargetPath = path.join(__dirname, '../dist/templates');
 
 let companyConfig: CompanyEntry[];
-let templateConfigs: Record<string, TemplateEntry[]> = {};
+const templateConfigs: Record<string, TemplateEntry[]> = {};
 
 const copyCompanyConfig = async () => {
     console.log('Copying company ID list...');
 
     // read source file
-    const companyConfigStr = await readFile(path.join(sourcePath, 'company-config.json'), 'utf-8');
+    const companyConfigStr = await readFile(path.join(sourcePath, 'core-company-config.json'), 'utf-8');
 
     // copy to target dir
     await mkdir(targetPath, { recursive: true });
@@ -30,7 +30,7 @@ const copyCompanyConfig = async () => {
 const createTemplateConfigsFile = async () => {
     console.log('Creating template configs file...');
 
-    for (let company of companyConfig) {
+    for (const company of companyConfig) {
         await copyTemplates(company.id);
     }
 
@@ -43,16 +43,16 @@ const copyTemplates = async (companyId: string) => {
     console.log(`Copying templates for company=${companyId}...`);
 
     // read config source file
-    const configStr = await readFile(path.join(sourcePath, companyId, '_config.json'), 'utf-8');
+    const configStr = await readFile(path.join(sourcePath, 'templates', companyId, '_config.json'), 'utf-8');
     const templateEntries: TemplateEntry[] = JSON.parse(configStr);
 
     // parse template
-    for (let template of templateEntries) {
+    for (const template of templateEntries) {
         const filename = template.filename;
         console.log(`Parsing template filename=${filename}...`);
 
         // read source file
-        const templateStr = await readFile(path.join(sourcePath, companyId, filename + '.json'), 'utf-8');
+        const templateStr = await readFile(path.join(sourcePath, 'templates', companyId, filename + '.json'), 'utf-8');
         const templateObj = JSON.parse(templateStr);
         template.style = templateObj.style;
 

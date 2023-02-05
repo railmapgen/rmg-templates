@@ -48,5 +48,5 @@ enum LanguageCode {
 
 type Translation = { [l in LanguageCode]?: string };
 
-export const companyConfig = companyConfigJson as CompanyEntry[];
-export const templateList = templateConfigsJson as Record<string, TemplateEntry[]>;
+export const coreCompanyConfig = companyConfigJson as CompanyEntry[];
+export const coreTemplateList = templateConfigsJson as Record<string, TemplateEntry[]>;
