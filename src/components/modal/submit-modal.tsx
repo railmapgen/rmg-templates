@@ -24,8 +24,9 @@ export default function SubmitModal(props: SubmitModalProps) {
     const [majorUpdateJustifications, setMajorUpdateJustifications] = useState<Record<string, string>>({});
     const [isFinishJustification, setIsFinishJustification] = useState(false);
 
+    const { companyConfig, templateList } = useRootSelector(state => state.app);
     const ticket = useRootSelector(state => state.ticket);
-    const companyName = ticketSelectors.getCompanyEnglishName(ticket);
+    const companyName = ticketSelectors.getCompanyEnglishName(ticket, companyConfig);
     const companyBlock = ticketSelectors.getCompanyBlock(ticket);
     const templateBlocks = ticketSelectors.getTemplateBlocks(ticket);
 
@@ -35,7 +36,7 @@ export default function SubmitModal(props: SubmitModalProps) {
             setTemplateErrors(ticketSelectors.getTemplateErrors(ticket));
 
             const majorJustificationsHolder = ticketSelectors
-                .getMajorUpdateNames(ticket)
+                .getMajorUpdateNames(ticket, templateList)
                 .reduce<Record<string, string>>(
                     (acc, cur) => ({
                         ...acc,

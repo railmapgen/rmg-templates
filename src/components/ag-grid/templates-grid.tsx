@@ -1,7 +1,7 @@
 import { RmgAgGrid } from '@railmapgen/rmg-components';
 import React, { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { TemplateEntry, templateList } from '@railmapgen/rmg-templates-resources';
+import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
 import { useRootSelector } from '../../redux';
 import { ColDef } from 'ag-grid-community';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ export default function TemplatesGrid() {
     const { t, i18n } = useTranslation();
     const translateName = useTranslatedName();
 
-    const selectedCompany = useRootSelector(state => state.app.selectedCompany);
+    const { templateList, selectedCompany } = useRootSelector(state => state.app);
     const rowData = templateList[selectedCompany] ?? [];
 
     const columnDefs = useMemo<ColDef<TemplateEntry>[]>(

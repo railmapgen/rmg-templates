@@ -1,15 +1,13 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setSelectedCompany } from '../redux/app/app-slice';
+import { setSelectedCompany } from '../../redux/app/app-slice';
 import { RmgFields, RmgFieldsField, RmgPageHeader } from '@railmapgen/rmg-components';
-import { useRootSelector } from '../redux';
+import { useRootSelector } from '../../redux';
 import { useTranslation } from 'react-i18next';
-import useTranslatedName from './hooks/use-translated-name';
-import { companyConfig } from '@railmapgen/rmg-templates-resources';
+import useTranslatedName from '../hooks/use-translated-name';
 import { Button, HStack } from '@chakra-ui/react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { useNavigate } from 'react-router-dom';
-import { Events } from '../util/constant';
+import { Events } from '../../util/constant';
 
 export default function PageHeader() {
     const { t, i18n } = useTranslation();
@@ -18,7 +16,7 @@ export default function PageHeader() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const selectedCompany = useRootSelector(state => state.app.selectedCompany);
+    const { companyConfig, selectedCompany } = useRootSelector(state => state.app);
 
     const companyOptions = companyConfig
         .map(company => [company.id, translateName(company.name)]) // translate country name

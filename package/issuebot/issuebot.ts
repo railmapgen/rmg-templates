@@ -5,7 +5,10 @@ import { JSDOM } from 'jsdom';
 import { CompanyEntry, TemplateEntry } from '../src';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const templatesPath = path.join(__dirname, '../../public/resources/templates');
+const resourcesPath = path.join(__dirname, '../../public/resources');
+const templatesPath = path.join(resourcesPath, 'templates');
+
+const CORE_COMPANIES = ['basic', 'mtr', 'gzmtr', 'shmetro'];
 
 let issueUser: string;
 let templateConfig: TemplateEntry[];
@@ -26,26 +29,26 @@ const parseDetailsEl = (details: HTMLDetailsElement) => {
     const major = details.getAttribute('major') === 'true';
 
     const nameEl = details.querySelector('details[type="name"]');
-    const name = nameEl ? (JSON.parse(nameEl.innerHTML) as Record<string, any>) : null;
+    const name = nameEl ? (JSON.parse(nameEl.textContent as string) as Record<string, any>) : null;
 
     if (!company || !line || !name) {
         throw new Error('Missing required attributes and/or data.');
     }
 
     const paramEl = details.querySelector('details[type="param"]');
-    const param = paramEl ? (JSON.parse(paramEl.innerHTML) as Record<string, any>) : null;
+    const param = paramEl ? (JSON.parse(paramEl.textContent as string) as Record<string, any>) : null;
 
     return { company, line, major, name, param };
 };
 
 const cacheTemplateConfig = async (company: string) => {
-    const configPath = path.join(templatesPath, company, '_config.json');
+    const configPath = path.join(templatesPath, company, '00config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     templateConfig = JSON.parse(configJsonStr) as TemplateEntry[];
 };
 
 const writeTemplateConfig = async (company: string) => {
-    const configPath = path.join(templatesPath, company, '_config.json');
+    const configPath = path.join(templatesPath, company, '00config.json');
     await writeFile(configPath, JSON.stringify(templateConfig, null, 4));
 };
 
@@ -65,23 +68,20 @@ const updateConfig = async (company: string, line: string, major: boolean, name:
 };
 
 const updateCompanyConfig = async (company: string, name: Record<string, any>) => {
+    const isCore = CORE_COMPANIES.includes(company);
+    if (isCore) {
+        console.log(`Skip company config update as ${company} is core company`);
+        return;
+    }
+
     console.log('Updating company config', company);
-    const configPath = path.join(templatesPath, 'company-config.json');
+    const configPath = path.join(resourcesPath, 'other-company-config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
 
     const config: CompanyEntry = { id: company, name };
-    const pinnedCompanies = ['basic', 'mtr', 'gzmtr', 'shmetro'];
     companyConfig = [...new Set(companyConfig.concat(config))].sort((a, b) => {
-        if (pinnedCompanies.includes(a.id) && pinnedCompanies.includes(b.id)) {
-            return 0;
-        } else if (pinnedCompanies.includes(a.id)) {
-            return -1;
-        } else if (pinnedCompanies.includes(b.id)) {
-            return 1;
-        } else {
-            return a.id.localeCompare(b.id);
-        }
+        return a.id.localeCompare(b.id);
     });
 
     await writeFile(configPath, JSON.stringify(companyConfig, null, 4));
@@ -92,7 +92,7 @@ const updateCompanyConfig = async (company: string, name: Record<string, any>) =
         await mkdir(companyPath);
 
         // create empty config if dir didn't exist
-        const templateConfigPath = path.join(templatesPath, company, '_config.json');
+        const templateConfigPath = path.join(templatesPath, company, '00config.json');
         await writeFile(templateConfigPath, JSON.stringify([], null, 4));
     } catch (err) {
         console.warn('Failed to create directory for company=' + company);
@@ -118,7 +118,7 @@ const start = async () => {
     }
 
     // add new company if needed
-    const newCompanyConfig = items.find(item => item.line === '_config');
+    const newCompanyConfig = items.find(item => item.line === '00config' || item.line === '_config');
     if (newCompanyConfig) {
         const { company, name } = newCompanyConfig;
         await updateCompanyConfig(company, name);
@@ -132,7 +132,7 @@ const start = async () => {
     // perform insert/update
     await Promise.all(
         items
-            .filter(item => item.line !== '_config')
+            .filter(item => item.line !== '00config' && item.line !== '_config')
             .map(async item => {
                 const { line, major, name, param } = item;
                 if (name) {
@@ -149,7 +149,7 @@ const start = async () => {
 
     // print affected files
     const affectedFiles = items
-        .filter(({ line }) => line !== '_config')
+        .filter(({ line }) => line !== '00config' && line !== '_config')
         .map(({ line }) => targetCompany + '/' + line + '.json');
     console.log(`AFFECTED_FILES=(${affectedFiles})`);
 };

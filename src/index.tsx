@@ -28,8 +28,12 @@ const renderApp = () => {
     );
 };
 
-rmgRuntime.ready().then(() => {
-    initStore(store);
-    renderApp();
-    rmgRuntime.injectCss();
-});
+rmgRuntime
+    .ready()
+    .then(() => {
+        return initStore(store);
+    })
+    .then(() => {
+        renderApp();
+        rmgRuntime.injectCss();
+    });

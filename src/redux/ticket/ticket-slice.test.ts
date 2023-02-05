@@ -15,7 +15,10 @@ describe('TicketSlice', () => {
 
         // step 2: select exiting line
         const templateId = state.templates[0].id;
-        state = ticketReducer(state, setTemplateLineById({ id: templateId, line: 'twl' }));
+        state = ticketReducer(
+            state,
+            setTemplateLineById({ id: templateId, line: 'twl', name: { en: 'Tsuen Wan Line' } })
+        );
 
         expect(state.templates[0].templateName).toHaveProperty('en', 'Tsuen Wan Line');
     });

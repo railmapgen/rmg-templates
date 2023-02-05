@@ -1,16 +1,16 @@
-import { AcceptedLang, ALL_ACCEPTED_LANGS, TemplateEntry } from '../../redux/ticket/ticket-slice';
+import { AcceptedLang, ALL_ACCEPTED_LANGS, TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
-import { templateList } from '@railmapgen/rmg-templates-resources';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { IconButton, Input } from '@chakra-ui/react';
 import { ChangeEvent } from 'react';
 import { readFileAsText } from '../../util/utils';
 import { MdClose } from 'react-icons/md';
+import { useRootSelector } from '../../redux';
 
 interface TemplateEntryCardProps {
     company: string;
-    templateEntry: TemplateEntry;
+    templateEntry: TemplateTicketEntry;
     onLineChange: (line: string) => void;
     onNewLineChange: (newLine: string) => void;
     onMajorFlagChange: (majorUpdate: boolean) => void;
@@ -34,6 +34,8 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
+
+    const { templateList } = useRootSelector(state => state.app);
 
     const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
