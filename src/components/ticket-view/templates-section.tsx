@@ -17,7 +17,13 @@ export default function TemplatesSection() {
     const { t } = useTranslation();
 
     const dispatch = useRootDispatch();
+    const { templateList } = useRootSelector(state => state.app);
     const { company, templates } = useRootSelector(state => state.ticket);
+
+    const handleLineChange = (entryId: string, line: string) => {
+        const existingTemplate = templateList[company]?.find(entry => entry.filename === line);
+        dispatch(setTemplateLineById({ id: entryId, line, name: existingTemplate?.name }));
+    };
 
     return (
         <Box as="section" mt={3}>
@@ -42,7 +48,7 @@ export default function TemplatesSection() {
                     key={entry.id}
                     company={company}
                     templateEntry={entry}
-                    onLineChange={line => dispatch(setTemplateLineById({ id: entry.id, line }))}
+                    onLineChange={line => handleLineChange(entry.id, line)}
                     onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
                     onMajorFlagChange={majorUpdate => dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))}
                     onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
