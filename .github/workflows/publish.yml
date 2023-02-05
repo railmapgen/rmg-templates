@@ -1,4 +1,4 @@
-name: Resources Compile and Publish
+name: Publish Core Resources
 
 on:
   workflow_dispatch:
@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
       - run: npm run postinstall
