@@ -5,7 +5,10 @@ import { JSDOM } from 'jsdom';
 import { CompanyEntry, TemplateEntry } from '../src';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const templatesPath = path.join(__dirname, '../../public/resources/templates');
+const resourcesPath = path.join(__dirname, '../../public/resources');
+const templatesPath = path.join(resourcesPath, 'templates');
+
+const CORE_COMPANIES = ['basic', 'mtr', 'gzmtr', 'shmetro'];
 
 let issueUser: string;
 let templateConfig: TemplateEntry[];
@@ -65,23 +68,20 @@ const updateConfig = async (company: string, line: string, major: boolean, name:
 };
 
 const updateCompanyConfig = async (company: string, name: Record<string, any>) => {
+    const isCore = CORE_COMPANIES.includes(company);
+    if (isCore) {
+        console.log(`Skip company config update as ${company} is core company`);
+        return;
+    }
+
     console.log('Updating company config', company);
-    const configPath = path.join(templatesPath, 'company-config.json');
+    const configPath = path.join(resourcesPath, 'other-company-config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
 
     const config: CompanyEntry = { id: company, name };
-    const pinnedCompanies = ['basic', 'mtr', 'gzmtr', 'shmetro'];
     companyConfig = [...new Set(companyConfig.concat(config))].sort((a, b) => {
-        if (pinnedCompanies.includes(a.id) && pinnedCompanies.includes(b.id)) {
-            return 0;
-        } else if (pinnedCompanies.includes(a.id)) {
-            return -1;
-        } else if (pinnedCompanies.includes(b.id)) {
-            return 1;
-        } else {
-            return a.id.localeCompare(b.id);
-        }
+        return a.id.localeCompare(b.id);
     });
 
     await writeFile(configPath, JSON.stringify(companyConfig, null, 4));

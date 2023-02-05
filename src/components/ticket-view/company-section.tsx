@@ -2,7 +2,6 @@ import { Box, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { useRootDispatch, useRootSelector } from '../../redux';
-import { companyConfig } from '@railmapgen/rmg-templates-resources';
 import useTranslatedName from '../hooks/use-translated-name';
 import {
     AcceptedLang,
@@ -17,6 +16,7 @@ export default function CompanySection() {
     const translateName = useTranslatedName();
 
     const dispatch = useRootDispatch();
+    const { companyConfig } = useRootSelector(state => state.app);
     const { company, newCompany, companyName } = useRootSelector(state => state.ticket);
 
     const companyOptions = {

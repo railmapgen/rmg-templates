@@ -29,24 +29,35 @@ enum LanguageCode {
     ChineseTrad = 'zh-Hant',
     ChineseHK = 'zh-HK',
     ChineseTW = 'zh-TW',
+    Danish = 'da',
     English = 'en',
     French = 'fr',
     Gaelic = 'ga',
     German = 'de',
+    Greek = 'el',
     Hindi = 'hi',
+    Hungarian = 'hu',
+    Indonesian = 'id',
+    Italian = 'it',
     Japanese = 'ja',
     Korean = 'ko',
     Malay = 'ms',
     Norwegian = 'no',
-    Spanish = 'es',
     Persian = 'fa',
+    Polish = 'pl',
     Portuguese = 'pt',
+    Romanian = 'ro',
     Russian = 'ru',
+    Spanish = 'es',
     Swedish = 'sv',
+    Thai = 'th',
     Turkish = 'tr',
+    Urdu = 'ur',
+    Uzbek = 'uz',
+    Vietnamese = 'vn',
 }
 
 type Translation = { [l in LanguageCode]?: string };
 
-export const companyConfig = companyConfigJson as CompanyEntry[];
-export const templateList = templateConfigsJson as Record<string, TemplateEntry[]>;
+export const coreCompanyConfig = companyConfigJson as CompanyEntry[];
+export const coreTemplateList = templateConfigsJson as Record<string, TemplateEntry[]>;

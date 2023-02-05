@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { companyConfig, templateList } from '@railmapgen/rmg-templates-resources';
+import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
 import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
+import { Translation } from '@railmapgen/rmg-translate';
 
 export const ALL_ACCEPTED_LANGS = { en: 'English', 'zh-Hans': 'Simplified Chinese', 'zh-Hant': 'Traditional Chinese' };
 export type AcceptedLang = keyof typeof ALL_ACCEPTED_LANGS;
 
-export interface TemplateEntry {
+export interface TemplateTicketEntry {
     id: string;
     line: string; // new, existing line
     newLine: string;
@@ -15,7 +16,7 @@ export interface TemplateEntry {
     param?: Record<string, any>;
 }
 
-const initTemplateEntry = (): TemplateEntry => ({
+const initTemplateEntry = (): TemplateTicketEntry => ({
     id: crypto.randomUUID(),
     line: '',
     newLine: '',
@@ -31,7 +32,7 @@ export interface TicketState {
     companyName: typeof ALL_ACCEPTED_LANGS;
 
     // templates
-    templates: TemplateEntry[];
+    templates: TemplateTicketEntry[];
 }
 
 const initialState: TicketState = {
@@ -62,20 +63,18 @@ const ticketSlice = createSlice({
             state.templates.push(initTemplateEntry());
         },
 
-        setTemplateLineById: (state, action: PayloadAction<{ id: string; line: string }>) => {
-            const { id, line } = action.payload;
+        setTemplateLineById: (
+            state,
+            action: PayloadAction<{ id: string; line: string; name?: Partial<Translation> }>
+        ) => {
+            const { id, line, name } = action.payload;
             const nextEntry = { ...(state.templates.find(entry => entry.id === id) ?? initTemplateEntry()), line };
 
             // populate line names
-            const existingTemplate = templateList[state.company]?.find(entry => entry.filename === line);
-            if (existingTemplate) {
-                nextEntry.templateName.en = existingTemplate.name.en ?? '';
-                nextEntry.templateName['zh-Hans'] = existingTemplate.name['zh-Hans'] ?? '';
-                nextEntry.templateName['zh-Hant'] =
-                    existingTemplate.name['zh-Hant'] ??
-                    existingTemplate.name['zh-HK'] ??
-                    existingTemplate.name['zh-TW'] ??
-                    '';
+            if (name) {
+                nextEntry.templateName.en = name.en ?? '';
+                nextEntry.templateName['zh-Hans'] = name['zh-Hans'] ?? '';
+                nextEntry.templateName['zh-Hant'] = name['zh-Hant'] ?? name['zh-HK'] ?? name['zh-TW'] ?? '';
             }
 
             state.templates = state.templates.map(entry => (entry.id === id ? nextEntry : entry));
@@ -124,7 +123,7 @@ const ticketSlice = createSlice({
 });
 
 export const ticketSelectors = {
-    getCompanyEnglishName: (state: TicketState): string => {
+    getCompanyEnglishName: (state: TicketState, companyConfig: CompanyEntry[]): string => {
         return state.company === 'new'
             ? state.companyName.en // new company
             : companyConfig.find(c => c.id === state.company)?.name?.en ?? ''; // existing company
@@ -195,7 +194,7 @@ export const ticketSelectors = {
         return result;
     },
 
-    getMajorUpdateNames: (state: TicketState): string[] => {
+    getMajorUpdateNames: (state: TicketState, templateList: Record<string, TemplateEntry[]>): string[] => {
         const { company, templates } = state;
         if (company === 'new') {
             return [];
