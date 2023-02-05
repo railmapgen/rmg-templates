@@ -43,7 +43,7 @@ const copyTemplates = async (companyId: string) => {
     console.log(`Copying templates for company=${companyId}...`);
 
     // read config source file
-    const configStr = await readFile(path.join(sourcePath, 'templates', companyId, '_config.json'), 'utf-8');
+    const configStr = await readFile(path.join(sourcePath, 'templates', companyId, '00config.json'), 'utf-8');
     const templateEntries: TemplateEntry[] = JSON.parse(configStr);
 
     // parse template

@@ -42,13 +42,13 @@ const parseDetailsEl = (details: HTMLDetailsElement) => {
 };
 
 const cacheTemplateConfig = async (company: string) => {
-    const configPath = path.join(templatesPath, company, '_config.json');
+    const configPath = path.join(templatesPath, company, '00config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     templateConfig = JSON.parse(configJsonStr) as TemplateEntry[];
 };
 
 const writeTemplateConfig = async (company: string) => {
-    const configPath = path.join(templatesPath, company, '_config.json');
+    const configPath = path.join(templatesPath, company, '00config.json');
     await writeFile(configPath, JSON.stringify(templateConfig, null, 4));
 };
 
@@ -92,7 +92,7 @@ const updateCompanyConfig = async (company: string, name: Record<string, any>) =
         await mkdir(companyPath);
 
         // create empty config if dir didn't exist
-        const templateConfigPath = path.join(templatesPath, company, '_config.json');
+        const templateConfigPath = path.join(templatesPath, company, '00config.json');
         await writeFile(templateConfigPath, JSON.stringify([], null, 4));
     } catch (err) {
         console.warn('Failed to create directory for company=' + company);
@@ -118,7 +118,7 @@ const start = async () => {
     }
 
     // add new company if needed
-    const newCompanyConfig = items.find(item => item.line === '_config');
+    const newCompanyConfig = items.find(item => item.line === '00config' || item.line === '_config');
     if (newCompanyConfig) {
         const { company, name } = newCompanyConfig;
         await updateCompanyConfig(company, name);
@@ -132,7 +132,7 @@ const start = async () => {
     // perform insert/update
     await Promise.all(
         items
-            .filter(item => item.line !== '_config')
+            .filter(item => item.line !== '00config' && item.line !== '_config')
             .map(async item => {
                 const { line, major, name, param } = item;
                 if (name) {
@@ -149,7 +149,7 @@ const start = async () => {
 
     // print affected files
     const affectedFiles = items
-        .filter(({ line }) => line !== '_config')
+        .filter(({ line }) => line !== '00config' && line !== '_config')
         .map(({ line }) => targetCompany + '/' + line + '.json');
     console.log(`AFFECTED_FILES=(${affectedFiles})`);
 };

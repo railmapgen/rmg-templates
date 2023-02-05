@@ -22,7 +22,7 @@ const fetchOtherCompanyConfig = async (): Promise<CompanyEntry[]> => {
 
 const fetchTemplatesByCompany = async (company: string): Promise<TemplateEntry[]> => {
     try {
-        const response = await fetch('/rmg-templates/resources/templates/' + company + '/_config.json');
+        const response = await fetch('/rmg-templates/resources/templates/' + company + '/00config.json');
         const result = (await response.json()) as TemplateEntry[];
 
         const element = document.createElement('p');

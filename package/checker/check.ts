@@ -26,7 +26,7 @@ const checkTemplatesByCompany = async (companyId: string) => {
     console.log('Checking templates for company', companyId);
     const templatesPath = path.join(sourcePath, 'templates', companyId);
 
-    const configPath = path.join(templatesPath, '_config.json');
+    const configPath = path.join(templatesPath, '00config.json');
     const configStr = await readFile(configPath, 'utf-8');
     const config = JSON.parse(configStr);
     assertEquals<TemplateEntry[]>(config);

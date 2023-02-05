@@ -5,7 +5,7 @@ export const convertCompanyEntry = (companyEntry: CompanyEntry): HTMLDetailsElem
     const element = document.createElement('details');
     element.setAttribute('repo', 'rmg-templates');
     element.setAttribute('company', companyEntry.id);
-    element.setAttribute('line', '_config');
+    element.setAttribute('line', '00config');
 
     const summary = document.createElement('summary');
     summary.textContent = 'New company: ' + companyEntry.name.en;
