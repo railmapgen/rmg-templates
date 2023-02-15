@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v2
         with:
           node-version: '18'
       - run: npm ci
@@ -20,6 +20,5 @@ jobs:
 
       - name: Code check
         run: |
-          npm run build:resources
           npm run lint
           npm run test
