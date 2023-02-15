@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: '18'
       - run: |
-          npm run preinstall
-          npm install
+          npm run install:resources
+          npm run build:resources
 
       - name: Resources check
         run: cd ./package && npm run check
