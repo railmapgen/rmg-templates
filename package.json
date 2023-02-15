@@ -57,7 +57,8 @@
         "test": "vitest",
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix",
-        "postinstall": "cd ./package && npm install",
+        "install:package": "cd ./package && npm install",
+        "preinstall": "npm run install:package && npm run build:resources",
         "preview": "vite preview"
     },
     "version": "0.3.10"
