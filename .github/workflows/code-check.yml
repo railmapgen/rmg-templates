@@ -13,18 +13,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm ci
-        working-directory: ./package
 
       - name: Resources check
         run: |
-          cd ./package
+          npm install
           npm run check
           npm run build
-
-      - run: npm ci
+        working-directory: ./package
 
       - name: Code check
         run: |
+          npm install
           npm run lint
           npm run test
