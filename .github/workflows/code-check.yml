@@ -10,15 +10,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm ci
 
       - name: Resources check
-        run: cd ./package && npm run check
+        run: |
+          npm install
+          npm run check
+          npm run build
+        working-directory: ./package
 
       - name: Code check
         run: |
+          npm install
           npm run lint
           npm run test
