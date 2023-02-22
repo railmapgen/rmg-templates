@@ -1,238 +1,179 @@
 {
-    "svgWidth": {
-        "destination": 1500,
-        "runin": 1200,
-        "railmap": 1500,
-        "indoor": 1200
-    },
-    "svg_height": 300,
     "style": "mtr",
-    "y_pc": 50,
-    "padding": 10,
-    "branch_spacing": 10,
-    "direction": "r",
-    "platform_num": "3",
+    "svg_height": 300,
+    "padding": 13.261261261261263,
+    "y_pc": 40,
+    "branch_spacing": 45,
     "theme": [
         "hongkong",
         "tcl",
         "#F38B00",
         "#fff"
     ],
-    "line_name": [
-        "東涌綫",
-        "Tung Chung Line"
-    ],
-    "current_stn_idx": "rIJvOH",
+    "direction": "l",
+    "current_stn_idx": "iwf6",
+    "platform_num": "1",
     "stn_list": {
         "linestart": {
-            "name": [
-                "LEFT END",
-                "LEFT END"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
             "parents": [],
             "children": [
-                "rIJvOH"
+                "0bvm"
+            ],
+            "name": [
+                "路綫左端",
+                "LEFT END"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "osi_names": [],
+                "info": [
+                    []
+                ]
             },
+            "services": [
+                "local"
+            ],
+            "num": "00",
             "facility": "",
-            "loop_pivot": false
+            "secondaryName": false
         },
-        "rIJvOH": {
+        "lineend": {
+            "parents": [
+                "iwf6"
+            ],
+            "children": [],
+            "name": [
+                "路綫右端",
+                "RIGHT END"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
+                    []
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "num": "00",
+            "facility": "",
+            "secondaryName": false
+        },
+        "iwf6": {
+            "children": [
+                "lineend"
+            ],
+            "parents": [
+                "xhla"
+            ],
             "name": [
                 "香港",
                 "Hong Kong"
             ],
-            "secondaryName": false,
-            "num": "01",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "iSbXuF"
-            ],
             "branch": {
                 "left": [],
                 "right": []
             },
+            "num": "01",
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false
-        },
-        "iSbXuF": {
-            "name": [
-                "九龍",
-                "Kowloon"
-            ],
-            "secondaryName": false,
-            "num": "02",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "rIJvOH"
-            ],
-            "children": [
-                "2h6dKk"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
+                "osi_names": [
+                    [
+                        "中環",
+                        "Stn Name"
+                    ]
+                ],
                 "info": [
-                    [],
                     [
                         [
                             "hongkong",
-                            "hsr",
-                            "#9D968D",
+                            "ael",
+                            "#007078",
                             "#fff",
-                            "高速鐵路",
-                            "High Speed Rail"
+                            "機場快綫",
+                            "Line"
+                        ]
+                    ],
+                    [
+                        [
+                            "hongkong",
+                            "isl",
+                            "#0071CE",
+                            "#fff",
+                            "港島綫",
+                            "Island Line"
+                        ],
+                        [
+                            "hongkong",
+                            "twl",
+                            "#E2231A",
+                            "#fff",
+                            "荃灣綫",
+                            "Tsuen Wan Line"
                         ]
                     ]
-                ],
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "facility": "",
+            "secondaryName": false
+        },
+        "m6b7": {
+            "parents": [
+                "x7ve"
+            ],
+            "children": [
+                "lx27"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "name": [
+                "青衣",
+                "Tsing Yi"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "transfer": {
                 "tick_direc": "r",
-                "paid_area": false,
-                "osi_names": [
+                "paid_area": true,
+                "osi_names": [],
+                "info": [
                     [
-                        "香港西九龍",
-                        "Hong Kong West Kowloon"
+                        [
+                            "hongkong",
+                            "ael",
+                            "#007078",
+                            "#fff",
+                            "機場快綫",
+                            " Airport Express"
+                        ]
                     ]
                 ]
             },
             "facility": "",
-            "loop_pivot": false
+            "secondaryName": false
         },
-        "lineend": {
+        "lx27": {
             "name": [
-                "RIGHT END",
-                "RIGHT END"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "NwJ06l"
-            ],
-            "children": [],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false
-        },
-        "2h6dKk": {
-            "name": [
-                "奧運",
-                "Olympic"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iSbXuF"
-            ],
-            "children": [
-                "MP01CM"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false
-        },
-        "MP01CM": {
-            "name": [
-                "南昌",
-                "Nam Cheong"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "2h6dKk"
-            ],
-            "children": [
-                "DuQYGM"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "hongkong",
-                            "mol",
-                            "#9A3820",
-                            "#fff",
-                            "屯馬綫",
-                            "Tuen Ma Line"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false
-        },
-        "DuQYGM": {
-            "name": [
-                "茘景",
+                "荔景",
                 "Lai King"
             ],
             "secondaryName": false,
@@ -241,10 +182,10 @@
                 "local"
             ],
             "parents": [
-                "MP01CM"
+                "m6b7"
             ],
             "children": [
-                "vhkjzB"
+                "uru3"
             ],
             "branch": {
                 "left": [],
@@ -267,13 +208,12 @@
                 "paid_area": true,
                 "osi_names": []
             },
-            "facility": "",
-            "loop_pivot": false
+            "facility": ""
         },
-        "vhkjzB": {
+        "uru3": {
             "name": [
-                "青衣",
-                "Tsing Yi"
+                "南昌",
+                "Nam Cheong"
             ],
             "secondaryName": false,
             "num": "00",
@@ -281,10 +221,49 @@
                 "local"
             ],
             "parents": [
-                "DuQYGM"
+                "lx27"
             ],
             "children": [
-                "XyLKzm"
+                "emy3"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "hongkong",
+                            "mol",
+                            "#9A3820",
+                            "#fff",
+                            "屯馬綫",
+                            "Tuen Ma Line"
+                        ]
+                    ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true,
+                "osi_names": []
+            },
+            "facility": ""
+        },
+        "emy3": {
+            "name": [
+                "奧運",
+                "Olympic"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "uru3"
+            ],
+            "children": [
+                "xhla"
             ],
             "branch": {
                 "left": [],
@@ -298,10 +277,90 @@
                 "paid_area": true,
                 "osi_names": []
             },
-            "facility": "",
-            "loop_pivot": false
+            "facility": ""
         },
-        "XyLKzm": {
+        "xhla": {
+            "name": [
+                "九龍",
+                "Kowloon"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "emy3"
+            ],
+            "children": [
+                "iwf6"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [
+                        [
+                            "hongkong",
+                            "ael",
+                            "#007078",
+                            "#fff",
+                            "機場快綫",
+                            " Airport Express"
+                        ]
+                    ],
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": false,
+                "osi_names": [
+                    [
+                        "香港西九龍站",
+                        "Stn Name"
+                    ]
+                ]
+            },
+            "facility": ""
+        },
+        "0bvm": {
+            "name": [
+                "東涌",
+                "Tung Chung"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "x7ve"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "info": [
+                    [],
+                    []
+                ],
+                "tick_direc": "r",
+                "paid_area": false,
+                "osi_names": [
+                    [
+                        "",
+                        "Stn Name"
+                    ]
+                ]
+            },
+            "facility": ""
+        },
+        "x7ve": {
             "name": [
                 "欣澳",
                 "Sunny Bay"
@@ -312,10 +371,10 @@
                 "local"
             ],
             "parents": [
-                "vhkjzB"
+                "0bvm"
             ],
             "children": [
-                "NwJ06l"
+                "m6b7"
             ],
             "branch": {
                 "left": [],
@@ -338,63 +397,34 @@
                 "paid_area": true,
                 "osi_names": []
             },
-            "facility": "",
-            "loop_pivot": false
-        },
-        "NwJ06l": {
-            "name": [
-                "東涌",
-                "Tung Chung"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "XyLKzm"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false
+            "facility": ""
         }
     },
-    "namePosMTR": {
-        "isStagger": true,
-        "isFlip": true
-    },
+    "line_name": [
+        "東涌綫",
+        "Tung Chung Line"
+    ],
+    "psd_num": "1",
+    "line_num": "TW",
+    "info_panel_type": "gz28",
+    "direction_gz_x": 50,
+    "direction_gz_y": 70,
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": [
-            "東涌及迪士尼綫",
-            "Tung Chung and Disneyland Resort Line"
+            "機場及博覽館",
+            "Airport and AsiaWorld-Expo"
         ]
     },
-    "line_num": "1",
-    "psd_num": "1",
-    "info_panel_type": "gz1",
+    "svgWidth": {
+        "destination": 1100,
+        "runin": 1100,
+        "railmap": 1100,
+        "indoor": 1100
+    },
     "notesGZMTR": [],
-    "direction_gz_x": 40,
-    "direction_gz_y": 70,
-    "coline": {},
-    "loop": false,
-    "loop_info": {
-        "bank": true,
-        "left_and_right_factor": 1,
-        "bottom_factor": 1
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": false
     }
 }
