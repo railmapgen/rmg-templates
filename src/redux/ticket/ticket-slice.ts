@@ -4,7 +4,12 @@ import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
 import { Translation } from '@railmapgen/rmg-translate';
 
-export const ALL_ACCEPTED_LANGS = { en: 'English', 'zh-Hans': 'Simplified Chinese', 'zh-Hant': 'Traditional Chinese' };
+export const ALL_ACCEPTED_LANGS = {
+    en: 'English',
+    'zh-Hans': 'Simplified Chinese',
+    'zh-Hant': 'Traditional Chinese',
+    ko: 'Korean',
+};
 export type AcceptedLang = keyof typeof ALL_ACCEPTED_LANGS;
 
 export interface TemplateTicketEntry {
@@ -21,7 +26,7 @@ const initTemplateEntry = (): TemplateTicketEntry => ({
     line: '',
     newLine: '',
     majorUpdate: false,
-    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
+    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
     param: undefined,
 });
 
@@ -38,7 +43,7 @@ export interface TicketState {
 const initialState: TicketState = {
     company: '',
     newCompany: '',
-    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
+    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
     templates: [],
 };
 
@@ -75,6 +80,7 @@ const ticketSlice = createSlice({
                 nextEntry.templateName.en = name.en ?? '';
                 nextEntry.templateName['zh-Hans'] = name['zh-Hans'] ?? '';
                 nextEntry.templateName['zh-Hant'] = name['zh-Hant'] ?? name['zh-HK'] ?? name['zh-TW'] ?? '';
+                nextEntry.templateName.ko = name.ko ?? '';
             }
 
             state.templates = state.templates.map(entry => (entry.id === id ? nextEntry : entry));
