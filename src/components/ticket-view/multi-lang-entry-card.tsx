@@ -11,8 +11,13 @@ interface MultiLangEntryCardProps {
     onRemove: (lang: LanguageCode) => void;
 }
 
-const languageOptions = Object.entries(LanguageCode).reduce<Record<string, string>>((acc, cur) => {
-    return { ...acc, [cur[1]]: cur[0] };
+// FIXME
+const ALL_LANGUAGES: Partial<Record<LanguageCode, string>> = {
+    en: 'English',
+};
+
+const languageOptions = Object.entries(ALL_LANGUAGES).reduce<Record<string, string>>((acc, cur) => {
+    return { ...acc, [cur[0]]: cur[1] };
 }, {});
 
 const cardRowStyles: SystemStyleObject = {
@@ -46,7 +51,9 @@ export default function MultiLangEntryCard(props: MultiLangEntryCardProps) {
     };
 
     const handleAddEntry = () => {
-        const nextLang = Object.values(LanguageCode).filter(l => !translations.find(entry => entry[0] === l))[0];
+        const nextLang = Object.keys(ALL_LANGUAGES).filter(
+            l => !translations.find(entry => entry[0] === l)
+        )[0] as LanguageCode;
         onUpdate(nextLang, '');
     };
 
