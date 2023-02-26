@@ -2,22 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
 import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
-import { Translation } from '@railmapgen/rmg-translate';
-
-export const ALL_ACCEPTED_LANGS = {
-    en: 'English',
-    'zh-Hans': 'Simplified Chinese',
-    'zh-Hant': 'Traditional Chinese',
-    ko: 'Korean',
-};
-export type AcceptedLang = keyof typeof ALL_ACCEPTED_LANGS;
+import { SupportedLanguageCode, Translation } from '@railmapgen/rmg-translate';
 
 export interface TemplateTicketEntry {
     id: string;
     line: string; // new, existing line
     newLine: string;
     majorUpdate: boolean;
-    templateName: typeof ALL_ACCEPTED_LANGS;
+    templateName: Record<SupportedLanguageCode, string>;
     param?: Record<string, any>;
 }
 
@@ -34,7 +26,7 @@ export interface TicketState {
     // company
     company: string; // new, (empty), companyCode
     newCompany: string;
-    companyName: typeof ALL_ACCEPTED_LANGS;
+    companyName: Record<SupportedLanguageCode, string>;
 
     // templates
     templates: TemplateTicketEntry[];
@@ -59,7 +51,7 @@ const ticketSlice = createSlice({
             state.newCompany = action.payload;
         },
 
-        setCompanyNameByLang: (state, action: PayloadAction<{ lang: AcceptedLang; name: string }>) => {
+        setCompanyNameByLang: (state, action: PayloadAction<{ lang: SupportedLanguageCode; name: string }>) => {
             const { lang, name } = action.payload;
             state.companyName[lang] = name;
         },
