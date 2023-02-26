@@ -1,8 +1,9 @@
-import { LanguageCode } from '@railmapgen/rmg-translate';
+import { LANGUAGE_NAMES, LanguageCode } from '@railmapgen/rmg-translate';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { Box, HStack, IconButton, SystemStyleObject } from '@chakra-ui/react';
 import { MdAdd, MdDelete } from 'react-icons/md';
+import useTranslatedName from '../hooks/use-translated-name';
 
 interface MultiLangEntryCardProps {
     translations: any[];
@@ -10,10 +11,6 @@ interface MultiLangEntryCardProps {
     onLangSwitch: (prevLang: LanguageCode, nextLang: LanguageCode) => void;
     onRemove: (lang: LanguageCode) => void;
 }
-
-const languageOptions = Object.entries(LanguageCode).reduce<Record<string, string>>((acc, cur) => {
-    return { ...acc, [cur[1]]: cur[0] };
-}, {});
 
 const cardRowStyles: SystemStyleObject = {
     '& > div:first-of-type': {
@@ -24,6 +21,7 @@ const cardRowStyles: SystemStyleObject = {
 export default function MultiLangEntryCard(props: MultiLangEntryCardProps) {
     const { translations, onUpdate, onLangSwitch, onRemove } = props;
     const { t } = useTranslation();
+    const translateName = useTranslatedName();
 
     const getFields = (lang: LanguageCode, name: string): RmgFieldsField[] => {
         return [
@@ -31,7 +29,13 @@ export default function MultiLangEntryCard(props: MultiLangEntryCardProps) {
                 type: 'select',
                 label: t('Language'),
                 value: lang,
-                options: languageOptions,
+                options: Object.entries(LANGUAGE_NAMES).reduce(
+                    (acc, cur) => ({
+                        ...acc,
+                        [cur[0]]: translateName(cur[1]),
+                    }),
+                    {} as Record<LanguageCode, string>
+                ),
                 disabledOptions: translations.filter(entry => entry[0] !== lang).map(entry => entry[0]),
                 onChange: value => onLangSwitch(lang, value as LanguageCode),
             },
@@ -46,7 +50,9 @@ export default function MultiLangEntryCard(props: MultiLangEntryCardProps) {
     };
 
     const handleAddEntry = () => {
-        const nextLang = Object.values(LanguageCode).filter(l => !translations.find(entry => entry[0] === l))[0];
+        const nextLang = Object.keys(LANGUAGE_NAMES).filter(
+            l => !translations.find(entry => entry[0] === l)
+        )[0] as LanguageCode;
         onUpdate(nextLang, '');
     };
 

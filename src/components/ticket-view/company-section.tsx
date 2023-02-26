@@ -3,13 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import useTranslatedName from '../hooks/use-translated-name';
-import {
-    AcceptedLang,
-    ALL_ACCEPTED_LANGS,
-    setCompany,
-    setCompanyNameByLang,
-    setNewCompany,
-} from '../../redux/ticket/ticket-slice';
+import { setCompany, setCompanyNameByLang, setNewCompany } from '../../redux/ticket/ticket-slice';
+import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 
 export default function CompanySection() {
     const { t, i18n } = useTranslation();
@@ -51,14 +46,12 @@ export default function CompanySection() {
         },
     ];
 
-    const languageFields: RmgFieldsField[] = Object.entries(ALL_ACCEPTED_LANGS).map(entry => {
-        const langCode = entry[0] as AcceptedLang;
-        const langName = entry[1];
+    const languageFields: RmgFieldsField[] = SUPPORTED_LANGUAGES.map(lang => {
         return {
             type: 'input',
-            label: t(langName),
-            value: companyName[langCode],
-            onChange: value => dispatch(setCompanyNameByLang({ lang: langCode, name: value })),
+            label: translateName(LANGUAGE_NAMES[lang]),
+            value: companyName[lang],
+            onChange: value => dispatch(setCompanyNameByLang({ lang, name: value })),
         };
     });
 

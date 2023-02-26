@@ -1,4 +1,4 @@
-import { AcceptedLang, ALL_ACCEPTED_LANGS, TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
+import { TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
@@ -7,6 +7,7 @@ import { ChangeEvent } from 'react';
 import { readFileAsText } from '../../util/utils';
 import { MdClose } from 'react-icons/md';
 import { useRootSelector } from '../../redux';
+import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 
 interface TemplateEntryCardProps {
     company: string;
@@ -104,14 +105,13 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         },
     ];
 
-    const languageFields: RmgFieldsField[] = Object.entries(ALL_ACCEPTED_LANGS).map(entry => {
-        const langCode = entry[0] as AcceptedLang;
-        const langName = entry[1];
+    const languageFields: RmgFieldsField[] = SUPPORTED_LANGUAGES.map(lang => {
         return {
             type: 'input',
-            label: t(langName),
-            value: templateName[langCode],
-            onChange: value => onLineNameChange(langCode, value),
+            label: translateName(LANGUAGE_NAMES[lang]),
+            value: templateName[lang],
+            onChange: value => onLineNameChange(lang, value),
+            minW: lang === 'en' ? 260 : undefined,
         };
     });
 

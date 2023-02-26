@@ -7,7 +7,7 @@ export default function useTranslatedName(): (name: Translation) => string {
     return (name: Translation) => {
         return (
             i18n.languages.map(lang => name[lang as LanguageCode]).find(name => name !== undefined) ??
-            name[LanguageCode.English] ??
+            name.en ??
             '(Translation Error)'
         );
     };
