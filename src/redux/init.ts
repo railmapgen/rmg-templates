@@ -38,10 +38,13 @@ const fetchTemplatesByCompany = async (company: string): Promise<TemplateEntry[]
 
 const initCompanyAndTemplates = async (store: RootStore) => {
     const companyConfig = await fetchOtherCompanyConfig();
-    for (const company of companyConfig) {
-        const templates = await fetchTemplatesByCompany(company.id);
-        store.dispatch(appendCompanyAndTemplates({ company, templates }));
-    }
+    const resultTuples = await Promise.all(
+        companyConfig.map(async company => {
+            const templates = await fetchTemplatesByCompany(company.id);
+            return [company, templates] as [CompanyEntry, TemplateEntry[]];
+        })
+    );
+    resultTuples.forEach(([company, templates]) => store.dispatch(appendCompanyAndTemplates({ company, templates })));
 };
 
 export default async function initStore(store: RootStore) {
