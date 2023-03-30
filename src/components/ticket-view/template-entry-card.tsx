@@ -6,8 +6,8 @@ import { IconButton, Input } from '@chakra-ui/react';
 import { ChangeEvent } from 'react';
 import { readFileAsText } from '../../util/utils';
 import { MdClose } from 'react-icons/md';
-import { useRootSelector } from '../../redux';
 import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
+import useTemplates from '../hooks/use-templates';
 
 interface TemplateEntryCardProps {
     company: string;
@@ -36,7 +36,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
     const { t } = useTranslation();
     const translateName = useTranslatedName();
 
-    const { templateList } = useRootSelector(state => state.app);
+    const { templates } = useTemplates(company);
 
     const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -65,7 +65,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         '': t('Please select...'),
         ...(company === '' || company === 'new'
             ? {}
-            : templateList[company].reduce((acc, cur) => {
+            : templates.reduce((acc, cur) => {
                   return { ...acc, [cur.filename]: translateName(cur.name) };
               }, {})),
         new: t('Add a line...'),

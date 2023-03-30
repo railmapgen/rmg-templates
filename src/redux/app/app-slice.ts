@@ -17,13 +17,13 @@ const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        appendCompanyAndTemplates: (
-            state,
-            action: PayloadAction<{ company: CompanyEntry; templates: TemplateEntry[] }>
-        ) => {
+        appendCompanies: (state, action: PayloadAction<CompanyEntry[]>) => {
+            state.companyConfig = state.companyConfig.concat(action.payload);
+        },
+
+        setTemplateListByCompany: (state, action: PayloadAction<{ company: string; templates: TemplateEntry[] }>) => {
             const { company, templates } = action.payload;
-            state.companyConfig.push(company);
-            state.templateList[company.id] = templates;
+            state.templateList[company] = templates;
         },
 
         setSelectedCompany: (state, action: PayloadAction<string>) => {
@@ -32,5 +32,5 @@ const appSlice = createSlice({
     },
 });
 
-export const { appendCompanyAndTemplates, setSelectedCompany } = appSlice.actions;
+export const { appendCompanies, setTemplateListByCompany, setSelectedCompany } = appSlice.actions;
 export default appSlice.reducer;
