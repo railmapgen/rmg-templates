@@ -7,13 +7,14 @@ import { ColDef } from 'ag-grid-community';
 import { useTranslation } from 'react-i18next';
 import useTranslatedName from '../hooks/use-translated-name';
 import { Avatar, Badge, Tag, TagLabel } from '@chakra-ui/react';
+import useTemplates from '../hooks/use-templates';
 
 export default function TemplatesGrid() {
     const { t, i18n } = useTranslation();
     const translateName = useTranslatedName();
 
-    const { templateList, selectedCompany } = useRootSelector(state => state.app);
-    const rowData = templateList[selectedCompany] ?? [];
+    const { selectedCompany } = useRootSelector(state => state.app);
+    const { templates } = useTemplates(selectedCompany);
 
     const columnDefs = useMemo<ColDef<TemplateEntry>[]>(
         () => [
@@ -61,7 +62,7 @@ export default function TemplatesGrid() {
     return (
         <RmgAgGrid>
             <AgGridReact
-                rowData={rowData}
+                rowData={templates}
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDef}
                 getRowId={({ data }) => data.filename}

@@ -34,6 +34,14 @@ export default function TicketView() {
     const dispatch = useRootDispatch();
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
 
+    const handleBack = () => {
+        if (rmgRuntime.isStandaloneWindow()) {
+            navigate('/');
+        } else {
+            rmgRuntime.openApp('rmg-templates');
+        }
+    };
+
     const handleReset = () => {
         dispatch(resetTicket());
         rmgRuntime.event(Events.RESET_TICKETS, {});
@@ -46,8 +54,8 @@ export default function TicketView() {
                 <TemplatesSection />
             </Flex>
             <Flex>
-                <Button size="sm" onClick={() => navigate('/')}>
-                    {t('Go back')}
+                <Button size="sm" onClick={handleBack}>
+                    {t('Back to list')}
                 </Button>
 
                 <HStack ml="auto">
