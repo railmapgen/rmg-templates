@@ -25,7 +25,6 @@ BOT_RUN_LOG=$(npm run issuebot)
 cd ..
 
 # Commit
-rm ./package/issuebot/issue.json
 git add .
 git commit -m "#$ISSUE_NUMBER $ISSUE_TITLE" --author="$USER_LOGIN <$USER_ID+$USER_LOGIN@users.noreply.github.com>"
 
