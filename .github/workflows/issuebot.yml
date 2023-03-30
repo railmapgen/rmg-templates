@@ -20,11 +20,14 @@ jobs:
         working-directory: ./package
 
       - name: Update and push
-        run: |
-          chmod +x ./scripts/issuebot.sh
-          ./scripts/issuebot.sh ${{ github.event.issue.number }} "${{ github.event.issue.title }}" "${{ github.event.issue.user.login }}" "${{ github.event.issue.user.id }}"
+        run: ./scripts/issuebot.sh
+        shell: bash
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          USER_LOGIN: ${{ github.event.issue.user.login }}
+          USER_ID: ${{ github.event.issue.user.id }}
         id: bot
 
       - name: pull-request-action
