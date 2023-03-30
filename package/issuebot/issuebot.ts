@@ -9,16 +9,12 @@ const resourcesPath = path.join(__dirname, '../../public/resources');
 const templatesPath = path.join(resourcesPath, 'templates');
 
 const CORE_COMPANIES = ['basic', 'mtr', 'gzmtr', 'shmetro'];
+const issueUser = process.env.USER_LOGIN;
 
-let issueUser: string;
 let templateConfig: TemplateEntry[];
 
 const readIssueBody = async (): Promise<HTMLDetailsElement[]> => {
-    const issueJsonStr = await readFile(__dirname + '/issue.json', 'utf-8');
-    const issueObj = JSON.parse(issueJsonStr);
-    const issueBody = issueObj.event.issue.body;
-    issueUser = issueObj.event.issue.user.login;
-
+    const issueBody = process.env.ISSUE_BODY;
     const dom = new JSDOM(issueBody);
     return Array.from(dom.window.document.querySelectorAll('details[repo="rmg-templates"]'));
 };
