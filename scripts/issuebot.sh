@@ -19,6 +19,9 @@ BRANCH_NAME="bot-$1"
   git checkout -b $BRANCH_NAME;
 }
 
+# Dump payload
+node ./package/issuebot/dump-payload.js
+
 # Update templates
 cd package
 BOT_RUN_LOG=$(npm run issuebot)
