@@ -1,6 +1,6 @@
 import { RootStore } from './index';
-import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
-import { appendCompanyAndTemplates } from './app/app-slice';
+import { CompanyEntry } from '@railmapgen/rmg-templates-resources';
+import { appendCompanies } from './app/app-slice';
 
 const $ = document.querySelector.bind(document);
 
@@ -20,33 +20,11 @@ const fetchOtherCompanyConfig = async (): Promise<CompanyEntry[]> => {
     }
 };
 
-const fetchTemplatesByCompany = async (company: string): Promise<TemplateEntry[]> => {
-    try {
-        const response = await fetch('/rmg-templates/resources/templates/' + company + '/00config.json');
-        const result = (await response.json()) as TemplateEntry[];
-
-        const element = document.createElement('p');
-        element.textContent = 'Fetched templates of ' + company;
-        $('#root')?.append(element);
-
-        return result;
-    } catch (e) {
-        console.error('Failed to fetch template list for ' + company, e);
-        return [];
-    }
-};
-
-const initCompanyAndTemplates = async (store: RootStore) => {
+const initCompanyConfig = async (store: RootStore) => {
     const companyConfig = await fetchOtherCompanyConfig();
-    const resultTuples = await Promise.all(
-        companyConfig.map(async company => {
-            const templates = await fetchTemplatesByCompany(company.id);
-            return [company, templates] as [CompanyEntry, TemplateEntry[]];
-        })
-    );
-    resultTuples.forEach(([company, templates]) => store.dispatch(appendCompanyAndTemplates({ company, templates })));
+    store.dispatch(appendCompanies(companyConfig));
 };
 
 export default async function initStore(store: RootStore) {
-    await initCompanyAndTemplates(store);
+    await initCompanyConfig(store);
 }

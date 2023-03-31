@@ -12,21 +12,24 @@ import {
     setTemplateParamById,
 } from '../../redux/ticket/ticket-slice';
 import { MdAdd, MdHelp } from 'react-icons/md';
+import useTemplates from '../hooks/use-templates';
+import { RmgLoader } from '@railmapgen/rmg-components';
 
 export default function TemplatesSection() {
     const { t } = useTranslation();
 
     const dispatch = useRootDispatch();
-    const { templateList } = useRootSelector(state => state.app);
     const { company, templates } = useRootSelector(state => state.ticket);
+    const { templates: templateList, isLoading } = useTemplates(company);
 
     const handleLineChange = (entryId: string, line: string) => {
-        const existingTemplate = templateList[company]?.find(entry => entry.filename === line);
+        const existingTemplate = templateList.find(entry => entry.filename === line);
         dispatch(setTemplateLineById({ id: entryId, line, name: existingTemplate?.name }));
     };
 
     return (
-        <Box as="section" mt={3}>
+        <Box as="section" mt={3} position="relative">
+            {isLoading && <RmgLoader isIndeterminate />}
             <Flex>
                 <Heading as="h5" size="sm" mb={2}>
                     {t('Add or update templates')}

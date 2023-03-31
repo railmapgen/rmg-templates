@@ -40,7 +40,11 @@ export default function PageHeader() {
     ];
 
     const handleUploadTemplates = () => {
-        navigate('/new');
+        if (rmgRuntime.isStandaloneWindow()) {
+            navigate('/new');
+        } else {
+            rmgRuntime.openApp('rmg-templates-upload');
+        }
         rmgRuntime.event(Events.UPLOAD_TEMPLATES, {});
     };
 
