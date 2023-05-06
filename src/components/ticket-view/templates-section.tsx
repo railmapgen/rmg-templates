@@ -14,6 +14,8 @@ import {
 import { MdAdd, MdHelp } from 'react-icons/md';
 import useTemplates from '../hooks/use-templates';
 import { RmgLoader } from '@railmapgen/rmg-components';
+import RmgParamAppClip from '../app-clip/rmg-param-app-clip';
+import { useState } from 'react';
 
 export default function TemplatesSection() {
     const { t } = useTranslation();
@@ -22,9 +24,18 @@ export default function TemplatesSection() {
     const { company, templates } = useRootSelector(state => state.ticket);
     const { templates: templateList, isLoading } = useTemplates(company);
 
+    const [templateIdForAppClip, setTemplateIdForAppClip] = useState<string>();
+
     const handleLineChange = (entryId: string, line: string) => {
         const existingTemplate = templateList.find(entry => entry.filename === line);
         dispatch(setTemplateLineById({ id: entryId, line, name: existingTemplate?.name }));
+    };
+
+    const handleParamImport = (param: Record<string, any>) => {
+        if (templateIdForAppClip) {
+            dispatch(setTemplateParamById({ id: templateIdForAppClip, param }));
+        }
+        setTemplateIdForAppClip(undefined);
     };
 
     return (
@@ -56,6 +67,7 @@ export default function TemplatesSection() {
                     onMajorFlagChange={majorUpdate => dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))}
                     onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
                     onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
+                    onParamImport={() => setTemplateIdForAppClip(entry.id)}
                     onRemove={() => dispatch(removeTemplate(entry.id))}
                 />
             ))}
@@ -65,6 +77,12 @@ export default function TemplatesSection() {
                     {t('Add item')}
                 </Button>
             </HStack>
+
+            <RmgParamAppClip
+                templateId={templateIdForAppClip}
+                onClose={() => setTemplateIdForAppClip(undefined)}
+                onImport={handleParamImport}
+            />
         </Box>
     );
 }
