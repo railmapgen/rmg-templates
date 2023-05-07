@@ -2,12 +2,31 @@ import { TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
-import { IconButton, Input } from '@chakra-ui/react';
-import { ChangeEvent } from 'react';
+import { Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } from '@chakra-ui/react';
+import { ChangeEvent, useRef } from 'react';
 import { readFileAsText } from '../../util/utils';
-import { MdClose } from 'react-icons/md';
+import { MdClose, MdInsertDriveFile } from 'react-icons/md';
 import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import useTemplates from '../hooks/use-templates';
+
+const style: SystemStyleObject = {
+    position: 'relative',
+
+    '& > div': {
+        overflow: 'hidden',
+    },
+
+    '& > div:last-of-type': {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        minW: 120,
+
+        '& input': {
+            display: 'none',
+        },
+    },
+};
 
 interface TemplateEntryCardProps {
     company: string;
@@ -16,7 +35,8 @@ interface TemplateEntryCardProps {
     onNewLineChange: (newLine: string) => void;
     onMajorFlagChange: (majorUpdate: boolean) => void;
     onLineNameChange: (lang: string, name: string) => void;
-    onParamChange: (param: Record<string, any>) => void;
+    onParamChange: (param?: Record<string, any>) => void;
+    onParamImport: () => void;
     onRemove: () => void;
 }
 
@@ -29,14 +49,16 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         onMajorFlagChange,
         onLineNameChange,
         onParamChange,
+        onParamImport,
         onRemove,
     } = props;
-    const { line, newLine, majorUpdate, templateName } = templateEntry;
+    const { line, newLine, majorUpdate, templateName, param } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
 
     const { templates } = useTemplates(company);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -82,12 +104,6 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             minW: 150,
         },
         {
-            type: 'custom',
-            label: t('Configuration file'),
-            component: <Input variant="flushed" size="xs" type="file" accept=".json" onChange={handleFileUpload} />,
-            minW: 250,
-        },
-        {
             type: 'input',
             label: t('Line code'),
             placeholder: 'e.g. twl, gz1, sh1',
@@ -116,7 +132,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
     });
 
     return (
-        <RmgCard position="relative" direction="column">
+        <RmgCard sx={style}>
             <IconButton
                 size="sm"
                 variant="ghost"
@@ -130,6 +146,35 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
                 onClick={onRemove}
             />
             <RmgFields fields={[...fields, ...languageFields]} minW={110} />
+
+            <VStack>
+                {param ? (
+                    <>
+                        <Icon as={MdInsertDriveFile} boxSize={10} />
+                        <Text as="i" fontSize="xs">
+                            ({t('Size')}: {JSON.stringify(param).length} {t('chars')})
+                        </Text>
+                        <Button size="sm" onClick={() => onParamChange(undefined)}>
+                            {t('Remove')}
+                        </Button>
+                    </>
+                ) : (
+                    <>
+                        <Text as="i" fontSize="sm">
+                            {t('Import from')}
+                        </Text>
+                        <HStack spacing={1}>
+                            <Button size="sm" onClick={onParamImport}>
+                                RMG
+                            </Button>
+                            <Button size="sm" onClick={() => inputRef.current?.click()}>
+                                {t('Local')}
+                            </Button>
+                            <input ref={inputRef} type="file" accept=".json" onChange={handleFileUpload} />
+                        </HStack>
+                    </>
+                )}
+            </VStack>
         </RmgCard>
     );
 }

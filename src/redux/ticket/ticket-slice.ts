@@ -106,7 +106,7 @@ const ticketSlice = createSlice({
             );
         },
 
-        setTemplateParamById: (state, action: PayloadAction<{ id: string; param: Record<string, any> }>) => {
+        setTemplateParamById: (state, action: PayloadAction<{ id: string; param?: Record<string, any> }>) => {
             state.templates = state.templates.map(entry =>
                 entry.id === action.payload.id ? { ...entry, param: action.payload.param } : entry
             );
