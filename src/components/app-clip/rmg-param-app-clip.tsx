@@ -1,9 +1,19 @@
-import { Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
+import { SystemStyleObject } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
-import { useRootDispatch } from '../../redux';
+import { RmgAppClip } from '@railmapgen/rmg-components';
 
 const CHANNEL_PREFIX = 'rmg-bridge--';
+
+const styles: SystemStyleObject = {
+    h: 500,
+    maxH: '70%',
+
+    '& iframe': {
+        h: '100%',
+        w: '100%',
+    },
+};
 
 interface RmgAppClipProps {
     templateId?: string;
@@ -13,8 +23,6 @@ interface RmgAppClipProps {
 
 export default function RmgParamAppClip(props: RmgAppClipProps) {
     const { templateId, onClose, onImport } = props;
-
-    const dispatch = useRootDispatch();
 
     const [appClipId] = useState(crypto.randomUUID());
     const frameUrl =
@@ -42,11 +50,8 @@ export default function RmgParamAppClip(props: RmgAppClipProps) {
     }, [templateId]);
 
     return (
-        <Modal isOpen={!!templateId} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent h={500} maxH="70%">
-                <iframe src={frameUrl} loading="lazy" width="100%" height="100%" />
-            </ModalContent>
-        </Modal>
+        <RmgAppClip isOpen={!!templateId} onClose={onClose} sx={styles}>
+            <iframe src={frameUrl} loading="lazy" />
+        </RmgAppClip>
     );
 }
