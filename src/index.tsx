@@ -31,5 +31,5 @@ rmgRuntime
     })
     .then(() => {
         renderApp();
-        rmgRuntime.injectCss();
+        rmgRuntime.injectUITools();
     });
