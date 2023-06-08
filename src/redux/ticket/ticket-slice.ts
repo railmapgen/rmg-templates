@@ -29,6 +29,7 @@ export interface TicketState {
     company: string; // new, (empty), companyCode
     newCompany: string;
     companyName: Record<SupportedLanguageCode, string>;
+    companyOptionalName: [LanguageCode, string][];
 
     // templates
     templates: TemplateTicketEntry[];
@@ -38,6 +39,7 @@ const initialState: TicketState = {
     company: '',
     newCompany: '',
     companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
+    companyOptionalName: [['ko', '']],
     templates: [],
 };
 
@@ -59,6 +61,10 @@ const ticketSlice = createSlice({
         setCompanyNameByLang: (state, action: PayloadAction<{ lang: SupportedLanguageCode; name: string }>) => {
             const { lang, name } = action.payload;
             state.companyName[lang] = name;
+        },
+
+        setCompanyOptionalName: (state, action: PayloadAction<[LanguageCode, string][]>) => {
+            state.companyOptionalName = action.payload;
         },
 
         addTemplate: state => {
@@ -250,6 +256,7 @@ export const {
     setCompany,
     setNewCompany,
     setCompanyNameByLang,
+    setCompanyOptionalName,
     addTemplate,
     setTemplateLineById,
     setTemplateNewLineById,
