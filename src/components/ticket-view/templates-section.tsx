@@ -9,6 +9,7 @@ import {
     setTemplateLineNameById,
     setTemplateMajorFlagById,
     setTemplateNewLineById,
+    setTemplateOptionalNameById,
     setTemplateParamById,
 } from '../../redux/ticket/ticket-slice';
 import { MdAdd, MdHelp } from 'react-icons/md';
@@ -66,6 +67,9 @@ export default function TemplatesSection() {
                     onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
                     onMajorFlagChange={majorUpdate => dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))}
                     onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
+                    onOptionalNameChange={optionalName =>
+                        dispatch(setTemplateOptionalNameById({ id: entry.id, optionalName }))
+                    }
                     onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
                     onParamImport={() => setTemplateIdForAppClip(entry.id)}
                     onRemove={() => dispatch(removeTemplate(entry.id))}
