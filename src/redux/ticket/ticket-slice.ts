@@ -18,7 +18,7 @@ const initTemplateEntry = (): TemplateTicketEntry => ({
     line: '',
     newLine: '',
     majorUpdate: false,
-    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
+    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
     param: undefined,
 });
 
@@ -35,7 +35,7 @@ export interface TicketState {
 const initialState: TicketState = {
     company: '',
     newCompany: '',
-    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
+    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
     templates: [],
 };
 
@@ -45,6 +45,9 @@ const ticketSlice = createSlice({
     reducers: {
         setCompany: (state, action: PayloadAction<string>) => {
             state.company = action.payload;
+            if (action.payload === 'new') {
+                state.templates = state.templates.map(entry => ({ ...entry, line: 'new' }));
+            }
         },
 
         setNewCompany: (state, action: PayloadAction<string>) => {
@@ -71,8 +74,7 @@ const ticketSlice = createSlice({
             if (name) {
                 nextEntry.templateName.en = name.en ?? '';
                 nextEntry.templateName['zh-Hans'] = name['zh-Hans'] ?? '';
-                nextEntry.templateName['zh-Hant'] = name['zh-Hant'] ?? name['zh-HK'] ?? name['zh-TW'] ?? '';
-                nextEntry.templateName.ko = name.ko ?? '';
+                nextEntry.templateName['zh-Hant'] = name['zh-Hant'] ?? '';
             }
 
             state.templates = state.templates.map(entry => (entry.id === id ? nextEntry : entry));

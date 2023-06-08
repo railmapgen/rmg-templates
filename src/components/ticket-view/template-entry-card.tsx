@@ -127,7 +127,6 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             label: translateName(LANGUAGE_NAMES[lang]),
             value: templateName[lang],
             onChange: value => onLineNameChange(lang, value),
-            minW: lang === 'en' ? 260 : undefined,
         };
     });
 
