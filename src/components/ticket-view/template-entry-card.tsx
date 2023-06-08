@@ -2,11 +2,11 @@ import { TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
-import { Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } from '@chakra-ui/react';
 import { ChangeEvent, useRef } from 'react';
 import { readFileAsText } from '../../util/utils';
-import { MdClose, MdInsertDriveFile } from 'react-icons/md';
-import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
+import { MdAdd, MdClose, MdDelete, MdInsertDriveFile } from 'react-icons/md';
+import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import useTemplates from '../hooks/use-templates';
 
 const style: SystemStyleObject = {
@@ -14,6 +14,17 @@ const style: SystemStyleObject = {
 
     '& > div': {
         overflow: 'hidden',
+    },
+
+    '& > div:first-of-type': {
+        '& > div': {
+            width: '100%',
+        },
+
+        '& > button': {
+            width: '100%',
+            my: 2,
+        },
     },
 
     '& > div:last-of-type': {
@@ -35,6 +46,7 @@ interface TemplateEntryCardProps {
     onNewLineChange: (newLine: string) => void;
     onMajorFlagChange: (majorUpdate: boolean) => void;
     onLineNameChange: (lang: string, name: string) => void;
+    onOptionalNameChange: (optionalName: [LanguageCode, string][]) => void;
     onParamChange: (param?: Record<string, any>) => void;
     onParamImport: () => void;
     onRemove: () => void;
@@ -48,11 +60,12 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         onNewLineChange,
         onMajorFlagChange,
         onLineNameChange,
+        onOptionalNameChange,
         onParamChange,
         onParamImport,
         onRemove,
     } = props;
-    const { line, newLine, majorUpdate, templateName, param } = templateEntry;
+    const { line, newLine, majorUpdate, templateName, optionalName, param } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
@@ -130,6 +143,57 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         };
     });
 
+    const getOptionalLanguageFields = (lang: LanguageCode, name: string): RmgFieldsField[] => {
+        return [
+            {
+                type: 'select',
+                label: t('Language'),
+                value: lang,
+                options: Object.entries(LANGUAGE_NAMES).reduce(
+                    (acc, cur) => ({
+                        ...acc,
+                        [cur[0]]: translateName(cur[1]),
+                    }),
+                    {} as Record<LanguageCode, string>
+                ),
+                disabledOptions: Object.keys(LANGUAGE_NAMES)
+                    .filter(l => SUPPORTED_LANGUAGES.includes(l as any) || optionalName.some(entry => entry[0] === l))
+                    .filter(l => l !== lang),
+                onChange: value => handleLanguageSwitch(lang, value as LanguageCode),
+            },
+            {
+                type: 'input',
+                label: t('Name'),
+                value: name,
+                onChange: value => handleUpdateOptionalName(lang, value),
+                validator: value => !!value,
+            },
+        ];
+    };
+
+    const handleAddOptionalName = () => {
+        const availableLanguages = Object.keys(LANGUAGE_NAMES).filter(
+            l => !SUPPORTED_LANGUAGES.includes(l as any) && !optionalName.some(entry => entry[0] === l)
+        ) as LanguageCode[];
+        if (availableLanguages.includes('ko')) {
+            onOptionalNameChange([...optionalName, ['ko', '']]);
+        } else {
+            onOptionalNameChange([...optionalName, [availableLanguages[0], '']]);
+        }
+    };
+
+    const handleLanguageSwitch = (prevLang: LanguageCode, nextLang: LanguageCode) => {
+        onOptionalNameChange(optionalName.map(entry => (entry[0] === prevLang ? [nextLang, entry[1]] : entry)));
+    };
+
+    const handleUpdateOptionalName = (lang: LanguageCode, name: string) => {
+        onOptionalNameChange(optionalName.map(entry => (entry[0] === lang ? [entry[0], name] : entry)));
+    };
+
+    const handleRemoveOptionalName = (lang: LanguageCode) => {
+        onOptionalNameChange(optionalName.filter(entry => entry[0] !== lang));
+    };
+
     return (
         <RmgCard sx={style}>
             <IconButton
@@ -144,7 +208,45 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
                 zIndex={5}
                 onClick={onRemove}
             />
-            <RmgFields fields={[...fields, ...languageFields]} minW={110} />
+
+            <VStack spacing={0}>
+                <RmgFields fields={[...fields, ...languageFields]} minW={110} />
+
+                {optionalName.length === 0 && (
+                    <Button variant="ghost" size="sm" leftIcon={<MdAdd />} onClick={handleAddOptionalName}>
+                        {t('Add more translations')}
+                    </Button>
+                )}
+
+                {optionalName.map(([lang, name], idx, arr) => (
+                    <HStack key={lang}>
+                        <RmgFields fields={getOptionalLanguageFields(lang, name)} noLabel={idx > 0} />
+                        {idx === arr.length - 1 ? (
+                            <IconButton
+                                size="sm"
+                                variant="ghost"
+                                aria-label={t('Add translation')}
+                                title={t('Add translation')}
+                                onClick={handleAddOptionalName}
+                                icon={<MdAdd />}
+                            />
+                        ) : (
+                            <Box minW={8} />
+                        )}
+
+                        {
+                            <IconButton
+                                size="sm"
+                                variant="ghost"
+                                aria-label={t('Remove this translation')}
+                                title={t('Remove this translation')}
+                                onClick={() => handleRemoveOptionalName(lang as LanguageCode)}
+                                icon={<MdDelete />}
+                            />
+                        }
+                    </HStack>
+                ))}
+            </VStack>
 
             <VStack>
                 {param ? (
