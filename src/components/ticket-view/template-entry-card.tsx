@@ -6,8 +6,9 @@ import { Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } fro
 import { ChangeEvent, useRef } from 'react';
 import { readFileAsText } from '../../util/utils';
 import { MdClose, MdInsertDriveFile } from 'react-icons/md';
-import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
+import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import useTemplates from '../hooks/use-templates';
+import OptionalLanguageEntries from './optional-language-entries';
 
 const style: SystemStyleObject = {
     position: 'relative',
@@ -35,6 +36,7 @@ interface TemplateEntryCardProps {
     onNewLineChange: (newLine: string) => void;
     onMajorFlagChange: (majorUpdate: boolean) => void;
     onLineNameChange: (lang: string, name: string) => void;
+    onOptionalNameChange: (optionalName: [LanguageCode, string][]) => void;
     onParamChange: (param?: Record<string, any>) => void;
     onParamImport: () => void;
     onRemove: () => void;
@@ -48,11 +50,12 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         onNewLineChange,
         onMajorFlagChange,
         onLineNameChange,
+        onOptionalNameChange,
         onParamChange,
         onParamImport,
         onRemove,
     } = props;
-    const { line, newLine, majorUpdate, templateName, param } = templateEntry;
+    const { line, newLine, majorUpdate, templateName, optionalName, param } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
@@ -127,7 +130,6 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             label: translateName(LANGUAGE_NAMES[lang]),
             value: templateName[lang],
             onChange: value => onLineNameChange(lang, value),
-            minW: lang === 'en' ? 260 : undefined,
         };
     });
 
@@ -145,7 +147,11 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
                 zIndex={5}
                 onClick={onRemove}
             />
-            <RmgFields fields={[...fields, ...languageFields]} minW={110} />
+
+            <VStack spacing={0}>
+                <RmgFields fields={[...fields, ...languageFields]} minW={110} />
+                <OptionalLanguageEntries optionalName={optionalName} onChange={onOptionalNameChange} />
+            </VStack>
 
             <VStack>
                 {param ? (

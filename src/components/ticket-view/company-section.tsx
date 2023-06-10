@@ -3,8 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import useTranslatedName from '../hooks/use-translated-name';
-import { setCompany, setCompanyNameByLang, setNewCompany } from '../../redux/ticket/ticket-slice';
+import {
+    setCompany,
+    setCompanyNameByLang,
+    setCompanyOptionalName,
+    setNewCompany,
+} from '../../redux/ticket/ticket-slice';
 import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
+import OptionalLanguageEntries from './optional-language-entries';
 
 export default function CompanySection() {
     const { t, i18n } = useTranslation();
@@ -12,7 +18,7 @@ export default function CompanySection() {
 
     const dispatch = useRootDispatch();
     const { companyConfig } = useRootSelector(state => state.app);
-    const { company, newCompany, companyName } = useRootSelector(state => state.ticket);
+    const { company, newCompany, companyName, companyOptionalName } = useRootSelector(state => state.ticket);
 
     const companyOptions = {
         ...companyConfig
@@ -64,6 +70,12 @@ export default function CompanySection() {
             <RmgCard direction="column">
                 <RmgFields fields={fields} />
                 {company === 'new' && <RmgFields fields={languageFields} />}
+                {company === 'new' && (
+                    <OptionalLanguageEntries
+                        optionalName={companyOptionalName}
+                        onChange={optionalName => dispatch(setCompanyOptionalName(optionalName))}
+                    />
+                )}
             </RmgCard>
         </Box>
     );

@@ -74,6 +74,10 @@ const updateCompanyConfig = async (company: string, name: Record<string, any>) =
     const configPath = path.join(resourcesPath, 'other-company-config.json');
     const configJsonStr = await readFile(configPath, 'utf-8');
     let companyConfig = JSON.parse(configJsonStr) as CompanyEntry[];
+    if (companyConfig.some(entry => entry.id === company)) {
+        console.log(`Skip company config update as ${company} already exists`);
+        return;
+    }
 
     const config: CompanyEntry = { id: company, name };
     companyConfig = [...new Set(companyConfig.concat(config))].sort((a, b) => {
