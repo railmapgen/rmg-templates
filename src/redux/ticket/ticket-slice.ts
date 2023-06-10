@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
 import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
-import { SupportedLanguageCode, Translation } from '@railmapgen/rmg-translate';
+import { LanguageCode, SUPPORTED_LANGUAGES, SupportedLanguageCode, Translation } from '@railmapgen/rmg-translate';
 
 export interface TemplateTicketEntry {
     id: string;
@@ -10,15 +10,17 @@ export interface TemplateTicketEntry {
     newLine: string;
     majorUpdate: boolean;
     templateName: Record<SupportedLanguageCode, string>;
+    optionalName: [LanguageCode, string][];
     param?: Record<string, any>;
 }
 
-const initTemplateEntry = (): TemplateTicketEntry => ({
+export const initTemplateEntry = (): TemplateTicketEntry => ({
     id: crypto.randomUUID(),
     line: '',
     newLine: '',
     majorUpdate: false,
-    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
+    templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
+    optionalName: [['ko', '']],
     param: undefined,
 });
 
@@ -27,6 +29,7 @@ export interface TicketState {
     company: string; // new, (empty), companyCode
     newCompany: string;
     companyName: Record<SupportedLanguageCode, string>;
+    companyOptionalName: [LanguageCode, string][];
 
     // templates
     templates: TemplateTicketEntry[];
@@ -35,7 +38,8 @@ export interface TicketState {
 const initialState: TicketState = {
     company: '',
     newCompany: '',
-    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '', ko: '' },
+    companyName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
+    companyOptionalName: [['ko', '']],
     templates: [],
 };
 
@@ -45,6 +49,9 @@ const ticketSlice = createSlice({
     reducers: {
         setCompany: (state, action: PayloadAction<string>) => {
             state.company = action.payload;
+            if (action.payload === 'new') {
+                state.templates = state.templates.map(entry => ({ ...entry, line: 'new' }));
+            }
         },
 
         setNewCompany: (state, action: PayloadAction<string>) => {
@@ -54,6 +61,10 @@ const ticketSlice = createSlice({
         setCompanyNameByLang: (state, action: PayloadAction<{ lang: SupportedLanguageCode; name: string }>) => {
             const { lang, name } = action.payload;
             state.companyName[lang] = name;
+        },
+
+        setCompanyOptionalName: (state, action: PayloadAction<[LanguageCode, string][]>) => {
+            state.companyOptionalName = action.payload;
         },
 
         addTemplate: state => {
@@ -69,10 +80,16 @@ const ticketSlice = createSlice({
 
             // populate line names
             if (name) {
-                nextEntry.templateName.en = name.en ?? '';
-                nextEntry.templateName['zh-Hans'] = name['zh-Hans'] ?? '';
-                nextEntry.templateName['zh-Hant'] = name['zh-Hant'] ?? name['zh-HK'] ?? name['zh-TW'] ?? '';
-                nextEntry.templateName.ko = name.ko ?? '';
+                nextEntry.templateName = SUPPORTED_LANGUAGES.reduce(
+                    (acc, cur) => ({
+                        ...acc,
+                        [cur]: name[cur] ?? '',
+                    }),
+                    {} as Record<SupportedLanguageCode, string>
+                );
+                nextEntry.optionalName = (Object.entries(name) as [LanguageCode, string][]).filter(
+                    ([lang]) => !SUPPORTED_LANGUAGES.includes(lang as any)
+                );
             }
 
             state.templates = state.templates.map(entry => (entry.id === id ? nextEntry : entry));
@@ -103,6 +120,18 @@ const ticketSlice = createSlice({
                           templateName: { ...entry.templateName, [action.payload.lang]: action.payload.name },
                       }
                     : entry
+            );
+        },
+
+        setTemplateOptionalNameById: (
+            state,
+            action: PayloadAction<{
+                id: string;
+                optionalName: [LanguageCode, string][];
+            }>
+        ) => {
+            state.templates = state.templates.map(entry =>
+                entry.id === action.payload.id ? { ...entry, optionalName: action.payload.optionalName } : entry
             );
         },
 
@@ -139,7 +168,19 @@ export const ticketSelectors = {
         return state.templates.map(entry => {
             const line = entry.line === 'new' ? entry.newLine : entry.line;
             const major = entry.line !== 'new' && entry.majorUpdate;
-            return convertTemplateEntry(company, line, major, entry.templateName, entry.param);
+            const name = [...Object.entries(entry.templateName), ...entry.optionalName].reduce<Translation>(
+                (acc, cur) => {
+                    const value = cur[1].trim();
+                    if (value) {
+                        return { ...acc, [cur[0]]: value };
+                    } else {
+                        return acc;
+                    }
+                },
+                {}
+            );
+
+            return convertTemplateEntry(company, line, major, name, entry.param);
         });
     },
 
@@ -215,11 +256,13 @@ export const {
     setCompany,
     setNewCompany,
     setCompanyNameByLang,
+    setCompanyOptionalName,
     addTemplate,
     setTemplateLineById,
     setTemplateNewLineById,
     setTemplateMajorFlagById,
     setTemplateLineNameById,
+    setTemplateOptionalNameById,
     setTemplateParamById,
     removeTemplate,
     resetTicket,
