@@ -1,6 +1,6 @@
 import { RootStore } from './index';
 import { CompanyEntry } from '@railmapgen/rmg-templates-resources';
-import { appendCompanies } from './app/app-slice';
+import { setOtherCompanyConfig } from './app/app-slice';
 
 const $ = document.querySelector.bind(document);
 
@@ -22,7 +22,7 @@ const fetchOtherCompanyConfig = async (): Promise<CompanyEntry[]> => {
 
 const initCompanyConfig = async (store: RootStore) => {
     const companyConfig = await fetchOtherCompanyConfig();
-    store.dispatch(appendCompanies(companyConfig));
+    store.dispatch(setOtherCompanyConfig(companyConfig));
 };
 
 export default async function initStore(store: RootStore) {
