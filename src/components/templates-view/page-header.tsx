@@ -3,30 +3,21 @@ import { setSelectedCompany } from '../../redux/app/app-slice';
 import { RmgFields, RmgFieldsField, RmgPageHeader } from '@railmapgen/rmg-components';
 import { useRootSelector } from '../../redux';
 import { useTranslation } from 'react-i18next';
-import useTranslatedName from '../hooks/use-translated-name';
 import { Button, HStack } from '@chakra-ui/react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { useNavigate } from 'react-router-dom';
 import { Events } from '../../util/constant';
+import useCompanyOptions from '../hooks/use-company-options';
 
 export default function PageHeader() {
-    const { t, i18n } = useTranslation();
-    const translateName = useTranslatedName();
+    const { t } = useTranslation();
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { companyConfig, selectedCompany } = useRootSelector(state => state.app);
+    const { selectedCompany } = useRootSelector(state => state.app);
 
-    const companyOptions = companyConfig
-        .map(company => [company.id, translateName(company.name)]) // translate country name
-        .sort((a, b) => a[1].localeCompare(b[1], i18n.languages[0])) // sort
-        .reduce<Record<string, string>>(
-            (acc, cur) => {
-                return { ...acc, [cur[0]]: cur[1] };
-            },
-            { '': t('Please select...') }
-        );
+    const companyOptions = useCompanyOptions();
 
     const fields: RmgFieldsField[] = [
         {

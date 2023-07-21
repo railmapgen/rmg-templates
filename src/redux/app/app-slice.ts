@@ -2,13 +2,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CompanyEntry, coreCompanyConfig, coreTemplateList, TemplateEntry } from '@railmapgen/rmg-templates-resources';
 
 interface AppState {
-    companyConfig: CompanyEntry[];
+    coreCompanyConfig: CompanyEntry[];
+    otherCompanyConfig: CompanyEntry[];
     templateList: Record<string, TemplateEntry[]>;
     selectedCompany: string;
 }
 
 const initialState: AppState = {
-    companyConfig: coreCompanyConfig,
+    coreCompanyConfig: coreCompanyConfig,
+    otherCompanyConfig: [],
     templateList: coreTemplateList,
     selectedCompany: '',
 };
@@ -17,8 +19,8 @@ const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        appendCompanies: (state, action: PayloadAction<CompanyEntry[]>) => {
-            state.companyConfig = state.companyConfig.concat(action.payload);
+        setOtherCompanyConfig: (state, action: PayloadAction<CompanyEntry[]>) => {
+            state.otherCompanyConfig = action.payload;
         },
 
         setTemplateListByCompany: (state, action: PayloadAction<{ company: string; templates: TemplateEntry[] }>) => {
@@ -32,5 +34,5 @@ const appSlice = createSlice({
     },
 });
 
-export const { appendCompanies, setTemplateListByCompany, setSelectedCompany } = appSlice.actions;
+export const { setOtherCompanyConfig, setTemplateListByCompany, setSelectedCompany } = appSlice.actions;
 export default appSlice.reducer;

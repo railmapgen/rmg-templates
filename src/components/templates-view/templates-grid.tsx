@@ -25,13 +25,13 @@ export default function TemplatesGrid() {
     if (!templates.length) {
         return (
             <Flex h="100%" w="100%" alignItems="center" justifyContent="center">
-                <Text as="i">No templates available in selected company.</Text>
+                <Text as="i">{t('No templates available in selected company.')}</Text>
             </Flex>
         );
     }
 
     return (
-        <SimpleGrid minChildWidth={220} spacing={2} maxH="100%" overflowY="scroll">
+        <SimpleGrid minChildWidth={220} spacing={2} px={2} maxH="100%" overflowY="scroll">
             {templates.map(template => (
                 <RmgCard key={template.filename} sx={cardStyles}>
                     <Heading as="h2" size="md">
