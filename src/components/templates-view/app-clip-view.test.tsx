@@ -23,7 +23,7 @@ describe('AppClipView', () => {
     });
 
     it('Can broadcast selected template', async () => {
-        mockFetch.mockResolvedValue({ text: () => Promise.resolve(JSON.stringify({ style: 'mtr' })) });
+        mockFetch.mockResolvedValue({ json: () => Promise.resolve({ style: 'mtr' }) });
         global.fetch = mockFetch;
 
         render(<AppClipView />, { store: mockStore, route: '/import?parentId=test-id&parentComponent=vitest' });

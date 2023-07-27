@@ -51,11 +51,11 @@ export default function AppClipView() {
         try {
             setIsLoading(true);
             const res = await fetch(`/rmg-templates/resources/templates/${selectedCompany}/${selectedTemplate}.json`);
-            const data = await res.text();
+            const param = await res.json();
             channelRef.current?.postMessage({
                 event: 'IMPORT',
                 meta: { selectedCompany, selectedTemplate },
-                data,
+                data: JSON.stringify(param),
             });
             rmgRuntime.event(Events.APP_CLIP_VIEW_IMPORT, { parentComponent });
         } catch (e) {
