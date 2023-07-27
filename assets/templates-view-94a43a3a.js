@@ -1,0 +1,1 @@
+import{j as r}from"./chakra-4d1cedbe.js";import{P as e,T as s}from"./templates-grid-bdf007d4.js";import{R as t}from"./index-326f6911.js";import"./react-d5c86316.js";import"./use-templates-ba728bbf.js";function x(){return r.jsxs(t,{children:[r.jsx(e,{}),r.jsx(s,{})]})}export{x as default};
