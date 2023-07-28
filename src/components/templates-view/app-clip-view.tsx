@@ -21,7 +21,7 @@ export default function AppClipView() {
     const parentId = searchParams.get('parentId');
     const parentComponent = searchParams.get('parentComponent');
 
-    const { selectedCompany } = useRootSelector(state => state.app);
+    const { selectedCompany, coreCompanyConfig, otherCompanyConfig } = useRootSelector(state => state.app);
     const [selectedTemplate, setSelectedTemplate] = useState<TemplateEntry>();
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -37,8 +37,14 @@ export default function AppClipView() {
             `[${channelRef.current?.name}] App clip connection established, parentComponent=${parentComponent}`
         );
 
+        // reset window header margin
+        const styleEl = document.createElement('style');
+        styleEl.textContent = `.rmg-window__header{margin-left: unset;}`;
+        document.head.appendChild(styleEl);
+
         return () => {
             channelRef.current?.close();
+            document.head.removeChild(styleEl);
         };
     }, []);
 
@@ -50,11 +56,14 @@ export default function AppClipView() {
         if (!selectedTemplate) {
             return;
         }
-        const { filename, name } = selectedTemplate;
-
+        const { filename, name: templateName } = selectedTemplate;
         console.log(
             `[${channelRef.current?.name}] Emitting IMPORT event, company=${selectedCompany}, template=${filename}`
         );
+
+        const companyName =
+            [...coreCompanyConfig, ...otherCompanyConfig].find(company => company.id === selectedCompany)?.name ?? {};
+        const displayName = translateName(companyName) + ' ' + translateName(templateName);
 
         try {
             setIsLoading(true);
@@ -62,7 +71,7 @@ export default function AppClipView() {
             const data = await res.json();
             channelRef.current?.postMessage({
                 event: 'IMPORT',
-                meta: { company: selectedCompany, filename, name: translateName(name) },
+                meta: { company: selectedCompany, filename, name: displayName },
                 data,
             });
             rmgRuntime.event(Events.APP_CLIP_VIEW_IMPORT, { parentComponent, company: selectedCompany, filename });
