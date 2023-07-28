@@ -5,7 +5,7 @@ import { RmgCard } from '@railmapgen/rmg-components';
 import useTranslatedName from '../hooks/use-translated-name';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import {TemplateEntry} from "@railmapgen/rmg-templates-resources";
+import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
 
 const cardStyles: SystemStyleObject = {
     flexDirection: 'column',
