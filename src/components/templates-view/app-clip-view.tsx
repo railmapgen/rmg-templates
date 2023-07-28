@@ -8,18 +8,21 @@ import { useTranslation } from 'react-i18next';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import { useSearchParams } from 'react-router-dom';
+import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import useTranslatedName from '../hooks/use-translated-name';
 
 const CHANNEL_PREFIX = 'rmg-templates-bridge--';
 
 export default function AppClipView() {
     const { t } = useTranslation();
+    const translateName = useTranslatedName();
 
     const [searchParams] = useSearchParams();
     const parentId = searchParams.get('parentId');
     const parentComponent = searchParams.get('parentComponent');
 
     const { selectedCompany } = useRootSelector(state => state.app);
-    const [selectedTemplate, setSelectedTemplate] = useState<string>();
+    const [selectedTemplate, setSelectedTemplate] = useState<TemplateEntry>();
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -44,20 +47,25 @@ export default function AppClipView() {
     }, [selectedCompany]);
 
     const handleImport = async () => {
+        if (!selectedTemplate) {
+            return;
+        }
+        const { filename, name } = selectedTemplate;
+
         console.log(
-            `[${channelRef.current?.name}] Emitting IMPORT event, company=${selectedCompany}, template=${selectedTemplate}`
+            `[${channelRef.current?.name}] Emitting IMPORT event, company=${selectedCompany}, template=${filename}`
         );
 
         try {
             setIsLoading(true);
-            const res = await fetch(`/rmg-templates/resources/templates/${selectedCompany}/${selectedTemplate}.json`);
-            const param = await res.json();
+            const res = await fetch(`/rmg-templates/resources/templates/${selectedCompany}/${filename}.json`);
+            const data = await res.json();
             channelRef.current?.postMessage({
                 event: 'IMPORT',
-                meta: { selectedCompany, selectedTemplate },
-                data: JSON.stringify(param),
+                meta: { company: selectedCompany, filename, name: translateName(name) },
+                data,
             });
-            rmgRuntime.event(Events.APP_CLIP_VIEW_IMPORT, { parentComponent });
+            rmgRuntime.event(Events.APP_CLIP_VIEW_IMPORT, { parentComponent, company: selectedCompany, filename });
         } catch (e) {
             setIsError(true);
         } finally {
