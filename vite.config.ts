@@ -18,9 +18,8 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    react: ['react', 'react-dom', 'react-router-dom', '@reduxjs/toolkit'],
+                    react: ['react', 'react-dom', 'react-router-dom', '@reduxjs/toolkit', 'react-i18next'],
                     chakra: ['@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion', 'react-icons'],
-                    'ag-grid': ['ag-grid-community', 'ag-grid-react'],
                 },
             },
         },

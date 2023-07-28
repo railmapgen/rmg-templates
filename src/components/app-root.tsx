@@ -1,14 +1,15 @@
 import React, { lazy } from 'react';
 import WindowHeader from './window-header';
 import { RmgErrorBoundary, RmgLoader, RmgThemeProvider, RmgWindow } from '@railmapgen/rmg-components';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 const TemplatesView = lazy(() => import('./templates-view/templates-view'));
+const AppClipView = lazy(() => import('./templates-view/app-clip-view'));
 const TicketView = lazy(() => import('./ticket-view/ticket-view'));
 
 export default function AppRoot() {
     return (
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <HashRouter>
             <RmgThemeProvider>
                 <RmgWindow>
                     <WindowHeader />
@@ -18,6 +19,14 @@ export default function AppRoot() {
                             element={
                                 <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
                                     <TicketView />
+                                </RmgErrorBoundary>
+                            }
+                        />
+                        <Route
+                            path="/import"
+                            element={
+                                <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                    <AppClipView />
                                 </RmgErrorBoundary>
                             }
                         />
@@ -32,6 +41,6 @@ export default function AppRoot() {
                     </Routes>
                 </RmgWindow>
             </RmgThemeProvider>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
