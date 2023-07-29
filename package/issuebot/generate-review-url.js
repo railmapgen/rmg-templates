@@ -9,7 +9,7 @@ console.log('REVIEW_URLS<<EOF');
 console.log('**Review links**');
 files.forEach(file => {
     const externalUrl = baseUrl + gitHash + templatesPath + file;
-    const fullUrl = `${rmgUrl}?external=${encodeURIComponent(externalUrl)}`;
+    const fullUrl = `${rmgUrl}#/?external=${encodeURIComponent(externalUrl)}`;
     console.log(`[${file}](${fullUrl})`);
 });
 console.log('EOF');
