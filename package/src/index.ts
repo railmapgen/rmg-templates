@@ -1,4 +1,5 @@
-import companyConfigJson from './templates/company-config.json';
+import coreCompanyConfigJson from './templates/core-company-config.json';
+import otherCompanyConfigJson from './templates/other-company-config.json';
 import templateConfigsJson from './templates/template-configs.json';
 import { Translation } from '@railmapgen/rmg-translate';
 
@@ -20,5 +21,6 @@ export interface TemplateEntry {
     style?: RmgStyle;
 }
 
-export const coreCompanyConfig = companyConfigJson as CompanyEntry[];
+export const coreCompanyConfig = coreCompanyConfigJson as CompanyEntry[];
+export const otherCompanyConfig = otherCompanyConfigJson as CompanyEntry[];
 export const coreTemplateList = templateConfigsJson as Record<string, TemplateEntry[]>;
