@@ -18,13 +18,15 @@ const copyCompanyConfig = async () => {
     console.log('Copying company ID list...');
 
     // read source file
-    const companyConfigStr = await readFile(path.join(sourcePath, 'core-company-config.json'), 'utf-8');
+    const coreCompanyConfigStr = await readFile(path.join(sourcePath, 'core-company-config.json'), 'utf-8');
+    const otherCompanyConfigStr = await readFile(path.join(sourcePath, 'other-company-config.json'), 'utf-8');
 
     // copy to target dir
     await mkdir(targetPath, { recursive: true });
-    await writeFile(path.join(targetPath, 'company-config.json'), companyConfigStr);
+    await writeFile(path.join(targetPath, 'core-company-config.json'), coreCompanyConfigStr);
+    await writeFile(path.join(targetPath, 'other-company-config.json'), otherCompanyConfigStr);
 
-    companyConfig = JSON.parse(companyConfigStr);
+    companyConfig = JSON.parse(coreCompanyConfigStr);
 };
 
 const createTemplateConfigsFile = async () => {
