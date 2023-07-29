@@ -1,27 +1,28 @@
 {
     "svgWidth": {
-        "destination": 1500,
-        "runin": 1500,
-        "railmap": 2500,
-        "indoor": 2500
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 5000,
+        "indoor": 1200
     },
-    "svg_height": 420,
-    "style": "shmetro",
+    "svg_height": 400,
+    "style": "mtr",
     "y_pc": 50,
-    "padding": 5,
-    "direction": "l",
-    "platform_num": "",
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "1",
     "theme": [
-        "other",
-        "other",
-        "#7ebb44",
+        "paris",
+        "rere",
+        "#D682B5",
         "#fff"
     ],
     "line_name": [
-        "4号线",
-        "Line 4"
+        "RER快铁E线",
+        "Ligne E du RER d'Île-de-France"
     ],
-    "current_stn_idx": "DjmlGr",
+    "current_stn_idx": "a1-HZ2",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,30 +36,30 @@
             ],
             "parents": [],
             "children": [
-                "ulQpl8"
+                "a1-HZ2"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "ulQpl8": {
+        "a1-HZ2": {
             "name": [
-                "慈城",
-                "Cicheng"
+                "奥斯曼-圣拉扎尔车站",
+                "Haussmann Saint-Lazare"
             ],
             "secondaryName": false,
             "num": "01",
@@ -69,30 +70,103 @@
                 "linestart"
             ],
             "children": [
-                "UGL2cF"
+                "Ngp7V0"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
-                        "lines": []
+                        "lines": [
+                            {
+                                "theme": [
+                                    "paris",
+                                    "rera",
+                                    "#E3051C",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "RER快铁A线",
+                                    "Ligne A du RER d'Île-de-France"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m3",
+                                    "#9F9825",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Ligne 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m9",
+                                    "#D5C900",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "9号线",
+                                    "Ligne 9"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m12",
+                                    "#00814F",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "12号线",
+                                    "Ligne 12"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m13",
+                                    "#98D4E2",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "13号线",
+                                    "Ligne 13"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m14",
+                                    "#662483",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "14号线",
+                                    "Ligne 14"
+                                ]
+                            }
+                        ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
-            "facility": "",
+            "facility": "hsr",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "YGkThc": {
+        "Ngp7V0": {
             "name": [
-                "东钱湖",
-                "Dongqian Lake"
+                "巴黎北站-马尚塔",
+                "Gare du Nord Magenta"
             ],
             "secondaryName": false,
             "num": "02",
@@ -100,25 +174,91 @@
                 "local"
             ],
             "parents": [
-                "5_3hTH"
+                "a1-HZ2"
             ],
             "children": [
-                "lineend"
+                "dko5L8"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
-                        "lines": []
+                        "lines": [
+                            {
+                                "theme": [
+                                    "paris",
+                                    "rerb",
+                                    "#5291CE",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "RER快铁B线",
+                                    "Ligne B du RER d'Île-de-France"
+                                ],
+                                "facility": "airport"
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "rerd",
+                                    "#009E59",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "RER快铁D线",
+                                    "Ligne D du RER d'Île-de-France"
+                                ],
+                                "facility": ""
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m2",
+                                    "#0064B0",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Ligne 2"
+                                ],
+                                "facility": ""
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m4",
+                                    "#C04191",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Ligne 4"
+                                ],
+                                "facility": ""
+                            },
+                            {
+                                "theme": [
+                                    "paris",
+                                    "m5",
+                                    "#F28E42",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Ligne 5"
+                                ],
+                                "facility": ""
+                            }
+                        ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
-            "facility": "",
+            "facility": "hsr",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
@@ -134,31 +274,35 @@
                 "local"
             ],
             "parents": [
-                "YGkThc"
+                "O6Wpms",
+                "Kx_OeM"
             ],
             "children": [],
             "branch": {
-                "left": [],
+                "left": [
+                    "through",
+                    "Kx_OeM"
+                ],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "UGL2cF": {
+        "dko5L8": {
             "name": [
-                "官山河",
-                "Guanshanhe"
+                "罗莎·帕克斯",
+                "Rosa Parks"
             ],
             "secondaryName": false,
             "num": "00",
@@ -166,352 +310,46 @@
                 "local"
             ],
             "parents": [
-                "ulQpl8"
+                "Ngp7V0"
             ],
             "children": [
-                "u4tSCc"
+                "q_DOw2"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "u4tSCc": {
-            "name": [
-                "长兴路",
-                "Changxing Rd"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "UGL2cF"
-            ],
-            "children": [
-                "SWsIoC"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "SWsIoC": {
-            "name": [
-                "金山路",
-                "Jinshan Rd"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "u4tSCc"
-            ],
-            "children": [
-                "t9Rlk3"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "t9Rlk3": {
-            "name": [
-                "奥体中心",
-                "Olympic Sports Center"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "SWsIoC"
-            ],
-            "children": [
-                "4y2KmJ"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "4y2KmJ": {
-            "name": [
-                "洪大路",
-                "Hongda Rd"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "t9Rlk3"
-            ],
-            "children": [
-                "TVlNdr"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "TVlNdr": {
-            "name": [
-                "庄桥火车站",
-                "Zhuangqiao Railway Station"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "4y2KmJ"
-            ],
-            "children": [
-                "kpGP_b"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "kpGP_b": {
-            "name": [
-                "丽江路",
-                "Lijiang Rd"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "TVlNdr"
-            ],
-            "children": [
-                "x8eXkL"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "x8eXkL": {
-            "name": [
-                "双东路",
-                "Shuangdong Rd"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "kpGP_b"
-            ],
-            "children": [
-                "H0zSOX"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "H0zSOX": {
-            "name": [
-                "翠柏里",
-                "Cuibaili"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "x8eXkL"
-            ],
-            "children": [
-                "keo1HT"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "keo1HT": {
-            "name": [
-                "大卿桥",
-                "Daqing Bridge"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "H0zSOX"
-            ],
-            "children": [
-                "xBZ-U4"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#1a88bd",
+                                    "paris",
+                                    "t3b",
+                                    "#009E59",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "1号线",
-                                    "Line 1"
+                                    "有轨电车T3B线",
+                                    "Ligne 3B du tramway d'Île-de-France"
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "xBZ-U4": {
+        "q_DOw2": {
             "name": [
-                "柳西",
-                "Liuxi"
+                "庞坦",
+                "Pantin"
             ],
             "secondaryName": false,
             "num": "00",
@@ -519,33 +357,33 @@
                 "local"
             ],
             "parents": [
-                "keo1HT"
+                "dko5L8"
             ],
             "children": [
-                "DjmlGr"
+                "E1bUX8"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "DjmlGr": {
+        "E1bUX8": {
             "name": [
-                "宁波火车站",
-                "Ningbo Railway Station"
+                "奈斯勒塞克",
+                "Noisy le Sec"
             ],
             "secondaryName": false,
             "num": "00",
@@ -553,65 +391,50 @@
                 "local"
             ],
             "parents": [
-                "xBZ-U4"
+                "q_DOw2"
             ],
             "children": [
-                "7F76U8"
+                "Y3y_MM",
+                "3s2DvE"
             ],
             "branch": {
                 "left": [],
-                "right": []
+                "right": [
+                    "through",
+                    "3s2DvE"
+                ]
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#bd1c21",
+                                    "paris",
+                                    "t1",
+                                    "#0064B0",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "2号线",
-                                    "Line 2"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "lines": []
-                    },
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "other",
-                                    "other",
-                                    "#000000",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "宁波至余慈城际铁路",
-                                    "Ningbo-Yuyao-Cixi Intercity Railway"
+                                    "有轨电车T1线",
+                                    "Ligne 1 du tramway d'Île-de-France"
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "7F76U8": {
+        "Y3y_MM": {
             "name": [
-                "兴宁桥西",
-                "Xingning Bridge West"
+                "邦迪",
+                "Bondy"
             ],
             "secondaryName": false,
             "num": "00",
@@ -619,148 +442,46 @@
                 "local"
             ],
             "parents": [
-                "DjmlGr"
+                "E1bUX8"
             ],
             "children": [
-                "DW0_mz"
+                "WIH8of"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "DW0_mz": {
-            "name": [
-                "兴宁桥东",
-                "Xingning Bridge East"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "7F76U8"
-            ],
-            "children": [
-                "Ip9DNa"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "Ip9DNa": {
-            "name": [
-                "白鹤",
-                "Baihe"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "DW0_mz"
-            ],
-            "children": [
-                "xY5MsU"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "xY5MsU": {
-            "name": [
-                "儿童公园",
-                "Children's Park"
-            ],
-            "secondaryName": false,
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "Ip9DNa"
-            ],
-            "children": [
-                "ZAbGhc"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#ebaf19",
+                                    "paris",
+                                    "t4",
+                                    "#FAB31E",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "3号线",
-                                    "Line 3"
+                                    "有轨电车T4线",
+                                    "Ligne 4 du tramway d'Île-de-France"
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "ZAbGhc": {
+        "WIH8of": {
             "name": [
-                "矮柳",
-                "Ailiu"
+                "汉西-维勒蒙布勒宜-蒙费梅伊",
+                "Le Raincy Villemomble Montfermeil"
             ],
             "secondaryName": false,
             "num": "00",
@@ -768,33 +489,33 @@
                 "local"
             ],
             "parents": [
-                "xY5MsU"
+                "Y3y_MM"
             ],
             "children": [
-                "4AJAsw"
+                "u_Iqcf"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "4AJAsw": {
+        "u_Iqcf": {
             "name": [
-                "潘火路",
-                "Panhuo Rd"
+                "加尼",
+                "Gagny"
             ],
             "secondaryName": false,
             "num": "00",
@@ -802,33 +523,33 @@
                 "local"
             ],
             "parents": [
-                "ZAbGhc"
+                "WIH8of"
             ],
             "children": [
-                "HExZG8"
+                "RXtOdu"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "HExZG8": {
+        "RXtOdu": {
             "name": [
-                "嵩江东路",
-                "Songjiang East Rd"
+                "舍奈-加尼",
+                "Le Chenay Gagny"
             ],
             "secondaryName": false,
             "num": "00",
@@ -836,33 +557,33 @@
                 "local"
             ],
             "parents": [
-                "4AJAsw"
+                "u_Iqcf"
             ],
             "children": [
-                "nnmWEf"
+                "O6Wpms"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "nnmWEf": {
+        "O6Wpms": {
             "name": [
-                "南高教园区",
-                "South Higher Education Park"
+                "谢勒-冈内",
+                "Chelles Gournay"
             ],
             "secondaryName": false,
             "num": "00",
@@ -870,46 +591,148 @@
                 "local"
             ],
             "parents": [
-                "HExZG8"
+                "RXtOdu"
             ],
             "children": [
-                "5YdO_I"
+                "lineend"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
                 "tick_direc": "r",
-                "paid_area": true,
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ng2-RI": {
+            "name": [
+                "罗尼苏布瓦",
+                "Rosny sous Bois"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3s2DvE"
+            ],
+            "children": [
+                "QB2D8q"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "3s2DvE": {
+            "name": [
+                "罗尼-布瓦·皮埃尔",
+                "Rosny Bois Perriere"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "E1bUX8"
+            ],
+            "children": [
+                "ng2-RI"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "QB2D8q": {
+            "name": [
+                "丰特奈河谷",
+                "Val de Fontenay"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ng2-RI"
+            ],
+            "children": [
+                "c-k57M"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
                 "groups": [
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#4d4399",
+                                    "paris",
+                                    "rera",
+                                    "#E3051C",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "5号线",
-                                    "Line 5"
+                                    "RER快铁A线",
+                                    "Ligne A du RER d'Île-de-France"
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "5YdO_I": {
+        "c-k57M": {
             "name": [
-                "金达南路",
-                "Jinda South Rd"
+                "诺晋特-佩洛",
+                "Nogent Le Perreux"
             ],
             "secondaryName": false,
             "num": "00",
@@ -917,33 +740,33 @@
                 "local"
             ],
             "parents": [
-                "nnmWEf"
+                "QB2D8q"
             ],
             "children": [
-                "5_3hTH"
+                "Us_U0q"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "5_3hTH": {
+        "Us_U0q": {
             "name": [
-                "小洋江",
-                "Xiaoyangjiang"
+                "勒布雅-尚皮尼",
+                "Les Boullereaux Champigny"
             ],
             "secondaryName": false,
             "num": "00",
@@ -951,23 +774,261 @@
                 "local"
             ],
             "parents": [
-                "5YdO_I"
+                "c-k57M"
             ],
             "children": [
-                "YGkThc"
+                "iU544G"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {
                         "lines": []
                     }
-                ]
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "iU544G": {
+            "name": [
+                "马恩河畔维利耶-勒普莱西斯-特雷维斯",
+                "Villiers-sur-Marne Le Plessis-Trévise"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Us_U0q"
+            ],
+            "children": [
+                "r7fJ30"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "r7fJ30": {
+            "name": [
+                "伊夫里奈斯-诺西勒格朗",
+                "Les Yvris Noisy-le-Grand"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "iU544G"
+            ],
+            "children": [
+                "AShRKJ"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "AShRKJ": {
+            "name": [
+                "埃梅兰维尔-蓬托-孔博",
+                "Émerainville Pontault Combault"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "r7fJ30"
+            ],
+            "children": [
+                "KZ5L57"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "KZ5L57": {
+            "name": [
+                "鲁瓦西昂-布里",
+                "Roissy en Brie"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "AShRKJ"
+            ],
+            "children": [
+                "Q54nc-"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Q54nc-": {
+            "name": [
+                "奥祖瓦-费利耶",
+                "Ozoir la Ferrière"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "KZ5L57"
+            ],
+            "children": [
+                "TVNaef"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "TVNaef": {
+            "name": [
+                "格雷茨-阿尔曼维利耶",
+                "Gretz Armainvilliers"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Q54nc-"
+            ],
+            "children": [
+                "Kx_OeM"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "facility": "",
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Kx_OeM": {
+            "name": [
+                "图尔南",
+                "Tournan"
+            ],
+            "secondaryName": false,
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "TVNaef"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "branch": {
+                "left": [],
+                "right": []
+            },
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
             },
             "facility": "",
             "loop_pivot": false,
@@ -993,8 +1054,7 @@
     "loop": false,
     "loop_info": {
         "bank": true,
-        "left_and_right_factor": 0,
+        "left_and_right_factor": 1,
         "bottom_factor": 1
-    },
-    "branchSpacingPct": 8
+    }
 }
