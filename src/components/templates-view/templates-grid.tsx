@@ -5,6 +5,7 @@ import { RmgCard } from '@railmapgen/rmg-components';
 import useTranslatedName from '../hooks/use-translated-name';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
 
 const cardStyles: SystemStyleObject = {
     flexDirection: 'column',
@@ -31,8 +32,8 @@ const cardStyles: SystemStyleObject = {
 };
 
 interface TemplatesGridProps {
-    selectedTemplate?: string;
-    onTemplateSelect?: (value: string) => void;
+    selectedTemplate?: TemplateEntry;
+    onTemplateSelect?: (value: TemplateEntry) => void;
 }
 
 export default function TemplatesGrid(props: TemplatesGridProps) {
@@ -59,8 +60,8 @@ export default function TemplatesGrid(props: TemplatesGridProps) {
                 return (
                     <RmgCard
                         key={filename}
-                        className={selectedTemplate === filename ? 'selected' : ''}
-                        onClick={() => onTemplateSelect?.(filename)}
+                        className={selectedTemplate?.filename === filename ? 'selected' : ''}
+                        onClick={() => onTemplateSelect?.(template)}
                         cursor={!onTemplateSelect ? 'unset' : 'pointer'}
                         sx={cardStyles}
                     >

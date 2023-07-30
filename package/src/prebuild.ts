@@ -2,7 +2,7 @@
 
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { readFile, mkdir, writeFile } from 'fs/promises';
+import { mkdir, readFile, writeFile } from 'fs/promises';
 import { CompanyEntry, TemplateEntry } from './index';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,20 +18,22 @@ const copyCompanyConfig = async () => {
     console.log('Copying company ID list...');
 
     // read source file
-    const companyConfigStr = await readFile(path.join(sourcePath, 'core-company-config.json'), 'utf-8');
+    const coreCompanyConfigStr = await readFile(path.join(sourcePath, 'core-company-config.json'), 'utf-8');
+    const otherCompanyConfigStr = await readFile(path.join(sourcePath, 'other-company-config.json'), 'utf-8');
 
     // copy to target dir
     await mkdir(targetPath, { recursive: true });
-    await writeFile(path.join(targetPath, 'company-config.json'), companyConfigStr);
+    await writeFile(path.join(targetPath, 'core-company-config.json'), coreCompanyConfigStr);
+    await writeFile(path.join(targetPath, 'other-company-config.json'), otherCompanyConfigStr);
 
-    companyConfig = JSON.parse(companyConfigStr);
+    companyConfig = JSON.parse(coreCompanyConfigStr);
 };
 
 const createTemplateConfigsFile = async () => {
     console.log('Creating template configs file...');
 
     for (const company of companyConfig) {
-        await copyTemplates(company.id);
+        await copyTemplateConfig(company.id);
     }
 
     // write template configs
@@ -39,31 +41,14 @@ const createTemplateConfigsFile = async () => {
     await writeFile(path.join(targetPath, 'template-configs.json'), JSON.stringify(templateConfigs));
 };
 
-const copyTemplates = async (companyId: string) => {
-    console.log(`Copying templates for company=${companyId}...`);
+const copyTemplateConfig = async (companyId: string) => {
+    console.log(`Copying template config for company=${companyId}...`);
 
     // read config source file
     const configStr = await readFile(path.join(sourcePath, 'templates', companyId, '00config.json'), 'utf-8');
-    const templateEntries: TemplateEntry[] = JSON.parse(configStr);
-
-    // parse template
-    for (const template of templateEntries) {
-        const filename = template.filename;
-        console.log(`Parsing template filename=${filename}...`);
-
-        // read source file
-        const templateStr = await readFile(path.join(sourcePath, 'templates', companyId, filename + '.json'), 'utf-8');
-        const templateObj = JSON.parse(templateStr);
-        template.style = templateObj.style;
-
-        // copy to target dir
-        await mkdir(path.join(distTargetPath, companyId), { recursive: true });
-        await writeFile(path.join(distTargetPath, companyId, filename + '.json'), templateStr);
-    }
-
     // add template config
-    templateConfigs[companyId] = templateEntries;
-}
+    templateConfigs[companyId] = JSON.parse(configStr);
+};
 
 const writePackageJson = async () => {
     console.log('Writing package.json for dist...');
