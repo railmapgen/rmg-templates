@@ -4,6 +4,7 @@ import { RmgErrorBoundary, RmgLoader, RmgThemeProvider, RmgWindow } from '@railm
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 const TemplatesView = lazy(() => import('./templates-view/templates-view'));
+const AppClipView = lazy(() => import('./templates-view/app-clip-view'));
 const TicketView = lazy(() => import('./ticket-view/ticket-view'));
 
 export default function AppRoot() {
@@ -18,6 +19,14 @@ export default function AppRoot() {
                             element={
                                 <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
                                     <TicketView />
+                                </RmgErrorBoundary>
+                            }
+                        />
+                        <Route
+                            path="/import"
+                            element={
+                                <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                    <AppClipView />
                                 </RmgErrorBoundary>
                             }
                         />
