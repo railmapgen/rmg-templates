@@ -11,34 +11,23 @@ import {
 } from '../../redux/ticket/ticket-slice';
 import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import OptionalLanguageEntries from './optional-language-entries';
+import useCompanyOptions from '../hooks/use-company-options';
 
 export default function CompanySection() {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const translateName = useTranslatedName();
 
     const dispatch = useRootDispatch();
-    const { companyConfig } = useRootSelector(state => state.app);
     const { company, newCompany, companyName, companyOptionalName } = useRootSelector(state => state.ticket);
 
-    const companyOptions = {
-        ...companyConfig
-            .map(company => [company.id, translateName(company.name)]) // translate country name
-            .sort((a, b) => a[1].localeCompare(b[1], i18n.languages[0])) // sort
-            .reduce<Record<string, string>>(
-                (acc, cur) => {
-                    return { ...acc, [cur[0]]: cur[1] };
-                },
-                { '': t('Please select...') }
-            ),
-        new: t('Add a company...'),
-    };
+    const companyOptions = useCompanyOptions();
 
     const fields: RmgFieldsField[] = [
         {
             type: 'select',
             label: t('Company'),
             value: company,
-            options: companyOptions,
+            options: { ...companyOptions, [t('New')]: { new: t('Add a company...') } },
             disabledOptions: [''],
             onChange: value => dispatch(setCompany(value as string)),
         },
