@@ -1,11 +1,7 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
+        "lib": ["dom", "dom.iterable", "esnext"],
         "outDir": "./dist",
         "allowJs": true,
         "skipLibCheck": true,
@@ -28,9 +24,8 @@
         ],
         "strictNullChecks": true
     },
-    "include": [
-        "src/**/*",
-        "checker/**/*",
-        "issuebot/**/*"
-    ]
+    "ts-node": {
+        "esm": true
+    },
+    "include": ["checker/**/*", "issuebot/**/*", "src/**/*"]
 }
