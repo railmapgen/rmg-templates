@@ -1,7 +1,7 @@
 import { TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
-import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
+import { RmgButtonGroup, RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
 import { Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } from '@chakra-ui/react';
 import { ChangeEvent, useRef } from 'react';
 import { readFileAsText } from '../../util/utils';
@@ -115,12 +115,19 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             hidden: line !== 'new',
         },
         {
-            type: 'switch',
+            type: 'custom',
             label: t('Major update'),
-            isChecked: majorUpdate,
-            onChange: value => onMajorFlagChange(value),
+            component: (
+                <RmgButtonGroup
+                    selections={[
+                        { label: t('Yes'), value: true },
+                        { label: t('No'), value: false },
+                    ]}
+                    defaultValue={majorUpdate}
+                    onChange={value => onMajorFlagChange(value)}
+                />
+            ),
             hidden: line === 'new',
-            oneLine: true,
         },
     ];
 
