@@ -3,7 +3,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, writeFile } from 'fs/promises';
-import { CompanyEntry, TemplateEntry } from './index';
+import { CompanyEntry, TemplateEntry } from '../src';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
