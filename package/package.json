@@ -6,13 +6,13 @@
         "url": "https://github.com/railmapgen/rmg-templates.git",
         "directory": "package"
     },
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "",
     "main": "./index.js",
     "scripts": {
-        "build": "node --loader ts-node/esm --experimental-specifier-resolution=node src/prebuild.ts && npx tsc --project tsconfig.build.json",
+        "build": "node --loader ts-node/esm src/prebuild.mts && npx tsc --project tsconfig.build.json",
         "check": "node --loader ts-node/esm checker/check.ts",
-        "issuebot": "node --loader ts-node/esm ./issuebot/issuebot.ts",
+        "issuebot": "node --loader ts-node/esm issuebot/issuebot.mts",
         "prepare": "ts-patch install"
     },
     "author": "",
@@ -29,7 +29,6 @@
         ".": "./index.js",
         "./": "./"
     },
-    "type": "module",
     "dependencies": {
         "@railmapgen/rmg-translate": "^3.0.1"
     }
