@@ -44,4 +44,5 @@ jobs:
       - name: Trigger check
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-          echo '{"name":"check","head_sha":"${{ github.sha }}"}' | gh api /repos/railmapgen/rmg-templates/check-runs --input -
+          echo "GITHASH=$(git log -n 1 --pretty=%H)" >> $GITHUB_ENV
+          echo '{"name":"check","head_sha":"$GITHASH"}' | gh api /repos/${{ github.repository }}/check-runs --input -
