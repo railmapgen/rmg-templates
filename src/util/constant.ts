@@ -59,3 +59,5 @@ export const INVALID_REASON: Record<InvalidReasonType, Translation> = {
 };
 
 export const GITHUB_ISSUE_PREAMBLE = '**Do not edit lines below, they are meant for bots only!!!**';
+
+export const SELECTED_COMPANY_KEY = 'selectedCompany';

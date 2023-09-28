@@ -1,6 +1,6 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { chakra, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
+import { RmgCard, RmgFields, RmgFieldsField, RmgSection, RmgSectionHeader } from '@railmapgen/rmg-components';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import useTranslatedName from '../hooks/use-translated-name';
 import {
@@ -51,21 +51,25 @@ export default function CompanySection() {
     });
 
     return (
-        <Box as="section">
-            <Heading as="h5" size="sm" mb={2}>
-                {t('Railway company')}
-            </Heading>
+        <RmgSection>
+            <RmgSectionHeader>
+                <Heading as="h5" size="sm">
+                    {t('Railway company')}
+                </Heading>
+            </RmgSectionHeader>
 
-            <RmgCard direction="column">
-                <RmgFields fields={fields} />
-                {company === 'new' && <RmgFields fields={languageFields} />}
-                {company === 'new' && (
-                    <OptionalLanguageEntries
-                        optionalName={companyOptionalName}
-                        onChange={optionalName => dispatch(setCompanyOptionalName(optionalName))}
-                    />
-                )}
-            </RmgCard>
-        </Box>
+            <chakra.div px={1}>
+                <RmgCard direction="column">
+                    <RmgFields fields={fields} />
+                    {company === 'new' && <RmgFields fields={languageFields} />}
+                    {company === 'new' && (
+                        <OptionalLanguageEntries
+                            optionalName={companyOptionalName}
+                            onChange={optionalName => dispatch(setCompanyOptionalName(optionalName))}
+                        />
+                    )}
+                </RmgCard>
+            </chakra.div>
+        </RmgSection>
     );
 }
