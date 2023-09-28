@@ -14,15 +14,33 @@ manifest.json provides metadata used when your web app is installed on a
 user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
 -->
         <link rel="manifest" href="/manifest.json" />
+        <style>
+            @keyframes animation-spinner {
+                0% {transform: rotate(0deg)}
+                100% {transform: rotate(360deg)}
+            }
+            .spinner {
+                border-top: 2px solid currentcolor;
+                border-right: 2px solid currentcolor;
+                border-bottom: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                animation: 0.45s linear 0s infinite animation-spinner;
+                position: absolute;
+                top: calc(50% - 16px);
+                left: calc(50% - 16px);
+            }
+        </style>
 
         <title>RMG Templates</title>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">
-            Loading RMG Templates...
+            <div class="spinner"></div>
         </div>
-
         <script type="module" src="src/index.tsx"></script>
     </body>
 </html>
