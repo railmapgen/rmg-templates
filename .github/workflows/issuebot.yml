@@ -45,4 +45,4 @@ jobs:
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           echo "GITHASH=$(git log -n 1 --pretty=%H)" >> $GITHUB_ENV
-          echo '{"name":"check","head_sha":"$GITHASH"}' | gh api /repos/${{ github.repository }}/check-runs --input -
+          echo '{"name":"check","head_sha":"${{ env.GITHASH }}"}' | gh api /repos/${{ github.repository }}/check-runs --input -
