@@ -40,3 +40,8 @@ jobs:
           PULL_REQUEST_TITLE: ${{ github.event.issue.title }}
           PULL_REQUEST_BODY: "Hi, I'm the rmg bot updating ${{ github.event.issue.title }} on behalf of ${{ github.event.issue.user.login }}.\nThis should fix #${{ github.event.issue.number }}\n\n${{ steps.bot.outputs.REVIEW_URLS }}"
           PULL_REQUEST_UPDATE: true
+
+      - name: Trigger check
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+          echo '{"name":"check","head_sha":"${{ github.sha }}"}' | gh api /repos/railmapgen/rmg-templates/check-runs --input -
