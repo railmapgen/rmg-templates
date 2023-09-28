@@ -44,4 +44,4 @@ jobs:
       - name: Trigger check
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-          echo '{"name":"check","head_sha":"$(git log -n 1 --pretty=%H)"}' | gh api /repos/${{ github.repository }}/check-runs --input -
+          echo "{\"name\":\"check\",\"head_sha\":\"$(git log -n 1 --pretty=%H)\"}" | gh api /repos/${{ github.repository }}/check-runs --input -
