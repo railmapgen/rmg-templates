@@ -12,14 +12,14 @@ import { useState } from 'react';
 import SubmitModal from '../modal/submit-modal';
 
 const styles: SystemStyleObject = {
-    px: 2,
-    pt: 2,
     width: { base: '100%', md: 520 },
+    alignSelf: 'center',
 
     '& > div:first-of-type': {
         flexDirection: 'column',
         flex: 1,
         overflowY: 'auto',
+        bg: 'inherit',
     },
 
     '& > div:nth-of-type(2)': {

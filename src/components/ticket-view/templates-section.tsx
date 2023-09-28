@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Flex, Heading, HStack, Icon, Tooltip } from '@chakra-ui/react';
+import { Button, chakra, Heading, HStack, Icon, Tooltip } from '@chakra-ui/react';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import TemplateEntryCard from './template-entry-card';
 import {
@@ -14,7 +14,7 @@ import {
 } from '../../redux/ticket/ticket-slice';
 import { MdAdd, MdHelp } from 'react-icons/md';
 import useTemplates from '../hooks/use-templates';
-import { RmgLoader } from '@railmapgen/rmg-components';
+import { RmgLoader, RmgSection, RmgSectionHeader } from '@railmapgen/rmg-components';
 import RmgParamAppClip from '../app-clip/rmg-param-app-clip';
 import { useState } from 'react';
 
@@ -40,10 +40,10 @@ export default function TemplatesSection() {
     };
 
     return (
-        <Box as="section" mt={3} position="relative">
+        <RmgSection>
             {isLoading && <RmgLoader isIndeterminate />}
-            <Flex>
-                <Heading as="h5" size="sm" mb={2}>
+            <RmgSectionHeader>
+                <Heading as="h5" size="sm">
                     {t('Add or update templates')}
                 </Heading>
                 <Tooltip
@@ -56,25 +56,31 @@ export default function TemplatesSection() {
                         <Icon as={MdHelp} ml={1} />
                     </span>
                 </Tooltip>
-            </Flex>
+            </RmgSectionHeader>
 
-            {templates.map(entry => (
-                <TemplateEntryCard
-                    key={entry.id}
-                    company={company}
-                    templateEntry={entry}
-                    onLineChange={line => handleLineChange(entry.id, line)}
-                    onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
-                    onMajorFlagChange={majorUpdate => dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))}
-                    onLineNameChange={(lang, name) => dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))}
-                    onOptionalNameChange={optionalName =>
-                        dispatch(setTemplateOptionalNameById({ id: entry.id, optionalName }))
-                    }
-                    onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
-                    onParamImport={() => setTemplateIdForAppClip(entry.id)}
-                    onRemove={() => dispatch(removeTemplate(entry.id))}
-                />
-            ))}
+            <chakra.div px={1} transform="translateZ(0)">
+                {templates.map(entry => (
+                    <TemplateEntryCard
+                        key={entry.id}
+                        company={company}
+                        templateEntry={entry}
+                        onLineChange={line => handleLineChange(entry.id, line)}
+                        onNewLineChange={newLine => dispatch(setTemplateNewLineById({ id: entry.id, newLine }))}
+                        onMajorFlagChange={majorUpdate =>
+                            dispatch(setTemplateMajorFlagById({ id: entry.id, majorUpdate }))
+                        }
+                        onLineNameChange={(lang, name) =>
+                            dispatch(setTemplateLineNameById({ id: entry.id, lang, name }))
+                        }
+                        onOptionalNameChange={optionalName =>
+                            dispatch(setTemplateOptionalNameById({ id: entry.id, optionalName }))
+                        }
+                        onParamChange={param => dispatch(setTemplateParamById({ id: entry.id, param }))}
+                        onParamImport={() => setTemplateIdForAppClip(entry.id)}
+                        onRemove={() => dispatch(removeTemplate(entry.id))}
+                    />
+                ))}
+            </chakra.div>
 
             <HStack justifyContent="flex-end">
                 <Button variant="ghost" size="sm" leftIcon={<MdAdd />} onClick={() => dispatch(addTemplate())}>
@@ -87,6 +93,6 @@ export default function TemplatesSection() {
                 onClose={() => setTemplateIdForAppClip(undefined)}
                 onImport={handleParamImport}
             />
-        </Box>
+        </RmgSection>
     );
 }

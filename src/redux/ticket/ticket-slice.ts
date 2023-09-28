@@ -2,7 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
 import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
-import { LanguageCode, SUPPORTED_LANGUAGES, SupportedLanguageCode, Translation } from '@railmapgen/rmg-translate';
+import {
+    LanguageCode,
+    OPTIONAL_LANGUAGES,
+    SUPPORTED_LANGUAGES,
+    SupportedLanguageCode,
+    Translation,
+} from '@railmapgen/rmg-translate';
 
 export interface TemplateTicketEntry {
     id: string;
@@ -20,7 +26,7 @@ export const initTemplateEntry = (): TemplateTicketEntry => ({
     newLine: '',
     majorUpdate: false,
     templateName: { en: '', 'zh-Hans': '', 'zh-Hant': '' },
-    optionalName: [['ko', '']],
+    optionalName: OPTIONAL_LANGUAGES.map(l => [l, '']),
     param: undefined,
 });
 
