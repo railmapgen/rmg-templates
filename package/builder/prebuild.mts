@@ -3,7 +3,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, writeFile } from 'fs/promises';
-import { CompanyEntry, TemplateEntry } from './index';
+import { CompanyEntry, TemplateEntry } from '../src';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -55,10 +55,8 @@ const writePackageJson = async () => {
 
     // read source file
     const packageJsonStr = await readFile(path.join(__dirname, '..', 'package.json'), 'utf-8');
-    const { type: _, ...others } = JSON.parse(packageJsonStr);
-
     await mkdir(path.join(distTargetPath), { recursive: true });
-    await writeFile(path.join(distTargetPath, '..', 'package.json'), JSON.stringify(others));
+    await writeFile(path.join(distTargetPath, '..', 'package.json'), packageJsonStr);
 };
 
 const prebuild = async () => {
