@@ -1,0 +1,286 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 350,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "",
+    "theme": [
+        "beijing",
+        "bj34sj",
+        "#a29bbb",
+        "#000"
+    ],
+    "line_name": [
+        "首都机场线",
+        "Capital Airport Express"
+    ],
+    "current_stn_idx": "MYIJ5W",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "QC6Qa6"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150
+        },
+        "QGyaYE": {
+            "name": [
+                "3号航站楼",
+                "3 Hao Hangzhanlou (Terminal 3)"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "hD-nIM"
+            ],
+            "children": [
+                "De47WH"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150,
+            "facility": "airport"
+        },
+        "De47WH": {
+            "name": [
+                "2号航站楼",
+                "2 Hao Hangzhanlou (Terminal 2)"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "QGyaYE"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150,
+            "facility": "airport"
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "De47WH"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150
+        },
+        "hD-nIM": {
+            "name": [
+                "三元桥",
+                "Sanyuanqiao"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "MYIJ5W"
+            ],
+            "children": [
+                "QGyaYE"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "beijing",
+                                    "bj10",
+                                    "#009bc0",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "10号线",
+                                    "Line 10"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150
+        },
+        "MYIJ5W": {
+            "name": [
+                "东直门",
+                "Dongzhimen"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "QC6Qa6"
+            ],
+            "children": [
+                "hD-nIM"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "beijing",
+                                    "bj2",
+                                    "#006098",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "beijing",
+                                    "bj13",
+                                    "#f9e700",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "13号线",
+                                    "Line 13"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150
+        },
+        "QC6Qa6": {
+            "name": [
+                "北新桥",
+                "Beixinqiao"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "MYIJ5W"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "beijing",
+                                    "bj5",
+                                    "#a6217f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Line 5"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "psd_num": "1",
+    "info_panel_type": "sh2020",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.14.12"
+}
