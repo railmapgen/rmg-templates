@@ -1,0 +1,222 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "3",
+    "theme": [
+        "other",
+        "other",
+        "#814300",
+        "#fff"
+    ],
+    "line_name": [
+        "凤凰磁浮",
+        "Fenghuang Maglev"
+    ],
+    "current_stn_idx": "bl1Bdw",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "bl1Bdw"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "bl1Bdw": {
+            "name": [
+                "凤凰古城",
+                "Fenghuanggucheng"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "BgPRhz"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hongkong",
+                                    "hsr",
+                                    "#9D968D",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "张吉怀高速铁路",
+                                    "Zhangjiajie-Jishou-Huaihua High-Speed Railway"
+                                ],
+                                "facility": "hsr"
+                            }
+                        ],
+                        "name": [
+                            "凤凰古城",
+                            "Fenghuanggucheng"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "BgPRhz": {
+            "name": [
+                "凤凰迎宾",
+                "Fenghuangyingbin"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "bl1Bdw"
+            ],
+            "children": [
+                "lxgca9"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "KOuVwb"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lxgca9": {
+            "name": [
+                "凤凰揽胜",
+                "Fenghuanglansheng"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BgPRhz"
+            ],
+            "children": [
+                "KOuVwb"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "KOuVwb": {
+            "name": [
+                "凤凰等待",
+                "Fenghuangdengdai"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "lxgca9"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.14.12"
+}
