@@ -3,11 +3,10 @@
     "svg_height": 500,
     "padding": 3,
     "y_pc": 40,
-    "branch_spacing": 45,
     "theme": [
         "shanghai",
         "sh1",
-        "#e4002b",
+        "#E3002B",
         "#fff"
     ],
     "direction": "l",
@@ -23,24 +22,20 @@
                 "路綫左端",
                 "LEFT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
             "services": [
                 "local"
             ],
             "num": "00",
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "lineend": {
             "parents": [
@@ -51,24 +46,20 @@
                 "路綫右端",
                 "RIGHT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
             "services": [
                 "local"
             ],
             "num": "00",
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "l1mz": {
             "parents": [
@@ -81,24 +72,20 @@
                 "外环路",
                 "Waihuanlu"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "num": "02",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "iwf6": {
             "children": [
@@ -111,33 +98,35 @@
                 "莘庄",
                 "Xinzhuang"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "num": "01",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh5",
-                            "#ac4fc6",
-                            "#fff",
-                            "5号线",
-                            "Line 5"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh5",
+                                    "#944D9A",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Line 5"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "jsat": {
             "parents": [
@@ -146,10 +135,6 @@
             "children": [
                 "qzjx"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "锦江乐园",
                 "JinJiang Park"
@@ -158,16 +143,16 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "srpy": {
             "parents": [
@@ -176,10 +161,6 @@
             "children": [
                 "jsat"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "上海南站",
                 "Shanghai South Railway Station"
@@ -188,44 +169,60 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh3",
-                            "#ffd100",
-                            "#000",
-                            "3号线",
-                            "Line 3"
-                        ],
-                        [
-                            "shanghai",
-                            "sh15",
-                            "#a4bcc2",
-                            "#fff",
-                            "15号线",
-                            "Line 15"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh3",
+                                    "#FCD600",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh15",
+                                    "#BCA886",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "15号线",
+                                    "Line 15"
+                                ]
+                            }
                         ]
-                    ],
-                    [],
-                    [
-                        [
-                            "shanghai",
-                            "pjl",
-                            "#999999",
-                            "#fff",
-                            "金山铁路",
-                            "Jingshan Railway"
+                    },
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "pjl",
+                                    "#B5B5B6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "金山铁路",
+                                    "Jingshan Railway"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "x9gu": {
             "parents": [
@@ -234,10 +231,6 @@
             "children": [
                 "srpy"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "漕宝路",
                 "Caobao Road"
@@ -246,25 +239,31 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh12",
-                            "#007b5f",
-                            "#fff",
-                            "12号线",
-                            "Line 12"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh12",
+                                    "#007A60",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "12号线",
+                                    "Line 12"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "k9k5": {
             "parents": [
@@ -273,10 +272,6 @@
             "children": [
                 "x9gu"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "上海体育馆",
                 "Shanghai Indoor Stadium"
@@ -288,22 +283,28 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh4",
-                            "#5f259f",
-                            "#fff",
-                            "4号线",
-                            "Line 4"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh4",
+                                    "#461D84",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "j2kn": {
             "parents": [
@@ -312,10 +313,6 @@
             "children": [
                 "k9k5"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "徐家汇",
                 "Xujiahui"
@@ -327,30 +324,40 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh9",
-                            "#71c5e8",
-                            "#000",
-                            "9号线",
-                            "Line 9"
-                        ],
-                        [
-                            "shanghai",
-                            "sh11",
-                            "#76232f",
-                            "#fff",
-                            "11号线",
-                            "Line 11"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh9",
+                                    "#87CAED",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "9号线",
+                                    "Line 9"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh11",
+                                    "#871C2B",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "11号线",
+                                    "Line 11"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "kaxg": {
             "parents": [
@@ -359,10 +366,6 @@
             "children": [
                 "wbtv"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "人民广场",
                 "People's Square"
@@ -374,30 +377,40 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh2",
-                            "#97d700",
-                            "#000",
-                            "2号线",
-                            "Line 2"
-                        ],
-                        [
-                            "shanghai",
-                            "sh8",
-                            "#00a3e0",
-                            "#fff",
-                            "8号线",
-                            "Line 8"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh2",
+                                    "#82BF25",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh8",
+                                    "#0094D8",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "8号线",
+                                    "Line 8"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "sd6y": {
             "parents": [
@@ -406,10 +419,6 @@
             "children": [
                 "qnbj"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "上海火车站",
                 "Shanghai Railway Station"
@@ -421,36 +430,45 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [
-                    [
-                        "車站名",
-                        "Stn Name"
-                    ]
-                ],
-                "info": [
-                    [],
-                    [
-                        [
-                            "shanghai",
-                            "sh3",
-                            "#ffd100",
-                            "#000",
-                            "3号线",
-                            "Line 3"
+                "groups": [
+                    {},
+                    {
+                        "name": [
+                            "車站名",
+                            "Stn Name"
                         ],
-                        [
-                            "shanghai",
-                            "sh4",
-                            "#5f259f",
-                            "#fff",
-                            "4号线",
-                            "Line 4"
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh3",
+                                    "#FCD600",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh4",
+                                    "#461D84",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "9cyo": {
             "parents": [
@@ -459,10 +477,6 @@
             "children": [
                 "8hte"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "富锦路",
                 "Fujin Road"
@@ -474,13 +488,13 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "hhar": {
             "children": [
@@ -489,10 +503,6 @@
             "parents": [
                 "nhrh"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "通河新村",
                 "Tonghe Xincun"
@@ -504,13 +514,13 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "jjh7": {
             "children": [
@@ -519,10 +529,6 @@
             "parents": [
                 "wbtv"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "陕西南路",
                 "South Shaanxi Road"
@@ -534,30 +540,40 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh10",
-                            "#c1a7e2",
-                            "#000",
-                            "10号线",
-                            "Line 10"
-                        ],
-                        [
-                            "shanghai",
-                            "sh12",
-                            "#007b5f",
-                            "#fff",
-                            "12号线",
-                            "Line 12"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh10",
+                                    "#C6AFD4",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "10号线",
+                                    "Line 10"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh12",
+                                    "#007A60",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "12号线",
+                                    "Line 12"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "7x7k": {
             "children": [
@@ -566,10 +582,6 @@
             "parents": [
                 "qnbj"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "name": [
                 "新闸路",
                 "XinZha Road"
@@ -581,20 +593,19 @@
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ]
             },
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "qnbj": {
             "name": [
                 "汉中路",
                 "Hanzhong Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -605,43 +616,49 @@
             "children": [
                 "7x7k"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh12",
-                            "#007b5f",
-                            "#fff",
-                            "12号线",
-                            "Line 12"
-                        ],
-                        [
-                            "shanghai",
-                            "sh13",
-                            "#EF95CF",
-                            "#000",
-                            "13号线",
-                            "Line 13"
-                        ]
-                    ]
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh12",
+                                    "#007A60",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "12号线",
+                                    "Line 12"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh13",
+                                    "#E999C0",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "13号线",
+                                    "Line 13"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "1fdr": {
             "name": [
                 "中山北路",
                 "North Zhongshan Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -652,26 +669,22 @@
             "children": [
                 "sd6y"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "lcgp": {
             "name": [
                 "衡山路",
                 "Hengshan Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -682,26 +695,22 @@
             "children": [
                 "j2kn"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "wbtv": {
             "name": [
                 "一大会址·黄陂南路",
                 "Site of the First CPC National\\Congress · South Huangpi Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -712,35 +721,37 @@
             "children": [
                 "jjh7"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh14",
-                            "#827A04",
-                            "#fff",
-                            "14号线",
-                            "Line 14"
-                        ]
-                    ]
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh14",
+                                    "#626020",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "14号线",
+                                    "Line 14"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "wai3": {
             "name": [
                 "延长路",
                 "Yanchang Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -751,26 +762,22 @@
             "children": [
                 "1fdr"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "naz0": {
             "name": [
                 "上海马戏城",
                 "Shanghai Circus World"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -781,26 +788,22 @@
             "children": [
                 "wai3"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "y6id": {
             "name": [
                 "汶水路",
                 "Wenshui Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -811,26 +814,22 @@
             "children": [
                 "naz0"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "exax": {
             "name": [
                 "共富新村",
                 "Gongfu Xincun"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -841,26 +840,22 @@
             "children": [
                 "nhrh"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "qzjx": {
             "name": [
                 "莲花路",
                 "Lianhua Road "
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -871,26 +866,22 @@
             "children": [
                 "l1mz"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "8hte": {
             "name": [
                 "友谊西路",
                 "West Youyi Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -901,26 +892,22 @@
             "children": [
                 "yrlx"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "yrlx": {
             "name": [
                 "宝安公路",
                 "Bao'an Highway"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -931,26 +918,22 @@
             "children": [
                 "exax"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "nhrh": {
             "name": [
                 "呼兰路",
                 "Hulan Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -961,35 +944,37 @@
             "children": [
                 "hhar"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh18",
-                            "#D6A461",
-                            "#000",
-                            "18号线",
-                            "Line 18"
-                        ]
-                    ]
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh18",
+                                    "#C4984F",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "18号线",
+                                    "Line 18"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "qgae": {
             "name": [
                 "共康路",
                 "Gongkang Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -1000,26 +985,22 @@
             "children": [
                 "ekdv"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "ekdv": {
             "name": [
                 "彭浦新村",
                 "Pengpu Xincun"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -1030,26 +1011,22 @@
             "children": [
                 "y6id"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {}
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         },
         "h3vs": {
             "name": [
                 "常熟路",
                 "Changshu Road"
             ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -1060,28 +1037,31 @@
             "children": [
                 "lcgp"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "shanghai",
-                            "sh7",
-                            "#FF6900",
-                            "#000",
-                            "7号线",
-                            "Line 7"
-                        ]
-                    ]
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh7",
+                                    "#ED6F00",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "7号线",
+                                    "Line 7"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355
         }
     },
     "line_name": [
@@ -1103,9 +1083,17 @@
         "railmap": 2000,
         "indoor": 3500
     },
-    "notesGZMTR": [],
     "namePosMTR": {
         "isStagger": true,
-        "isFlip": false
-    }
+        "isFlip": true
+    },
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 0,
+        "bottom_factor": 1
+    },
+    "branchSpacingPct": 27,
+    "version": "5.14.12"
 }
