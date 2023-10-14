@@ -2,27 +2,27 @@
     "svgWidth": {
         "destination": 1200,
         "runin": 1200,
-        "railmap": 2000,
+        "railmap": 1200,
         "indoor": 1200
     },
     "svg_height": 300,
-    "style": "shmetro",
+    "style": "mtr",
     "y_pc": 50,
     "padding": 10,
     "branchSpacingPct": 33,
-    "direction": "l",
-    "platform_num": "",
+    "direction": "r",
+    "platform_num": "3",
     "theme": [
-        "shanghai",
-        "maglev",
-        "#009090",
+        "other",
+        "other",
+        "#814300",
         "#fff"
     ],
     "line_name": [
-        "磁浮线",
-        "Maglev Line"
+        "凤凰磁浮",
+        "Fenghuang Maglev"
     ],
-    "current_stn_idx": "8Nvwy3",
+    "current_stn_idx": "bl1Bdw",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,7 +35,7 @@
             ],
             "parents": [],
             "children": [
-                "Tz2gj3"
+                "bl1Bdw"
             ],
             "transfer": {
                 "groups": [
@@ -48,10 +48,10 @@
             "one_line": true,
             "int_padding": 355
         },
-        "Tz2gj3": {
+        "bl1Bdw": {
             "name": [
-                "龙阳路",
-                "Longyang Rd."
+                "凤凰古城",
+                "Fenghuanggucheng"
             ],
             "num": "01",
             "services": [
@@ -61,7 +61,7 @@
                 "linestart"
             ],
             "children": [
-                "8Nvwy3"
+                "BgPRhz"
             ],
             "transfer": {
                 "groups": [
@@ -70,104 +70,56 @@
                         "lines": [
                             {
                                 "theme": [
-                                    "shanghai",
-                                    "sh2",
-                                    "#82BF25",
-                                    "#000"
+                                    "hongkong",
+                                    "hsr",
+                                    "#9D968D",
+                                    "#fff"
                                 ],
                                 "name": [
-                                    "2号线",
-                                    "Line 2"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "shanghai",
-                                    "sh7",
-                                    "#ED6F00",
-                                    "#000"
+                                    "张吉怀高速铁路",
+                                    "Zhangjiajie-Jishou-Huaihua High-Speed Railway"
                                 ],
-                                "name": [
-                                    "7号线",
-                                    "Line 7"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "shanghai",
-                                    "sh16",
-                                    "#98D1C0",
-                                    "#000"
-                                ],
-                                "name": [
-                                    "16号线",
-                                    "Line 16"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "shanghai",
-                                    "sh18",
-                                    "#C4984F",
-                                    "#000"
-                                ],
-                                "name": [
-                                    "18号线",
-                                    "Line 18"
-                                ]
+                                "facility": "hsr"
                             }
+                        ],
+                        "name": [
+                            "凤凰古城",
+                            "Fenghuanggucheng"
                         ]
                     }
                 ],
                 "tick_direc": "r",
-                "paid_area": true
+                "paid_area": false
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 200
+            "int_padding": 355
         },
-        "8Nvwy3": {
+        "BgPRhz": {
             "name": [
-                "浦东国际机场",
-                "Pudong Airport"
+                "凤凰迎宾",
+                "Fenghuangyingbin"
             ],
             "num": "02",
             "services": [
                 "local"
             ],
             "parents": [
-                "Tz2gj3"
+                "bl1Bdw"
             ],
             "children": [
-                "lineend"
+                "lxgca9"
             ],
             "transfer": {
                 "groups": [
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "shanghai",
-                                    "sh2",
-                                    "#82BF25",
-                                    "#000"
-                                ],
-                                "name": [
-                                    "2号线",
-                                    "Line 2"
-                                ]
-                            }
-                        ]
-                    }
+                    {}
                 ],
                 "tick_direc": "r",
                 "paid_area": true
             },
-            "facility": "airport",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 210
+            "int_padding": 355
         },
         "lineend": {
             "name": [
@@ -179,9 +131,61 @@
                 "local"
             ],
             "parents": [
-                "8Nvwy3"
+                "KOuVwb"
             ],
             "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lxgca9": {
+            "name": [
+                "凤凰揽胜",
+                "Fenghuanglansheng"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BgPRhz"
+            ],
+            "children": [
+                "KOuVwb"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "KOuVwb": {
+            "name": [
+                "凤凰等待",
+                "Fenghuangdengdai"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "lxgca9"
+            ],
+            "children": [
+                "lineend"
+            ],
             "transfer": {
                 "groups": [
                     {}
