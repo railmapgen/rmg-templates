@@ -1,28 +1,28 @@
 {
     "svgWidth": {
-        "destination": 1200,
+        "destination": 1500,
         "runin": 1200,
-        "railmap": 1200,
-        "indoor": 1200
+        "railmap": 1500,
+        "indoor": 2500
     },
-    "svg_height": 300,
+    "svg_height": 450,
     "style": "mtr",
     "y_pc": 50,
-    "padding": 10,
+    "padding": 26,
     "branchSpacingPct": 33,
-    "direction": "l",
-    "platform_num": "",
+    "direction": "r",
+    "platform_num": "1",
     "theme": [
-        "xian",
-        "xxzg",
-        "#bb0601",
+        "tokyo",
+        "togane",
+        "#b31c31",
         "#fff"
     ],
     "line_name": [
-        "西咸智轨1号线",
-        "Xixian ART Line 1"
+        "東金線",
+        "Togane Line"
     ],
-    "current_stn_idx": "3DWAx6",
+    "current_stn_idx": "523iA0",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,7 +35,7 @@
             ],
             "parents": [],
             "children": [
-                "mTgway"
+                "523iA0"
             ],
             "transfer": {
                 "groups": [
@@ -46,50 +46,63 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355,
-            "branch": {}
+            "int_padding": 355
         },
-        "viZva6": {
+        "523iA0": {
             "name": [
-                "汉溪湖",
-                "HANXIHU"
+                "大網",
+                "Oami"
             ],
             "num": "01",
             "services": [
                 "local"
             ],
             "parents": [
-                "k7G6RK"
+                "linestart"
             ],
             "children": [
-                "3DWAx6"
+                "rg7BrW"
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "sotobo",
+                                    "#f21f31",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "外房線",
+                                    "Sotobo Line"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355,
-            "branch": {}
+            "int_padding": 355
         },
-        "3DWAx6": {
+        "rg7BrW": {
             "name": [
-                "昆明池",
-                "KUNMINGCHI"
+                "福俵",
+                "Fukudawara"
             ],
             "num": "02",
             "services": [
                 "local"
             ],
             "parents": [
-                "viZva6"
+                "523iA0"
             ],
             "children": [
-                "lineend"
+                "oQf_wt"
             ],
             "transfer": {
                 "groups": [
@@ -112,7 +125,7 @@
                 "local"
             ],
             "parents": [
-                "3DWAx6"
+                "O_ygCR"
             ],
             "children": [],
             "transfer": {
@@ -126,20 +139,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "k7G6RK": {
+        "oQf_wt": {
             "name": [
-                "镐京大道",
-                "HAOJINGDADAO"
+                "東金",
+                "Togane"
             ],
-            "num": "00",
+            "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "mTgway"
+                "rg7BrW"
             ],
             "children": [
-                "viZva6"
+                "SiL4nv"
             ],
             "transfer": {
                 "groups": [
@@ -150,50 +163,70 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355,
-            "branch": {}
+            "int_padding": 355
         },
-        "mTgway": {
+        "SiL4nv": {
             "name": [
-                "斗门",
-                "DOUMEN"
+                "求名",
+                "Gumyo"
             ],
-            "num": "00",
+            "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "linestart"
+                "oQf_wt"
             ],
             "children": [
-                "k7G6RK"
+                "O_ygCR"
             ],
             "transfer": {
                 "groups": [
-                    {},
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "O_ygCR": {
+            "name": [
+                "成東",
+                "Naruto"
+            ],
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "SiL4nv"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "xian",
-                                    "xa5",
-                                    "#A6E35F",
+                                    "other",
+                                    "other",
+                                    "#fed304",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "地铁5号线",
-                                    "Metro Line 5"
+                                    "總武本線",
+                                    "Sobu Main Line"
                                 ]
                             }
-                        ],
-                        "name": [
-                            "斗门",
-                            "DOUMEN"
                         ]
                     }
                 ],
                 "tick_direc": "r",
-                "paid_area": false
+                "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
@@ -208,7 +241,7 @@
         "isLegacy": false,
         "terminal": false
     },
-    "line_num": "1",
+    "line_num": "-",
     "psd_num": "1",
     "info_panel_type": "gz1",
     "direction_gz_x": 40,
