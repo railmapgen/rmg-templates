@@ -1,28 +1,28 @@
 {
     "svgWidth": {
-        "destination": 1700,
-        "runin": 1300,
-        "railmap": 1900,
-        "indoor": 1300
+        "destination": 2000,
+        "runin": 2000,
+        "railmap": 3500,
+        "indoor": 1800
     },
     "svg_height": 500,
     "style": "shmetro",
     "y_pc": 50,
-    "padding": 9,
-    "branchSpacingPct": 42,
+    "padding": 10,
+    "branchSpacingPct": 33,
     "direction": "l",
-    "platform_num": "",
+    "platform_num": "1",
     "theme": [
         "other",
         "other",
-        "#d85600",
+        "#009088",
         "#fff"
     ],
     "line_name": [
-        "高新有轨电车2号线",
-        "SND Tram Line 2"
+        "1号线",
+        "Line 1"
     ],
-    "current_stn_idx": "J3d6jL",
+    "current_stn_idx": "nJsqZU",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,15 +35,8 @@
             ],
             "parents": [],
             "children": [
-                "8ltzRJ",
-                "zgjeB_"
+                "7ieY4s"
             ],
-            "branch": {
-                "right": [
-                    "through",
-                    "8ltzRJ"
-                ]
-            },
             "transfer": {
                 "groups": [
                     {}
@@ -55,39 +48,50 @@
             "one_line": true,
             "int_padding": 355
         },
-        "J3d6jL": {
+        "gnWNJT": {
             "name": [
-                "龙康路",
-                "Longkanglu"
+                "所台",
+                "Sotae\\소태"
             ],
-            "num": "02",
+            "num": "01",
             "services": [
                 "local"
             ],
             "parents": [
-                "UqrKdO"
+                "_k7ZKy"
+            ],
+            "children": [
+                "nJsqZU"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "nJsqZU": {
+            "name": [
+                "鹿洞",
+                "Nokdong\\녹동"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gnWNJT"
             ],
             "children": [
                 "lineend"
             ],
             "transfer": {
                 "groups": [
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "suzhou",
-                                    "tram",
-                                    "#d8e4c0",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "有轨电车1号线",
-                                    "Tram Line 1"
-                                ]
-                            }
-                        ]
-                    }
+                    {}
                 ],
                 "tick_direc": "r",
                 "paid_area": true
@@ -106,16 +110,9 @@
                 "local"
             ],
             "parents": [
-                "ednSB-",
-                "J3d6jL"
+                "nJsqZU"
             ],
             "children": [],
-            "branch": {
-                "left": [
-                    "through",
-                    "ednSB-"
-                ]
-            },
             "transfer": {
                 "groups": [
                     {}
@@ -127,20 +124,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "CSLlrS": {
+        "_k7ZKy": {
             "name": [
-                "漓江路",
-                "Lijianglu"
+                "鹤洞·证心寺入口",
+                "Hakdong·Jeungsimsa\\학동·증심사입구"
             ],
-            "num": "00",
+            "num": "02",
             "services": [
                 "local"
             ],
             "parents": [
-                "L1SJEP"
+                "9MZyj6"
             ],
             "children": [
-                "UqrKdO"
+                "gnWNJT"
             ],
             "transfer": {
                 "groups": [
@@ -153,20 +150,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "L1SJEP": {
+        "9MZyj6": {
             "name": [
-                "恩顾山",
-                "Engushan"
+                "南光州",
+                "Namgwangju\\남광주"
             ],
-            "num": "00",
+            "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "IBUswv"
+                "_rdxI3"
             ],
             "children": [
-                "CSLlrS"
+                "_k7ZKy"
             ],
             "transfer": {
                 "groups": [
@@ -177,22 +174,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 125
         },
-        "IBUswv": {
+        "_rdxI3": {
             "name": [
-                "白龙桥",
-                "Bailongqiao"
+                "文化殿堂（旧道厅）",
+                "Asia Culture Center(Formerly Provincial Office)\\문화전당(구도청)"
             ],
-            "num": "00",
+            "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "m6nEP7"
+                "aXi0yA"
             ],
             "children": [
-                "L1SJEP"
+                "9MZyj6"
             ],
             "transfer": {
                 "groups": [
@@ -205,20 +202,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "m6nEP7": {
+        "aXi0yA": {
             "name": [
-                "树山",
-                "Shushan"
+                "锦南路四街",
+                "Geumnamno 4(sa)-ga\\금남로4가"
             ],
-            "num": "00",
+            "num": "05",
             "services": [
                 "local"
             ],
             "parents": [
-                "SUeTWg"
+                "EQP-ES"
             ],
             "children": [
-                "IBUswv"
+                "_rdxI3"
             ],
             "transfer": {
                 "groups": [
@@ -231,20 +228,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "SUeTWg": {
+        "EQP-ES": {
             "name": [
-                "通安",
-                "Tongan"
+                "锦南路五街",
+                "Geumnamno 5(o)-ga\\금남로5가"
             ],
-            "num": "00",
+            "num": "06",
             "services": [
                 "local"
             ],
             "parents": [
-                "HbZ5d-"
+                "e5d9-A"
             ],
             "children": [
-                "m6nEP7"
+                "aXi0yA"
             ],
             "transfer": {
                 "groups": [
@@ -257,20 +254,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "HbZ5d-": {
+        "e5d9-A": {
             "name": [
-                "华通花园南",
-                "Huatonghuayuan South"
+                "良洞市场",
+                "Yangdong Market\\양동시장"
             ],
-            "num": "00",
+            "num": "07",
             "services": [
                 "local"
             ],
             "parents": [
-                "Xk3gm8"
+                "qBN4n3"
             ],
             "children": [
-                "SUeTWg"
+                "EQP-ES"
             ],
             "transfer": {
                 "groups": [
@@ -283,20 +280,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "Xk3gm8": {
+        "qBN4n3": {
             "name": [
-                "建通桥",
-                "Jiantongqiao"
+                "石脊",
+                "Dolgogae\\돌고개"
             ],
-            "num": "00",
+            "num": "08",
             "services": [
                 "local"
             ],
             "parents": [
-                "fEes6i"
+                "QDxGFX"
             ],
             "children": [
-                "HbZ5d-"
+                "e5d9-A"
             ],
             "transfer": {
                 "groups": [
@@ -309,20 +306,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "fEes6i": {
+        "QDxGFX": {
             "name": [
-                "虎疁路",
-                "Huliulu"
+                "农城",
+                "Nongseong\\농성"
             ],
-            "num": "00",
+            "num": "09",
             "services": [
                 "local"
             ],
             "parents": [
-                "nz6DDH"
+                "pJ3i52"
             ],
             "children": [
-                "Xk3gm8"
+                "qBN4n3"
             ],
             "transfer": {
                 "groups": [
@@ -335,20 +332,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "nz6DDH": {
+        "pJ3i52": {
             "name": [
-                "兴贤桥北",
-                "Xingxianqiao North"
+                "花亭",
+                "Hwajeong\\화정"
             ],
-            "num": "00",
+            "num": "10",
             "services": [
                 "local"
             ],
             "parents": [
-                "v4Mg2o"
+                "WUER1-"
             ],
             "children": [
-                "fEes6i"
+                "QDxGFX"
             ],
             "transfer": {
                 "groups": [
@@ -361,28 +358,21 @@
             "one_line": true,
             "int_padding": 355
         },
-        "v4Mg2o": {
+        "WUER1-": {
             "name": [
-                "鸿福路",
-                "Hongfulu"
+                "双村",
+                "Ssangchon\\쌍촌"
             ],
-            "num": "00",
+            "num": "11",
             "services": [
                 "local"
             ],
             "parents": [
-                "8ltzRJ",
-                "zgjeB_"
+                "wm4y2z"
             ],
             "children": [
-                "nz6DDH"
+                "pJ3i52"
             ],
-            "branch": {
-                "left": [
-                    "through",
-                    "8ltzRJ"
-                ]
-            },
             "transfer": {
                 "groups": [
                     {}
@@ -394,12 +384,194 @@
             "one_line": true,
             "int_padding": 355
         },
-        "zgjeB_": {
+        "wm4y2z": {
             "name": [
-                "苏州新区火车站",
-                "Suzhou Xinqu Railway Station"
+                "云泉",
+                "Uncheon\\운천"
             ],
-            "num": "00",
+            "num": "12",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "2GrDKC"
+            ],
+            "children": [
+                "WUER1-"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "2GrDKC": {
+            "name": [
+                "尚武",
+                "Sangmu\\상무"
+            ],
+            "num": "13",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "rM7a4f"
+            ],
+            "children": [
+                "wm4y2z"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 95
+        },
+        "rM7a4f": {
+            "name": [
+                "金大中会展中心（马勒）",
+                "Kim Daejung Convention Center(Mareuk)\\김대중컨벤션센터(마륵)"
+            ],
+            "num": "14",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BRwt0J"
+            ],
+            "children": [
+                "2GrDKC"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "BRwt0J": {
+            "name": [
+                "机场",
+                "Airport\\공항"
+            ],
+            "num": "15",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "lY2W0k"
+            ],
+            "children": [
+                "rM7a4f"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lY2W0k": {
+            "name": [
+                "松汀公园",
+                "Songjeong Park\\송정공원"
+            ],
+            "num": "16",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "QUlDrD"
+            ],
+            "children": [
+                "BRwt0J"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "QUlDrD": {
+            "name": [
+                "光州松汀站",
+                "Gwangju Songjeong Station\\광주송정역"
+            ],
+            "num": "17",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Ip4v2C"
+            ],
+            "children": [
+                "lY2W0k"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Ip4v2C": {
+            "name": [
+                "道山",
+                "Dosan\\도산"
+            ],
+            "num": "18",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "7ieY4s"
+            ],
+            "children": [
+                "QUlDrD"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "7ieY4s": {
+            "name": [
+                "平洞",
+                "Pyeongdong\\평동"
+            ],
+            "num": "19",
             "services": [
                 "local"
             ],
@@ -407,159 +579,7 @@
                 "linestart"
             ],
             "children": [
-                "v4Mg2o"
-            ],
-            "transfer": {
-                "groups": [
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "suzhou",
-                                    "sz3",
-                                    "#F88211",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "轨道交通3号线",
-                                    "Rail Transit Line 3"
-                                ],
-                                "facility": "hsr"
-                            }
-                        ],
-                        "name": [
-                            "苏州新区火车站",
-                            "Suzhou Xinqu Railway Station"
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": false
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "8ltzRJ": {
-            "name": [
-                "文昌路",
-                "Wenchanglu"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "v4Mg2o"
-            ],
-            "transfer": {
-                "groups": [
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "suzhou",
-                                    "sz3",
-                                    "#F88211",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "轨道交通3号线",
-                                    "Rail Transit Line 3"
-                                ]
-                            }
-                        ],
-                        "name": [
-                            "文昌路",
-                            "Wenchanglu"
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": false
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "UqrKdO": {
-            "name": [
-                "航舶浜",
-                "Hongbobang"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "CSLlrS"
-            ],
-            "children": [
-                "gvWvdu",
-                "J3d6jL"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355,
-            "branch": {
-                "right": [
-                    "through",
-                    "gvWvdu"
-                ]
-            }
-        },
-        "gvWvdu": {
-            "name": [
-                "龙塘港路",
-                "Longtangganglu"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "UqrKdO"
-            ],
-            "children": [
-                "ednSB-"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "ednSB-": {
-            "name": [
-                "南京大学东",
-                "Nanjing University East"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "gvWvdu"
-            ],
-            "children": [
-                "lineend"
+                "Ip4v2C"
             ],
             "transfer": {
                 "groups": [
@@ -582,8 +602,8 @@
         "terminal": false
     },
     "line_num": "1",
-    "psd_num": "1",
-    "info_panel_type": "gz1",
+    "psd_num": "07",
+    "info_panel_type": "gzgf",
     "direction_gz_x": 40,
     "direction_gz_y": 70,
     "coline": {},
