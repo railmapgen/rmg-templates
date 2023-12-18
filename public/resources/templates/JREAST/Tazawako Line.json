@@ -1,28 +1,28 @@
 {
     "svgWidth": {
-        "destination": 1700,
-        "runin": 1300,
-        "railmap": 1900,
-        "indoor": 1300
+        "destination": 2000,
+        "runin": 2000,
+        "railmap": 3000,
+        "indoor": 3500
     },
-    "svg_height": 500,
-    "style": "shmetro",
+    "svg_height": 450,
+    "style": "mtr",
     "y_pc": 50,
-    "padding": 9,
-    "branchSpacingPct": 42,
+    "padding": 10,
+    "branchSpacingPct": 33,
     "direction": "l",
-    "platform_num": "",
+    "platform_num": "1",
     "theme": [
         "other",
         "other",
-        "#d85600",
+        "#835ba0",
         "#fff"
     ],
     "line_name": [
-        "高新有轨电车2号线",
-        "SND Tram Line 2"
+        "田沢湖線",
+        "Tazawako Line"
     ],
-    "current_stn_idx": "J3d6jL",
+    "current_stn_idx": "y6yuid",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,15 +35,8 @@
             ],
             "parents": [],
             "children": [
-                "8ltzRJ",
-                "zgjeB_"
+                "UQYc4l"
             ],
-            "branch": {
-                "right": [
-                    "through",
-                    "8ltzRJ"
-                ]
-            },
             "transfer": {
                 "groups": [
                     {}
@@ -53,22 +46,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "J3d6jL": {
+        "UQYc4l": {
             "name": [
-                "龙康路",
-                "Longkanglu"
+                "大曲",
+                "Ōmagari"
             ],
-            "num": "02",
+            "num": "01",
             "services": [
                 "local"
             ],
             "parents": [
-                "UqrKdO"
+                "linestart"
             ],
             "children": [
-                "lineend"
+                "I0NkwT"
             ],
             "transfer": {
                 "groups": [
@@ -76,14 +69,14 @@
                         "lines": [
                             {
                                 "theme": [
-                                    "suzhou",
-                                    "tram",
-                                    "#d8e4c0",
+                                    "other",
+                                    "other",
+                                    "#e7661f",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "有轨电车1号线",
-                                    "Tram Line 1"
+                                    "奥羽本线",
+                                    "Ōu Mainline"
                                 ]
                             }
                         ]
@@ -94,7 +87,33 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
+        },
+        "I0NkwT": {
+            "name": [
+                "北大曲",
+                "Kita-Ōmagari"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "UQYc4l"
+            ],
+            "children": [
+                "DUQ50_"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
         },
         "lineend": {
             "name": [
@@ -106,16 +125,9 @@
                 "local"
             ],
             "parents": [
-                "ednSB-",
-                "J3d6jL"
+                "y6yuid"
             ],
             "children": [],
-            "branch": {
-                "left": [
-                    "through",
-                    "ednSB-"
-                ]
-            },
             "transfer": {
                 "groups": [
                     {}
@@ -125,48 +137,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "CSLlrS": {
+        "DUQ50_": {
             "name": [
-                "漓江路",
-                "Lijianglu"
+                "羽後四ツ屋\t",
+                "Ugo-Yotsuya"
             ],
-            "num": "00",
+            "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "L1SJEP"
+                "I0NkwT"
             ],
             "children": [
-                "UqrKdO"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "L1SJEP": {
-            "name": [
-                "恩顾山",
-                "Engushan"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "IBUswv"
-            ],
-            "children": [
-                "CSLlrS"
+                "RmjafX"
             ],
             "transfer": {
                 "groups": [
@@ -177,22 +163,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "IBUswv": {
+        "RmjafX": {
             "name": [
-                "白龙桥",
-                "Bailongqiao"
+                "鑓見内\t",
+                "Yariminai"
             ],
-            "num": "00",
+            "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "m6nEP7"
+                "DUQ50_"
             ],
             "children": [
-                "L1SJEP"
+                "N0ApsK"
             ],
             "transfer": {
                 "groups": [
@@ -203,22 +189,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "m6nEP7": {
+        "N0ApsK": {
             "name": [
-                "树山",
-                "Shushan"
+                "羽後長野\t",
+                "Ugo-Nagano"
             ],
-            "num": "00",
+            "num": "05",
             "services": [
                 "local"
             ],
             "parents": [
-                "SUeTWg"
+                "RmjafX"
             ],
             "children": [
-                "IBUswv"
+                "g3-iUG"
             ],
             "transfer": {
                 "groups": [
@@ -229,22 +215,22 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "SUeTWg": {
+        "g3-iUG": {
             "name": [
-                "通安",
-                "Tongan"
+                "鶯野\t",
+                "Uguisuno"
             ],
-            "num": "00",
+            "num": "06",
             "services": [
                 "local"
             ],
             "parents": [
-                "HbZ5d-"
+                "N0ApsK"
             ],
             "children": [
-                "m6nEP7"
+                "uOWeoJ"
             ],
             "transfer": {
                 "groups": [
@@ -255,253 +241,63 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "HbZ5d-": {
+        "uOWeoJ": {
             "name": [
-                "华通花园南",
-                "Huatonghuayuan South"
+                "角館\t",
+                "Kakunodate"
             ],
-            "num": "00",
+            "num": "07",
             "services": [
                 "local"
             ],
             "parents": [
-                "Xk3gm8"
+                "g3-iUG"
             ],
             "children": [
-                "SUeTWg"
+                "netnsb"
             ],
             "transfer": {
                 "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "Xk3gm8": {
-            "name": [
-                "建通桥",
-                "Jiantongqiao"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "fEes6i"
-            ],
-            "children": [
-                "HbZ5d-"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "fEes6i": {
-            "name": [
-                "虎疁路",
-                "Huliulu"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "nz6DDH"
-            ],
-            "children": [
-                "Xk3gm8"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "nz6DDH": {
-            "name": [
-                "兴贤桥北",
-                "Xingxianqiao North"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "v4Mg2o"
-            ],
-            "children": [
-                "fEes6i"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "v4Mg2o": {
-            "name": [
-                "鸿福路",
-                "Hongfulu"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "8ltzRJ",
-                "zgjeB_"
-            ],
-            "children": [
-                "nz6DDH"
-            ],
-            "branch": {
-                "left": [
-                    "through",
-                    "8ltzRJ"
-                ]
-            },
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "zgjeB_": {
-            "name": [
-                "苏州新区火车站",
-                "Suzhou Xinqu Railway Station"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "v4Mg2o"
-            ],
-            "transfer": {
-                "groups": [
-                    {},
                     {
                         "lines": [
                             {
                                 "theme": [
-                                    "suzhou",
-                                    "sz3",
-                                    "#F88211",
+                                    "other",
+                                    "other",
+                                    "#fb0006",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "轨道交通3号线",
-                                    "Rail Transit Line 3"
-                                ],
-                                "facility": "hsr"
-                            }
-                        ],
-                        "name": [
-                            "苏州新区火车站",
-                            "Suzhou Xinqu Railway Station"
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": false
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "8ltzRJ": {
-            "name": [
-                "文昌路",
-                "Wenchanglu"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "v4Mg2o"
-            ],
-            "transfer": {
-                "groups": [
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "suzhou",
-                                    "sz3",
-                                    "#F88211",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "轨道交通3号线",
-                                    "Rail Transit Line 3"
+                                    "秋田内陸線",
+                                    "Akita Nairiku Line"
                                 ]
                             }
-                        ],
-                        "name": [
-                            "文昌路",
-                            "Wenchanglu"
                         ]
                     }
                 ],
                 "tick_direc": "r",
-                "paid_area": false
+                "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 200
         },
-        "UqrKdO": {
+        "netnsb": {
             "name": [
-                "航舶浜",
-                "Hongbobang"
+                "生田",
+                "Shōden"
             ],
-            "num": "00",
+            "num": "08",
             "services": [
                 "local"
             ],
             "parents": [
-                "CSLlrS"
+                "uOWeoJ"
             ],
             "children": [
-                "gvWvdu",
-                "J3d6jL"
+                "N2VYbL"
             ],
             "transfer": {
                 "groups": [
@@ -512,28 +308,100 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355,
-            "branch": {
-                "right": [
-                    "through",
-                    "gvWvdu"
-                ]
-            }
+            "int_padding": 200
         },
-        "gvWvdu": {
+        "N2VYbL": {
             "name": [
-                "龙塘港路",
-                "Longtangganglu"
+                "神代",
+                "Jindai"
             ],
-            "num": "00",
+            "num": "09",
             "services": [
                 "local"
             ],
             "parents": [
-                "UqrKdO"
+                "netnsb"
             ],
             "children": [
-                "ednSB-"
+                "Ie7rPM"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "Ie7rPM": {
+            "name": [
+                "刺巻",
+                "Sashimaki"
+            ],
+            "num": "10",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "N2VYbL"
+            ],
+            "children": [
+                "AKrrag"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "AKrrag": {
+            "name": [
+                "田沢湖\t",
+                "Tazawako"
+            ],
+            "num": "11",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Ie7rPM"
+            ],
+            "children": [
+                "9sinCB"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "9sinCB": {
+            "name": [
+                "赤渕",
+                "Akabuchi"
+            ],
+            "num": "12",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "AKrrag"
+            ],
+            "children": [
+                "0o6peh"
             ],
             "transfer": {
                 "groups": [
@@ -546,31 +414,200 @@
             "one_line": true,
             "int_padding": 355
         },
-        "ednSB-": {
+        "0o6peh": {
             "name": [
-                "南京大学东",
-                "Nanjing University East"
+                "春木場\t",
+                "Harukiba"
             ],
-            "num": "00",
+            "num": "13",
             "services": [
                 "local"
             ],
             "parents": [
-                "gvWvdu"
+                "9sinCB"
+            ],
+            "children": [
+                "4gXz2-"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "4gXz2-": {
+            "name": [
+                "雫石\t",
+                "Shizukuishi"
+            ],
+            "num": "14",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "0o6peh"
+            ],
+            "children": [
+                "yoY3_V"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "yoY3_V": {
+            "name": [
+                "小岩井\t",
+                "Koiwai"
+            ],
+            "num": "15",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "4gXz2-"
+            ],
+            "children": [
+                "1iEbbM"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "1iEbbM": {
+            "name": [
+                "大釜\t",
+                "Ōkama"
+            ],
+            "num": "16",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yoY3_V"
+            ],
+            "children": [
+                "yDxBZU"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "yDxBZU": {
+            "name": [
+                "前潟",
+                "Maegata"
+            ],
+            "num": "17",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "1iEbbM"
+            ],
+            "children": [
+                "y6yuid"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "y6yuid": {
+            "name": [
+                "盛岡\t",
+                "Morioka"
+            ],
+            "num": "18",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yDxBZU"
             ],
             "children": [
                 "lineend"
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#33a85e",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東北本線",
+                                    "Tōhoku Line "
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#bf6619",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "山田線",
+                                    "Yamada Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#0831aa",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "いわて銀河鉄道線",
+                                    "Iwate Galaxy Railway Line"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 300
         }
     },
     "namePosMTR": {
@@ -581,7 +618,7 @@
         "isLegacy": false,
         "terminal": false
     },
-    "line_num": "1",
+    "line_num": "--",
     "psd_num": "1",
     "info_panel_type": "gz1",
     "direction_gz_x": 40,

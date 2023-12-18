@@ -1,9 +1,9 @@
 {
     "svgWidth": {
-        "destination": 3000,
+        "destination": 1700,
         "runin": 1200,
         "railmap": 5000,
-        "indoor": 10000
+        "indoor": 7000
     },
     "svg_height": 450,
     "style": "shmetro",
@@ -14,20 +14,20 @@
     "platform_num": "1",
     "theme": [
         "tokyo",
-        "t",
-        "#00a4db",
+        "n",
+        "#02b69b",
         "#fff"
     ],
     "line_name": [
-        "東西線",
-        "Tozai Line"
+        "南北線",
+        "Namboku Line"
     ],
-    "current_stn_idx": "98Y_so",
+    "current_stn_idx": "cKSESb",
     "stn_list": {
         "linestart": {
             "name": [
-                "RIGHT END",
-                "RIGHT END"
+                "LEFT END",
+                "LEFT END"
             ],
             "num": "00",
             "services": [
@@ -35,7 +35,7 @@
             ],
             "parents": [],
             "children": [
-                "98Y_so"
+                "cKSESb"
             ],
             "transfer": {
                 "groups": [
@@ -48,36 +48,10 @@
             "one_line": true,
             "int_padding": 355
         },
-        "m5ZGVr": {
+        "cKSESb": {
             "name": [
-                "落合",
-                "Ochiai"
-            ],
-            "num": "02",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "98Y_so"
-            ],
-            "children": [
-                "l5R9NC"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "98Y_so": {
-            "name": [
-                "中野",
-                "Nakano"
+                "目黑",
+                "Meguro"
             ],
             "num": "01",
             "services": [
@@ -87,7 +61,7 @@
                 "linestart"
             ],
             "children": [
-                "m5ZGVr"
+                "vhobeJ"
             ],
             "transfer": {
                 "groups": [
@@ -95,26 +69,79 @@
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#fed304",
+                                    "tokyo",
+                                    "mg",
+                                    "#009CD3",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "中央線（各駅停車）",
-                                    "Chuo Line (Local)"
+                                    "東急目黒線",
+                                    "Tokyu Meguro Line"
                                 ]
                             },
                             {
                                 "theme": [
                                     "tokyo",
-                                    "jc",
-                                    "#f15921",
+                                    "i",
+                                    "#0068a5",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "中央線（快速）",
-                                    "Chuo Line (Rapid)"
+                                    "都営三田線",
+                                    "Toei Mita Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#7bab4f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "山手線",
+                                    "Yamanote Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "vhobeJ": {
+            "name": [
+                "白金台",
+                "Shirokanedai"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "cKSESb"
+            ],
+            "children": [
+                "Wz1reC"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "i",
+                                    "#0068a5",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "都営三田線",
+                                    "Toei Mita Line"
                                 ]
                             }
                         ]
@@ -129,15 +156,15 @@
         },
         "lineend": {
             "name": [
-                "LEFT END",
-                "LEFT END"
+                "RIGHT END",
+                "RIGHT END"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "tgyltk"
+                "vRHUXa"
             ],
             "children": [],
             "transfer": {
@@ -151,20 +178,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "l5R9NC": {
+        "Wz1reC": {
             "name": [
-                "高田馬場",
-                "Takadanobaba"
+                "白金高輪",
+                "Shirokane-Takanawa"
             ],
             "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "m5ZGVr"
+                "vhobeJ"
             ],
             "children": [
-                "pz5fz8"
+                "ioWV88"
             ],
             "transfer": {
                 "groups": [
@@ -172,124 +199,40 @@
                         "lines": [
                             {
                                 "theme": [
-                                    "other",
-                                    "other",
-                                    "#7bab4f",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "山手線",
-                                    "Yamanote Line"
-                                ]
-                            },
-                            {
-                                "theme": [
                                     "tokyo",
-                                    "ss",
-                                    "#00A6BF",
+                                    "i",
+                                    "#0068a5",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "西武新宿線",
-                                    "Seibu Shinjuku Line"
+                                    "都営三田線",
+                                    "Toei Mita Line"
                                 ]
                             }
-                        ]
-                    },
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "f",
-                                    "#9c5e31",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "副都心線",
-                                    "Fukutoshin Line"
-                                ]
-                            }
-                        ],
-                        "name": [
-                            "西早稲田",
-                            "Nishi-Waseda"
                         ]
                     }
                 ],
                 "tick_direc": "r",
-                "paid_area": false
+                "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
         },
-        "pz5fz8": {
+        "ioWV88": {
             "name": [
-                "早稲田",
-                "Waseda"
+                "麻布十番",
+                "Azabu-Juban"
             ],
             "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "l5R9NC"
+                "Wz1reC"
             ],
             "children": [
-                "IRRvfF"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "IRRvfF": {
-            "name": [
-                "神楽坂",
-                "Kagurazaka"
-            ],
-            "num": "05",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "pz5fz8"
-            ],
-            "children": [
-                "1ggPwz"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "1ggPwz": {
-            "name": [
-                "飯田橋",
-                "Iidabashi"
-            ],
-            "num": "06",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "IRRvfF"
-            ],
-            "children": [
-                "0B2QqN"
+                "k9cVOZ"
             ],
             "transfer": {
                 "groups": [
@@ -303,48 +246,8 @@
                                     "#fff"
                                 ],
                                 "name": [
-                                    "大江戶線",
-                                    "Oedo Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "other",
-                                    "other",
-                                    "#fed304",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "中央線（各駅停車）",
-                                    "Chuo Line (Rapid)"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "y",
-                                    "#d1a662",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "有楽町線",
-                                    "Yurakucho Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "n",
-                                    "#02b69b",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "南北線",
-                                    "Namboku Line"
+                                    "都営大江戶線",
+                                    "Toei Oedo Line"
                                 ]
                             }
                         ]
@@ -357,77 +260,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "0B2QqN": {
+        "k9cVOZ": {
             "name": [
-                "九段下",
-                "Kudanshita"
+                "六本木一丁目",
+                "Roppongi-Itchome"
             ],
-            "num": "07",
+            "num": "05",
             "services": [
                 "local"
             ],
             "parents": [
-                "1ggPwz"
+                "ioWV88"
             ],
             "children": [
-                "ZKeJLl"
-            ],
-            "transfer": {
-                "groups": [
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "s",
-                                    "#abba41",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "都営新宿線",
-                                    "Toei Shinjuku Line"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "z",
-                                    "#8c7dba",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "半藏門線",
-                                    "Hanzomon Line"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "ZKeJLl": {
-            "name": [
-                "竹橋 （毎日新聞社前）",
-                "Takebashi"
-            ],
-            "num": "08",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "0B2QqN"
-            ],
-            "children": [
-                "FmOyBn"
+                "sGuSVh"
             ],
             "transfer": {
                 "groups": [
@@ -440,20 +286,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "FmOyBn": {
+        "sGuSVh": {
             "name": [
-                "大手町",
-                "Otemachi"
+                "溜池山王",
+                "Tameike-Sanno"
             ],
-            "num": "09",
+            "num": "06",
             "services": [
                 "local"
             ],
             "parents": [
-                "ZKeJLl"
+                "k9cVOZ"
             ],
             "children": [
-                "uJFNiz"
+                "9ut_OH"
             ],
             "transfer": {
                 "groups": [
@@ -462,25 +308,13 @@
                             {
                                 "theme": [
                                     "tokyo",
-                                    "c",
-                                    "#1bb267",
+                                    "g",
+                                    "#f9a328",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "千代田線",
-                                    "Chiyoda Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "i",
-                                    "#0068a5",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "三田線",
-                                    "Mita Line"
+                                    "銀座線",
+                                    "Ginza Line"
                                 ]
                             }
                         ]
@@ -502,6 +336,51 @@
                             {
                                 "theme": [
                                     "tokyo",
+                                    "c",
+                                    "#1bb267",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "千代田線",
+                                    "Chiyoda Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "国会議事堂前",
+                            "Kokkai-Gijidōmae"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "9ut_OH": {
+            "name": [
+                "永田町",
+                "Nagatacho"
+            ],
+            "num": "07",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "sGuSVh"
+            ],
+            "children": [
+                "kzaR23"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
                                     "z",
                                     "#8c7dba",
                                     "#fff"
@@ -509,6 +388,18 @@
                                 "name": [
                                     "半藏門線",
                                     "Hanzomon Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "y",
+                                    "#d1a662",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "有楽町線",
+                                    "Yurakucho Line"
                                 ]
                             }
                         ]
@@ -518,108 +409,15 @@
                             {
                                 "theme": [
                                     "tokyo",
-                                    "jc",
-                                    "#f15921",
+                                    "m",
+                                    "#d92c2f",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "中央線",
-                                    "Chuo Line"
+                                    "丸之內線",
+                                    "Marunouchi Line"
                                 ]
                             },
-                            {
-                                "theme": [
-                                    "other",
-                                    "other",
-                                    "#7bab4f",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "山手線",
-                                    "Yamanote Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "jk",
-                                    "#00b2e6",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "京濱東北線",
-                                    "Keihin-Tohoku Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "jt",
-                                    "#f68b1f",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "東海道線",
-                                    "Tokkaido Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "jo",
-                                    "#007ac0",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "總武線（快速）· 橫須賀線",
-                                    "Sobu Line (Rapid) · Yokosuka Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "je",
-                                    "#D01827",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "京葉線",
-                                    "Keiyo Line"
-                                ]
-                            }
-                        ],
-                        "name": [
-                            "東京",
-                            "Tokyo"
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "uJFNiz": {
-            "name": [
-                "日本橋 （高島屋前）",
-                "Nihombashi"
-            ],
-            "num": "10",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "FmOyBn"
-            ],
-            "children": [
-                "3bMIhn"
-            ],
-            "transfer": {
-                "groups": [
-                    {
-                        "lines": [
                             {
                                 "theme": [
                                     "tokyo",
@@ -631,17 +429,74 @@
                                     "銀座線",
                                     "Ginza Line"
                                 ]
+                            }
+                        ],
+                        "name": [
+                            "赤坂見附",
+                            "Akasaka-Mitsuke"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "kzaR23": {
+            "name": [
+                "四ツ谷",
+                "Yotsuya"
+            ],
+            "num": "08",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "9ut_OH"
+            ],
+            "children": [
+                "kw7hhr"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "m",
+                                    "#d92c2f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "丸之內線",
+                                    "Marunouchi Line"
+                                ]
                             },
                             {
                                 "theme": [
                                     "tokyo",
-                                    "a",
-                                    "#dd4231",
+                                    "jc",
+                                    "#f15921",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "淺草線",
-                                    "Asakusa Line"
+                                    "中央線（快速）",
+                                    "Chuo Line (Rapid)"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#fed304",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "中央線（各駅停車）",
+                                    "Chuo Line (Local)"
                                 ]
                             }
                         ]
@@ -654,20 +509,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "3bMIhn": {
+        "kw7hhr": {
             "name": [
-                "茅場町",
-                "Kayabacho"
+                "市ケ谷",
+                "Ichigaya"
             ],
-            "num": "11",
+            "num": "09",
             "services": [
                 "local"
             ],
             "parents": [
-                "uJFNiz"
+                "kzaR23"
             ],
             "children": [
-                "3Xk2-b"
+                "tR9CVr"
             ],
             "transfer": {
                 "groups": [
@@ -676,13 +531,37 @@
                             {
                                 "theme": [
                                     "tokyo",
-                                    "h",
-                                    "#c7beb3",
+                                    "y",
+                                    "#d1a662",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "日比谷線",
-                                    "Hibiya Line"
+                                    "有楽町線",
+                                    "Yurakucho Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "s",
+                                    "#abba41",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "都営新宿線",
+                                    "Toei Shinjuku Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#fed304",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "中央線（各駅停車）",
+                                    "Chuo Line (Local)"
                                 ]
                             }
                         ]
@@ -695,25 +574,49 @@
             "one_line": true,
             "int_padding": 355
         },
-        "3Xk2-b": {
+        "tR9CVr": {
             "name": [
-                "門前仲町",
-                "Monzen-Nakacho"
+                "飯田橋",
+                "Iidabashi"
             ],
-            "num": "12",
+            "num": "10",
             "services": [
                 "local"
             ],
             "parents": [
-                "3bMIhn"
+                "kw7hhr"
             ],
             "children": [
-                "BJHXI4"
+                "ZdnrlH"
             ],
             "transfer": {
                 "groups": [
                     {
                         "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "t",
+                                    "#00a4db",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東西線",
+                                    "Tozai Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "y",
+                                    "#d1a662",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "有楽町線",
+                                    "Yurakucho Line"
+                                ]
+                            },
                             {
                                 "theme": [
                                     "tokyo",
@@ -722,8 +625,20 @@
                                     "#fff"
                                 ],
                                 "name": [
-                                    "大江戶線",
-                                    "Oedo Line"
+                                    "都営大江戶線",
+                                    "Toei Oedo Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#fed304",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "中央線（各駅停車）",
+                                    "Chuo Line (Local)"
                                 ]
                             }
                         ]
@@ -736,20 +651,46 @@
             "one_line": true,
             "int_padding": 355
         },
-        "BJHXI4": {
+        "RstKcF": {
             "name": [
-                "木場",
-                "Kiba"
+                "東大前",
+                "Todaimae"
+            ],
+            "num": "12",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ZdnrlH"
+            ],
+            "children": [
+                "Mze0-_"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Mze0-_": {
+            "name": [
+                "本駒込",
+                "Hon-Komagome"
             ],
             "num": "13",
             "services": [
                 "local"
             ],
             "parents": [
-                "3Xk2-b"
+                "RstKcF"
             ],
             "children": [
-                "5OP-AJ"
+                "1G4ZTW"
             ],
             "transfer": {
                 "groups": [
@@ -762,24 +703,39 @@
             "one_line": true,
             "int_padding": 355
         },
-        "5OP-AJ": {
+        "1G4ZTW": {
             "name": [
-                "東陽町",
-                "Toyocho"
+                "駒込",
+                "Komagome"
             ],
             "num": "14",
             "services": [
                 "local"
             ],
             "parents": [
-                "BJHXI4"
+                "Mze0-_"
             ],
             "children": [
-                "8eNhcS"
+                "gehhWh"
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#7bab4f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "山手線",
+                                    "Yamanote Line"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
@@ -788,20 +744,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "8eNhcS": {
+        "gehhWh": {
             "name": [
-                "南砂町",
-                "Minami-Sunamachi"
+                "西ケ原",
+                "Nishigahara"
             ],
             "num": "15",
             "services": [
                 "local"
             ],
             "parents": [
-                "5OP-AJ"
+                "1G4ZTW"
             ],
             "children": [
-                "XQDmal"
+                "jsvP5Y"
             ],
             "transfer": {
                 "groups": [
@@ -814,24 +770,59 @@
             "one_line": true,
             "int_padding": 355
         },
-        "XQDmal": {
+        "jsvP5Y": {
             "name": [
-                "西葛西",
-                "Nishi-Kasai"
+                "王子",
+                "Oji"
             ],
             "num": "16",
             "services": [
                 "local"
             ],
             "parents": [
-                "8eNhcS"
+                "gehhWh"
             ],
             "children": [
-                "TAsDGh"
+                "Sr3Jmn"
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "jk",
+                                    "#00b2e6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "京濱東北線",
+                                    "Keihin-Tohoku Line"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "sa",
+                                    "#d75b80",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "荒川線",
+                                    "Arakawa Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "王子站前",
+                            "Oji-Ekimae"
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
@@ -840,20 +831,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "TAsDGh": {
+        "Sr3Jmn": {
             "name": [
-                "葛西 （地下鉄博物館前）",
-                "Kasai"
+                "王子神谷",
+                "Oji-Kamiya"
             ],
             "num": "17",
             "services": [
                 "local"
             ],
             "parents": [
-                "XQDmal"
+                "jsvP5Y"
             ],
             "children": [
-                "TR1PbS"
+                "UKOscu"
             ],
             "transfer": {
                 "groups": [
@@ -866,20 +857,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "TR1PbS": {
+        "UKOscu": {
             "name": [
-                "浦安",
-                "Urayasu"
+                "志茂",
+                "Shimo"
             ],
             "num": "18",
             "services": [
                 "local"
             ],
             "parents": [
-                "TAsDGh"
+                "Sr3Jmn"
             ],
             "children": [
-                "HcPRrG"
+                "vRHUXa"
             ],
             "transfer": {
                 "groups": [
@@ -892,121 +883,17 @@
             "one_line": true,
             "int_padding": 355
         },
-        "HcPRrG": {
+        "vRHUXa": {
             "name": [
-                "南行徳",
-                "Minami-Gyotoku"
+                "赤羽岩淵",
+                "Akabane-Iwabuchi"
             ],
             "num": "19",
             "services": [
                 "local"
             ],
             "parents": [
-                "TR1PbS"
-            ],
-            "children": [
-                "4wWWti"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "4wWWti": {
-            "name": [
-                "行徳",
-                "Gyotoku"
-            ],
-            "num": "20",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "HcPRrG"
-            ],
-            "children": [
-                "MooH9r"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "MooH9r": {
-            "name": [
-                "妙典",
-                "Myoden"
-            ],
-            "num": "21",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "4wWWti"
-            ],
-            "children": [
-                "R7SK8r"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "R7SK8r": {
-            "name": [
-                "原木中山",
-                "Baraki-Nakayama"
-            ],
-            "num": "22",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "MooH9r"
-            ],
-            "children": [
-                "tgyltk"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "tgyltk": {
-            "name": [
-                "西船橋",
-                "Nishi-Funabashi"
-            ],
-            "num": "23",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "R7SK8r"
+                "UKOscu"
             ],
             "children": [
                 "lineend"
@@ -1018,72 +905,15 @@
                             {
                                 "theme": [
                                     "tokyo",
-                                    "tr",
-                                    "#5AB65C",
+                                    "srr",
+                                    "#3564AF",
                                     "#fff"
                                 ],
                                 "name": [
-                                    "東葉高速線",
-                                    "Toyo Kosoku Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "other",
-                                    "other",
-                                    "#fed304",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "總武線",
-                                    "Sobu Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "jm",
-                                    "#EB5A28",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "武藏野線",
-                                    "Musashino Line"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "je",
-                                    "#D01827",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "京葉線",
-                                    "Keiyo Line"
+                                    "埼玉高速鐵道線",
+                                    "Saitama-Kosoku-Tetsudo Line"
                                 ]
                             }
-                        ]
-                    },
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "tokyo",
-                                    "ks",
-                                    "#005AAA",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "京成本線",
-                                    "Keisei Main Line"
-                                ]
-                            }
-                        ],
-                        "name": [
-                            "京成西船",
-                            "Keisei-Nishifuna"
                         ]
                     }
                 ],
@@ -1093,21 +923,94 @@
             "loop_pivot": false,
             "one_line": true,
             "int_padding": 355
+        },
+        "ZdnrlH": {
+            "name": [
+                "後樂園",
+                "Korakuen"
+            ],
+            "num": "11",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "tR9CVr"
+            ],
+            "children": [
+                "RstKcF"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "m",
+                                    "#d92c2f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "丸之內線",
+                                    "Marunouchi Line"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "i",
+                                    "#0068a5",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "三田線",
+                                    "Mita Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "o",
+                                    "#ce1c64",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "都営大江戶線",
+                                    "Toei Oedo Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "春日",
+                            "Kasuga "
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         }
     },
     "namePosMTR": {
-        "isStagger": true,
-        "isFlip": true
+        "isStagger": false,
+        "isFlip": false
     },
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
     },
-    "line_num": "T",
+    "line_num": "N",
     "psd_num": "1",
     "info_panel_type": "gz1",
     "direction_gz_x": 40,
-    "direction_gz_y": 70,
+    "direction_gz_y": 79,
     "coline": {},
     "loop": false,
     "loop_info": {
