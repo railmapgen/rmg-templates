@@ -2,27 +2,27 @@
     "svgWidth": {
         "destination": 1200,
         "runin": 1200,
-        "railmap": 3000,
-        "indoor": 1200
+        "railmap": 1600,
+        "indoor": 2000
     },
-    "svg_height": 350,
-    "style": "mtr",
+    "svg_height": 330,
+    "style": "shmetro",
     "y_pc": 50,
-    "padding": 5,
+    "padding": 10,
     "branchSpacingPct": 33,
-    "direction": "l",
-    "platform_num": "1",
+    "direction": "r",
+    "platform_num": "",
     "theme": [
-        "chengdu",
-        "cd10",
-        "#0050a3",
+        "chuzhou",
+        "ningchu",
+        "#ff631b",
         "#fff"
     ],
     "line_name": [
-        "10号线",
-        "Line 10"
+        "宁滁线",
+        "Nanjing-Chuzhou Line"
     ],
-    "current_stn_idx": "V9NcxR",
+    "current_stn_idx": "IRG7ho",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,7 +35,7 @@
             ],
             "parents": [],
             "children": [
-                "ZFT6Zt"
+                "IRG7ho"
             ],
             "transfer": {
                 "groups": [
@@ -48,20 +48,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "FVExyD": {
+        "IRG7ho": {
             "name": [
-                "刘家碾",
-                "Liujianian"
+                "滁州高铁站",
+                "Chuzhou Railway Station"
             ],
             "num": "01",
             "services": [
                 "local"
             ],
             "parents": [
-                "V_nrVk"
+                "linestart"
             ],
             "children": [
-                "V9NcxR"
+                "CFn1jE"
             ],
             "transfer": {
                 "groups": [
@@ -72,22 +72,21 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "facility": "railway"
         },
-        "V9NcxR": {
+        "CFn1jE": {
             "name": [
-                "新平",
-                "Xinping"
+                "腰铺",
+                "YAOPU"
             ],
             "num": "02",
-            "services": [
-                "local"
-            ],
+            "services": [],
             "parents": [
-                "FVExyD"
+                "IRG7ho"
             ],
             "children": [
-                "lineend"
+                "gmRYy3"
             ],
             "transfer": {
                 "groups": [
@@ -110,7 +109,7 @@
                 "local"
             ],
             "parents": [
-                "V9NcxR"
+                "9GLiw4"
             ],
             "children": [],
             "transfer": {
@@ -124,20 +123,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "V_nrVk": {
+        "gmRYy3": {
             "name": [
-                "儒林路",
-                "Rulin Road"
+                "花博园",
+                "HUABOYUAN"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "fvoMMD"
+                "CFn1jE"
             ],
             "children": [
-                "FVExyD"
+                "pJTBqw"
             ],
             "transfer": {
                 "groups": [
@@ -150,20 +149,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "fvoMMD": {
+        "pJTBqw": {
             "name": [
-                "五津",
-                "Wujin"
+                "琅琊山",
+                "LANGYASHAN"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "QaF8is"
+                "gmRYy3"
             ],
             "children": [
-                "V_nrVk"
+                "zlv5_7"
             ],
             "transfer": {
                 "groups": [
@@ -176,20 +175,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "QaF8is": {
+        "zlv5_7": {
             "name": [
-                "花桥",
-                "Huaqiao"
+                "滁州政务中心",
+                "Chuzhou Government Affairs Center"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "VSUbuF"
+                "pJTBqw"
             ],
             "children": [
-                "fvoMMD"
+                "rqdEL4"
             ],
             "transfer": {
                 "groups": [
@@ -202,47 +201,18 @@
             "one_line": true,
             "int_padding": 355
         },
-        "VSUbuF": {
+        "rqdEL4": {
             "name": [
-                "新津站",
-                "Xinjin Railway Station"
+                "担子",
+                "DANZI"
             ],
             "num": "00",
-            "services": [
-                "local"
-            ],
+            "services": [],
             "parents": [
-                "zxi9mm"
+                "zlv5_7"
             ],
             "children": [
-                "QaF8is"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355,
-            "facility": "hsr"
-        },
-        "zxi9mm": {
-            "name": [
-                "花源",
-                "Huayuan"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "I2wcWW"
-            ],
-            "children": [
-                "VSUbuF"
+                "88PdWi"
             ],
             "transfer": {
                 "groups": [
@@ -255,20 +225,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "I2wcWW": {
+        "88PdWi": {
             "name": [
-                "黄水",
-                "Huangshui"
+                "苏滁商务中心",
+                "SUCHU Business Center"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "wY-pqm"
+                "rqdEL4"
             ],
             "children": [
-                "zxi9mm"
+                "W6OBJF"
             ],
             "transfer": {
                 "groups": [
@@ -281,20 +251,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "wY-pqm": {
+        "W6OBJF": {
             "name": [
-                "应天寺",
-                "Yingtian Temple"
+                "大王郢",
+                "DAWANGYING"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "64CnIR"
+                "88PdWi"
             ],
             "children": [
-                "I2wcWW"
+                "lX2iwN"
             ],
             "transfer": {
                 "groups": [
@@ -307,136 +277,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "64CnIR": {
+        "lX2iwN": {
             "name": [
-                "双流西站",
-                "Shuangliu West Railway Station"
+                "林楼",
+                "LINLOU"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "B_uNm6"
+                "W6OBJF"
             ],
             "children": [
-                "wY-pqm"
-            ],
-            "transfer": {
-                "groups": [
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd3",
-                                    "#d5006a",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "3号线",
-                                    "Line 3"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355,
-            "facility": "hsr"
-        },
-        "B_uNm6": {
-            "name": [
-                "双流机场2航站楼",
-                "Terminal 2 of Shuangliu International\\Airport"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "_bAo7g"
-            ],
-            "children": [
-                "64CnIR"
-            ],
-            "transfer": {
-                "groups": [
-                    {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd19",
-                                    "#89ABE3",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "19号线",
-                                    "Line 19"
-                                ]
-                            }
-                        ],
-                        "name": [
-                            "双流机场2航站楼东",
-                            "East of Terminal 2 of Shuangliu\\International Airport"
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": false
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355,
-            "facility": "airport"
-        },
-        "_bAo7g": {
-            "name": [
-                "双流机场1航站楼",
-                "Terminal 1 of Shuangliu International\\Airport"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "PvQQGi"
-            ],
-            "children": [
-                "B_uNm6"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355,
-            "facility": "airport"
-        },
-        "PvQQGi": {
-            "name": [
-                "金花",
-                "Jinhua"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "3-D1_H"
-            ],
-            "children": [
-                "_bAo7g"
+                "Bxpldy"
             ],
             "transfer": {
                 "groups": [
@@ -449,61 +303,18 @@
             "one_line": true,
             "int_padding": 355
         },
-        "3-D1_H": {
+        "Bxpldy": {
             "name": [
-                "华兴",
-                "Huaxing"
+                "水口",
+                "SHUIKOU"
             ],
             "num": "00",
-            "services": [
-                "local"
-            ],
+            "services": [],
             "parents": [
-                "9y3Jki"
+                "lX2iwN"
             ],
             "children": [
-                "PvQQGi"
-            ],
-            "transfer": {
-                "groups": [
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd9",
-                                    "#f1ad17",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "9号线",
-                                    "Line 9"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "9y3Jki": {
-            "name": [
-                "簇锦",
-                "Cujin"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "ZFT6Zt"
-            ],
-            "children": [
-                "3-D1_H"
+                "WhT-Oy"
             ],
             "transfer": {
                 "groups": [
@@ -516,51 +327,100 @@
             "one_line": true,
             "int_padding": 355
         },
-        "ZFT6Zt": {
+        "WhT-Oy": {
             "name": [
-                "太平园",
-                "Taipingyuan"
+                "十二里半",
+                "SHIERLIBAN"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "linestart"
+                "Bxpldy"
             ],
             "children": [
-                "9y3Jki"
+                "1LYxp0"
             ],
             "transfer": {
                 "groups": [
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd3",
-                                    "#d5006a",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "3号线",
-                                    "Line 3"
-                                ]
-                            },
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd7",
-                                    "#6dc6d6",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "7号线",
-                                    "Line 7"
-                                ]
-                            }
-                        ]
-                    }
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "1LYxp0": {
+            "name": [
+                "相官",
+                "XIANGGUAN"
+            ],
+            "num": "00",
+            "services": [],
+            "parents": [
+                "WhT-Oy"
+            ],
+            "children": [
+                "j-NFpS"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "j-NFpS": {
+            "name": [
+                "汊河新城",
+                "CHAHEXINCHENG"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "1LYxp0"
+            ],
+            "children": [
+                "9GLiw4"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "9GLiw4": {
+            "name": [
+                "汊河",
+                "CHAHE"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "j-NFpS"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
                 "paid_area": true
