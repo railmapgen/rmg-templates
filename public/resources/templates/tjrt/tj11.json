@@ -1,33 +1,33 @@
 {
     "svgWidth": {
         "destination": 1200,
-        "runin": 1200,
-        "railmap": 2000,
-        "indoor": 3000
+        "runin": 1300,
+        "railmap": 1500,
+        "indoor": 1500
     },
-    "svg_height": 400,
+    "svg_height": 390,
     "style": "gzmtr",
     "y_pc": 50,
     "padding": 10,
     "branchSpacingPct": 33,
     "direction": "l",
-    "platform_num": "1",
+    "platform_num": "",
     "theme": [
-        "tianjin",
-        "tj11",
-        "#ed0066",
+        "other",
+        "other",
+        "#002d72",
         "#fff"
     ],
     "line_name": [
         "11号线",
         "Line 11"
     ],
-    "current_stn_idx": "0L8a_b",
+    "current_stn_idx": "PpNbhA",
     "stn_list": {
         "linestart": {
             "name": [
-                "RIGHT END",
-                "RIGHT END"
+                "LEFT END",
+                "LEFT END"
             ],
             "num": "00",
             "services": [
@@ -35,7 +35,59 @@
             ],
             "parents": [],
             "children": [
-                "ORHuoQ"
+                "2GJbcB"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "LbScWJ": {
+            "name": [
+                "东丽三经路",
+                "Dongli Sanjing Road"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3i3Vys"
+            ],
+            "children": [
+                "IqZyQO"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "IqZyQO": {
+            "name": [
+                "东丽六经路",
+                "Dongli Liujing Road"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "LbScWJ"
+            ],
+            "children": [
+                "lineend"
             ],
             "transfer": {
                 "groups": [
@@ -50,15 +102,15 @@
         },
         "lineend": {
             "name": [
-                "LEFT END",
-                "LEFT END"
+                "RIGHT END",
+                "RIGHT END"
             ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "0L8a_b"
+                "IqZyQO"
             ],
             "children": [],
             "transfer": {
@@ -72,72 +124,47 @@
             "one_line": true,
             "int_padding": 355
         },
-        "ORHuoQ": {
+        "3i3Vys": {
             "name": [
-                "东江道",
-                "DONGJIANGDAO"
-            ],
-            "num": "01",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "linestart"
-            ],
-            "children": [
-                "Va5MAi"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "Va5MAi": {
-            "name": [
-                "学苑北路",
-                "XUEYUANBEILU"
-            ],
-            "num": "02",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "ORHuoQ"
-            ],
-            "children": [
-                "BSnkPJ"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "BSnkPJ": {
-            "name": [
-                "海河东路",
-                "HAIHEDONGLU"
+                "东丽一经路",
+                "Dongli Yijing Road"
             ],
             "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "Va5MAi"
+                "f5BsP0"
             ],
             "children": [
-                "hPQ7vL"
+                "LbScWJ"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "f5BsP0": {
+            "name": [
+                "驯海路",
+                " Xunhai Road"
+            ],
+            "num": "04",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "PpNbhA"
+            ],
+            "children": [
+                "3i3Vys"
             ],
             "transfer": {
                 "groups": [
@@ -150,20 +177,98 @@
             "one_line": true,
             "int_padding": 355
         },
-        "hPQ7vL": {
+        "PpNbhA": {
             "name": [
-                "环宇道",
-                "HUANYUDAO"
+                "东丽文体中心",
+                "Dongli Culture & Sports Center"
             ],
-            "num": "04",
+            "num": "05",
             "services": [
                 "local"
             ],
             "parents": [
-                "BSnkPJ"
+                "1vXEHI"
             ],
             "children": [
-                "5gs8sq"
+                "f5BsP0"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "1vXEHI": {
+            "name": [
+                "招远路",
+                "Zhaoyuan Road"
+            ],
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "B3xPnJ"
+            ],
+            "children": [
+                "PpNbhA"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "B3xPnJ": {
+            "name": [
+                "雪莲南路",
+                "South Xuelian Road"
+            ],
+            "num": "07",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "qRtBVL"
+            ],
+            "children": [
+                "1vXEHI"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "qRtBVL": {
+            "name": [
+                "环宇道",
+                "Huanyu Road"
+            ],
+            "num": "08",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "WHNmmu"
+            ],
+            "children": [
+                "B3xPnJ"
             ],
             "transfer": {
                 "groups": [
@@ -191,124 +296,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "5gs8sq": {
+        "WHNmmu": {
             "name": [
-                "雪莲南路",
-                "XUELIANNANLU"
-            ],
-            "num": "05",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "hPQ7vL"
-            ],
-            "children": [
-                "074wJA"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "074wJA": {
-            "name": [
-                "招远路",
-                "ZHAOYUANLU"
-            ],
-            "num": "06",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "5gs8sq"
-            ],
-            "children": [
-                "rUVRsH"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "rUVRsH": {
-            "name": [
-                "东丽文体中心",
-                "DONGLIWENTIZHONGXIN"
-            ],
-            "num": "07",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "074wJA"
-            ],
-            "children": [
-                "JEquGW"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "JEquGW": {
-            "name": [
-                "驯海路",
-                "XUNHAILU"
-            ],
-            "num": "08",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "rUVRsH"
-            ],
-            "children": [
-                "amQnLW"
-            ],
-            "transfer": {
-                "groups": [
-                    {}
-                ],
-                "tick_direc": "r",
-                "paid_area": true
-            },
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 355
-        },
-        "amQnLW": {
-            "name": [
-                "东丽一经路",
-                "DONGLIYIJINGLU"
+                "海河东路",
+                "East Haihe River Road"
             ],
             "num": "09",
             "services": [
                 "local"
             ],
             "parents": [
-                "JEquGW"
+                "_s3jwV"
             ],
             "children": [
-                "qc_Bkx"
+                "qRtBVL"
             ],
             "transfer": {
                 "groups": [
@@ -321,20 +322,20 @@
             "one_line": true,
             "int_padding": 355
         },
-        "qc_Bkx": {
+        "_s3jwV": {
             "name": [
-                "东丽三经路",
-                "DONGLISANJINGLU"
+                "学苑北路",
+                "North Xueyuan Road"
             ],
             "num": "10",
             "services": [
                 "local"
             ],
             "parents": [
-                "amQnLW"
+                "2GJbcB"
             ],
             "children": [
-                "0L8a_b"
+                "WHNmmu"
             ],
             "transfer": {
                 "groups": [
@@ -347,24 +348,41 @@
             "one_line": true,
             "int_padding": 355
         },
-        "0L8a_b": {
+        "2GJbcB": {
             "name": [
-                "东丽六经路",
-                "DONGLILIUJINGLU"
+                "东江道",
+                "Dongjiang Road"
             ],
             "num": "11",
             "services": [
                 "local"
             ],
             "parents": [
-                "qc_Bkx"
+                "linestart"
             ],
             "children": [
-                "lineend"
+                "_s3jwV"
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {},
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tianjin",
+                                    "tj1",
+                                    "#bd0016",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1号线",
+                                    "1号线"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
@@ -376,7 +394,7 @@
     },
     "namePosMTR": {
         "isStagger": true,
-        "isFlip": true
+        "isFlip": false
     },
     "customiseMTRDest": {
         "isLegacy": false,
@@ -385,8 +403,8 @@
     "line_num": "11",
     "psd_num": "1",
     "info_panel_type": "gz5",
-    "direction_gz_x": 47,
-    "direction_gz_y": 79,
+    "direction_gz_x": 59,
+    "direction_gz_y": 80,
     "coline": {},
     "loop": false,
     "loop_info": {
@@ -394,14 +412,6 @@
         "left_and_right_factor": 1,
         "bottom_factor": 1
     },
-    "version": "5.14.16",
-    "notesGZMTR": [
-        [
-            "11号线东江道站可站外换乘1号线华山里站，30分钟内站外联程，可享受1元联程优惠",
-            "Line 11 DONGJIANGDAO Station can transfer to Line 1 HUASHANLI Station outside the station. You can enjoy a 1 yuan connection discount within 30 minutes",
-            61,
-            88,
-            true
-        ]
-    ]
+    "version": "5.15.3",
+    "spanLineNum": true
 }
