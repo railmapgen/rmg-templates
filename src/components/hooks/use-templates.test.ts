@@ -1,23 +1,24 @@
 import { renderHook } from '../../test-utils';
-import rootReducer from '../../redux';
-import { createMockRootStore } from '../../setupTests';
+import rootReducer, { RootStore } from '../../redux';
+import { createTestStore } from '../../setupTests';
 import useTemplates, { IUseTemplates } from './use-templates';
-import { vi } from 'vitest';
 import { act, RenderHookResult } from '@testing-library/react';
 
 const realStore = rootReducer.getState();
-const mockStore = createMockRootStore({
-    ...realStore,
-    app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {} }] } },
-});
+let mockStore: RootStore;
 
 const originalFetch = global.fetch;
 const mockFetch = vi.fn();
 
 describe('useTempaltes', () => {
+    beforeEach(() => {
+        mockStore = createTestStore({
+            app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {} }] } },
+        });
+    });
+
     afterEach(() => {
         global.fetch = originalFetch;
-        mockStore.clearActions();
         mockFetch.mockClear();
     });
 
@@ -52,8 +53,6 @@ describe('useTempaltes', () => {
         expect(templates).toContainEqual(expect.objectContaining({ filename: 'gf' }));
 
         // add to cache
-        const actions = mockStore.getActions();
-        expect(actions).toHaveLength(1);
-        expect(actions).toContainEqual(expect.objectContaining({ type: 'app/setTemplateListByCompany' }));
+        expect(mockStore.getState().app.templateList).toHaveProperty('fmetro', expect.any(Array));
     });
 });

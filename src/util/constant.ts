@@ -60,4 +60,45 @@ export const INVALID_REASON: Record<InvalidReasonType, Translation> = {
 
 export const GITHUB_ISSUE_PREAMBLE = '**Do not edit lines below, they are meant for bots only!!!**';
 
+export type ReferenceSource =
+    | 'STATION_WEB_IMAGE'
+    | 'STATION_WEB_VIDEO'
+    | 'STATION_UPLOAD_IMAGE'
+    | 'LINE_DIAGRAM'
+    | 'WIKIPEDIA'
+    | 'OTHER';
+
+export const REFERENCE_SOURCE_DISPLAY_TEXT: Record<ReferenceSource, Translation> = {
+    STATION_WEB_IMAGE: {
+        en: '1. Images taken in the stations on the Internet',
+        'zh-Hans': '1. 互联网上在车站里拍摄的相片',
+        'zh-Hant': '1. 網絡上於車站內拍攝的相片',
+    },
+    STATION_WEB_VIDEO: {
+        en: '2. Video recorded in the stations on the Internet',
+        'zh-Hans': '2. 互联网上在车站里拍摄的视频',
+        'zh-Hant': '2. 網絡上於車站內錄製的影片',
+    },
+    STATION_UPLOAD_IMAGE: {
+        en: '3. Images taken in the stations (Upload separately in Issue)',
+        'zh-Hans': '3. 在车站里拍摄的相片（在 Issue 中单独上传）',
+        'zh-Hant': '3. 於車站內拍攝的相片（於 Issue 中另外上載）',
+    },
+    LINE_DIAGRAM: {
+        en: '4. Line diagram on the Internet',
+        'zh-Hans': '4. 互联网上的路线图',
+        'zh-Hant': '4. 網絡上的綫路圖',
+    },
+    WIKIPEDIA: {
+        en: '5. Wikipedia',
+        'zh-Hans': '5. 维基百科',
+        'zh-Hant': '5. 維基百科',
+    },
+    OTHER: {
+        en: '6. Others (Please indicate below)',
+        'zh-Hans': '6. 其他（请于下方注明）',
+        'zh-Hant': '6. 其他（請於下方註明）',
+    },
+};
+
 export const SELECTED_COMPANY_KEY = 'selectedCompany';
