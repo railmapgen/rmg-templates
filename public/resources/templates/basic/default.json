@@ -1,414 +1,237 @@
 {
-    "style": "mtr",
-    "svg_height": 300,
-    "svg_width": 1050,
-    "svg_dest_width": 1050,
-    "show_outer": true,
-    "padding": 5,
-    "y_pc": 40,
-    "strip_pc": 90,
-    "branch_spacing": 45,
-    "theme": [
-        "guangzhou",
-        "gz3",
-        "#ECA154"
-    ],
+    "svgWidth": {
+        "destination": 3000,
+        "runin": 3000,
+        "railmap": 3000,
+        "indoor": 3000
+    },
+    "svg_height": 400,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 15,
+    "branchSpacingPct": 33,
     "direction": "r",
-    "current_stn_idx": "a4",
-    "platform_num": "2",
-    "txt_bg_gap": 15,
-    "txt_flip": false,
+    "platform_num": "",
+    "theme": [
+        "other",
+        "other",
+        "#00ff00",
+        "#fff"
+    ],
+    "line_name": [
+        "1号线",
+        "Line 1"
+    ],
+    "current_stn_idx": "8HhZ8s",
     "stn_list": {
         "linestart": {
-            "parents": [],
-            "children": [
-                "ackf"
-            ],
             "name": [
-                "路綫左端",
+                "LEFT END",
                 "LEFT END"
             ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a00": {
-            "parents": [
-                "ackf"
+            "num": "00",
+            "services": [
+                "local"
             ],
+            "parents": [],
             "children": [
-                "a2",
-                "a4"
+                "ziIliy"
             ],
-            "name": [
-                "番禺",
-                "Panyu"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": [
-                    "through",
-                    "a4"
-                ]
-            }
-        },
-        "a2": {
-            "parents": [
-                "a00"
-            ],
-            "children": [
-                "a50"
-            ],
-            "name": [
-                "沙田",
-                "Sha Tin"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a4": {
-            "parents": [
-                "a00"
-            ],
-            "children": [
-                "a50"
-            ],
-            "name": [
-                "馬塲",
-                "Racecourse"
-            ],
-            "change_type": "osi12_pr",
-            "interchange": [
-                [],
-                [
-                    [
-                        "曁大",
-                        "Jinan University"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz13",
-                        "#8E8C13",
-                        "13號綫",
-                        "Line 13"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz18",
-                        "#D48BC8",
-                        "18號綫",
-                        "Line 18"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a50": {
-            "parents": [
-                "a2",
-                "a4"
-            ],
-            "children": [
-                "a51"
-            ],
-            "name": [
-                "廣州塔",
-                "Canton Tower"
-            ],
-            "change_type": "osi12_ur",
-            "interchange": [
-                [],
-                [
-                    [
-                        "嶺南廣場",
-                        "Lingnan Square"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [
-                    "through",
-                    "a4"
+            "transfer": {
+                "groups": [
+                    {}
                 ],
-                "right": []
-            }
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 300
         },
-        "a51": {
-            "parents": [
-                "a50"
-            ],
-            "children": [
-                "a5"
-            ],
+        "ziIliy": {
             "name": [
-                "珠江新城",
-                "Zhujiang New Town"
+                "未命名 ziIliy",
+                "Unnamed ziIliy"
             ],
-            "change_type": "osi11_ur",
-            "interchange": [
-                [],
-                [
-                    [
-                        "黃埔大道",
-                        "Huangpu Dadao"
-                    ],
-                    [
-                        "guangzhou",
-                        "apm",
-                        "#00B5E2",
-                        "APM綫",
-                        "APM Line"
-                    ]
-                ]
+            "num": "01",
+            "services": [
+                "local"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a5": {
-            "parents": [
-                "a51"
-            ],
-            "children": [
-                "a6",
-                "a10"
-            ],
-            "name": [
-                "體育西路",
-                "Tiyu Xilu"
-            ],
-            "change_type": "osi11_pl",
-            "interchange": [
-                [],
-                [
-                    [
-                        "天河路",
-                        "Tianhe Lu"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz10",
-                        "#7D9BC1",
-                        "10号线",
-                        "Line 10"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": [
-                    "nonthrough",
-                    "a10"
-                ]
-            }
-        },
-        "a6": {
-            "parents": [
-                "a5"
-            ],
-            "children": [
-                "a7"
-            ],
-            "name": [
-                "嘉禾望崗",
-                "Jiahe Wanggang"
-            ],
-            "change_type": "int3_r",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz3",
-                        "#ECA154",
-                        "3号线",
-                        "Line 3"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz14",
-                        "#81312F",
-                        "14号线",
-                        "Line 14"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a7": {
-            "parents": [
-                "a6"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "name": [
-                "機塲",
-                "Airport"
-            ],
-            "change_type": "osi22_end_p",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
-                ],
-                [
-                    [
-                        "香港",
-                        "Hong Kong"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a10": {
-            "parents": [
-                "a5"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "name": [
-                "銀河",
-                "Galaxy"
-            ],
-            "change_type": "int2",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "lineend": {
-            "parents": [
-                "a7",
-                "a10"
-            ],
-            "children": [],
-            "name": [
-                "路綫右端",
-                "RIGHT END"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [
-                    "nonthrough",
-                    "a10"
-                ],
-                "right": []
-            }
-        },
-        "ackf": {
             "parents": [
                 "linestart"
             ],
             "children": [
-                "a00"
+                "8HhZ8s"
             ],
-            "name": [
-                "海鷗",
-                "Haiou"
-            ],
-            "change_type": "osi22_end_u",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
+            "transfer": {
+                "groups": [
+                    {}
                 ],
-                [
-                    [
-                        "嶺南廣場",
-                        "Lingnan Square"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 300
+        },
+        "8HhZ8s": {
+            "name": [
+                "深暗古城",
+                "Deep Derk"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
+            "num": "02",
+            "services": [
+                "local",
+                "express",
+                "direct"
+            ],
+            "parents": [
+                "ziIliy"
+            ],
+            "children": [
+                "Su8hSU"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#ff0000",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Lien 2"
+                                ]
+                            }
+                        ]
+                    },
+                    {},
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "facility": "railway"
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "wQfpKZ"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 300
+        },
+        "Su8hSU": {
+            "name": [
+                "深暗古城西",
+                "Unnamed Su8hSU"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "8HhZ8s"
+            ],
+            "children": [
+                "wQfpKZ"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#00ff00",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1",
+                                    "branch line 1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "wQfpKZ": {
+            "name": [
+                "未命名 wQfpKZ",
+                "Unnamed wQfpKZ"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Su8hSU"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         }
     },
-    "line_name": [
-        "路線名",
-        "Name of Line"
-    ],
-    "dest_legacy": false,
-    "char_form": "trad"
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "sh2020",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.15.3"
 }
