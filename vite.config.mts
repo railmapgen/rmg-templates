@@ -18,7 +18,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    react: ['react', 'react-dom', 'react-router-dom', '@reduxjs/toolkit', 'react-i18next'],
+                    react: ['react', 'react-dom', 'react-router-dom', '@reduxjs/toolkit', 'react-redux', 'react-i18next'],
                     chakra: ['@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion', 'react-icons'],
                 },
             },
@@ -26,7 +26,7 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/rmg/': {
+            '^(/rmg/)': {
                 target: 'https://railmapgen.github.io',
                 changeOrigin: true,
                 secure: false,
