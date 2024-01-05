@@ -10,13 +10,17 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import { GITHUB_ISSUE_PREAMBLE } from '../../util/constant';
+import { GITHUB_ISSUE_PREAMBLE, REFERENCE_SOURCE_DISPLAY_TEXT, ReferenceSource } from '../../util/constant';
 import { MdChevronLeft, MdContentCopy, MdOpenInNew } from 'react-icons/md';
+import useTranslatedName from '../hooks/use-translated-name';
 
 interface SubmitModalStepSubmitProps {
     companyName: string;
     companyBlock: HTMLDetailsElement | null;
     templateBlocks: HTMLDetailsElement[];
+    haveBeenOpened: boolean;
+    willBeOpened: boolean;
+    refSource: ReferenceSource | '';
     justification: string;
     majorUpdateJustifications: Record<string, string>;
     onPrev: () => void;
@@ -24,13 +28,28 @@ interface SubmitModalStepSubmitProps {
 }
 
 export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps) {
-    const { companyName, companyBlock, templateBlocks, justification, majorUpdateJustifications, onPrev, onClose } =
-        props;
+    const {
+        companyName,
+        companyBlock,
+        templateBlocks,
+        haveBeenOpened,
+        willBeOpened,
+        refSource,
+        justification,
+        majorUpdateJustifications,
+        onPrev,
+        onClose,
+    } = props;
 
     const { t } = useTranslation();
+    const translateName = useTranslatedName();
     const linkColour = useColorModeValue('primary.500', 'primary.300');
 
     const issueBody = [
+        `**Lines opening status:** ${
+            haveBeenOpened ? 'OPENED' : willBeOpened ? 'WILL BE OPENED SOON' : 'NOT READY FOR OPENING'
+        }`,
+        `**Reference source:** ${refSource ? translateName(REFERENCE_SOURCE_DISPLAY_TEXT[refSource]) : '(REPLACE ME)'}`,
         `**Justification:** ${justification || '(REPLACE ME)'}`,
         Object.entries(majorUpdateJustifications)
             .map(([line, value]) => `- Major update of ${line}: ${value}`)
