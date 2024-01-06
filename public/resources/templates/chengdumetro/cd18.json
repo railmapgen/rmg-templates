@@ -46,7 +46,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 255,
+            "branch": {}
         },
         "Ve4Q4g": {
             "name": [
@@ -56,7 +57,7 @@
             "num": "17",
             "services": [
                 "local",
-                "express"
+                "direct"
             ],
             "parents": [
                 "C2Xqr1"
@@ -122,7 +123,7 @@
             "num": "05",
             "services": [
                 "local",
-                "express"
+                "direct"
             ],
             "parents": [
                 "linestart"
@@ -175,8 +176,7 @@
             ],
             "num": "06",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "49boLf"
@@ -313,8 +313,7 @@
             ],
             "num": "09",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "DfOmv1"
@@ -435,8 +434,7 @@
             ],
             "num": "13",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "NZUXxr"
@@ -479,10 +477,10 @@
             "num": "16",
             "services": [
                 "local",
-                "express"
+                "direct"
             ],
             "parents": [
-                "9csC46"
+                "Gg9XUE"
             ],
             "children": [
                 "Ve4Q4g"
@@ -528,7 +526,7 @@
                 "uzaCst"
             ],
             "children": [
-                "C2Xqr1"
+                "Gg9XUE"
             ],
             "transfer": {
                 "groups": [
@@ -554,12 +552,13 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 255,
+            "branch": {}
         },
         "NZUXxr": {
             "name": [
-                "天府站",
-                "Tianfu Zhan"
+                "天府站（仅换乘）",
+                "Tianfu Station(transfer only)"
             ],
             "num": "00",
             "services": [
@@ -594,7 +593,47 @@
                 "paid_area": true
             },
             "loop_pivot": false,
-            "one_line": true,
+            "one_line": false,
+            "int_padding": 255,
+            "branch": {}
+        },
+        "Gg9XUE": {
+            "name": [
+                "天府机场3号4号航站楼",
+                "Terminal 3&4 of Tianfu International Airport"
+            ],
+            "num": "00",
+            "services": [],
+            "parents": [
+                "9csC46"
+            ],
+            "children": [
+                "C2Xqr1"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd19",
+                                    "#89ABE3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "19号线",
+                                    "Line 19"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
             "int_padding": 255
         }
     },
