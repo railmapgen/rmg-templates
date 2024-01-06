@@ -1,0 +1,256 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1400,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 400,
+    "style": "gzmtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "singapore",
+        "ccl",
+        "#FF9E1B",
+        "#000"
+    ],
+    "line_name": [
+        "滨海湾支线",
+        "Marina Bay Branch Line"
+    ],
+    "current_stn_idx": "tCT4II",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "yaZJsx"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "tCT4II": {
+            "name": [
+                "滨海湾",
+                "Marina Bay"
+            ],
+            "num": "2",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "myFzQF"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "singapore",
+                                    "nsl",
+                                    "#DA291C",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "南北线",
+                                    "North South Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "singapore",
+                                    "tel",
+                                    "#9B5A1A",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "汤申-东海岸线",
+                                    "Thomson-East Coast Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#000000",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "圣淘沙捷运（出站换乘）",
+                                    "Sentosa Express (Exit transfer)"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "tCT4II"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "yaZJsx": {
+            "name": [
+                "宝门廊",
+                "Promenade"
+            ],
+            "num": "0",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "myFzQF"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "singapore",
+                                    "ccl",
+                                    "#FF9E1B",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "环线",
+                                    "Circle Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "singapore",
+                                    "dtl",
+                                    "#0057B7",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "滨海市区线",
+                                    "Downtown Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "myFzQF": {
+            "name": [
+                "海湾舫",
+                "Bayfront"
+            ],
+            "num": "1",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yaZJsx"
+            ],
+            "children": [
+                "tCT4II"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "singapore",
+                                    "dtl",
+                                    "#0057B7",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "滨海市区线",
+                                    "Downtown Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "CE",
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 41,
+    "direction_gz_y": 77,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.16.3"
+}
