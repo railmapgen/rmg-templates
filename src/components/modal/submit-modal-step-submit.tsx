@@ -21,6 +21,7 @@ interface SubmitModalStepSubmitProps {
     haveBeenOpened: boolean;
     willBeOpened: boolean;
     refSource: ReferenceSource | '';
+    refLink: string;
     justification: string;
     majorUpdateJustifications: Record<string, string>;
     onPrev: () => void;
@@ -35,6 +36,7 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
         haveBeenOpened,
         willBeOpened,
         refSource,
+        refLink,
         justification,
         majorUpdateJustifications,
         onPrev,
@@ -49,8 +51,9 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
         `**Lines opening status:** ${
             haveBeenOpened ? 'OPENED' : willBeOpened ? 'WILL BE OPENED SOON' : 'NOT READY FOR OPENING'
         }`,
-        `**Reference source:** ${refSource ? translateName(REFERENCE_SOURCE_DISPLAY_TEXT[refSource]) : '(REPLACE ME)'}`,
-        `**Justification:** ${justification || '(REPLACE ME)'}`,
+        `**Reference source:** ${refSource ? translateName(REFERENCE_SOURCE_DISPLAY_TEXT[refSource]) : '(Not Provided)'}`,
+        `**Reference link:** ${refLink || '(Not Provided)'}`,
+        `**Justification:** ${justification || '(Not Provided)'}`,
         Object.entries(majorUpdateJustifications)
             .map(([line, value]) => `- Major update of ${line}: ${value}`)
             .join('\n'),
