@@ -5,6 +5,8 @@ import { MdChevronRight } from 'react-icons/md';
 import { REFERENCE_SOURCE_DISPLAY_TEXT, ReferenceSource } from '../../util/constant';
 import useTranslatedName from '../hooks/use-translated-name';
 
+const urlValidator = (url: string): boolean => !!url.match(/^https?:\/\//)?.[0];
+
 interface SubmitModalStepJustificationProps {
     haveBeenOpened: boolean;
     onHaveBeenOpenedChange: (value: boolean) => void;
@@ -12,6 +14,8 @@ interface SubmitModalStepJustificationProps {
     onWillBeOpenedChange: (value: boolean) => void;
     refSource: ReferenceSource | '';
     onRefSourceChange: (value: ReferenceSource | '') => void;
+    refLink: string;
+    onRefLinkChange: (value: string) => void;
     justification: string;
     majorUpdateJustifications: Record<string, string>;
     onJustificationChange: (value: string) => void;
@@ -27,6 +31,8 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
         onWillBeOpenedChange,
         refSource,
         onRefSourceChange,
+        refLink,
+        onRefLinkChange,
         justification,
         majorUpdateJustifications,
         onJustificationChange,
@@ -44,7 +50,10 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
 
     const refSourceOptions = Object.fromEntries([
         ['', t('Please select...')],
-        ...Object.entries(REFERENCE_SOURCE_DISPLAY_TEXT).map(([key, translation]) => [key, translateName(translation)]),
+        ...Object.entries(REFERENCE_SOURCE_DISPLAY_TEXT).map(([key, translation], i) => [
+            key,
+            `${i + 1}. ${translateName(translation)}`,
+        ]),
     ]);
 
     const fields: RmgFieldsField[] = [
@@ -80,6 +89,15 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
             onChange: value => onRefSourceChange(value as ReferenceSource),
         },
         {
+            type: 'input',
+            value: refLink,
+            label: t('Reference link'),
+            placeholder: t('Enter a valid URL, e.g.') + ' https://en.wikipedia.org',
+            onChange: onRefLinkChange,
+            validator: urlValidator,
+            isDisabled: refSource === 'STATION_UPLOAD_IMAGE',
+        },
+        {
             type: 'textarea',
             value: justification,
             label: t('Justification'),
@@ -97,8 +115,9 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
     }));
 
     const meetCriteria = haveBeenOpened || willBeOpened;
+    const refOk = refSource === 'STATION_UPLOAD_IMAGE' || (refSource && refLink);
     const isNextDisabled =
-        !meetCriteria || !refSource || !justification || Object.values(majorUpdateJustifications).some(value => !value);
+        !meetCriteria || !refOk || !justification || Object.values(majorUpdateJustifications).some(value => !value);
 
     return (
         <>

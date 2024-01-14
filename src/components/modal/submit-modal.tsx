@@ -24,6 +24,7 @@ export default function SubmitModal(props: SubmitModalProps) {
     const [haveBeenOpened, setHaveBeenOpened] = useState(false);
     const [willBeOpened, setWillBeOpened] = useState(false);
     const [refSource, setRefSource] = useState<ReferenceSource | ''>('');
+    const [refLink, setRefLink] = useState('');
     const [justification, setJustification] = useState('');
     const [majorUpdateJustifications, setMajorUpdateJustifications] = useState<Record<string, string>>({});
     const [isFinishJustification, setIsFinishJustification] = useState(false);
@@ -86,6 +87,8 @@ export default function SubmitModal(props: SubmitModalProps) {
                         onWillBeOpenedChange={setWillBeOpened}
                         refSource={refSource}
                         onRefSourceChange={setRefSource}
+                        refLink={refLink}
+                        onRefLinkChange={setRefLink}
                         justification={justification}
                         majorUpdateJustifications={majorUpdateJustifications}
                         onJustificationChange={setJustification}
@@ -107,6 +110,7 @@ export default function SubmitModal(props: SubmitModalProps) {
                         haveBeenOpened={haveBeenOpened}
                         willBeOpened={willBeOpened}
                         refSource={refSource}
+                        refLink={refLink}
                         justification={justification}
                         majorUpdateJustifications={majorUpdateJustifications}
                         onPrev={() => setIsFinishJustification(false)}
