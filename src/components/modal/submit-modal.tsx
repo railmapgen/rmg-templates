@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useRootSelector } from '../../redux';
 import { useEffect, useState } from 'react';
-import { InvalidReasonType } from '../../util/constant';
+import { InvalidReasonType, ReferenceSource } from '../../util/constant';
 import { ticketSelectors } from '../../redux/ticket/ticket-slice';
 import { Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 import SubmitModalStepError from './submit-modal-step-error';
@@ -20,6 +20,11 @@ export default function SubmitModal(props: SubmitModalProps) {
 
     const [companyErrors, setCompanyErrors] = useState<InvalidReasonType[]>([]);
     const [templateErrors, setTemplateErrors] = useState<Record<string, InvalidReasonType[]>>({});
+
+    const [haveBeenOpened, setHaveBeenOpened] = useState(false);
+    const [willBeOpened, setWillBeOpened] = useState(false);
+    const [refSource, setRefSource] = useState<ReferenceSource | ''>('');
+    const [refLink, setRefLink] = useState('');
     const [justification, setJustification] = useState('');
     const [majorUpdateJustifications, setMajorUpdateJustifications] = useState<Record<string, string>>({});
     const [isFinishJustification, setIsFinishJustification] = useState(false);
@@ -47,6 +52,9 @@ export default function SubmitModal(props: SubmitModalProps) {
             setMajorUpdateJustifications(majorJustificationsHolder);
         } else {
             // reset modal
+            setHaveBeenOpened(false);
+            setWillBeOpened(false);
+            setRefSource('');
             setJustification('');
             setMajorUpdateJustifications({});
             setIsFinishJustification(false);
@@ -73,6 +81,14 @@ export default function SubmitModal(props: SubmitModalProps) {
 
                 {isShowStepJustification && (
                     <SubmitModalStepJustification
+                        haveBeenOpened={haveBeenOpened}
+                        onHaveBeenOpenedChange={setHaveBeenOpened}
+                        willBeOpened={willBeOpened}
+                        onWillBeOpenedChange={setWillBeOpened}
+                        refSource={refSource}
+                        onRefSourceChange={setRefSource}
+                        refLink={refLink}
+                        onRefLinkChange={setRefLink}
                         justification={justification}
                         majorUpdateJustifications={majorUpdateJustifications}
                         onJustificationChange={setJustification}
@@ -91,6 +107,10 @@ export default function SubmitModal(props: SubmitModalProps) {
                         companyName={companyName}
                         companyBlock={companyBlock}
                         templateBlocks={templateBlocks}
+                        haveBeenOpened={haveBeenOpened}
+                        willBeOpened={willBeOpened}
+                        refSource={refSource}
+                        refLink={refLink}
                         justification={justification}
                         majorUpdateJustifications={majorUpdateJustifications}
                         onPrev={() => setIsFinishJustification(false)}
