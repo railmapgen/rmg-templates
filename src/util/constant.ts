@@ -87,12 +87,12 @@ export const REFERENCE_SOURCE_DISPLAY_TEXT: Record<ReferenceSource, Translation>
     LINE_DIAGRAM: {
         en: 'Line diagram on the Internet',
         'zh-Hans': '互联网上的路线图',
-        'zh-Hant': '網絡上的綫路圖',
+        'zh-Hant': '網絡上的路綫圖',
     },
     WIKIPEDIA: {
-        en: 'Wikipedia',
-        'zh-Hans': '维基百科',
-        'zh-Hant': '維基百科',
+        en: 'Online encyclopaedia (e.g. Wikipedia)',
+        'zh-Hans': '在线百科全书（如维基百科）',
+        'zh-Hant': '線上百科全書（如維基百科）',
     },
     OTHER: {
         en: 'Others (Please indicate below)',
