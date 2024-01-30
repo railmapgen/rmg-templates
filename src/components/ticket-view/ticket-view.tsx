@@ -10,6 +10,7 @@ import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import { useState } from 'react';
 import SubmitModal from '../modal/submit-modal';
+import Preamble from './Preamble';
 
 const styles: SystemStyleObject = {
     width: { base: '100%', md: 520 },
@@ -50,6 +51,7 @@ export default function TicketView() {
     return (
         <RmgPage sx={styles}>
             <Flex>
+                <Preamble />
                 <CompanySection />
                 <TemplatesSection />
             </Flex>
