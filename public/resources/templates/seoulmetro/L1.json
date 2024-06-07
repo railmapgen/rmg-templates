@@ -22,7 +22,7 @@
         "1号线",
         "Line 1"
     ],
-    "current_stn_idx": "gLpEMi",
+    "current_stn_idx": "P2ZRN3",
     "stn_list": {
         "linestart": {
             "name": [
@@ -35,7 +35,7 @@
             ],
             "parents": [],
             "children": [
-                "2bMetx"
+                "P2ZRN3"
             ],
             "transfer": {
                 "groups": [
@@ -46,7 +46,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "2bMetx": {
             "name": [
@@ -58,7 +59,7 @@
                 "local"
             ],
             "parents": [
-                "linestart"
+                "7-wPfN"
             ],
             "children": [
                 "p3wQKR"
@@ -72,7 +73,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "p3wQKR": {
             "name": [
@@ -3144,6 +3146,86 @@
             ],
             "children": [
                 "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "7-wPfN": {
+            "name": [
+                "青山",
+                "Cheongsan\\청산"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "g6zBew"
+            ],
+            "children": [
+                "2bMetx"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "g6zBew": {
+            "name": [
+                "全谷",
+                "Jeongok\\전곡"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "P2ZRN3"
+            ],
+            "children": [
+                "7-wPfN"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "P2ZRN3": {
+            "name": [
+                "涟川",
+                "Yeoncheon\\연천"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "g6zBew"
             ],
             "transfer": {
                 "groups": [
