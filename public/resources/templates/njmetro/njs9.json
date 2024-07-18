@@ -1,0 +1,278 @@
+{
+    "svgWidth": {
+        "destination": 1400,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "nanjing",
+        "s9",
+        "#ffc600",
+        "#fff"
+    ],
+    "line_name": [
+        "S9号线",
+        "Line S9"
+    ],
+    "current_stn_idx": "mBCm8s",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "j7jfhl"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "branch": {}
+        },
+        "mBCm8s": {
+            "name": [
+                "翔宇路南",
+                "XIANGYULUNAN"
+            ],
+            "num": "01",
+            "services": [
+                "local",
+                "direct"
+            ],
+            "parents": [
+                "kip66z"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "nanjing",
+                                    "s1",
+                                    "#4bbbb4",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "S1号线",
+                                    "Line S1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 160,
+            "branch": {}
+        },
+        "kip66z": {
+            "name": [
+                "铜山",
+                "TONGSHAN"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "HNRi-s"
+            ],
+            "children": [
+                "mBCm8s"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "branch": {}
+        },
+        "lineend": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "mBCm8s"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "branch": {}
+        },
+        "HNRi-s": {
+            "name": [
+                "石湫",
+                "SHIQIU"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "mDmnsf"
+            ],
+            "children": [
+                "kip66z"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "mDmnsf": {
+            "name": [
+                "明觉",
+                "MINGJUE"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "9jiUdI"
+            ],
+            "children": [
+                "HNRi-s"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "9jiUdI": {
+            "name": [
+                "团结圩",
+                "TUANJIEXU"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "j7jfhl"
+            ],
+            "children": [
+                "mDmnsf"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "j7jfhl": {
+            "name": [
+                "高淳",
+                "GAOCHUN"
+            ],
+            "num": "00",
+            "services": [
+                "local",
+                "direct"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "9jiUdI"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
