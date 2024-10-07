@@ -1,1259 +1,1734 @@
 {
-    "style": "shmetro",
-    "svg_height": 400,
-    "padding": 3,
-    "y_pc": 40,
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1600,
+        "railmap": 2800,
+        "indoor": 1200
+    },
+    "svg_height": 350,
+    "style": "gzmtr",
+    "y_pc": 50,
+    "padding": 1,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
     "theme": [
         "chengdu",
         "cd6",
-        "#B36924",
+        "#be7331",
         "#fff"
     ],
-    "direction": "l",
-    "current_stn_idx": "__EQEj",
-    "platform_num": "2",
+    "line_name": [
+        "6号线",
+        "Line 6"
+    ],
+    "current_stn_idx": "llF8yZ",
     "stn_list": {
         "linestart": {
-            "parents": [],
-            "children": [
-                "96sj"
-            ],
             "name": [
-                "路綫左端",
+                "LEFT END",
                 "LEFT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
+            "num": "00",
             "services": [
                 "local"
             ],
-            "facility": "",
-            "num": "00",
-            "secondaryName": false,
+            "parents": [],
+            "children": [
+                "LFzsiT"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
+        },
+        "XQLVIe": {
+            "name": [
+                "杭州路",
+                "Hangzhou Road"
+            ],
+            "num": "48",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ZfmbXM"
+            ],
+            "children": [
+                "llF8yZ"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "llF8yZ": {
+            "name": [
+                "天府商务区",
+                "Tianfu Commercial District"
+            ],
+            "num": "49",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "XQLVIe"
+            ],
+            "children": [
+                "H5gNRa"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd19",
+                                    "#89ABE3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "19号线",
+                                    "Line 19"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         },
         "lineend": {
-            "parents": [
-                "__EQEj"
-            ],
-            "children": [],
             "name": [
-                "路綫右端",
+                "RIGHT END",
                 "RIGHT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
+            "num": "00",
             "services": [
                 "local"
             ],
-            "facility": "",
-            "num": "00",
-            "secondaryName": false,
+            "parents": [
+                "hbpXpW"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "iwf6": {
-            "children": [
-                "__EQEj"
+        "H5gNRa": {
+            "name": [
+                "西博城",
+                "Western China Int’l Expo City"
+            ],
+            "num": "50",
+            "services": [
+                "local"
             ],
             "parents": [
-                "6t4_pF"
+                "llF8yZ"
             ],
+            "children": [
+                "9FEoZm"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd1",
+                                    "#222a8c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1号线",
+                                    "Line 1"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd18",
+                                    "#006268",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "18号线",
+                                    "Line 18"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "9FEoZm": {
+            "name": [
+                "秦皇寺",
+                "Qinhuangsi"
+            ],
+            "num": "51",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "H5gNRa"
+            ],
+            "children": [
+                "Y9XFhn"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Y9XFhn": {
+            "name": [
+                "松林",
+                "Songlin"
+            ],
+            "num": "52",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "9FEoZm"
+            ],
+            "children": [
+                "Rg4HQ1"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Rg4HQ1": {
+            "name": [
+                "芦角",
+                "Lujiao"
+            ],
+            "num": "53",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Y9XFhn"
+            ],
+            "children": [
+                "7vr9Se"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "7vr9Se": {
+            "name": [
+                "钓鱼嘴",
+                "Diaoyuzui"
+            ],
+            "num": "54",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Rg4HQ1"
+            ],
+            "children": [
+                "ifZo6i"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ifZo6i": {
             "name": [
                 "回龙",
                 "Huilong"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "num": "55",
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd5",
-                            "#BB29BB",
-                            "#fff",
-                            "5号线",
-                            "Line 5"
-                        ]
-                    ]
-                ]
-            },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false,
+            "parents": [
+                "7vr9Se"
+            ],
+            "children": [
+                "hbpXpW"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd5",
+                                    "#a23e92",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Line 5"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 100
+            "int_padding": 355
         },
-        "qmhe": {
+        "hbpXpW": {
+            "name": [
+                "兰家沟",
+                "Lanjiagou"
+            ],
+            "num": "56",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ifZo6i"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ZfmbXM": {
+            "name": [
+                "昌公堰",
+                "Changgongyan"
+            ],
+            "num": "47",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3LOyYi"
+            ],
+            "children": [
+                "XQLVIe"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "3LOyYi": {
+            "name": [
+                "青岛路",
+                "Qingdao Road"
+            ],
+            "num": "46",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BsEmL0"
+            ],
+            "children": [
+                "ZfmbXM"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "BsEmL0": {
+            "name": [
+                "沈阳路",
+                "Shenyang Road"
+            ],
+            "num": "45",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3kRs5g"
+            ],
+            "children": [
+                "3LOyYi"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "3kRs5g": {
             "name": [
                 "麓山大道",
                 "Lushan Avenue"
             ],
-            "secondaryName": false,
             "num": "44",
             "services": [
                 "local"
             ],
             "parents": [
-                "s9zd"
+                "9aenAs"
             ],
             "children": [
-                "iIWvbG"
+                "BsEmL0"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "s9zd": {
+        "9aenAs": {
             "name": [
                 "万安",
-                "Wan'an"
+                "Wan’an"
             ],
-            "secondaryName": false,
             "num": "43",
             "services": [
                 "local"
             ],
             "parents": [
-                "nsup"
+                "oehOdN"
             ],
             "children": [
-                "qmhe"
+                "3kRs5g"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "nsup": {
+        "oehOdN": {
             "name": [
                 "蒲草塘",
                 "Pucaotang"
             ],
-            "secondaryName": false,
             "num": "42",
             "services": [
                 "local"
             ],
             "parents": [
-                "ya17"
+                "35rzfk"
             ],
             "children": [
-                "s9zd"
+                "9aenAs"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "ya17": {
+        "35rzfk": {
             "name": [
                 "龙灯山",
                 "Longdengshan"
             ],
-            "secondaryName": false,
             "num": "41",
             "services": [
                 "local"
             ],
             "parents": [
-                "zeh0"
+                "O_MQet"
             ],
             "children": [
-                "nsup"
+                "oehOdN"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "zeh0": {
+        "O_MQet": {
             "name": [
                 "新川路",
                 "Xinchuan Road"
             ],
-            "secondaryName": false,
             "num": "40",
             "services": [
                 "local"
             ],
             "parents": [
-                "orn7"
+                "I0KMxD"
             ],
             "children": [
-                "ya17"
+                "35rzfk"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "orn7": {
+        "I0KMxD": {
             "name": [
                 "新通大道",
                 "Xintong Avenue"
             ],
-            "secondaryName": false,
             "num": "39",
             "services": [
                 "local"
             ],
             "parents": [
-                "m5es"
+                "2hBWOE"
             ],
             "children": [
-                "zeh0"
+                "O_MQet"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "m5es": {
+        "2hBWOE": {
             "name": [
                 "观东",
                 "Guandong"
             ],
-            "secondaryName": false,
             "num": "38",
             "services": [
                 "local"
             ],
             "parents": [
-                "MstlqV"
+                "zmCAxW"
             ],
             "children": [
-                "orn7"
+                "I0KMxD"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "3ibs": {
+        "zmCAxW": {
+            "name": [
+                "陆肖",
+                "Luxiao"
+            ],
+            "num": "37",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "N5tLas"
+            ],
+            "children": [
+                "2hBWOE"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "N5tLas": {
+            "name": [
+                "张家寺",
+                "Zhangjiasi"
+            ],
+            "num": "36",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "uYB_9d"
+            ],
+            "children": [
+                "zmCAxW"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "uYB_9d": {
+            "name": [
+                "中和",
+                "Zhonghe"
+            ],
+            "num": "35",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "_JnZeL"
+            ],
+            "children": [
+                "N5tLas"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "_JnZeL": {
             "name": [
                 "金融城东",
                 "Financial City East"
             ],
-            "secondaryName": false,
             "num": "34",
             "services": [
                 "local"
             ],
             "parents": [
-                "cktp"
+                "ra_R1x"
             ],
             "children": [
-                "GWtjRk"
+                "uYB_9d"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd9",
-                            "#FFB81C",
-                            "#fff",
-                            "9号线",
-                            "Line 9"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd9",
+                                    "#f1ad17",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "9号线",
+                                    "Line 9"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "cktp": {
+        "ra_R1x": {
             "name": [
                 "金石路",
                 "Jinshi Road"
             ],
-            "secondaryName": false,
             "num": "33",
             "services": [
                 "local"
             ],
             "parents": [
-                "wr6q"
+                "4VgprC"
             ],
             "children": [
-                "3ibs"
+                "_JnZeL"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "wr6q": {
+        "4VgprC": {
             "name": [
                 "琉三路",
                 "Liusan Road"
             ],
-            "secondaryName": false,
             "num": "32",
             "services": [
                 "local"
             ],
             "parents": [
-                "0kp1"
+                "vxf38I"
             ],
             "children": [
-                "cktp"
+                "ra_R1x"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "0kp1": {
+        "vxf38I": {
             "name": [
                 "琉璃场",
                 "Liulichang"
             ],
-            "secondaryName": false,
             "num": "31",
             "services": [
                 "local"
             ],
             "parents": [
-                "xlu4"
+                "bzdnjT"
             ],
             "children": [
-                "wr6q"
+                "4VgprC"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd7",
-                            "#59CBE8",
-                            "#fff",
-                            "7号线",
-                            "Line 7"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd7",
+                                    "#6dc6d6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "7号线",
+                                    "Line 7"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "xlu4": {
+        "bzdnjT": {
             "name": [
                 "东光",
                 "Dongguang"
             ],
-            "secondaryName": false,
             "num": "30",
             "services": [
                 "local"
             ],
             "parents": [
-                "-_ffS3"
+                "2EmfKQ"
             ],
             "children": [
-                "0kp1"
+                "vxf38I"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd8",
-                            "#C4D600",
-                            "#fff",
-                            "8号线",
-                            "Line 8"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd8",
+                                    "#a6c214",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "8号线",
+                                    "Line 8"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "5hux": {
+        "2EmfKQ": {
+            "name": [
+                "三官堂",
+                "Sanguantang"
+            ],
+            "num": "29",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "QdYXnB"
+            ],
+            "children": [
+                "bzdnjT"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "QdYXnB": {
+            "name": [
+                "顺江路",
+                "Shunjiang Road"
+            ],
+            "num": "28",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "1WY7NB"
+            ],
+            "children": [
+                "2EmfKQ"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "1WY7NB": {
             "name": [
                 "牛王庙",
                 "Niuwangmiao"
             ],
-            "secondaryName": false,
             "num": "27",
             "services": [
                 "local"
             ],
             "parents": [
-                "239w"
+                "yUoJ3h"
             ],
             "children": [
-                "9dRwOE"
+                "QdYXnB"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd2",
-                            "#FF5C39",
-                            "#fff",
-                            "2号线",
-                            "Line 2"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd2",
+                                    "#eb5a35",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "239w": {
+        "yUoJ3h": {
             "name": [
                 "玉双路",
                 "Yushuang Road"
             ],
-            "secondaryName": false,
             "num": "26",
             "services": [
                 "local"
             ],
             "parents": [
-                "VXtIN5"
+                "4DTiiY"
             ],
             "children": [
-                "5hux"
+                "1WY7NB"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd4",
-                            "#00B047",
-                            "#fff",
-                            "4号线",
-                            "Line 4"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd4",
+                                    "#00aa58",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
                         ]
-                    ],
-                    [],
-                    []
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": false,
-                "osi_names": [
-                    [
-                        "11",
-                        "11"
-                    ]
-                ]
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "uh76": {
+        "4DTiiY": {
+            "name": [
+                "新鸿路",
+                "Xinhong Road"
+            ],
+            "num": "25",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "bK-62Y"
+            ],
+            "children": [
+                "yUoJ3h"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "bK-62Y": {
+            "name": [
+                "建设北路",
+                "Jianshe North Road"
+            ],
+            "num": "24",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "seG8NM"
+            ],
+            "children": [
+                "4DTiiY"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "seG8NM": {
+            "name": [
+                "前锋路",
+                "Qianfeng Road"
+            ],
+            "num": "23",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "0Kv7Gu"
+            ],
+            "children": [
+                "bK-62Y"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd3",
+                                    "#d5006a",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "0Kv7Gu": {
+            "name": [
+                "梁家巷",
+                "Liangjiaxiang"
+            ],
+            "num": "22",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Baxv5s"
+            ],
+            "children": [
+                "seG8NM"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Baxv5s": {
             "name": [
                 "人民北路",
-                "Renmin Road North"
+                "Renmin Rd. North"
             ],
-            "secondaryName": false,
             "num": "21",
             "services": [
                 "local"
             ],
             "parents": [
-                "omd0"
+                "zOny1Z"
             ],
             "children": [
-                "z86Jd9"
+                "0Kv7Gu"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd1",
-                            "#10069F",
-                            "#fff",
-                            "1号线",
-                            "Line 1"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd1",
+                                    "#222a8c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1号线",
+                                    "Line 1"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "omd0": {
+        "zOny1Z": {
             "name": [
                 "西北桥",
-                "Xibeiqiao"
+                "Xibei Bridge"
             ],
-            "secondaryName": false,
             "num": "20",
             "services": [
                 "local"
             ],
             "parents": [
-                "zkZQC-"
+                "Lp1RFA"
             ],
             "children": [
-                "uh76"
+                "Baxv5s"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd5",
-                            "#BB29BB",
-                            "#fff",
-                            "5号线",
-                            "Line 5"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd5",
+                                    "#a23e92",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Line 5"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "rjrf": {
+        "Lp1RFA": {
+            "name": [
+                "沙湾",
+                "Shawan"
+            ],
+            "num": "19",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "raLLtW"
+            ],
+            "children": [
+                "zOny1Z"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "raLLtW": {
             "name": [
                 "西南交大",
                 "Southwest Jiaotong University"
             ],
-            "secondaryName": false,
             "num": "18",
             "services": [
                 "local"
             ],
             "parents": [
-                "A3Eu68"
+                "7KUiwj"
             ],
             "children": [
-                "zkZQC-"
+                "Lp1RFA"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd7",
-                            "#59CBE8",
-                            "#fff",
-                            "7号线",
-                            "Line 7"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd7",
+                                    "#6dc6d6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "7号线",
+                                    "Line 7"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "tsku": {
+        "7KUiwj": {
+            "name": [
+                "星河",
+                "Xinghe"
+            ],
+            "num": "17",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "8h1Xg9"
+            ],
+            "children": [
+                "raLLtW"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "8h1Xg9": {
             "name": [
                 "金府",
                 "Jinfu"
             ],
-            "secondaryName": false,
             "num": "16",
             "services": [
                 "local"
             ],
             "parents": [
-                "8vx6"
+                "SS6sVy"
             ],
             "children": [
-                "A3Eu68"
+                "7KUiwj"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "8vx6": {
+        "SS6sVy": {
             "name": [
                 "西华大道",
                 "Xihua Avenue"
             ],
-            "secondaryName": false,
             "num": "15",
             "services": [
                 "local"
             ],
             "parents": [
-                "nv5d"
+                "a7xYWd"
             ],
             "children": [
-                "tsku"
+                "8h1Xg9"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "nv5d": {
+        "a7xYWd": {
             "name": [
                 "青杠",
                 "Qinggang"
             ],
-            "secondaryName": false,
             "num": "14",
             "services": [
                 "local"
             ],
             "parents": [
-                "xf3w"
+                "aIztHu"
             ],
             "children": [
-                "8vx6"
+                "SS6sVy"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "xf3w": {
+        "aIztHu": {
             "name": [
                 "兴盛",
                 "Xingsheng"
             ],
-            "secondaryName": false,
             "num": "13",
             "services": [
                 "local"
             ],
             "parents": [
-                "b029"
+                "0xyAbJ"
             ],
             "children": [
-                "nv5d"
+                "a7xYWd"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "b029": {
+        "0xyAbJ": {
             "name": [
                 "侯家桥",
                 "Houjiaqiao"
             ],
-            "secondaryName": false,
             "num": "12",
             "services": [
                 "local"
             ],
             "parents": [
-                "5rdw"
+                "gqhLuy"
             ],
             "children": [
-                "xf3w"
+                "aIztHu"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "5rdw": {
+        "gqhLuy": {
             "name": [
                 "梓潼宫",
                 "Zitonggong"
             ],
-            "secondaryName": false,
             "num": "11",
             "services": [
                 "local"
             ],
             "parents": [
-                "qmbv"
+                "IzKyu4"
             ],
             "children": [
-                "b029"
+                "0xyAbJ"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "qmbv": {
+        "IzKyu4": {
             "name": [
                 "兴业北街",
                 "Xingye North Street"
             ],
-            "secondaryName": false,
             "num": "10",
             "services": [
                 "local"
             ],
             "parents": [
-                "betj"
+                "UupgLq"
             ],
             "children": [
-                "5rdw"
+                "gqhLuy"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [],
-                    [],
-                    [
-                        [
-                            "chengdu",
-                            "t2",
-                            "#44D62C",
-                            "#fff",
-                            "蓉2号线",
-                            "Tram Line 2"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "t2",
+                                    "#7f9f3a",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "蓉2号线",
+                                    "Tram Line 2"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [
-                    [
-                        "車站名",
-                        "Stn Name"
-                    ],
-                    [
-                        "龙吟",
-                        "Longyin"
-                    ]
-                ]
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "betj": {
+        "UupgLq": {
             "name": [
                 "犀浦",
-                "Xipu"
+                "Xipu Railway Station"
             ],
-            "secondaryName": false,
             "num": "09",
             "services": [
                 "local"
             ],
             "parents": [
-                "i261"
+                "0FJywx"
             ],
             "children": [
-                "qmbv"
+                "IzKyu4"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd2",
-                            "#FF5C39",
-                            "#fff",
-                            "2号线",
-                            "Line 2"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd2",
+                                    "#eb5a35",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "railway",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "i261": {
+        "0FJywx": {
             "name": [
                 "天宇路",
                 "Tianyu Road"
             ],
-            "secondaryName": false,
             "num": "08",
             "services": [
                 "local"
             ],
             "parents": [
-                "jd8q"
+                "3QEAG2"
             ],
             "children": [
-                "betj"
+                "UupgLq"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "jd8q": {
+        "3QEAG2": {
             "name": [
                 "红高路",
                 "Honggao Road"
             ],
-            "secondaryName": false,
             "num": "07",
             "services": [
                 "local"
             ],
             "parents": [
-                "DpNnT_"
+                "QjiSQo"
             ],
             "children": [
-                "i261"
+                "0FJywx"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "r8et": {
+        "QjiSQo": {
+            "name": [
+                "尚锦路",
+                "Shangjin Road"
+            ],
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "dQzZMs"
+            ],
+            "children": [
+                "3QEAG2"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "dQzZMs": {
             "name": [
                 "檬梓",
                 "Mengzi"
             ],
-            "secondaryName": false,
             "num": "05",
             "services": [
                 "local"
             ],
             "parents": [
-                "ya0n"
+                "HN8065"
             ],
             "children": [
-                "DpNnT_"
+                "QjiSQo"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "ya0n": {
+        "HN8065": {
             "name": [
                 "蜀新大道",
                 "Shuxin Avenue"
             ],
-            "secondaryName": false,
             "num": "04",
             "services": [
                 "local"
             ],
             "parents": [
-                "lxe3"
+                "BP1nGP"
             ],
             "children": [
-                "r8et"
+                "dQzZMs"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "lxe3": {
+        "BP1nGP": {
             "name": [
                 "郫筒",
-                "Pitong"
+                "Pitong Street"
             ],
-            "secondaryName": false,
             "num": "03",
             "services": [
                 "local"
             ],
             "parents": [
-                "6t8p"
+                "MBeh3e"
             ],
             "children": [
-                "ya0n"
+                "HN8065"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "6t8p": {
+        "MBeh3e": {
             "name": [
                 "和平街",
                 "Heping Street"
             ],
-            "secondaryName": false,
             "num": "02",
             "services": [
                 "local"
             ],
             "parents": [
-                "96sj"
+                "LFzsiT"
             ],
             "children": [
-                "lxe3"
+                "BP1nGP"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         },
-        "96sj": {
+        "LFzsiT": {
             "name": [
                 "望丛祠",
                 "Wangcong Temple"
             ],
-            "secondaryName": false,
             "num": "01",
             "services": [
                 "local"
@@ -1262,854 +1737,64 @@
                 "linestart"
             ],
             "children": [
-                "6t8p"
+                "MBeh3e"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [],
-                    [],
-                    [
-                        [
-                            "chengdu",
-                            "t2",
-                            "#44D62C",
-                            "#fff",
-                            "蓉2号线",
-                            "Tram Line 2"
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "t2",
+                                    "#7f9f3a",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "蓉2号线",
+                                    "Tram Line 2"
+                                ]
+                            }
                         ]
-                    ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 220
-        },
-        "A3Eu68": {
-            "name": [
-                "星河",
-                "Xinghe"
-            ],
-            "secondaryName": false,
-            "num": "17",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "tsku"
-            ],
-            "children": [
-                "rjrf"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "z86Jd9": {
-            "name": [
-                "梁家巷",
-                "Liangjia Alley"
-            ],
-            "secondaryName": false,
-            "num": "22",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "uh76"
-            ],
-            "children": [
-                "D7q4QQ"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "9dRwOE": {
-            "name": [
-                "顺江路",
-                "Shunjiang Road"
-            ],
-            "secondaryName": false,
-            "num": "28",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "5hux"
-            ],
-            "children": [
-                "-_ffS3"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "-_ffS3": {
-            "name": [
-                "三官堂",
-                "Sanguantang"
-            ],
-            "secondaryName": false,
-            "num": "29",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "9dRwOE"
-            ],
-            "children": [
-                "xlu4"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "MstlqV": {
-            "name": [
-                "陆肖",
-                "Luxiao"
-            ],
-            "secondaryName": false,
-            "num": "37",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "HQRS7B"
-            ],
-            "children": [
-                "m5es"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "GWtjRk": {
-            "name": [
-                "中和",
-                "Zhonghe"
-            ],
-            "secondaryName": false,
-            "num": "35",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "3ibs"
-            ],
-            "children": [
-                "HQRS7B"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "DpNnT_": {
-            "name": [
-                "尚锦路",
-                "Shangjin Road"
-            ],
-            "secondaryName": false,
-            "num": "06",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "r8et"
-            ],
-            "children": [
-                "jd8q"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "zkZQC-": {
-            "name": [
-                "沙湾",
-                "Shawan"
-            ],
-            "secondaryName": false,
-            "num": "19",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "rjrf"
-            ],
-            "children": [
-                "omd0"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "VXtIN5": {
-            "name": [
-                "新鸿路",
-                "Xinhong Road"
-            ],
-            "secondaryName": false,
-            "num": "25",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "TpnrV9"
-            ],
-            "children": [
-                "239w"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "TpnrV9": {
-            "name": [
-                "建设北路",
-                "Jianshe North Road"
-            ],
-            "secondaryName": false,
-            "num": "24",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "D7q4QQ"
-            ],
-            "children": [
-                "VXtIN5"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "D7q4QQ": {
-            "name": [
-                "前锋路",
-                "Qianfeng Road"
-            ],
-            "secondaryName": false,
-            "num": "23",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "z86Jd9"
-            ],
-            "children": [
-                "TpnrV9"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd3",
-                            "#D9027D",
-                            "#fff",
-                            "3号线",
-                            "Line 3"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "HQRS7B": {
-            "name": [
-                "张家寺",
-                "Zhangjiasi"
-            ],
-            "secondaryName": false,
-            "num": "36",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "GWtjRk"
-            ],
-            "children": [
-                "MstlqV"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "hufzTd": {
-            "name": [
-                "天府商务区",
-                "Tianfu Commercial District"
-            ],
-            "secondaryName": false,
-            "num": "49",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "EtDGSG"
-            ],
-            "children": [
-                "JqegrP"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "EtDGSG": {
-            "name": [
-                "杭州路",
-                "Hangzhou Road"
-            ],
-            "secondaryName": false,
-            "num": "48",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "pRWGGY"
-            ],
-            "children": [
-                "hufzTd"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "pRWGGY": {
-            "name": [
-                "昌公堰",
-                "Changgongyan"
-            ],
-            "secondaryName": false,
-            "num": "47",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "15K5ow"
-            ],
-            "children": [
-                "EtDGSG"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "15K5ow": {
-            "name": [
-                "青岛路",
-                "Qingdao Road"
-            ],
-            "secondaryName": [
-                "暂缓开通",
-                "Stay open"
-            ],
-            "num": "46",
-            "services": [],
-            "parents": [
-                "iIWvbG"
-            ],
-            "children": [
-                "pRWGGY"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "iIWvbG": {
-            "name": [
-                "沈阳路",
-                "Shenyang Road"
-            ],
-            "secondaryName": false,
-            "num": "45",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "qmhe"
-            ],
-            "children": [
-                "15K5ow"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "kY1rVP": {
-            "name": [
-                "芦角",
-                "Lujiao"
-            ],
-            "secondaryName": [
-                "暂缓开通",
-                "Stay open"
-            ],
-            "num": "53",
-            "services": [],
-            "parents": [
-                "dsm3Gm"
-            ],
-            "children": [
-                "6t4_pF"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "dsm3Gm": {
-            "name": [
-                "松林",
-                "Songlin"
-            ],
-            "secondaryName": false,
-            "num": "52",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "S61qwI"
-            ],
-            "children": [
-                "kY1rVP"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "S61qwI": {
-            "name": [
-                "秦皇寺",
-                "Qinhuangsi"
-            ],
-            "secondaryName": false,
-            "num": "51",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "JqegrP"
-            ],
-            "children": [
-                "dsm3Gm"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "JqegrP": {
-            "name": [
-                "西博城",
-                "Western China Int'l Expo City"
-            ],
-            "secondaryName": false,
-            "num": "50",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "hufzTd"
-            ],
-            "children": [
-                "S61qwI"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "chengdu",
-                            "cd1",
-                            "#10069F",
-                            "#fff",
-                            "1号线",
-                            "Line 1"
-                        ],
-                        [
-                            "chengdu",
-                            "cd18",
-                            "#006271",
-                            "#fff",
-                            "18号线",
-                            "Line 18"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "6t4_pF": {
-            "name": [
-                "钓鱼嘴",
-                "Diaoyuzui"
-            ],
-            "secondaryName": false,
-            "num": "54",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "kY1rVP"
-            ],
-            "children": [
-                "iwf6"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
-        },
-        "__EQEj": {
-            "name": [
-                "兰家沟",
-                "Lanjiagou"
-            ],
-            "secondaryName": false,
-            "num": "56",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "iwf6"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "",
-            "loop_pivot": false,
-            "one_line": true,
-            "int_padding": 220
+            "int_padding": 355
         }
     },
-    "line_name": [
-        "6号线",
-        "Line 6"
-    ],
-    "psd_num": "1",
-    "line_num": "06",
-    "info_panel_type": "gz28",
-    "direction_gz_x": 50,
-    "direction_gz_y": 70,
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
     },
-    "svgWidth": {
-        "destination": 1500,
-        "runin": 1500,
-        "railmap": 2750,
-        "indoor": 4000
-    },
-    "notesGZMTR": [],
-    "namePosMTR": {
-        "isStagger": true,
-        "isFlip": false
-    },
+    "line_num": "06",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 74,
     "coline": {},
     "loop": false,
     "loop_info": {
         "bank": true,
-        "left_and_right_factor": 0,
+        "left_and_right_factor": 1,
         "bottom_factor": 1
     },
-    "branchSpacingPct": 41
+    "notesGZMTR": [
+        [
+            "芦角站暂未开通。",
+            "Lujiao Station is not available.",
+            58,
+            70,
+            true
+        ]
+    ],
+    "version": "5.16.11"
 }
