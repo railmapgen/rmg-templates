@@ -1,0 +1,204 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 500,
+    "style": "gzmtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "1",
+    "theme": [
+        "kansai",
+        "s",
+        "#007ac2",
+        "#fff"
+    ],
+    "line_name": [
+        "関西空港線",
+        "Kansai-airport Line"
+    ],
+    "current_stn_idx": "pH-Xey",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "ttAVXc"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ttAVXc": {
+            "name": [
+                "関西空港",
+                "Kansai Airport"
+            ],
+            "num": "47",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "pH-Xey"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "secondaryName": [
+                "かんさいくうこう",
+                "关西机场"
+            ]
+        },
+        "pH-Xey": {
+            "name": [
+                "りんくうタウン",
+                "Rinku-Town"
+            ],
+            "num": "46",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ttAVXc"
+            ],
+            "children": [
+                "gX4nMv"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {},
+            "secondaryName": [
+                "りんくうタウン",
+                "临空城"
+            ]
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gX4nMv"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "gX4nMv": {
+            "name": [
+                "日根野",
+                "Hineno"
+            ],
+            "num": "45",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "pH-Xey"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "kansai",
+                                    "r",
+                                    "#f89c1c",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "阪和線",
+                                    "Hanwa Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "secondaryName": [
+                "ひねの",
+                "日根野"
+            ]
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "S",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
