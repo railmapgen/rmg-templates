@@ -22,7 +22,7 @@
         "5号线",
         "Line 5"
     ],
-    "current_stn_idx": "ehmjqc",
+    "current_stn_idx": "KUw2JJ",
     "stn_list": {
         "linestart": {
             "name": [
@@ -87,7 +87,7 @@
                 "d8HQ-1"
             ],
             "children": [
-                "lineend"
+                "JmzEIE"
             ],
             "transfer": {
                 "groups": [
@@ -98,7 +98,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "lineend": {
             "name": [
@@ -110,7 +111,7 @@
                 "local"
             ],
             "parents": [
-                "ehmjqc"
+                "KUw2JJ"
             ],
             "children": [],
             "transfer": {
@@ -122,7 +123,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "NHPK4K": {
             "name": [
@@ -975,6 +977,59 @@
             ],
             "children": [
                 "iwCIvi"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "KUw2JJ": {
+            "name": [
+                "雁鸣湖",
+                "YANMINGHU"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "JmzEIE"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "JmzEIE": {
+            "name": [
+                "月登阁",
+                "YUEDENGGE"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ehmjqc"
+            ],
+            "children": [
+                "KUw2JJ"
             ],
             "transfer": {
                 "groups": [
