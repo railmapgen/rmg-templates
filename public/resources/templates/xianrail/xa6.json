@@ -22,7 +22,7 @@
         "6号线",
         "Line 6"
     ],
-    "current_stn_idx": "voickZ",
+    "current_stn_idx": "GvgfIK",
     "stn_list": {
         "linestart": {
             "name": [
@@ -88,7 +88,7 @@
                 "6xIlVI"
             ],
             "children": [
-                "lineend"
+                "gP1P4i"
             ],
             "transfer": {
                 "groups": [
@@ -99,7 +99,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "lineend": {
             "name": [
@@ -111,7 +112,7 @@
                 "local"
             ],
             "parents": [
-                "voickZ"
+                "GvgfIK"
             ],
             "children": [],
             "transfer": {
@@ -123,7 +124,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "branch": {}
         },
         "TGPKrD": {
             "name": [
@@ -589,7 +591,7 @@
                                 "theme": [
                                     "xian",
                                     "xa2",
-                                    "#ef3340",
+                                    "#EF3340",
                                     "#fff"
                                 ],
                                 "name": [
@@ -727,7 +729,7 @@
                                 "theme": [
                                     "xian",
                                     "xa3",
-                                    "#ce70cc",
+                                    "#CE70CC",
                                     "#fff"
                                 ],
                                 "name": [
@@ -958,7 +960,7 @@
                                 "theme": [
                                     "xian",
                                     "xa1",
-                                    "#0077c8",
+                                    "#0077C8",
                                     "#fff"
                                 ],
                                 "name": [
@@ -970,7 +972,7 @@
                                 "theme": [
                                     "xian",
                                     "xa9",
-                                    "#ff9e1b",
+                                    "#FF9E1B",
                                     "#fff"
                                 ],
                                 "name": [
@@ -982,6 +984,59 @@
                     }
                 ],
                 "tick_direc": "l",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "GvgfIK": {
+            "name": [
+                "西安南站",
+                "XIANNANZHAN"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gP1P4i"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "gP1P4i": {
+            "name": [
+                "西电科大南校区·未来之瞳",
+                "XIDIANKEDANANXIAOQU·WEILAIZHITONG"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "voickZ"
+            ],
+            "children": [
+                "GvgfIK"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
                 "paid_area": true
             },
             "loop_pivot": false,
