@@ -1,0 +1,634 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1800,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "seoul",
+        "gtxa",
+        "#9a6292",
+        "#fff"
+    ],
+    "line_name": [
+        "수도권 광역급행철도 A",
+        "GTX-A"
+    ],
+    "current_stn_idx": "MpgDs8",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "u13en2"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "u13en2": {
+            "name": [
+                "운정중앙/雲井中央",
+                "Unjeongjungang"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "XkoP_C"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "XkoP_C": {
+            "name": [
+                "킨텍스/韩国国际会展中心",
+                "KINTEX"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "u13en2"
+            ],
+            "children": [
+                "o9jDJs"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "i2",
+                                    "#f5a251",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "인천 2호선",
+                                    "Incheon Metro Line 2"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "GRoI0I"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "ddnYok": {
+            "name": [
+                "연신내/延新川",
+                "Yeonsinnae"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Qc8uhE"
+            ],
+            "children": [
+                "XhOrgL"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s3",
+                                    "#ef7c1c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3호선",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s6",
+                                    "#cd7c2f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "6호선",
+                                    "Line 6"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "Qc8uhE": {
+            "name": [
+                "창릉/昌陵",
+                "Changneung"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "o9jDJs"
+            ],
+            "children": [
+                "ddnYok"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "o9jDJs": {
+            "name": [
+                "대곡/大谷",
+                "Daegok"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "XkoP_C"
+            ],
+            "children": [
+                "Qc8uhE"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s3",
+                                    "#ef7c1c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3호선",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "gj",
+                                    "#77c4a3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "경의·중앙선",
+                                    "Gyeongui-Jungang Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "seo",
+                                    "#8fc31f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "서해선",
+                                    "Seohae Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "yvuNIa": {
+            "name": [
+                "성남/城南",
+                "Seongnam"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "zxhiA7"
+            ],
+            "children": [
+                "MpgDs8"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "gg",
+                                    "#0054a6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "경강선",
+                                    "Gyeonggang Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "zxhiA7": {
+            "name": [
+                "수서/水西",
+                "Suseo"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "LKWNk4"
+            ],
+            "children": [
+                "yvuNIa"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s3",
+                                    "#ef7c1c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3호선",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "sb",
+                                    "#fabe00",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "수인·분당선",
+                                    "Suin-Bundang Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "LKWNk4": {
+            "name": [
+                "삼성/三成",
+                "Samseong"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "XhOrgL"
+            ],
+            "children": [
+                "zxhiA7"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s2",
+                                    "#00a84d",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2호선",
+                                    "Line 2"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s9",
+                                    "#bdb092",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "9호선",
+                                    "Line 9"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "XhOrgL": {
+            "name": [
+                "서울역/首尔站",
+                "Seoul Station"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ddnYok"
+            ],
+            "children": [
+                "LKWNk4"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s1",
+                                    "#0052a4",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1호선",
+                                    "Line 1"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s4",
+                                    "#00a4e3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4호선",
+                                    "Line 4"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "gj",
+                                    "#77c4a3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "경의·중앙선",
+                                    "Gyeongui-Jungang Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "arex",
+                                    "#0090d2",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "공항철도",
+                                    "AREX"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "gtxb",
+                                    "#234699",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "광역급행철도 B노선",
+                                    "GTX-B"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "GRoI0I": {
+            "name": [
+                "동탄/東灘",
+                "Dongtan"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "MpgDs8"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "s1",
+                                    "#0052a4",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1호선",
+                                    "Line 1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "MpgDs8": {
+            "name": [
+                "구성/駒城",
+                "Guseong"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yvuNIa"
+            ],
+            "children": [
+                "GRoI0I"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "seoul",
+                                    "sb",
+                                    "#fabe00",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "수인·분당선",
+                                    "Suin-Bundang Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
