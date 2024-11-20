@@ -3,15 +3,15 @@
         "destination": 1200,
         "runin": 1200,
         "railmap": 1800,
-        "indoor": 2200
+        "indoor": 2500
     },
-    "svg_height": 350,
+    "svg_height": 370,
     "style": "shmetro",
-    "y_pc": 50,
-    "padding": 12,
+    "y_pc": 63,
+    "padding": 10,
     "branchSpacingPct": 33,
     "direction": "l",
-    "platform_num": "",
+    "platform_num": "1",
     "theme": [
         "chengdu",
         "cd18",
@@ -46,7 +46,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "Ve4Q4g": {
             "name": [
@@ -88,7 +89,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "lineend": {
             "name": [
@@ -112,7 +114,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "49boLf": {
             "name": [
@@ -166,7 +169,9 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "facility": "railway",
+            "branch": {}
         },
         "EeH0KY": {
             "name": [
@@ -175,8 +180,7 @@
             ],
             "num": "06",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "49boLf"
@@ -220,7 +224,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "N9M4Rt": {
             "name": [
@@ -242,28 +247,14 @@
                 "paid_area": true,
                 "groups": [
                     {},
-                    {
-                        "lines": [
-                            {
-                                "theme": [
-                                    "chengdu",
-                                    "cd1",
-                                    "#222a8c",
-                                    "#fff"
-                                ],
-                                "name": [
-                                    "1号线",
-                                    "Line 1"
-                                ]
-                            }
-                        ]
-                    },
+                    {},
                     {}
                 ]
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "DfOmv1": {
             "name": [
@@ -304,7 +295,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "p5bn8r": {
             "name": [
@@ -313,8 +305,7 @@
             ],
             "num": "09",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "DfOmv1"
@@ -346,7 +337,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "kWpvMP": {
             "name": [
@@ -399,7 +391,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "u9UeXb": {
             "name": [
@@ -416,7 +409,6 @@
             "children": [
                 "NZUXxr"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -426,7 +418,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "uzaCst": {
             "name": [
@@ -435,8 +428,7 @@
             ],
             "num": "13",
             "services": [
-                "local",
-                "express"
+                "local"
             ],
             "parents": [
                 "NZUXxr"
@@ -444,7 +436,6 @@
             "children": [
                 "9csC46"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -469,7 +460,8 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "C2Xqr1": {
             "name": [
@@ -482,12 +474,11 @@
                 "express"
             ],
             "parents": [
-                "9csC46"
+                "6Z_0pO"
             ],
             "children": [
                 "Ve4Q4g"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -512,15 +503,16 @@
             },
             "loop_pivot": false,
             "one_line": false,
-            "int_padding": 255,
-            "facility": "airport"
+            "int_padding": 225,
+            "facility": "airport",
+            "branch": {}
         },
         "9csC46": {
             "name": [
                 "福田",
                 "Futian"
             ],
-            "num": "00",
+            "num": "14",
             "services": [
                 "local"
             ],
@@ -528,7 +520,7 @@
                 "uzaCst"
             ],
             "children": [
-                "C2Xqr1"
+                "6Z_0pO"
             ],
             "transfer": {
                 "groups": [
@@ -545,6 +537,18 @@
                                     "19号线",
                                     "Line 19"
                                 ]
+                            },
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "zyl",
+                                    "#75787B",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "S3号线（资阳线）",
+                                    "Line S3(Ziyang Line)"
+                                ]
                             }
                         ]
                     }
@@ -554,14 +558,15 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "branch": {}
         },
         "NZUXxr": {
             "name": [
                 "天府站",
-                "Tianfu Zhan"
+                "Tianfu Station"
             ],
-            "num": "00",
+            "num": "12",
             "services": [
                 "local"
             ],
@@ -595,7 +600,57 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 255
+            "int_padding": 225,
+            "secondaryName": [
+                "仅换乘",
+                "Only for transferring"
+            ],
+            "facility": "railway",
+            "branch": {}
+        },
+        "6Z_0pO": {
+            "name": [
+                "天府机场3号4号航站楼",
+                "Terminal 3&4 of Tianfu International Airport"
+            ],
+            "num": "15",
+            "services": [],
+            "parents": [
+                "9csC46"
+            ],
+            "children": [
+                "C2Xqr1"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chengdu",
+                                    "cd19",
+                                    "#89ABE3",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "19号线",
+                                    "Line 19"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 225,
+            "secondaryName": [
+                "暂缓开通",
+                "Stay Open"
+            ],
+            "branch": {}
         }
     },
     "namePosMTR": {
@@ -610,7 +665,7 @@
     "psd_num": "1",
     "info_panel_type": "gz1",
     "direction_gz_x": 40,
-    "direction_gz_y": 70,
+    "direction_gz_y": 14,
     "coline": {},
     "loop": false,
     "loop_info": {
@@ -618,5 +673,5 @@
         "left_and_right_factor": 1,
         "bottom_factor": 1
     },
-    "version": "5.14.13"
+    "version": "5.16.15"
 }
