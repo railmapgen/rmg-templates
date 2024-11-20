@@ -1,0 +1,352 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "tokyo",
+        "ju",
+        "#f68b1f",
+        "#fff"
+    ],
+    "line_name": [
+        "日光線",
+        "Nikkō Line"
+    ],
+    "current_stn_idx": "wGtVIi",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "gvHMRL"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "gvHMRL": {
+            "name": [
+                "日光",
+                "Nikkō"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "ZcmrWm"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "ju",
+                                    "#f68b1f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東武日光線",
+                                    "Tobu Nikko Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ZcmrWm": {
+            "name": [
+                "今市",
+                "Imaichi"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gvHMRL"
+            ],
+            "children": [
+                "5AkuV0"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "wGtVIi"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "5AkuV0": {
+            "name": [
+                "下野大沢",
+                "Shimotsuke-Ōsawa"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ZcmrWm"
+            ],
+            "children": [
+                "tAMRCt"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "tAMRCt": {
+            "name": [
+                "文挾",
+                "Fubasami"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "5AkuV0"
+            ],
+            "children": [
+                "GAbBri"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "GAbBri": {
+            "name": [
+                "鹿沼",
+                "Kanuma"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "tAMRCt"
+            ],
+            "children": [
+                "B-wMz_"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "B-wMz_": {
+            "name": [
+                "鶴田",
+                "Tsuruta"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "GAbBri"
+            ],
+            "children": [
+                "wGtVIi"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "wGtVIi": {
+            "name": [
+                "宇都宮",
+                "Utsunomiya"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "B-wMz_"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#4e7a27",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東北新幹線",
+                                    "Tōhoku Shinkansen"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#e63b7a",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "秋田新幹線",
+                                    "Akita Shinkansen"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "ju",
+                                    "#f68b1f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "宇都宮線",
+                                    "Utsunomiya Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tokyo",
+                                    "js",
+                                    "#db2027",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "湘南新宿線",
+                                    "Shōnan-Shinjuku Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.16.15"
+}
