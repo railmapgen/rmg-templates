@@ -1,0 +1,732 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 2500,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 43,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "hokkaido",
+        "hoap",
+        "#1abeee",
+        "#fff"
+    ],
+    "line_name": [
+        "千歳線",
+        "Chitose Line"
+    ],
+    "current_stn_idx": "Jxni7C",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "YhxSE5"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "YhxSE5": {
+            "name": [
+                "札幌",
+                "Sapporo"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "cln9hw"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hos",
+                                    "#e50401",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "函館本線",
+                                    "Hakodate Main Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hog",
+                                    "#0d9435",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "札沼線",
+                                    "Sasshō Line"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#669d34",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "南北線",
+                                    "Namboku Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#008cb4",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東北線",
+                                    "Tōhō Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "札幌",
+                            "Sapporo"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "cln9hw": {
+            "name": [
+                "苗穂",
+                "Naebo"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "YhxSE5"
+            ],
+            "children": [
+                "HNZs4i"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lineend": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BXK0y3",
+                "Jxni7C"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {
+                "left": [
+                    "through",
+                    "BXK0y3"
+                ]
+            }
+        },
+        "HNZs4i": {
+            "name": [
+                "白石",
+                "Shiroishi"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "cln9hw"
+            ],
+            "children": [
+                "g96DIw"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hoa",
+                                    "#f07713",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "函館本線",
+                                    "Hakodate Main Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "g96DIw": {
+            "name": [
+                "平和",
+                "Heiwa"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "HNZs4i"
+            ],
+            "children": [
+                "Z0B7Xq"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Z0B7Xq": {
+            "name": [
+                "新札幌",
+                "Shin-Sapporo"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "g96DIw"
+            ],
+            "children": [
+                "0Nk7Q1"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#ffab01",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "東西線",
+                                    "Tōzai Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "新札幌",
+                            "Shin-Sapporo"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "0Nk7Q1": {
+            "name": [
+                "上野幌",
+                "Kami-Nopporo"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Z0B7Xq"
+            ],
+            "children": [
+                "3lagk5"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "3lagk5": {
+            "name": [
+                "北広島",
+                "Kita-Hiroshima"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "0Nk7Q1"
+            ],
+            "children": [
+                "wt9NZk"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "wt9NZk": {
+            "name": [
+                "島松",
+                "Shimamatsu"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "3lagk5"
+            ],
+            "children": [
+                "DdKR3G"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "DdKR3G": {
+            "name": [
+                "恵の野",
+                "Megumino"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "wt9NZk"
+            ],
+            "children": [
+                "QKjiL4"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "QKjiL4": {
+            "name": [
+                "恵庭",
+                "Eniwa"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "DdKR3G"
+            ],
+            "children": [
+                "uljbxI"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "uljbxI": {
+            "name": [
+                "サッポロビール庭園",
+                "Sapporo Beer Teien"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "QKjiL4"
+            ],
+            "children": [
+                "NYLaY7"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "NYLaY7": {
+            "name": [
+                "長都",
+                "Osatsu"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "uljbxI"
+            ],
+            "children": [
+                "OEHIeG"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "OEHIeG": {
+            "name": [
+                "千歳",
+                "Chitose"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "NYLaY7"
+            ],
+            "children": [
+                "2918EG"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "2918EG": {
+            "name": [
+                "南千歳",
+                "Minami-Chitose"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "OEHIeG"
+            ],
+            "children": [
+                "BXK0y3",
+                "pH-xkf"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hok",
+                                    "#47c55b",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "石勝線",
+                                    "Sekishō Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {
+                "right": [
+                    "through",
+                    "BXK0y3"
+                ]
+            }
+        },
+        "pH-xkf": {
+            "name": [
+                "植苗",
+                "Uenae"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "2918EG"
+            ],
+            "children": [
+                "CXem9y"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "CXem9y": {
+            "name": [
+                "沼ノ端",
+                "Numanohata"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "pH-xkf"
+            ],
+            "children": [
+                "Jxni7C"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hoh",
+                                    "#066fc2",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "室蘭本線",
+                                    "Muroran Main Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Jxni7C": {
+            "name": [
+                "苫小牧",
+                "Tomakomai"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "CXem9y"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "hokkaido",
+                                    "hoh",
+                                    "#066fc2",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "室蘭本線",
+                                    "Muroran Main Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#5c5c5c",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "日高本線",
+                                    "Hidaka Main Line"
+                                ]
+                            }
+                        ]
+                    },
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "BXK0y3": {
+            "name": [
+                "新千歳空港",
+                "New Chitose Airport"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "2918EG"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.16.15"
+}
