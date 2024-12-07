@@ -1,0 +1,171 @@
+{
+    "style": "mtr",
+    "svg_height": 300,
+    "padding": 7.05352436628492,
+    "y_pc": 40,
+    "theme": [
+        "other",
+        "other",
+        "#754db6",
+        "#fff"
+    ],
+    "direction": "r",
+    "current_stn_idx": "hwTuQi",
+    "platform_num": "",
+    "stn_list": {
+        "linestart": {
+            "parents": [],
+            "children": [
+                "hwTuQi"
+            ],
+            "num": "00",
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "路綫左端",
+                "en": "LEFT END"
+            },
+            "branch": {}
+        },
+        "lineend": {
+            "parents": [
+                "tu3q"
+            ],
+            "children": [],
+            "num": "00",
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "路綫右端",
+                "en": "RIGHT END"
+            },
+            "branch": {}
+        },
+        "tu3q": {
+            "parents": [
+                "hwTuQi"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "num": "08",
+            "transfer": {
+                "tick_direc": "l",
+                "paid_area": true,
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "macao",
+                                    "taipa",
+                                    "#A4D65E",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "氹仔綫",
+                                    "Linha Taipa"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "lines": []
+                    }
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "協和醫院",
+                "en": "Hospital Union\\Union Hospital"
+            },
+            "branch": {}
+        },
+        "hwTuQi": {
+            "num": "12",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "tu3q"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "l",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "石排灣",
+                "en": "Seac Pai Van\\Seac Pai Van"
+            },
+            "branch": {}
+        }
+    },
+    "line_name": [
+        "石排灣線",
+        "Linha Seac Pai Van"
+    ],
+    "psd_num": "3",
+    "line_num": "TP",
+    "info_panel_type": "gz28",
+    "direction_gz_x": 50,
+    "direction_gz_y": 70,
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "svgWidth": {
+        "destination": 1600,
+        "runin": 1100,
+        "railmap": 1000,
+        "indoor": 900
+    },
+    "namePosMTR": {
+        "isStagger": false,
+        "isFlip": false
+    },
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 0,
+        "bottom_factor": 1
+    },
+    "branchSpacingPct": 30,
+    "version": "5.14.13"
+}
