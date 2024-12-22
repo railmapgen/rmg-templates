@@ -12,29 +12,25 @@ import {
 } from '@chakra-ui/react';
 import { GITHUB_ISSUE_PREAMBLE } from '../../util/constant';
 import { MdChevronLeft, MdContentCopy, MdOpenInNew } from 'react-icons/md';
+import { getMarkdownTable, Justification } from './justification';
 
 interface SubmitModalStepSubmitProps {
     companyName: string;
     companyBlock: HTMLDetailsElement | null;
     templateBlocks: HTMLDetailsElement[];
-    justification: string;
-    majorUpdateJustifications: Record<string, string>;
+    justification: Justification;
     onPrev: () => void;
     onClose: () => void;
 }
 
 export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps) {
-    const { companyName, companyBlock, templateBlocks, justification, majorUpdateJustifications, onPrev, onClose } =
-        props;
+    const { companyName, companyBlock, templateBlocks, justification, onPrev, onClose } = props;
 
     const { t } = useTranslation();
     const linkColour = useColorModeValue('primary.500', 'primary.300');
 
     const issueBody = [
-        `**Justification:** ${justification || '(REPLACE ME)'}`,
-        Object.entries(majorUpdateJustifications)
-            .map(([line, value]) => `- Major update of ${line}: ${value}`)
-            .join('\n'),
+        getMarkdownTable(justification),
         GITHUB_ISSUE_PREAMBLE,
         companyBlock?.outerHTML ?? '',
         ...templateBlocks.map(block => block.outerHTML),
