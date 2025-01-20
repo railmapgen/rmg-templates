@@ -3,7 +3,8 @@
         "destination": 1200,
         "runin": 1200,
         "railmap": 2000,
-        "indoor": 1200
+        "indoor": 1200,
+        "platform": 1200
     },
     "svg_height": 300,
     "style": "shmetro",
@@ -15,7 +16,7 @@
     "theme": [
         "shanghai",
         "maglev",
-        "#009090",
+        "#008b9a",
         "#fff"
     ],
     "line_name": [
@@ -25,10 +26,6 @@
     "current_stn_idx": "8Nvwy3",
     "stn_list": {
         "linestart": {
-            "name": [
-                "LEFT END",
-                "LEFT END"
-            ],
             "num": "00",
             "services": [
                 "local"
@@ -46,13 +43,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "LEFT END",
+                "en": "LEFT END"
+            },
+            "character_spacing": 75
         },
         "Tz2gj3": {
-            "name": [
-                "龙阳路",
-                "Longyang Rd."
-            ],
             "num": "01",
             "services": [
                 "local"
@@ -124,13 +122,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 200
+            "int_padding": 200,
+            "localisedName": {
+                "zh": "龙阳路",
+                "en": "Longyang Rd."
+            },
+            "character_spacing": 75
         },
         "8Nvwy3": {
-            "name": [
-                "浦东国际机场",
-                "Pudong Airport"
-            ],
             "num": "02",
             "services": [
                 "local"
@@ -159,6 +158,22 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "airport",
+                                    "#236890",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "机场联络线",
+                                    "Airport Link Line"
+                                ]
+                            }
+                        ]
                     }
                 ],
                 "tick_direc": "r",
@@ -167,13 +182,14 @@
             "facility": "airport",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 210
+            "int_padding": 210,
+            "localisedName": {
+                "zh": "浦东1号2号航站楼",
+                "en": "Pudong Terminal 1 & Terminal 2"
+            },
+            "character_spacing": 75
         },
         "lineend": {
-            "name": [
-                "RIGHT END",
-                "RIGHT END"
-            ],
             "num": "00",
             "services": [
                 "local"
@@ -191,7 +207,12 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "RIGHT END",
+                "en": "RIGHT END"
+            },
+            "character_spacing": 75
         }
     },
     "namePosMTR": {
