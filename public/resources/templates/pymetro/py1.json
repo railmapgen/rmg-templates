@@ -1,0 +1,354 @@
+{
+    "svgWidth": {
+        "destination": 1000,
+        "runin": 1200,
+        "railmap": 1000,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 48,
+    "padding": 8,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "pyongyang",
+        "chollima",
+        "#ff0000",
+        "#fff"
+    ],
+    "line_name": [
+        "千里馬線",
+        "Chollima Line"
+    ],
+    "current_stn_idx": "SfdaNi",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "localisedSecondaryName": {},
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "9_bqay"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "9_bqay": {
+            "localisedName": {
+                "zh": "紅星",
+                "en": "Pulgunbyol"
+            },
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "VlHNX7"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "VlHNX7": {
+            "localisedName": {
+                "zh": "戰友",
+                "en": "Jonu"
+            },
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "9_bqay"
+            ],
+            "children": [
+                "PyEh4K"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "pyongyang",
+                                    "hyeoksin",
+                                    "#00ff00",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "革新線",
+                                    "Hyoksin Line"
+                                ]
+                            }
+                        ],
+                        "name": [
+                            "戰勝",
+                            "Jonsung"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "localisedSecondaryName": {},
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "SfdaNi"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "PyEh4K": {
+            "localisedName": {
+                "zh": "凱旋",
+                "en": "Kaeson"
+            },
+            "num": "03",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "VlHNX7"
+            ],
+            "children": [
+                "pXQHFD"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "AEOM0z": {
+            "localisedName": {
+                "zh": "勝利",
+                "en": "Sungni"
+            },
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "pXQHFD"
+            ],
+            "children": [
+                "XFZs14"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "pXQHFD": {
+            "localisedName": {
+                "zh": "牡丹峰",
+                "en": "Moranbong"
+            },
+            "num": "04",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "PyEh4K"
+            ],
+            "children": [
+                "AEOM0z"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "XFZs14": {
+            "localisedName": {
+                "zh": "烽火",
+                "en": "Ponghwa"
+            },
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "AEOM0z"
+            ],
+            "children": [
+                "OyevP1"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "SfdaNi": {
+            "localisedName": {
+                "zh": "復興",
+                "en": "Puhung"
+            },
+            "num": "08",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "OyevP1"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "OyevP1": {
+            "localisedName": {
+                "zh": "榮光",
+                "en": "Yonggwang"
+            },
+            "num": "07",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "XFZs14"
+            ],
+            "children": [
+                "SfdaNi"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "pyongyang",
+                                    "",
+                                    "#AAAAAA",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "鐵路",
+                                    "Railway"
+                                ],
+                                "facility": "hsr"
+                            }
+                        ],
+                        "name": [
+                            "平壤站",
+                            "Pyongyang Station"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
