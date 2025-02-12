@@ -39,7 +39,7 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
     const manualSearchParams = new URLSearchParams({
         template: 'new-templates-request.md',
         labels: 'resources',
-        title: companyName,
+        title: 'Resources: New templates of ' + companyName,
     });
 
     const handleCopy = async () => {
