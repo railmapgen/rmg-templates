@@ -50,8 +50,8 @@
         "build": "tsc && vite build",
         "build:resources": "cd ./package && npm run build && cd ..",
         "test": "vitest",
-        "lint": "eslint ./src",
-        "lint:fix": "eslint ./src --fix",
+        "lint": "eslint src package",
+        "lint:fix": "eslint src package --fix",
         "postinstall": "cd ./package && npm install",
         "preview": "vite preview"
     },
