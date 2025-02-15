@@ -1,0 +1,167 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1400
+    },
+    "svg_height": 368,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "2",
+    "theme": [
+        "macao",
+        "peninsula",
+        "#FF0000",
+        "#fff"
+    ],
+    "line_name": [
+        "橫琴綫",
+        "Linha de Hengqin"
+    ],
+    "current_stn_idx": "Ht24Tq",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "localisedSecondaryName": {},
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "Ht24Tq"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "Ht24Tq": {
+            "localisedName": {
+                "zh": "蓮花",
+                "en": "Lótus \\Lotus"
+            },
+            "localisedSecondaryName": {},
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "_mD7Aq"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "macao",
+                                    "taipa",
+                                    "#A4D65E",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "氹仔綫",
+                                    "Linha Taipa"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 130
+        },
+        "_mD7Aq": {
+            "localisedName": {
+                "zh": "橫琴",
+                "en": "Hengqin \\Hengqin"
+            },
+            "localisedSecondaryName": {},
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Ht24Tq"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "localisedSecondaryName": {},
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "_mD7Aq"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "sh2020",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.17.1"
+}
