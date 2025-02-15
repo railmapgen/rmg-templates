@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import { PickerWindowHeader, TicketWindowHeader, WindowHeader } from './window-header';
 import { RmgErrorBoundary, RmgLoader, RmgThemeProvider, RmgWindow } from '@railmapgen/rmg-components';
 import { HashRouter, Route, Routes } from 'react-router-dom';

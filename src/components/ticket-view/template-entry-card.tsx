@@ -80,7 +80,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         try {
             const paramStr = await readFileAsText(file);
             onParamChange(JSON.parse(paramStr));
-        } catch (err) {
+        } catch {
             alert('Invalid file!');
             event.target.value = '';
         }
