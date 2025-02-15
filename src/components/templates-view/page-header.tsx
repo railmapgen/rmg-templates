@@ -34,7 +34,7 @@ export default function PageHeader() {
         if (rmgRuntime.isStandaloneWindow()) {
             navigate('/new');
         } else {
-            rmgRuntime.openApp('rmg-templates-upload');
+            rmgRuntime.openApp({ appId: 'rmg-templates-upload' });
         }
         rmgRuntime.event(Events.UPLOAD_TEMPLATES, {});
     };
