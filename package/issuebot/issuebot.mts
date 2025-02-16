@@ -94,7 +94,7 @@ const updateCompanyConfig = async (company: string, name: Record<string, any>) =
         // create empty config if dir didn't exist
         const templateConfigPath = path.join(templatesPath, company, '00config.json');
         await writeFile(templateConfigPath, JSON.stringify([], null, 4));
-    } catch (err) {
+    } catch {
         console.warn('Failed to create directory for company=' + company);
     }
 };
