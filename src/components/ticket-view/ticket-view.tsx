@@ -39,7 +39,7 @@ export default function TicketView() {
         if (rmgRuntime.isStandaloneWindow()) {
             navigate('/');
         } else {
-            rmgRuntime.openApp('rmg-templates');
+            rmgRuntime.openApp({ appId: 'rmg-templates' });
         }
     };
 

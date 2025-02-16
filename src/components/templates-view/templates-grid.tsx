@@ -3,7 +3,6 @@ import useTemplates from '../hooks/use-templates';
 import { Avatar, Flex, Heading, SimpleGrid, SystemStyleObject, Tag, TagLabel, Text } from '@chakra-ui/react';
 import { RmgCard } from '@railmapgen/rmg-components';
 import useTranslatedName from '../hooks/use-translated-name';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
 
