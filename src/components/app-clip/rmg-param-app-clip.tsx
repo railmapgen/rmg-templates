@@ -1,19 +1,8 @@
-import { SystemStyleObject } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
-import { RmgAppClip } from '@railmapgen/rmg-components';
+import { Modal } from '@mantine/core';
 
 const CHANNEL_PREFIX = 'rmg-bridge--';
-
-const styles: SystemStyleObject = {
-    h: 500,
-    maxH: '70%',
-
-    '& iframe': {
-        h: '100%',
-        w: '100%',
-    },
-};
 
 interface RmgAppClipProps {
     templateId?: string;
@@ -50,8 +39,11 @@ export default function RmgParamAppClip(props: RmgAppClipProps) {
     }, [templateId]);
 
     return (
-        <RmgAppClip isOpen={!!templateId} onClose={onClose} sx={styles}>
-            <iframe src={frameUrl} loading="lazy" />
-        </RmgAppClip>
+        <Modal.Root opened={!!templateId} onClose={onClose} keepMounted>
+            <Modal.Overlay />
+            <Modal.Content h={500} style={{ display: 'flex' }}>
+                <iframe src={frameUrl} loading="lazy" style={{ height: '100%', width: '100%', border: 'none' }} />
+            </Modal.Content>
+        </Modal.Root>
     );
 }
