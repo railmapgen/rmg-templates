@@ -1,12 +1,12 @@
 import PageHeader from './page-header';
-import { RmgPage } from '@railmapgen/rmg-components';
 import TemplatesGrid from './templates-grid';
+import { RMPage } from '@railmapgen/mantine-components';
 
 export default function TemplatesView() {
     return (
-        <RmgPage>
+        <RMPage>
             <PageHeader />
             <TemplatesGrid />
-        </RmgPage>
+        </RMPage>
     );
 }

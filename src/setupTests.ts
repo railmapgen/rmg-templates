@@ -2,7 +2,9 @@ import { createStore } from './redux';
 import { TextEncoder } from 'util';
 import crypto from 'node:crypto';
 import { MockBroadcastChannel } from './mock-broadcast-channel';
+import { setupTest } from '@railmapgen/mantine-components/utils';
 
+setupTest();
 export const createTestStore = createStore;
 
 vi.stubGlobal('BroadcastChannel', MockBroadcastChannel);
@@ -22,3 +24,4 @@ global.fetch = vi.fn().mockImplementation((...args: any[]) => {
 
 global.TextEncoder = TextEncoder;
 vi.stubGlobal('crypto', crypto);
+Element.prototype.scrollIntoView = vi.fn(); // fixme: use mantine-components

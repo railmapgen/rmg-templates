@@ -1,9 +1,8 @@
 import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
-import { Box, Button, HStack, IconButton } from '@chakra-ui/react';
-import { MdAdd, MdDelete } from 'react-icons/md';
-import { RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
+import { MdAdd, MdDeleteOutline } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import useTranslatedName from '../hooks/use-translated-name';
+import { ActionIcon, Box, Button, Fieldset, Flex, Group, Select, TextInput } from '@mantine/core';
 
 interface OptionalLanguageEntriesProps {
     optionalName: [LanguageCode, string][];
@@ -16,33 +15,11 @@ export default function OptionalLanguageEntries(props: OptionalLanguageEntriesPr
     const { t } = useTranslation();
     const translateName = useTranslatedName();
 
-    const getOptionalLanguageFields = (lang: LanguageCode, name: string): RmgFieldsField[] => {
-        return [
-            {
-                type: 'select',
-                label: t('Language'),
-                value: lang,
-                options: Object.entries(LANGUAGE_NAMES).reduce(
-                    (acc, cur) => ({
-                        ...acc,
-                        [cur[0]]: translateName(cur[1]),
-                    }),
-                    {} as Record<LanguageCode, string>
-                ),
-                disabledOptions: Object.keys(LANGUAGE_NAMES)
-                    .filter(l => SUPPORTED_LANGUAGES.includes(l as any) || optionalName.some(entry => entry[0] === l))
-                    .filter(l => l !== lang),
-                onChange: value => handleLanguageSwitch(lang, value as LanguageCode),
-            },
-            {
-                type: 'input',
-                label: t('Name'),
-                value: name,
-                onChange: value => handleUpdateOptionalName(lang, value),
-                validator: value => !!value,
-            },
-        ];
-    };
+    const languageOptions = Object.entries(LANGUAGE_NAMES).map(([lang, name]) => ({
+        value: lang,
+        label: translateName(name),
+        disabled: SUPPORTED_LANGUAGES.includes(lang as any) || optionalName.some(entry => entry[0] === lang),
+    }));
 
     const handleAddOptionalName = () => {
         const availableLanguages = Object.keys(LANGUAGE_NAMES).filter(
@@ -67,42 +44,59 @@ export default function OptionalLanguageEntries(props: OptionalLanguageEntriesPr
         onChange(optionalName.filter(entry => entry[0] !== lang));
     };
 
-    return (
-        <>
-            {optionalName.length === 0 && (
-                <Button variant="ghost" size="sm" leftIcon={<MdAdd />} onClick={handleAddOptionalName} w="100%" my={2}>
-                    {t('Add more translations')}
-                </Button>
-            )}
-
+    return optionalName.length === 0 ? (
+        <Button leftSection={<MdAdd />} onClick={handleAddOptionalName}>
+            {t('Add a name in another language')}
+        </Button>
+    ) : (
+        <Fieldset legend={t('Multi-languages')}>
             {optionalName.map(([lang, name], idx, arr) => (
-                <HStack key={lang} sx={{ w: '100%', '& > div:first-of-type': { flex: 1 } }}>
-                    <RmgFields fields={getOptionalLanguageFields(lang, name)} noLabel={idx > 0} />
-                    {idx === arr.length - 1 ? (
-                        <IconButton
-                            size="sm"
-                            variant="ghost"
-                            aria-label={t('Add translation')}
-                            title={t('Add translation')}
-                            onClick={handleAddOptionalName}
-                            icon={<MdAdd />}
+                <Flex key={idx} pt={4} align="center" data-testid={'entry-card-stack-' + lang}>
+                    <Group gap="xs" flex={1} grow>
+                        <Select
+                            size="xs"
+                            aria-label={t('Language')}
+                            value={lang}
+                            onChange={value => handleLanguageSwitch(lang, value as LanguageCode)}
+                            data={languageOptions}
+                            searchable
                         />
-                    ) : (
-                        <Box minW={8} />
-                    )}
+                        <TextInput
+                            size="xs"
+                            aria-label={t('Name')}
+                            placeholder={t('Enter name')}
+                            value={name}
+                            onChange={({ currentTarget: { value } }) => handleUpdateOptionalName(lang, value)}
+                        />
+                    </Group>
+                    <Flex ml={8} wrap="nowrap">
+                        {idx === arr.length - 1 ? (
+                            <ActionIcon
+                                size="sm"
+                                variant="filled"
+                                aria-label={t('Add a name in another language')}
+                                title={t('Add a name in another language')}
+                                onClick={handleAddOptionalName}
+                            >
+                                <MdAdd />
+                            </ActionIcon>
+                        ) : (
+                            <Box w={22} />
+                        )}
 
-                    {
-                        <IconButton
+                        <ActionIcon
                             size="sm"
-                            variant="ghost"
-                            aria-label={t('Remove this translation')}
-                            title={t('Remove this translation')}
+                            variant="outline"
+                            aria-label={t('Remove this name')}
+                            title={t('Remove this name')}
                             onClick={() => handleRemoveOptionalName(lang as LanguageCode)}
-                            icon={<MdDelete />}
-                        />
-                    }
-                </HStack>
+                            ml={4}
+                        >
+                            <MdDeleteOutline />
+                        </ActionIcon>
+                    </Flex>
+                </Flex>
             ))}
-        </>
+        </Fieldset>
     );
 }
