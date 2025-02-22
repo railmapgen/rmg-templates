@@ -47,7 +47,7 @@ export default function TemplatesSection() {
                 </Title>
             </RMSectionHeader>
 
-            <Stack>
+            <Stack py={4} gap="xs">
                 {templates.map(entry => (
                     <TemplateEntryCard
                         key={entry.id}

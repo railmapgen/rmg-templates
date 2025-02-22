@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
-import { Modal } from '@mantine/core';
+import { RMAppClip } from '@railmapgen/mantine-components';
 
 const CHANNEL_PREFIX = 'rmg-bridge--';
 
@@ -39,11 +39,8 @@ export default function RmgParamAppClip(props: RmgAppClipProps) {
     }, [templateId]);
 
     return (
-        <Modal.Root opened={!!templateId} onClose={onClose} keepMounted>
-            <Modal.Overlay />
-            <Modal.Content h={500} style={{ display: 'flex' }}>
-                <iframe src={frameUrl} loading="lazy" style={{ height: '100%', width: '100%', border: 'none' }} />
-            </Modal.Content>
-        </Modal.Root>
+        <RMAppClip opened={!!templateId} onClose={onClose} styles={{ content: { height: 500 } }}>
+            <iframe src={frameUrl} loading="lazy" />
+        </RMAppClip>
     );
 }

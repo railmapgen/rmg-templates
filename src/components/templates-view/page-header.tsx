@@ -6,7 +6,7 @@ import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import useCompanyOptions from '../hooks/use-company-options';
 import { RMPageHeader } from '@railmapgen/mantine-components';
-import { Button, Group, NativeSelect } from '@mantine/core';
+import { Button, Group, Select } from '@mantine/core';
 
 export default function PageHeader() {
     const { t } = useTranslation();
@@ -25,11 +25,12 @@ export default function PageHeader() {
     return (
         <RMPageHeader>
             <Group gap="xs" flex={1} align="flex-end">
-                <NativeSelect
+                <Select
                     label={t('Company')}
                     value={selectedCompany}
-                    onChange={({ currentTarget: { value } }) => dispatch(setSelectedCompany(value))}
+                    onChange={value => value && dispatch(setSelectedCompany(value))}
                     data={companyOptions}
+                    searchable
                 />
 
                 <Button variant="filled" ml="auto" onClick={handleUploadTemplates}>
