@@ -26,7 +26,7 @@ export default defineConfig({
                         'react-redux',
                         'react-i18next',
                     ],
-                    mantine: ['@mantine/core', '@mantine/hooks'],
+                    mantine: ['@mantine/core', '@mantine/hooks', '@railmapgen/mantine-components'],
                 },
             },
         },
