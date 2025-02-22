@@ -1,18 +1,9 @@
+import classes from './submit-modal.module.css';
 import { useTranslation } from 'react-i18next';
-import {
-    Button,
-    Icon,
-    Link,
-    ListItem,
-    ModalBody,
-    ModalFooter,
-    OrderedList,
-    Text,
-    useColorModeValue,
-} from '@chakra-ui/react';
 import { GITHUB_ISSUE_PREAMBLE } from '../../util/constant';
 import { MdChevronLeft, MdContentCopy, MdOpenInNew } from 'react-icons/md';
 import { getMarkdownTable, Justification } from './justification';
+import { Anchor, Button, Group, List, Stack, Text } from '@mantine/core';
 
 interface SubmitModalStepSubmitProps {
     companyName: string;
@@ -27,7 +18,6 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
     const { companyName, companyBlock, templateBlocks, justification, onPrev, onClose } = props;
 
     const { t } = useTranslation();
-    const linkColour = useColorModeValue('primary.500', 'primary.300');
 
     const issueBody = [
         getMarkdownTable(justification),
@@ -48,38 +38,37 @@ export default function SubmitModalStepSubmit(props: SubmitModalStepSubmitProps)
 
     return (
         <>
-            <ModalBody>
+            <Stack gap="xs" className={classes['step-body']}>
                 <Text>{t('Follow the instructions below to open an Issue') + ':'}</Text>
-                <OrderedList>
-                    <ListItem>
+                <List type="ordered" withPadding>
+                    <List.Item>
                         {t('Open')}{' '}
-                        <Link
-                            color={linkColour}
+                        <Anchor
                             href={
                                 'https://github.com/railmapgen/rmg-templates/issues/new?' +
                                 manualSearchParams.toString()
                             }
-                            isExternal={true}
+                            target="_blank"
                         >
-                            Issue: New Templates Request <Icon as={MdOpenInNew} />
-                        </Link>
-                    </ListItem>
-                    <ListItem>
+                            Issue: New Templates Request <MdOpenInNew />
+                        </Anchor>
+                    </List.Item>
+                    <List.Item>
                         {t('Click copy button and paste into issue body')}{' '}
-                        <Button size="xs" leftIcon={<MdContentCopy />} onClick={handleCopy}>
+                        <Button size="xs" variant="light" leftSection={<MdContentCopy />} onClick={handleCopy}>
                             {t('Copy')}
                         </Button>
-                    </ListItem>
-                </OrderedList>
-            </ModalBody>
-            <ModalFooter>
-                <Button variant="ghost" onClick={onPrev} mr="auto" leftIcon={<MdChevronLeft />}>
+                    </List.Item>
+                </List>
+            </Stack>
+            <Group gap="sm" pt="xs">
+                <Button variant="default" onClick={onPrev} leftSection={<MdChevronLeft />}>
                     {t('Previous')}
                 </Button>
-                <Button colorScheme="primary" onClick={onClose}>
+                <Button ml="auto" onClick={onClose}>
                     {t('Close')}
                 </Button>
-            </ModalFooter>
+            </Group>
         </>
     );
 }

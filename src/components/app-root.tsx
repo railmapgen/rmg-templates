@@ -1,7 +1,8 @@
 import { lazy } from 'react';
 import { PickerWindowHeader, TicketWindowHeader, WindowHeader } from './window-header';
-import { RmgErrorBoundary, RmgLoader, RmgThemeProvider, RmgWindow } from '@railmapgen/rmg-components';
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { RMErrorBoundary, RMMantineProvider, RMWindow } from '@railmapgen/mantine-components';
+import { LoadingOverlay } from '@mantine/core';
 
 const TemplatesView = lazy(() => import('./templates-view/templates-view'));
 const AppClipView = lazy(() => import('./templates-view/app-clip-view'));
@@ -10,39 +11,39 @@ const TicketView = lazy(() => import('./ticket-view/ticket-view'));
 export default function AppRoot() {
     return (
         <HashRouter>
-            <RmgThemeProvider>
-                <RmgWindow>
+            <RMMantineProvider>
+                <RMWindow>
                     <Routes>
                         <Route
                             path="/new"
                             element={
-                                <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                <RMErrorBoundary suspenseFallback={<LoadingOverlay visible />}>
                                     <TicketWindowHeader />
                                     <TicketView />
-                                </RmgErrorBoundary>
+                                </RMErrorBoundary>
                             }
                         />
                         <Route
                             path="/import"
                             element={
-                                <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                <RMErrorBoundary suspenseFallback={<LoadingOverlay visible />}>
                                     <PickerWindowHeader />
                                     <AppClipView />
-                                </RmgErrorBoundary>
+                                </RMErrorBoundary>
                             }
                         />
                         <Route
                             path="/"
                             element={
-                                <RmgErrorBoundary suspenseFallback={<RmgLoader isIndeterminate />}>
+                                <RMErrorBoundary suspenseFallback={<LoadingOverlay visible />}>
                                     <WindowHeader />
                                     <TemplatesView />
-                                </RmgErrorBoundary>
+                                </RMErrorBoundary>
                             }
                         />
                     </Routes>
-                </RmgWindow>
-            </RmgThemeProvider>
+                </RMWindow>
+            </RMMantineProvider>
         </HashRouter>
     );
 }
