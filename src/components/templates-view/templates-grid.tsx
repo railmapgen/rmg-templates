@@ -30,7 +30,7 @@ export default function TemplatesGrid(props: TemplatesGridProps) {
             />
             <SimpleGrid cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} classNames={{ root: classes.grid }}>
                 {templates.map(template => {
-                    const { filename, name, uploadBy } = template;
+                    const { filename, name, authors } = template;
                     return (
                         <Card
                             key={filename}
@@ -43,25 +43,29 @@ export default function TemplatesGrid(props: TemplatesGridProps) {
                             </Card.Section>
                             <Text span>{t('Authors')}</Text>
                             <AvatarGroup>
-                                {onTemplateSelect ? (
-                                    <Avatar
-                                        src={`https://github.com/${uploadBy}.png`}
-                                        alt={uploadBy}
-                                        name={uploadBy}
-                                        title={uploadBy}
-                                        color="initials"
-                                    />
-                                ) : (
-                                    <Avatar
-                                        component="a"
-                                        href={`https://github.com/railmapgen/rmg-templates/issues?q=is:issue+author:${uploadBy}`}
-                                        target="_blank"
-                                        src={`https://github.com/${uploadBy}.png`}
-                                        alt={uploadBy}
-                                        name={uploadBy}
-                                        title={t('View all templates authored by') + ' ' + uploadBy}
-                                        color="initials"
-                                    />
+                                {authors.map(author =>
+                                    onTemplateSelect ? (
+                                        <Avatar
+                                            key={author}
+                                            src={`https://github.com/${author}.png`}
+                                            alt={author}
+                                            name={author}
+                                            title={author}
+                                            color="initials"
+                                        />
+                                    ) : (
+                                        <Avatar
+                                            key={author}
+                                            component="a"
+                                            href={`https://github.com/railmapgen/rmg-templates/issues?q=is:issue+author:${author}`}
+                                            target="_blank"
+                                            src={`https://github.com/${author}.png`}
+                                            alt={author}
+                                            name={author}
+                                            title={t('View all templates authored by') + ' ' + author}
+                                            color="initials"
+                                        />
+                                    )
                                 )}
                             </AvatarGroup>
                         </Card>

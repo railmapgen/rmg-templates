@@ -53,13 +53,20 @@ const updateConfig = async (company: string, line: string, major: boolean, name:
     if (templateConfig.some(config => config.filename === line)) {
         templateConfig = templateConfig.map(config => {
             if (config.filename === line) {
-                return { ...config, name, uploadBy: major ? issueUser : config.uploadBy };
+                return {
+                    ...config,
+                    name,
+                    authors:
+                        !issueUser || config.authors.includes(issueUser)
+                            ? config.authors
+                            : [...config.authors, issueUser],
+                };
             } else {
                 return config;
             }
         });
     } else {
-        templateConfig.push({ filename: line, name, uploadBy: issueUser });
+        templateConfig.push({ filename: line, name, authors: issueUser ? [issueUser] : [] });
     }
 };
 
