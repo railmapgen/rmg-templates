@@ -1,15 +1,6 @@
 #!/bin/bash
 set -eux
 
-# build local resources
-cd ./package
-npm install
-npm run build
-cd ..
-
-# npm install
-npm install
-
 # patch authors
 npm run patch
 

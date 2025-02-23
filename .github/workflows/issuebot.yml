@@ -11,13 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: '0'
           token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm ci
-        working-directory: ./package
 
       - name: Update and push
         run: ./scripts/issuebot.sh
