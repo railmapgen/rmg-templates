@@ -14,7 +14,7 @@ git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
 # commit patched files
 git add .
-git commit -m 'Patch config files' || { echo "It's normal :)" }
+git commit -m 'Patch config files' || { echo "It's normal :)"; }
 
 # variables
 export APP_NAME=$(node -p "require('./package.json').name")
