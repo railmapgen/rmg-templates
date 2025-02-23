@@ -14,15 +14,9 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Resources check
-        run: |
-          npm install
-          npm run test
-          npm run build
-        working-directory: ./package
-
       - name: Code check
         run: |
           npm install
+          npm run patch
           npm run lint
           npm run test

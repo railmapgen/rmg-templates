@@ -28,9 +28,7 @@ cd ..
 git add .
 git commit -m "#$ISSUE_NUMBER $ISSUE_TITLE" --author="$USER_LOGIN <$USER_ID+$USER_LOGIN@users.noreply.github.com>"
 
-# Build to check
-cd package
-CI='' npm run build
+# No need to build to check -- covered by PR code check
 
 # Generate review url
 GITHASH=$(git log -n 1 --pretty=%H)

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import { useSearchParams } from 'react-router-dom';
-import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import { TemplateEntry } from '../../package';
 import useTranslatedName from '../hooks/use-translated-name';
 import { Alert, Button, Divider, Group, LoadingOverlay } from '@mantine/core';
 import { RMPage, RMPageFooter } from '@railmapgen/mantine-components';

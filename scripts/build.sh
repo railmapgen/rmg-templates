@@ -10,6 +10,9 @@ cd ..
 # npm install
 npm install
 
+# patch authors
+npm run patch
+
 # run tests
 npm run lint
 npm run test
