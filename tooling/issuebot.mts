@@ -5,7 +5,7 @@ import { JSDOM } from 'jsdom';
 import { CompanyEntry, TemplateEntry } from '../src/package';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const resourcesPath = path.join(__dirname, '../../public/resources');
+const resourcesPath = path.join(__dirname, '../public/resources');
 const templatesPath = path.join(resourcesPath, 'templates');
 
 const CORE_COMPANIES = ['basic', 'mtr', 'gzmtr', 'shmetro'];
