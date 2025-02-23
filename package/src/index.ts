@@ -17,7 +17,7 @@ enum RmgStyle {
 export interface TemplateEntry {
     filename: string;
     name: Translation;
-    uploadBy?: string;
+    authors: string[];
     style?: RmgStyle;
 }
 
