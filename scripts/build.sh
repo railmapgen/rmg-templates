@@ -12,6 +12,10 @@ npm run test
 git config --global user.name 'github-actions[bot]'
 git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+# commit patched files
+git add .
+git commit -m 'Patch config files'
+
 # variables
 export APP_NAME=$(node -p "require('./package.json').name")
 BRANCH=$(git branch | grep \* | cut -d ' ' -f2 | tr '/' '.')
