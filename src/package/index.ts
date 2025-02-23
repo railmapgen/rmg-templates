@@ -18,17 +18,10 @@ export interface CompanyEntry {
     name: Translation;
 }
 
-enum RmgStyle {
-    MTR = 'mtr',
-    GZMTR = 'gzmtr',
-    SHMetro = 'shmetro',
-}
-
 export interface TemplateEntry {
     filename: string;
     name: Translation;
     authors: string[];
-    style?: RmgStyle;
 }
 
 export const coreCompanyConfig = coreCompanyConfigJson as CompanyEntry[];
