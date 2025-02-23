@@ -10,8 +10,6 @@
     "description": "",
     "main": "./index.js",
     "scripts": {
-        "build": "node --loader ts-node/esm builder/prebuild.mts && npx tsc --project tsconfig.build.json",
-        "test": "vitest",
         "issuebot": "node --loader ts-node/esm issuebot/issuebot.mts"
     },
     "author": "",
@@ -20,8 +18,7 @@
         "@types/jsdom": "^21.1.7",
         "jsdom": "^26.0.0",
         "ts-node": "^10.9.2",
-        "typescript": "^5.7.3",
-        "vitest": "^3.0.6"
+        "typescript": "^5.7.3"
     },
     "exports": {
         ".": "./index.js",

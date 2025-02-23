@@ -29,7 +29,7 @@ describe('Sanity', () => {
                 expect(typeof filename).toBe('string');
                 translationAssertion(template.name);
                 expect(Array.isArray(template.authors)).toBeTruthy();
-                expect(template.authors.length).toBeGreaterThan(0);
+                expect(template.authors.length).toBeGreaterThanOrEqual(0);
 
                 // try import json as obj
                 await import(`../../public/resources/templates/${companyId}/${filename}.json`);

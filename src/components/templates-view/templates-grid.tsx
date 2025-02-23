@@ -3,7 +3,7 @@ import { useRootSelector } from '../../redux';
 import useTemplates from '../hooks/use-templates';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
-import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import { TemplateEntry } from '../../package';
 import { RMPageBody } from '@railmapgen/mantine-components';
 import { Avatar, AvatarGroup, Card, LoadingOverlay, SimpleGrid, Text, Title } from '@mantine/core';
 import clsx from 'clsx';
