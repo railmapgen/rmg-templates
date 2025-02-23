@@ -75,7 +75,7 @@ export default function AppClipView() {
                 data,
             });
             rmgRuntime.event(Events.APP_CLIP_VIEW_IMPORT, { parentComponent, company: selectedCompany, filename });
-        } catch (e) {
+        } catch {
             setIsError(true);
         } finally {
             setIsLoading(false);
