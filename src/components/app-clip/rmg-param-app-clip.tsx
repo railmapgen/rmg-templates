@@ -1,19 +1,8 @@
-import { SystemStyleObject } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import rmgRuntime from '@railmapgen/rmg-runtime';
-import { RmgAppClip } from '@railmapgen/rmg-components';
+import { RMAppClip } from '@railmapgen/mantine-components';
 
 const CHANNEL_PREFIX = 'rmg-bridge--';
-
-const styles: SystemStyleObject = {
-    h: 500,
-    maxH: '70%',
-
-    '& iframe': {
-        h: '100%',
-        w: '100%',
-    },
-};
 
 interface RmgAppClipProps {
     templateId?: string;
@@ -50,8 +39,8 @@ export default function RmgParamAppClip(props: RmgAppClipProps) {
     }, [templateId]);
 
     return (
-        <RmgAppClip isOpen={!!templateId} onClose={onClose} sx={styles}>
+        <RMAppClip opened={!!templateId} onClose={onClose} styles={{ content: { height: 500 } }}>
             <iframe src={frameUrl} loading="lazy" />
-        </RmgAppClip>
+        </RMAppClip>
     );
 }
