@@ -28,9 +28,8 @@ describe('Sanity', () => {
                 const filename = template.filename;
                 expect(typeof filename).toBe('string');
                 translationAssertion(template.name);
-                if (template.uploadBy) {
-                    expect(typeof template.uploadBy).toBe('string');
-                }
+                expect(Array.isArray(template.authors)).toBeTruthy();
+                expect(template.authors.length).toBeGreaterThanOrEqual(0);
 
                 // try import json as obj
                 await import(`../../public/resources/templates/${companyId}/${filename}.json`);

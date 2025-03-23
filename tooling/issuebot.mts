@@ -2,10 +2,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
-import { CompanyEntry, TemplateEntry } from '../src';
+import { CompanyEntry, TemplateEntry } from '../src/package';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const resourcesPath = path.join(__dirname, '../../public/resources');
+const resourcesPath = path.join(__dirname, '../public/resources');
 const templatesPath = path.join(resourcesPath, 'templates');
 
 const CORE_COMPANIES = ['basic', 'mtr', 'gzmtr', 'shmetro'];
@@ -53,13 +53,20 @@ const updateConfig = async (company: string, line: string, major: boolean, name:
     if (templateConfig.some(config => config.filename === line)) {
         templateConfig = templateConfig.map(config => {
             if (config.filename === line) {
-                return { ...config, name, uploadBy: major ? issueUser : config.uploadBy };
+                return {
+                    ...config,
+                    name,
+                    authors:
+                        !issueUser || config.authors.includes(issueUser)
+                            ? config.authors
+                            : [...config.authors, issueUser],
+                };
             } else {
                 return config;
             }
         });
     } else {
-        templateConfig.push({ filename: line, name, uploadBy: issueUser });
+        templateConfig.push({ filename: line, name, authors: issueUser ? [issueUser] : [] });
     }
 };
 
@@ -94,7 +101,7 @@ const updateCompanyConfig = async (company: string, name: Record<string, any>) =
         // create empty config if dir didn't exist
         const templateConfigPath = path.join(templatesPath, company, '00config.json');
         await writeFile(templateConfigPath, JSON.stringify([], null, 4));
-    } catch (err) {
+    } catch {
         console.warn('Failed to create directory for company=' + company);
     }
 };

@@ -1,4 +1,4 @@
-import { CompanyEntry } from '@railmapgen/rmg-templates-resources';
+import { CompanyEntry } from '../../package';
 import { Translation } from '@railmapgen/rmg-translate';
 
 export const convertCompanyEntry = (companyEntry: CompanyEntry): HTMLDetailsElement => {

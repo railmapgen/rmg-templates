@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CompanyEntry, TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import { CompanyEntry, TemplateEntry } from '../../package';
 import { convertCompanyEntry, convertTemplateEntry } from './ticket-converters';
 import { InvalidReasonType } from '../../util/constant';
 import {
@@ -159,7 +159,7 @@ export const ticketSelectors = {
     getCompanyEnglishName: (state: TicketState, companyConfig: CompanyEntry[]): string => {
         return state.company === 'new'
             ? state.companyName.en // new company
-            : companyConfig.find(c => c.id === state.company)?.name?.en ?? ''; // existing company
+            : (companyConfig.find(c => c.id === state.company)?.name?.en ?? ''); // existing company
     },
 
     getCompanyBlock: (state: TicketState): HTMLDetailsElement | null => {

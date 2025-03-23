@@ -1,7 +1,8 @@
-import { Button, Heading, HStack, ListItem, ModalBody, ModalFooter, Text, UnorderedList } from '@chakra-ui/react';
+import classes from './submit-modal.module.css';
 import { useTranslation } from 'react-i18next';
 import { INVALID_REASON, InvalidReasonType } from '../../util/constant';
 import useTranslatedName from '../hooks/use-translated-name';
+import { Button, Group, List, Stack, Text, Title } from '@mantine/core';
 
 interface SubmitModalStepErrorProps {
     companyErrors: InvalidReasonType[];
@@ -17,49 +18,47 @@ export default function SubmitModalStepError(props: SubmitModalStepErrorProps) {
 
     return (
         <>
-            <ModalBody>
+            <Stack gap="xs" className={classes['step-body']}>
                 <Text>{t('Your inputs contain the following errors. Please fix it before submitting.')}</Text>
 
                 {companyErrors.length > 0 && (
                     <>
-                        <Heading as="h5" size="sm" my={2}>
+                        <Title order={3} size="h5">
                             {t('Railway company')}
-                        </Heading>
-                        <UnorderedList aria-label="List of company errors">
+                        </Title>
+                        <List size="sm" withPadding aria-label="List of company errors">
                             {companyErrors.map((e, i) => (
-                                <ListItem key={i}>{translateName(INVALID_REASON[e])}</ListItem>
+                                <List.Item key={i}>{translateName(INVALID_REASON[e])}</List.Item>
                             ))}
-                        </UnorderedList>
+                        </List>
                     </>
                 )}
 
                 {Object.values(templateErrors).flat().length > 0 && (
                     <>
-                        <Heading as="h5" size="sm" my={2}>
+                        <Title order={3} size="h5">
                             {t('Templates')}
-                        </Heading>
-                        <UnorderedList aria-label="List of template errors">
+                        </Title>
+                        <List size="sm" withPadding aria-label="List of template errors">
                             {Object.entries(templateErrors).map(([item, errors]) => (
-                                <ListItem key={item}>
+                                <List.Item key={item}>
                                     {item}
-                                    <UnorderedList>
+                                    <List size="sm" withPadding>
                                         {errors.map((e, i) => (
-                                            <ListItem key={i}>{translateName(INVALID_REASON[e])}</ListItem>
+                                            <List.Item key={i}>{translateName(INVALID_REASON[e])}</List.Item>
                                         ))}
-                                    </UnorderedList>
-                                </ListItem>
+                                    </List>
+                                </List.Item>
                             ))}
-                        </UnorderedList>
+                        </List>
                     </>
                 )}
-            </ModalBody>
-            <ModalFooter>
-                <HStack>
-                    <Button colorScheme="primary" onClick={onClose}>
-                        {t('Go back')}
-                    </Button>
-                </HStack>
-            </ModalFooter>
+            </Stack>
+            <Group gap="sm" pt="xs">
+                <Button variant="default" ml="auto" onClick={onClose}>
+                    {t('Go back')}
+                </Button>
+            </Group>
         </>
     );
 }
