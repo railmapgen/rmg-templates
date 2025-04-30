@@ -1,0 +1,199 @@
+{
+    "svgWidth": {
+        "destination": 1600,
+        "runin": 1600,
+        "railmap": 1600,
+        "indoor": 1600,
+        "platform": 1200
+    },
+    "svg_height": 370,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "urumqi",
+        "urumqi1",
+        "#10069f",
+        "#fff"
+    ],
+    "line_name": [
+        "机场捷运",
+        "Airport MAT"
+    ],
+    "current_stn_idx": "JErvDI",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "5YmXlt"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75
+        },
+        "5YmXlt": {
+            "localisedName": {
+                "zh": "国际机场东",
+                "en": "East International Airport"
+            },
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "_LjyHE"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "JErvDI": {
+            "localisedName": {
+                "zh": "国际机场",
+                "en": "International Airport"
+            },
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "_LjyHE"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "urumqi",
+                                    "urumqi1",
+                                    "#10069f",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1号线",
+                                    "Line 1"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "JErvDI"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75
+        },
+        "_LjyHE": {
+            "localisedName": {
+                "zh": "国际机场北",
+                "en": "North International Airport"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "5YmXlt"
+            ],
+            "children": [
+                "JErvDI"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "coachNum": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.19.13"
+}
