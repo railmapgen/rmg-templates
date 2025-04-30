@@ -13,7 +13,7 @@ const mockFetch = vi.fn();
 describe('useTempaltes', () => {
     beforeEach(() => {
         mockStore = createTestStore({
-            app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {} }] } },
+            app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {}, authors: [] }] } },
         });
     });
 

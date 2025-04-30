@@ -1,15 +1,17 @@
-import { RmgLoader, RmgPage } from '@railmapgen/rmg-components';
+import classes from './app-clip-view.module.css';
 import PageHeader from './page-header';
 import TemplatesGrid from './templates-grid';
 import { useRootSelector } from '../../redux';
 import { useEffect, useRef, useState } from 'react';
-import { Alert, AlertIcon, Button, Divider, HStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import { useSearchParams } from 'react-router-dom';
-import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import { TemplateEntry } from '../../package';
 import useTranslatedName from '../hooks/use-translated-name';
+import { Alert, Button, Divider, Group, LoadingOverlay } from '@mantine/core';
+import { RMPage, RMPageFooter } from '@railmapgen/mantine-components';
+import { MdErrorOutline } from 'react-icons/md';
 
 const CHANNEL_PREFIX = 'rmg-templates-bridge--';
 
@@ -26,7 +28,7 @@ export default function AppClipView() {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
-    const channelRef = useRef<BroadcastChannel>();
+    const channelRef = useRef<BroadcastChannel>(null);
 
     useEffect(() => {
         // channel that talks to parent (RMP import modal, RMG Templates upload modal)
@@ -95,29 +97,34 @@ export default function AppClipView() {
     };
 
     return (
-        <>
-            <RmgPage>
-                {isLoading && <RmgLoader isIndeterminate />}
-                {isError && (
-                    <Alert status="error" variant="solid" size="xs" pl={3} pr={1} py={1}>
-                        <AlertIcon />
-                        {t('Unable to import selected template.')}
-                    </Alert>
-                )}
-                <PageHeader />
-                <TemplatesGrid selectedTemplate={selectedTemplate} onTemplateSelect={setSelectedTemplate} />
-            </RmgPage>
+        <RMPage>
+            <LoadingOverlay visible={isLoading} />
+            {isError && (
+                <Alert
+                    variant="light"
+                    color="red"
+                    title={t('Error')}
+                    icon={<MdErrorOutline />}
+                    className={classes.alert}
+                >
+                    {t('Unable to import selected template.')}
+                </Alert>
+            )}
+            <PageHeader />
+            <TemplatesGrid selectedTemplate={selectedTemplate} onTemplateSelect={setSelectedTemplate} />
 
             <Divider />
 
-            <HStack p={2} justifyContent="flex-end">
-                <Button size="sm" onClick={handleClose}>
-                    {t('Close')}
-                </Button>
-                <Button size="sm" colorScheme="primary" isDisabled={!selectedTemplate} onClick={handleImport}>
-                    {t('Import')}
-                </Button>
-            </HStack>
-        </>
+            <RMPageFooter>
+                <Group ml="auto" gap="sm">
+                    <Button variant="default" size="sm" onClick={handleClose}>
+                        {t('Close')}
+                    </Button>
+                    <Button variant="filled" size="sm" disabled={!selectedTemplate} onClick={handleImport}>
+                        {t('Import')}
+                    </Button>
+                </Group>
+            </RMPageFooter>
+        </RMPage>
     );
 }
