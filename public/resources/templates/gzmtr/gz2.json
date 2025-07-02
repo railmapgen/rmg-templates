@@ -10,39 +10,14 @@
         "#fff"
     ],
     "direction": "r",
-    "current_stn_idx": "w2zj",
-    "platform_num": "2",
+    "current_stn_idx": "u3eo",
+    "platform_num": "1",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "w2zj"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "num": "00",
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355,
-            "localisedName": {
-                "zh": "路綫左端",
-                "en": "LEFT END"
-            },
-            "character_spacing": 75
-        },
-        "lineend": {
-            "parents": [
                 "iwf6"
             ],
-            "children": [],
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -61,14 +36,41 @@
                 "zh": "路綫右端",
                 "en": "RIGHT END"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "lineend": {
+            "parents": [
+                "w2zj"
+            ],
+            "children": [],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "num": "00",
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "路綫左端",
+                "en": "LEFT END"
+            },
+            "character_spacing": 75,
+            "branch": {}
         },
         "l1mz": {
             "parents": [
-                "2gc5"
+                "iwf6"
             ],
             "children": [
-                "iwf6"
+                "2gc5"
             ],
             "num": "02",
             "transfer": {
@@ -103,14 +105,15 @@
                 "zh": "石壁",
                 "en": "Shibi"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "iwf6": {
             "children": [
-                "lineend"
+                "l1mz"
             ],
             "parents": [
-                "l1mz"
+                "linestart"
             ],
             "num": "01",
             "transfer": {
@@ -170,14 +173,15 @@
                 "zh": "广州南站",
                 "en": "Guangzhou South\\Railway Station"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "2gc5": {
             "parents": [
-                "tr5a"
+                "l1mz"
             ],
             "children": [
-                "l1mz"
+                "tr5a"
             ],
             "num": "03",
             "services": [
@@ -197,14 +201,15 @@
                 "zh": "会江",
                 "en": "Huijiang"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "tr5a": {
             "parents": [
-                "hxak"
+                "2gc5"
             ],
             "children": [
-                "2gc5"
+                "hxak"
             ],
             "num": "04",
             "services": [
@@ -224,14 +229,15 @@
                 "zh": "南浦",
                 "en": "Nanpu"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "hxak": {
             "parents": [
-                "lcmc"
+                "tr5a"
             ],
             "children": [
-                "tr5a"
+                "lcmc"
             ],
             "num": "05",
             "services": [
@@ -251,14 +257,15 @@
                 "zh": "洛溪",
                 "en": "Luoxi"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "lcmc": {
             "parents": [
-                "u3eo"
+                "hxak"
             ],
             "children": [
-                "hxak"
+                "u3eo"
             ],
             "num": "06",
             "services": [
@@ -293,14 +300,15 @@
                 "zh": "南洲",
                 "en": "Nanzhou"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "u3eo": {
             "parents": [
-                "fkbi"
+                "lcmc"
             ],
             "children": [
-                "lcmc"
+                "fkbi"
             ],
             "num": "07",
             "services": [
@@ -310,7 +318,22 @@
                 "tick_direc": "r",
                 "paid_area": true,
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "guangzhou",
+                                    "gz10",
+                                    "#7D9CC0",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "10号线",
+                                    "Line 10"
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             "loop_pivot": false,
@@ -318,16 +341,17 @@
             "int_padding": 355,
             "localisedName": {
                 "zh": "东晓南",
-                "en": "Dongxiaonan"
+                "en": "Dongxiao South"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "fkbi": {
             "parents": [
-                "fsbx"
+                "u3eo"
             ],
             "children": [
-                "u3eo"
+                "fsbx"
             ],
             "num": "08",
             "services": [
@@ -362,14 +386,15 @@
                 "zh": "江泰路",
                 "en": "Jiangtai Road"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "fsbx": {
             "parents": [
-                "ss50"
+                "fkbi"
             ],
             "children": [
-                "fkbi"
+                "ss50"
             ],
             "num": "09",
             "services": [
@@ -404,14 +429,15 @@
                 "zh": "昌岗",
                 "en": "Changgang"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "ss50": {
             "parents": [
-                "0p39"
+                "fsbx"
             ],
             "children": [
-                "fsbx"
+                "0p39"
             ],
             "num": "10",
             "services": [
@@ -431,14 +457,15 @@
                 "zh": "江南西",
                 "en": "Jiangnanxi"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "0p39": {
             "parents": [
-                "z5ux"
+                "ss50"
             ],
             "children": [
-                "ss50"
+                "z5ux"
             ],
             "num": "11",
             "services": [
@@ -458,14 +485,15 @@
                 "zh": "市二宫",
                 "en": "The 2nd Workers'\\Cultural Palace"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "z5ux": {
             "parents": [
-                "4ozz"
+                "0p39"
             ],
             "children": [
-                "0p39"
+                "4ozz"
             ],
             "num": "12",
             "services": [
@@ -500,14 +528,15 @@
                 "zh": "海珠广场",
                 "en": "Haizhu Square"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "4ozz": {
             "parents": [
-                "jepx"
+                "z5ux"
             ],
             "children": [
-                "z5ux"
+                "jepx"
             ],
             "num": "13",
             "services": [
@@ -542,14 +571,15 @@
                 "zh": "公园前",
                 "en": "Gongyuanqian"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "jepx": {
             "parents": [
-                "uo7r"
+                "4ozz"
             ],
             "children": [
-                "4ozz"
+                "uo7r"
             ],
             "num": "14",
             "services": [
@@ -569,14 +599,15 @@
                 "zh": "纪念堂",
                 "en": "Sun Yat-sen\\Memorial Hall"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "uo7r": {
             "parents": [
-                "6c5q"
+                "jepx"
             ],
             "children": [
-                "jepx"
+                "6c5q"
             ],
             "num": "15",
             "services": [
@@ -596,14 +627,15 @@
                 "zh": "越秀公园",
                 "en": "Yuexiu Park"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "6c5q": {
             "parents": [
-                "bgb9"
+                "uo7r"
             ],
             "children": [
-                "uo7r"
+                "bgb9"
             ],
             "num": "16",
             "services": [
@@ -638,14 +670,15 @@
                 "zh": "广州火车站",
                 "en": "Guangzhou Railway Station"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "bgb9": {
             "parents": [
-                "hcuk"
+                "6c5q"
             ],
             "children": [
-                "6c5q"
+                "hcuk"
             ],
             "num": "17",
             "services": [
@@ -665,14 +698,15 @@
                 "zh": "三元里",
                 "en": "Sanyuanli"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "hcuk": {
             "parents": [
-                "tems"
+                "bgb9"
             ],
             "children": [
-                "bgb9"
+                "tems"
             ],
             "num": "18",
             "services": [
@@ -692,14 +726,15 @@
                 "zh": "飞翔公园",
                 "en": "Feixiang Park"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "tems": {
             "parents": [
-                "e8u2"
+                "hcuk"
             ],
             "children": [
-                "hcuk"
+                "e8u2"
             ],
             "num": "19",
             "services": [
@@ -719,14 +754,15 @@
                 "zh": "白云公园",
                 "en": "Baiyun Park"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "e8u2": {
             "parents": [
-                "8bjm"
+                "tems"
             ],
             "children": [
-                "tems"
+                "8bjm"
             ],
             "num": "20",
             "services": [
@@ -736,7 +772,22 @@
                 "tick_direc": "r",
                 "paid_area": true,
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "guangzhou",
+                                    "gz12",
+                                    "#59621D",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "12号线",
+                                    "Line 12"
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             "loop_pivot": false,
@@ -746,14 +797,15 @@
                 "zh": "白云文化广场",
                 "en": "Baiyun Culture Square"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "8bjm": {
             "parents": [
-                "yx7a"
+                "e8u2"
             ],
             "children": [
-                "e8u2"
+                "yx7a"
             ],
             "num": "21",
             "services": [
@@ -773,14 +825,15 @@
                 "zh": "萧岗",
                 "en": "Xiao-gang"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "yx7a": {
             "parents": [
-                "i86o"
+                "8bjm"
             ],
             "children": [
-                "8bjm"
+                "i86o"
             ],
             "num": "22",
             "services": [
@@ -800,14 +853,15 @@
                 "zh": "江夏",
                 "en": "Jiangxia"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "i86o": {
             "parents": [
-                "w2zj"
+                "yx7a"
             ],
             "children": [
-                "yx7a"
+                "w2zj"
             ],
             "num": "23",
             "services": [
@@ -827,14 +881,15 @@
                 "zh": "黄边",
                 "en": "Huangbian"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         },
         "w2zj": {
             "parents": [
-                "linestart"
+                "i86o"
             ],
             "children": [
-                "i86o"
+                "lineend"
             ],
             "num": "24",
             "services": [
@@ -881,14 +936,15 @@
                 "zh": "嘉禾望岗",
                 "en": "Jiahewanggang"
             },
-            "character_spacing": 75
+            "character_spacing": 75,
+            "branch": {}
         }
     },
     "line_name": [
         "2号线",
         "Line 2"
     ],
-    "psd_num": "13",
+    "psd_num": "18",
     "line_num": "2",
     "info_panel_type": "gz28",
     "direction_gz_x": 50,
@@ -900,7 +956,7 @@
     "svgWidth": {
         "destination": 1200,
         "runin": 1200,
-        "railmap": 2100,
+        "railmap": 1500,
         "indoor": 2100,
         "platform": 1200
     },
@@ -916,5 +972,6 @@
         "bottom_factor": 1
     },
     "branchSpacingPct": 30,
-    "version": "5.14.11"
+    "version": "5.14.11",
+    "spanLineNum": true
 }
