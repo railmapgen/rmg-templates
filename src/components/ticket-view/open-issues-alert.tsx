@@ -50,7 +50,7 @@ export default function OpenIssuesAlert() {
             title={t('Uploaded templates pending for review') + ': ' + openIssues.length}
             icon={<MdOutlineWarning />}
         >
-            <List classNames={{ itemWrapper: classes['item-wrapper'], itemLabel: classes['item-label'] }}>
+            <List classNames={{ itemWrapper: classes['item-wrapper'], itemLabel: classes['item-label'] }} withPadding>
                 {openIssues.map(issue => (
                     <List.Item key={issue.number}>
                         <Anchor href={issue.html_url} target="_blank">
@@ -62,6 +62,13 @@ export default function OpenIssuesAlert() {
                     </List.Item>
                 ))}
             </List>
+            <Text>
+                {t('You can now earn points for redeeming subscriptions by reviewing templates uploaded by others.')}{' '}
+                {t('Find more details in')}{' '}
+                <Anchor href="https://github.com/railmapgen/rmg-templates/wiki/Review-Guidelines" target="_blank">
+                    {t('Review guidelines')}
+                </Anchor>
+            </Text>
         </Alert>
     );
 }
