@@ -54,7 +54,7 @@ export default function OpenIssuesAlert() {
                 {openIssues.map(issue => (
                     <List.Item key={issue.number}>
                         <Anchor href={issue.html_url} target="_blank">
-                            {issue.number} {readIssueBody(issue.body).map(translateName).join(', ')}
+                            #{issue.number} {readIssueBody(issue.body).map(translateName).join(', ')}
                         </Anchor>
                         <Text component="span" className={classes.created}>
                             {formatDistanceToNow(issue.created_at, { addSuffix: true, locale: getLocale() })}
