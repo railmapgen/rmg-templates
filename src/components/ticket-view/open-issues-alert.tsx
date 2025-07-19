@@ -39,13 +39,14 @@ export default function OpenIssuesAlert() {
     const companyName = ticketSelectors.getCompanyEnglishName(ticket, [...coreCompanyConfig, ...otherCompanyConfig]);
     const openIssues = issues.filter(issue => issue.title.endsWith(`New templates of ${companyName}`));
 
-    if (!openIssues.length) {
+    if (ticket.company === 'new' || !openIssues.length) {
         return null;
     }
 
     return (
         <Alert
             color="orange"
+            className={classes.alert}
             title={t('Uploaded templates pending for review') + ': ' + openIssues.length}
             icon={<MdOutlineWarning />}
         >
