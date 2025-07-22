@@ -1,0 +1,335 @@
+{
+    "svgWidth": {
+        "destination": 1100,
+        "runin": 1100,
+        "railmap": 1100,
+        "indoor": 1200,
+        "platform": 1200
+    },
+    "svg_height": 300,
+    "style": "gzmtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 20,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "other",
+        "other",
+        "#87cefa",
+        "#fff"
+    ],
+    "line_name": [
+        "1号线",
+        "Line 1"
+    ],
+    "current_stn_idx": "yzLxPg",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "PMSJRM"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "yzLxPg": {
+            "localisedName": {
+                "zh": "原韵",
+                "en": "Yuanyun"
+            },
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fD9rMF"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#3b7345",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "fD9rMF": {
+            "localisedName": {
+                "zh": "原韵南",
+                "en": "Yuayun South"
+            },
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "kcRGlV"
+            ],
+            "children": [
+                "yzLxPg"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {},
+            "underConstruction": "temp"
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yzLxPg"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "kcRGlV": {
+            "localisedName": {
+                "zh": "皇岗村",
+                "en": "Huanggang Village"
+            },
+            "num": "03",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "jEiJLP"
+            ],
+            "children": [
+                "fD9rMF"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#9932cd",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "jEiJLP": {
+            "localisedName": {
+                "zh": "七村社",
+                "en": "Seven village\\community"
+            },
+            "num": "04",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BMWpmS"
+            ],
+            "children": [
+                "kcRGlV"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "BMWpmS": {
+            "localisedName": {
+                "zh": "铁道博物馆",
+                "en": "Railway museum"
+            },
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "PMSJRM"
+            ],
+            "children": [
+                "jEiJLP"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "PMSJRM": {
+            "localisedName": {
+                "zh": "幌桓",
+                "en": "Huanghuan"
+            },
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "BMWpmS"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#eb8055",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#9932cd",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200,
+            "character_spacing": 75
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "8",
+    "coachNum": "2",
+    "info_panel_type": "gz7w",
+    "direction_gz_x": 40,
+    "direction_gz_y": 78,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 0,
+        "bottom_factor": 1
+    },
+    "notesGZMTR": [
+        [
+            "2号线，3号线暂未开通，请谅解。",
+            "Please note that Line 2 and Line 3 have not yet opened.",
+            15,
+            77,
+            true
+        ]
+    ]
+}
