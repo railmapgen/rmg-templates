@@ -1,5 +1,5 @@
 import { render } from '../../test-utils';
-import { screen } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import OptionalLanguageEntries from './optional-language-entries';
 import { userEvent } from '@testing-library/user-event';
 
@@ -28,17 +28,10 @@ describe('OptionalLanguageEntries', () => {
         const language1 = screen.getAllByRole('textbox', { name: 'Language' })[0];
         expect(language1).toHaveValue('Korean');
         await user.click(language1);
-        expect(screen.getByRole('option', { name: 'English' })).toHaveAttribute('data-combobox-disabled', 'true');
-        expect(screen.getByRole('option', { name: 'Simplified Chinese' })).toHaveAttribute(
-            'data-combobox-disabled',
-            'true'
-        );
-        expect(screen.getByRole('option', { name: 'Traditional Chinese' })).toHaveAttribute(
-            'data-combobox-disabled',
-            'true'
-        );
-        expect(screen.getByRole('option', { name: 'Japanese' })).toHaveAttribute('data-combobox-disabled', 'true');
-        expect(screen.getByRole('option', { name: 'Korean' })).toHaveAttribute('data-combobox-disabled', 'true');
+        const listbox = screen.getAllByLabelText('Language').find(el => el.role === 'listbox')!;
+        ['English', 'Simplified Chinese', 'Traditional Chinese', 'Japanese', 'Korean'].forEach(lang => {
+            expect(within(listbox).getByText(lang).parentElement).toHaveAttribute('data-combobox-disabled', 'true');
+        });
     });
 
     it('Can add optional language (Korean) to optional name when empty', async () => {
@@ -81,7 +74,7 @@ describe('OptionalLanguageEntries', () => {
         );
 
         await user.click(screen.getAllByRole('textbox', { name: 'Language' })[0]);
-        await user.click(screen.getByRole('option', { name: 'French' }));
+        await user.click(screen.getAllByText('French')[0]);
         expect(mockCallbacks.onChange).toBeCalledTimes(1);
         expect(mockCallbacks.onChange).toBeCalledWith([
             ['fr', 'aaa'],
