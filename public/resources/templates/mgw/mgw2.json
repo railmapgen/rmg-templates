@@ -1,0 +1,310 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200,
+        "platform": 1200
+    },
+    "svg_height": 300,
+    "style": "gzmtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "r",
+    "platform_num": "1",
+    "theme": [
+        "nagoya",
+        "e",
+        "#b074d6",
+        "#fff"
+    ],
+    "line_name": [
+        "名港线",
+        "Meikō Line"
+    ],
+    "current_stn_idx": "xCk7El",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "xCk7El"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75
+        },
+        "xCk7El": {
+            "localisedName": {
+                "zh": "金山",
+                "en": "Kanayama"
+            },
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "Ze-02u"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "nagoya",
+                                    "m",
+                                    "#b074d6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "名城线",
+                                    "Meijō Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75
+        },
+        "Ze-02u": {
+            "localisedName": {
+                "zh": "日比野",
+                "en": "Hibino"
+            },
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "xCk7El"
+            ],
+            "children": [
+                "gJ9Zlb"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "YTg1DY"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "YTg1DY": {
+            "localisedName": {
+                "zh": "名古屋港",
+                "en": "Nagoya-kō"
+            },
+            "num": "07",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "TdkWDc"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "TdkWDc": {
+            "localisedName": {
+                "zh": "筑地口",
+                "en": "Tsukiji-guchi"
+            },
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "zuP7Yv"
+            ],
+            "children": [
+                "YTg1DY"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "zuP7Yv": {
+            "localisedName": {
+                "zh": "港区役所",
+                "en": "Minato-Kuyakusho"
+            },
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "eKvnKe"
+            ],
+            "children": [
+                "TdkWDc"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "eKvnKe": {
+            "localisedName": {
+                "zh": "东海通",
+                "en": "Tōkai-dōri"
+            },
+            "num": "04",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gJ9Zlb"
+            ],
+            "children": [
+                "zuP7Yv"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "gJ9Zlb": {
+            "localisedName": {
+                "zh": "六番町",
+                "en": "Rokubanchō"
+            },
+            "num": "03",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Ze-02u"
+            ],
+            "children": [
+                "eKvnKe"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "underConstruction": false
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "E",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "coachNum": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
