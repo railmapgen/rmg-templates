@@ -60,13 +60,7 @@ export const INVALID_REASON: Record<InvalidReasonType, Translation> = {
 
 export const GITHUB_ISSUE_PREAMBLE = '**Do not edit lines below, they are meant for bots only!!!**';
 
-export type ReferenceSource =
-    | 'STATION_WEB_IMAGE'
-    | 'STATION_WEB_VIDEO'
-    | 'STATION_UPLOAD_IMAGE'
-    | 'LINE_DIAGRAM'
-    | 'WIKIPEDIA'
-    | 'OTHER';
+export type ReferenceSource = 'STATION_WEB_IMAGE' | 'STATION_WEB_VIDEO' | 'STATION_UPLOAD_IMAGE' | 'OTHER';
 
 export const REFERENCE_SOURCE_DISPLAY_TEXT: Record<ReferenceSource, Translation> = {
     STATION_WEB_IMAGE: {
@@ -83,16 +77,6 @@ export const REFERENCE_SOURCE_DISPLAY_TEXT: Record<ReferenceSource, Translation>
         en: 'Images taken in the stations (Upload separately in Issue)',
         'zh-Hans': '在车站里拍摄的相片（在 Issue 中单独上传）',
         'zh-Hant': '於車站內拍攝的相片（於 Issue 中另外上載）',
-    },
-    LINE_DIAGRAM: {
-        en: 'Line diagram on the Internet',
-        'zh-Hans': '互联网上的路线图',
-        'zh-Hant': '網絡上的路綫圖',
-    },
-    WIKIPEDIA: {
-        en: 'Online encyclopaedia (e.g. Wikipedia)',
-        'zh-Hans': '在线百科全书（如维基百科）',
-        'zh-Hant': '線上百科全書（如維基百科）',
     },
     OTHER: {
         en: 'Others (Please indicate below)',
