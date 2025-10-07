@@ -1,414 +1,347 @@
 {
-    "style": "mtr",
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200,
+        "platform": 1200
+    },
     "svg_height": 300,
-    "svg_width": 1050,
-    "svg_dest_width": 1050,
-    "show_outer": true,
-    "padding": 5,
-    "y_pc": 40,
-    "strip_pc": 90,
-    "branch_spacing": 45,
-    "theme": [
-        "guangzhou",
-        "gz3",
-        "#ECA154"
-    ],
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
     "direction": "r",
-    "current_stn_idx": "a4",
-    "platform_num": "2",
-    "txt_bg_gap": 15,
-    "txt_flip": false,
+    "platform_num": "1",
+    "theme": [
+        "other",
+        "other",
+        "#ff0000",
+        "#fff"
+    ],
+    "line_name": [
+        "S1线",
+        "Line S1"
+    ],
+    "current_stn_idx": "fSOHrf",
     "stn_list": {
         "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
             "parents": [],
             "children": [
-                "ackf"
+                "fSOHrf"
             ],
-            "name": [
-                "路綫左端",
-                "LEFT END"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a00": {
-            "parents": [
-                "ackf"
-            ],
-            "children": [
-                "a2",
-                "a4"
-            ],
-            "name": [
-                "番禺",
-                "Panyu"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": [
-                    "through",
-                    "a4"
-                ]
-            }
-        },
-        "a2": {
-            "parents": [
-                "a00"
-            ],
-            "children": [
-                "a50"
-            ],
-            "name": [
-                "沙田",
-                "Sha Tin"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a4": {
-            "parents": [
-                "a00"
-            ],
-            "children": [
-                "a50"
-            ],
-            "name": [
-                "馬塲",
-                "Racecourse"
-            ],
-            "change_type": "osi12_pr",
-            "interchange": [
-                [],
-                [
-                    [
-                        "曁大",
-                        "Jinan University"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz13",
-                        "#8E8C13",
-                        "13號綫",
-                        "Line 13"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz18",
-                        "#D48BC8",
-                        "18號綫",
-                        "Line 18"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a50": {
-            "parents": [
-                "a2",
-                "a4"
-            ],
-            "children": [
-                "a51"
-            ],
-            "name": [
-                "廣州塔",
-                "Canton Tower"
-            ],
-            "change_type": "osi12_ur",
-            "interchange": [
-                [],
-                [
-                    [
-                        "嶺南廣場",
-                        "Lingnan Square"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [
-                    "through",
-                    "a4"
+            "transfer": {
+                "groups": [
+                    {}
                 ],
-                "right": []
-            }
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "character_spacing": 75
         },
-        "a51": {
-            "parents": [
-                "a50"
+        "fSOHrf": {
+            "localisedName": {
+                "zh": "连云港站",
+                "en": "Lianyungang Railway Station"
+            },
+            "num": "01",
+            "services": [
+                "local"
             ],
-            "children": [
-                "a5"
-            ],
-            "name": [
-                "珠江新城",
-                "Zhujiang New Town"
-            ],
-            "change_type": "osi11_ur",
-            "interchange": [
-                [],
-                [
-                    [
-                        "黃埔大道",
-                        "Huangpu Dadao"
-                    ],
-                    [
-                        "guangzhou",
-                        "apm",
-                        "#00B5E2",
-                        "APM綫",
-                        "APM Line"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a5": {
-            "parents": [
-                "a51"
-            ],
-            "children": [
-                "a6",
-                "a10"
-            ],
-            "name": [
-                "體育西路",
-                "Tiyu Xilu"
-            ],
-            "change_type": "osi11_pl",
-            "interchange": [
-                [],
-                [
-                    [
-                        "天河路",
-                        "Tianhe Lu"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz10",
-                        "#7D9BC1",
-                        "10号线",
-                        "Line 10"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": [
-                    "nonthrough",
-                    "a10"
-                ]
-            }
-        },
-        "a6": {
-            "parents": [
-                "a5"
-            ],
-            "children": [
-                "a7"
-            ],
-            "name": [
-                "嘉禾望崗",
-                "Jiahe Wanggang"
-            ],
-            "change_type": "int3_r",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz3",
-                        "#ECA154",
-                        "3号线",
-                        "Line 3"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz14",
-                        "#81312F",
-                        "14号线",
-                        "Line 14"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a7": {
-            "parents": [
-                "a6"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "name": [
-                "機塲",
-                "Airport"
-            ],
-            "change_type": "osi22_end_p",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
-                ],
-                [
-                    [
-                        "香港",
-                        "Hong Kong"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "a10": {
-            "parents": [
-                "a5"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "name": [
-                "銀河",
-                "Galaxy"
-            ],
-            "change_type": "int2",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
-                ]
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
-        },
-        "lineend": {
-            "parents": [
-                "a7",
-                "a10"
-            ],
-            "children": [],
-            "name": [
-                "路綫右端",
-                "RIGHT END"
-            ],
-            "change_type": "none",
-            "branch": {
-                "left": [
-                    "nonthrough",
-                    "a10"
-                ],
-                "right": []
-            }
-        },
-        "ackf": {
             "parents": [
                 "linestart"
             ],
             "children": [
-                "a00"
+                "yrEE85"
             ],
-            "name": [
-                "海鷗",
-                "Haiou"
-            ],
-            "change_type": "osi22_end_u",
-            "interchange": [
-                [
-                    [
-                        "guangzhou",
-                        "gz6",
-                        "#80225F",
-                        "6号线",
-                        "Line 6"
-                    ]
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#AAAAAA",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "快速公交",
+                                    "BRT"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#AAAAAA",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "长途巴士",
+                                    "Coach"
+                                ]
+                            }
+                        ]
+                    }
                 ],
-                [
-                    [
-                        "嶺南廣場",
-                        "Lingnan Square"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz12",
-                        "#59621D",
-                        "12號綫",
-                        "Line 12"
-                    ],
-                    [
-                        "guangzhou",
-                        "gz19",
-                        "#BB29BB",
-                        "19號綫",
-                        "Line 19"
-                    ]
-                ]
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 105,
+            "character_spacing": 75,
+            "facility": "railway",
+            "branch": {}
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            }
+            "parents": [
+                "Trn_oq"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "yrEE85": {
+            "localisedName": {
+                "zh": "盐坨站",
+                "en": "Yantuo Station"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fSOHrf"
+            ],
+            "children": [
+                "BwnEif"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 250,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "BwnEif": {
+            "localisedName": {
+                "zh": "连云港东站",
+                "en": "Lianyungang East Station"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "yrEE85"
+            ],
+            "children": [
+                "_XU2CW"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#aaaaaa",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "快速公交",
+                                    "BRT"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#aaaaaa",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "长途巴士",
+                                    "Coach"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 175,
+            "character_spacing": 75,
+            "facility": "railway",
+            "branch": {}
+        },
+        "_XU2CW": {
+            "localisedName": {
+                "zh": "墟沟站",
+                "en": "Xugou Station"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BwnEif"
+            ],
+            "children": [
+                "Trn_oq"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#AAAAAA",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "快速公交",
+                                    "BRT"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 150,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "Trn_oq": {
+            "localisedName": {
+                "zh": "连云站",
+                "en": "Lianyun Station"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "_XU2CW"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "",
+                                    "#AAAAAA",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "快速公交",
+                                    "BRT"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 150,
+            "character_spacing": 75
         }
     },
-    "line_name": [
-        "路線名",
-        "Name of Line"
-    ],
-    "dest_legacy": false,
-    "char_form": "trad"
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": false
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "coachNum": "1",
+    "info_panel_type": "sh2020",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
 }
