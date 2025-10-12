@@ -9,20 +9,20 @@
         "#8E8C13",
         "#fff"
     ],
-    "direction": "r",
-    "current_stn_idx": "iwf6",
-    "platform_num": "3",
+    "direction": "l",
+    "current_stn_idx": "KN7CV8",
+    "platform_num": "5",
     "stn_list": {
         "2990": {
-            "num": "03",
+            "num": "26",
             "services": [
                 "local"
             ],
             "parents": [
-                "l1mz"
+                "o2kp"
             ],
             "children": [
-                "o2kp"
+                "l1mz"
             ],
             "branch": {
                 "left": [],
@@ -47,15 +47,15 @@
             "character_spacing": 75
         },
         "6575": {
-            "num": "09",
+            "num": "32",
             "services": [
                 "local"
             ],
             "parents": [
-                "g0m1"
+                "iblk"
             ],
             "children": [
-                "iblk"
+                "g0m1"
             ],
             "branch": {
                 "left": [],
@@ -82,41 +82,9 @@
         "linestart": {
             "parents": [],
             "children": [
-                "iwf6"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {
-                        "lines": []
-                    }
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "num": "00",
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355,
-            "localisedName": {
-                "zh": "路綫右端",
-                "en": "RIGHT END"
-            },
-            "character_spacing": 75
-        },
-        "lineend": {
-            "parents": [
                 "6dw0"
             ],
-            "children": [],
             "branch": {
-                "left": [],
                 "right": []
             },
             "transfer": {
@@ -141,18 +109,48 @@
             },
             "character_spacing": 75
         },
+        "lineend": {
+            "parents": [
+                "KN7CV8"
+            ],
+            "children": [],
+            "branch": {
+                "left": []
+            },
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
+            },
+            "services": [
+                "local"
+            ],
+            "num": "00",
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "路綫右端",
+                "en": "RIGHT END"
+            },
+            "character_spacing": 75
+        },
         "l1mz": {
             "parents": [
-                "iwf6"
+                "2990"
             ],
             "children": [
-                "2990"
+                "iwf6"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
-            "num": "02",
+            "num": "25",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -189,16 +187,16 @@
         },
         "iwf6": {
             "children": [
-                "l1mz"
+                "pXGcoI"
             ],
             "parents": [
-                "linestart"
+                "l1mz"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
-            "num": "01",
+            "num": "24",
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -234,15 +232,15 @@
             "character_spacing": 75
         },
         "6dw0": {
-            "num": "11",
+            "num": "34",
             "services": [
                 "local"
             ],
             "parents": [
-                "iblk"
+                "linestart"
             ],
             "children": [
-                "lineend"
+                "iblk"
             ],
             "branch": {
                 "left": [],
@@ -267,15 +265,15 @@
             "character_spacing": 75
         },
         "iblk": {
-            "num": "10",
+            "num": "33",
             "services": [
                 "local"
             ],
             "parents": [
-                "6575"
+                "6dw0"
             ],
             "children": [
-                "6dw0"
+                "6575"
             ],
             "branch": {
                 "left": [],
@@ -300,15 +298,15 @@
             "character_spacing": 75
         },
         "g0m1": {
-            "num": "08",
+            "num": "31",
             "services": [
                 "local"
             ],
             "parents": [
-                "9tlx"
+                "6575"
             ],
             "children": [
-                "6575"
+                "9tlx"
             ],
             "branch": {
                 "left": [],
@@ -333,15 +331,15 @@
             "character_spacing": 75
         },
         "9tlx": {
-            "num": "07",
+            "num": "30",
             "services": [
                 "local"
             ],
             "parents": [
-                "1en6"
+                "g0m1"
             ],
             "children": [
-                "g0m1"
+                "1en6"
             ],
             "branch": {
                 "left": [],
@@ -366,15 +364,15 @@
             "character_spacing": 75
         },
         "1en6": {
-            "num": "06",
+            "num": "29",
             "services": [
                 "local"
             ],
             "parents": [
-                "hnoy"
+                "9tlx"
             ],
             "children": [
-                "9tlx"
+                "hnoy"
             ],
             "branch": {
                 "left": [],
@@ -399,15 +397,15 @@
             "character_spacing": 75
         },
         "hnoy": {
-            "num": "05",
+            "num": "28",
             "services": [
                 "local"
             ],
             "parents": [
-                "o2kp"
+                "1en6"
             ],
             "children": [
-                "1en6"
+                "o2kp"
             ],
             "branch": {
                 "left": [],
@@ -445,15 +443,15 @@
             "character_spacing": 75
         },
         "o2kp": {
-            "num": "04",
+            "num": "27",
             "services": [
                 "local"
             ],
             "parents": [
-                "2990"
+                "hnoy"
             ],
             "children": [
-                "hnoy"
+                "2990"
             ],
             "branch": {
                 "left": [],
@@ -476,6 +474,160 @@
                 "en": "Nanhai God Temple"
             },
             "character_spacing": 75
+        },
+        "KN7CV8": {
+            "localisedName": {
+                "zh": "天河公园",
+                "en": "Tianhe Park "
+            },
+            "num": "20",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "iOfjWb"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "guangzhou",
+                                    "gz11",
+                                    "#ffb00a",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "11号线",
+                                    "Line 11"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "guangzhou",
+                                    "gz21",
+                                    "#211747",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "21号线",
+                                    "Line 21"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "iOfjWb": {
+            "localisedName": {
+                "zh": "棠下",
+                "en": "Tangxia"
+            },
+            "num": "21",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Z_cSh7"
+            ],
+            "children": [
+                "KN7CV8"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "Z_cSh7": {
+            "localisedName": {
+                "zh": "车陂",
+                "en": "Chebei"
+            },
+            "num": "22",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "pXGcoI"
+            ],
+            "children": [
+                "iOfjWb"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "guangzhou",
+                                    "gz4",
+                                    "#00843D",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "pXGcoI": {
+            "localisedName": {
+                "zh": "天河珠村",
+                "en": "Tianhe Zhucun"
+            },
+            "num": "23",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "iwf6"
+            ],
+            "children": [
+                "Z_cSh7"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
         }
     },
     "line_name": [
@@ -484,16 +636,16 @@
     ],
     "psd_num": "1",
     "line_num": "13",
-    "info_panel_type": "gz1421",
-    "direction_gz_x": 41.84,
-    "direction_gz_y": 77.98,
+    "info_panel_type": "gz7w",
+    "direction_gz_x": 46,
+    "direction_gz_y": 74,
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
     },
     "svgWidth": {
         "destination": 1000,
-        "runin": 1000,
+        "runin": 1050,
         "railmap": 1000,
         "indoor": 1000,
         "platform": 1200
@@ -511,5 +663,6 @@
         "bottom_factor": 1
     },
     "branchSpacingPct": 30,
-    "spanLineNum": true
+    "spanLineNum": true,
+    "coachNum": "1"
 }
