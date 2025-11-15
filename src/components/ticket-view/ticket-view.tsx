@@ -10,6 +10,7 @@ import SubmitModal from '../modal/submit-modal';
 import Preamble from './preamble';
 import { RMPage, RMPageBody, RMPageFooter } from '@railmapgen/mantine-components';
 import { Button, Divider, Group } from '@mantine/core';
+import OpenIssuesAlert from './open-issues-alert';
 
 export default function TicketView() {
     const { t } = useTranslation();
@@ -31,6 +32,7 @@ export default function TicketView() {
             <RMPageBody direction="column" px="xs" style={{ overflowY: 'auto' }}>
                 <Preamble />
                 <CompanySection />
+                <OpenIssuesAlert />
                 <TemplatesSection />
             </RMPageBody>
 

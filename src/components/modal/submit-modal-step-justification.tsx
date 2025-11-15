@@ -84,7 +84,7 @@ export default function SubmitModalStepJustification(props: SubmitModalStepJusti
                             />
                             <TextInput
                                 label={t('Reference link')}
-                                placeholder={t('Enter a valid URL, e.g.') + ' https://en.wikipedia.org'}
+                                placeholder={t('Enter a valid URL')}
                                 value={justification.link}
                                 onChange={({ currentTarget: { value } }) => onJustificationUpdate('link', value)}
                                 disabled={justification.source === 'STATION_UPLOAD_IMAGE'}
