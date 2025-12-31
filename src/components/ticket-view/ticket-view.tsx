@@ -1,7 +1,4 @@
-import { RmgPage } from '@railmapgen/rmg-components';
-import { Button, Flex, HStack, SystemStyleObject } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import CompanySection from './company-section';
 import TemplatesSection from './templates-section';
 import { useRootDispatch } from '../../redux';
@@ -10,37 +7,19 @@ import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Events } from '../../util/constant';
 import { useState } from 'react';
 import SubmitModal from '../modal/submit-modal';
-import Preamble from './Preamble';
-
-const styles: SystemStyleObject = {
-    width: { base: '100%', md: 520 },
-    alignSelf: 'center',
-
-    '& > div:first-of-type': {
-        flexDirection: 'column',
-        flex: 1,
-        overflowY: 'auto',
-        bg: 'inherit',
-    },
-
-    '& > div:nth-of-type(2)': {
-        my: 2,
-    },
-};
+import Preamble from './preamble';
+import { RMPage, RMPageBody, RMPageFooter } from '@railmapgen/mantine-components';
+import { Button, Divider, Group } from '@mantine/core';
+import OpenIssuesAlert from './open-issues-alert';
 
 export default function TicketView() {
     const { t } = useTranslation();
-    const navigate = useNavigate();
 
     const dispatch = useRootDispatch();
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
 
     const handleBack = () => {
-        if (rmgRuntime.isStandaloneWindow()) {
-            navigate('/');
-        } else {
-            rmgRuntime.openApp('rmg-templates');
-        }
+        rmgRuntime.openApp({ appId: 'rmg-templates' });
     };
 
     const handleReset = () => {
@@ -49,28 +28,30 @@ export default function TicketView() {
     };
 
     return (
-        <RmgPage sx={styles}>
-            <Flex>
+        <RMPage w={{ base: '100%', sm: 600 }} style={{ alignSelf: 'center' }}>
+            <RMPageBody direction="column" px="xs" style={{ overflowY: 'auto' }}>
                 <Preamble />
                 <CompanySection />
+                <OpenIssuesAlert />
                 <TemplatesSection />
-            </Flex>
-            <Flex>
-                <Button size="sm" onClick={handleBack}>
-                    {t('Back to list')}
-                </Button>
+            </RMPageBody>
 
-                <HStack ml="auto">
-                    <Button size="sm" variant="outline" onClick={handleReset}>
+            <Divider />
+
+            <RMPageFooter>
+                <Group flex={1} gap="sm">
+                    <Button variant="default" onClick={handleBack}>
+                        {t('Back to list')}
+                    </Button>
+
+                    <Button variant="default" ml="auto" onClick={handleReset}>
                         {t('Reset')}
                     </Button>
-                    <Button size="sm" colorScheme="primary" onClick={() => setIsSubmitModalOpen(true)}>
-                        {t('Submit')}
-                    </Button>
-                </HStack>
-            </Flex>
+                    <Button onClick={() => setIsSubmitModalOpen(true)}>{t('Submit')}</Button>
+                </Group>
+            </RMPageFooter>
 
             <SubmitModal isOpen={isSubmitModalOpen} onClose={() => setIsSubmitModalOpen(false)} />
-        </RmgPage>
+        </RMPage>
     );
 }

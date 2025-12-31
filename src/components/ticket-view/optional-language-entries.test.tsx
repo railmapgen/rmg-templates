@@ -1,18 +1,20 @@
-import { vi } from 'vitest';
 import { render } from '../../test-utils';
-import { fireEvent, screen, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import OptionalLanguageEntries from './optional-language-entries';
+import { userEvent } from '@testing-library/user-event';
 
 const mockCallbacks = {
     onChange: vi.fn(),
 };
 
 describe('OptionalLanguageEntries', () => {
+    const user = userEvent.setup();
+
     afterEach(() => {
         vi.resetAllMocks();
     });
 
-    it('Can disable existing languages as expected', () => {
+    it('Can disable existing languages as expected', async () => {
         render(
             <OptionalLanguageEntries
                 optionalName={[
@@ -23,34 +25,24 @@ describe('OptionalLanguageEntries', () => {
             />
         );
 
-        const languageGroup0 = screen.getAllByRole('group', { name: 'Language' })[0];
-        expect(within(languageGroup0).getByRole('combobox')).toHaveDisplayValue('Korean');
-        expect(within(languageGroup0).getByRole('option', { name: 'English' })).toBeDisabled();
-        expect(within(languageGroup0).getByRole('option', { name: 'Simplified Chinese' })).toBeDisabled();
-        expect(within(languageGroup0).getByRole('option', { name: 'Traditional Chinese' })).toBeDisabled();
-        expect(within(languageGroup0).getByRole('option', { name: 'Japanese' })).toBeDisabled();
-        expect(within(languageGroup0).getByRole('option', { name: 'Korean' })).not.toBeDisabled();
-
-        const languageGroup1 = screen.getAllByRole('group', { name: 'Language' })[1];
-        expect(within(languageGroup1).getByRole('combobox')).toHaveDisplayValue('Japanese');
-        expect(within(languageGroup1).getByRole('option', { name: 'English' })).toBeDisabled();
-        expect(within(languageGroup1).getByRole('option', { name: 'Simplified Chinese' })).toBeDisabled();
-        expect(within(languageGroup1).getByRole('option', { name: 'Traditional Chinese' })).toBeDisabled();
-        expect(within(languageGroup1).getByRole('option', { name: 'Korean' })).toBeDisabled();
-        expect(within(languageGroup1).getByRole('option', { name: 'Japanese' })).not.toBeDisabled();
+        const language1 = screen.getAllByRole('textbox', { name: 'Language' })[0];
+        expect(language1).toHaveValue('Korean');
+        await user.click(language1);
+        const listbox = screen.getAllByLabelText('Language').find(el => el.role === 'listbox')!;
+        ['English', 'Simplified Chinese', 'Traditional Chinese', 'Japanese', 'Korean'].forEach(lang => {
+            expect(within(listbox).getByText(lang).parentElement).toHaveAttribute('data-combobox-disabled', 'true');
+        });
     });
 
-    it('Can add optional language (Korean) to optional name when empty', () => {
+    it('Can add optional language (Korean) to optional name when empty', async () => {
         render(<OptionalLanguageEntries optionalName={[]} {...mockCallbacks} />);
 
-        expect(screen.queryByRole('button', { name: 'Add translation' })).not.toBeInTheDocument();
-
-        fireEvent.click(screen.getByRole('button', { name: 'Add more translations' }));
+        await user.click(screen.getByRole('button', { name: 'Add a name in another language' }));
         expect(mockCallbacks.onChange).toBeCalledTimes(1);
         expect(mockCallbacks.onChange).toBeCalledWith([['ko', '']]);
     });
 
-    it('Can add first available language to optional name', () => {
+    it('Can add first available language to optional name', async () => {
         render(
             <OptionalLanguageEntries
                 optionalName={[
@@ -61,9 +53,7 @@ describe('OptionalLanguageEntries', () => {
             />
         );
 
-        expect(screen.queryByRole('button', { name: 'Add more translations' })).not.toBeInTheDocument();
-
-        fireEvent.click(screen.getByRole('button', { name: 'Add translation' }));
+        await user.click(screen.getByRole('button', { name: 'Add a name in another language' }));
         expect(mockCallbacks.onChange).toBeCalledTimes(1);
         expect(mockCallbacks.onChange).toBeCalledWith([
             ['ko', ''],
@@ -72,7 +62,7 @@ describe('OptionalLanguageEntries', () => {
         ]);
     });
 
-    it('Can update translation language without change the order', () => {
+    it('Can update translation language without change the order', async () => {
         render(
             <OptionalLanguageEntries
                 optionalName={[
@@ -83,7 +73,8 @@ describe('OptionalLanguageEntries', () => {
             />
         );
 
-        fireEvent.change(screen.getByRole('combobox', { name: 'Language' }), { target: { value: 'fr' } });
+        await user.click(screen.getAllByRole('textbox', { name: 'Language' })[0]);
+        await user.click(screen.getAllByText('French')[0]);
         expect(mockCallbacks.onChange).toBeCalledTimes(1);
         expect(mockCallbacks.onChange).toBeCalledWith([
             ['fr', 'aaa'],
