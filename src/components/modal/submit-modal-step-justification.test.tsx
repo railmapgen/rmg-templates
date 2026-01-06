@@ -1,7 +1,6 @@
 import { render } from '../../test-utils';
 import SubmitModalStepJustification from './submit-modal-step-justification';
 import { screen } from '@testing-library/react';
-import { Modal } from '@chakra-ui/react';
 import { getInitialJustification, Justification } from './justification';
 
 const mockCallbacks = {
@@ -20,11 +19,7 @@ describe('SubmitModalStepJustification', () => {
             comments: 'Some justification',
             majorUpdateComments: {},
         };
-        render(
-            <Modal isOpen={true} onClose={vi.fn()}>
-                <SubmitModalStepJustification justification={justification} {...mockCallbacks} />
-            </Modal>
-        );
+        render(<SubmitModalStepJustification justification={justification} {...mockCallbacks} />);
         expect(screen.getByRole('button', { name: 'Next' })).toBeDisabled();
     });
 
@@ -38,11 +33,7 @@ describe('SubmitModalStepJustification', () => {
             comments: 'Some justification',
             majorUpdateComments: {},
         };
-        render(
-            <Modal isOpen={true} onClose={vi.fn()}>
-                <SubmitModalStepJustification justification={justification} {...mockCallbacks} />
-            </Modal>
-        );
+        render(<SubmitModalStepJustification justification={justification} {...mockCallbacks} />);
         expect(screen.getByRole('button', { name: 'Next' })).toBeEnabled();
     });
 
@@ -53,11 +44,7 @@ describe('SubmitModalStepJustification', () => {
             isOpened: true,
             soonToBeOpened: false,
         };
-        render(
-            <Modal isOpen={true} onClose={vi.fn()}>
-                <SubmitModalStepJustification justification={justification} {...mockCallbacks} />
-            </Modal>
-        );
+        render(<SubmitModalStepJustification justification={justification} {...mockCallbacks} />);
         expect(screen.getByText(/Sorry/)).toBeInTheDocument();
     });
 });

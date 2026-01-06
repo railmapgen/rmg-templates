@@ -1,0 +1,262 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200
+    },
+    "svg_height": 300,
+    "style": "mtr",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "26",
+    "theme": [
+        "london",
+        "waterloocity",
+        "#93CEBA",
+        "#fff"
+    ],
+    "line_name": [
+        "窩打老及城市綫",
+        "Waterloo & City Line"
+    ],
+    "current_stn_idx": "5amanT",
+    "stn_list": {
+        "linestart": {
+            "name": [
+                "RIGHT END",
+                "RIGHT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "KAt6BJ"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "5amanT": {
+            "name": [
+                "窩打老",
+                "Waterloo"
+            ],
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "KAt6BJ"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "london",
+                                    "bakerloo",
+                                    "#B26300",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "必嘉老綫",
+                                    "Bakerloo Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "jubilee",
+                                    "#A1A5A7",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "銀禧綫",
+                                    "Jubilee Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "northern",
+                                    "#000000",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "北綫",
+                                    "Northern Line"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "lines": [],
+                        "name": [
+                            "窩打老/窩打老東",
+                            "Waterloo/Waterloo East"
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": false
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "KAt6BJ": {
+            "name": [
+                "銀行",
+                "Bank"
+            ],
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "5amanT"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "london",
+                                    "central",
+                                    "#DC241F",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "中央綫",
+                                    "Central Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "circle",
+                                    "#FFD329",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "環綫",
+                                    "Circle Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "district",
+                                    "#007D32",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "區域綫",
+                                    "District Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "northern",
+                                    "#000000",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "北綫",
+                                    "Northern Line"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "london",
+                                    "dlr",
+                                    "#00AFAD",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "碼頭區輕鐵",
+                                    "DLR"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        },
+        "lineend": {
+            "name": [
+                "LEFT END",
+                "LEFT END"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "5amanT"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "branch": {}
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}

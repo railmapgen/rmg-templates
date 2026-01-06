@@ -1,27 +1,28 @@
 import { useRootSelector } from '../../redux';
 import { useTranslation } from 'react-i18next';
 import useTranslatedName from './use-translated-name';
+import { ComboboxData } from '@mantine/core';
 
-export default function useCompanyOptions() {
+export default function useCompanyOptions(): ComboboxData {
     const { t, i18n } = useTranslation();
     const translateName = useTranslatedName();
 
     const { coreCompanyConfig, otherCompanyConfig } = useRootSelector(state => state.app);
 
-    const coreOptions = coreCompanyConfig
-        .map(company => [company.id, translateName(company.name)]) // translate country name
-        .reduce<Record<string, string>>(
-            (acc, cur) => {
-                return { ...acc, [cur[0]]: cur[1] };
-            },
-            { '': t('Please select...') }
-        );
+    const coreOptions = coreCompanyConfig.map(company => ({ value: company.id, label: translateName(company.name) })); // translate country name
     const otherOptions = otherCompanyConfig
-        .map(company => [company.id, translateName(company.name)]) // translate country name
-        .sort((a, b) => a[1].localeCompare(b[1], i18n.languages[0])) // sort
-        .reduce<Record<string, string>>((acc, cur) => {
-            return { ...acc, [cur[0]]: cur[1] };
-        }, {});
+        .map(company => ({ value: company.id, label: translateName(company.name) })) // translate country name
+        .sort((a, b) => a.label.localeCompare(b.label, i18n.languages[0])); // sort
 
-    return { [t('Core companies')]: coreOptions, [t('Other companies')]: otherOptions };
+    return [
+        { value: '', label: t('Please select...'), disabled: true },
+        {
+            group: t('Core companies'),
+            items: coreOptions,
+        },
+        {
+            group: t('Other companies'),
+            items: otherOptions,
+        },
+    ];
 }
