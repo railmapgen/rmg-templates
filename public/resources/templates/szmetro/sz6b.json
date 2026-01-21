@@ -23,7 +23,7 @@
         "6号线支线",
         "Branch Line 6"
     ],
-    "current_stn_idx": "6CVt5Y",
+    "current_stn_idx": "eEkVO2",
     "stn_list": {
         "linestart": {
             "num": "00",
@@ -98,7 +98,7 @@
                 "HUIabF"
             ],
             "children": [
-                "lineend"
+                "Nw5kwF"
             ],
             "branch": {
                 "left": [],
@@ -141,7 +141,7 @@
                 "local"
             ],
             "parents": [
-                "6CVt5Y"
+                "eEkVO2"
             ],
             "children": [],
             "branch": {
@@ -231,6 +231,105 @@
                 "en": "Sun Yat-sen University"
             },
             "character_spacing": 75
+        },
+        "Nw5kwF": {
+            "localisedName": {
+                "zh": "碧眼",
+                "en": "Biyan"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "6CVt5Y"
+            ],
+            "children": [
+                "WovWS9"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "WovWS9": {
+            "localisedName": {
+                "zh": "虹桥公园",
+                "en": "Hongqiao Park"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Nw5kwF"
+            ],
+            "children": [
+                "eEkVO2"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "eEkVO2": {
+            "localisedName": {
+                "zh": "光明城",
+                "en": "Guangmingcheng"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "WovWS9"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shenzhen",
+                                    "sz13",
+                                    "#de7c00",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "13号线",
+                                    "Line 13"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "facility": "hsr"
         }
     },
     "namePosMTR": {
@@ -253,5 +352,6 @@
         "bank": true,
         "left_and_right_factor": 1,
         "bottom_factor": 1
-    }
+    },
+    "psdLabel": "screen"
 }
