@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
-import { CompanyEntry, TemplateEntry } from '../src/package';
+import type { CompanyEntry, TemplateEntry } from '../src/package';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resourcesPath = path.join(__dirname, '../public/resources');
