@@ -1,0 +1,29 @@
+.root {
+    /*flex-direction: row;*/
+    box-shadow: var(--mantine-shadow-sm);
+}
+
+.close-btn {
+    position: absolute;
+    top: var(--mantine-spacing-xs);
+    right: var(--mantine-spacing-xs);
+}
+
+.file {
+    margin-left: var(--mantine-spacing-xs);
+    margin-right: calc(-1 * var(--mantine-spacing-xs));
+}
+
+.file > span {
+    font-style: italic;
+    font-size: var(--mantine-font-size-sm);
+    text-wrap: nowrap;
+}
+
+.file > span.file-size {
+    font-size: var(--mantine-font-size-xs);
+}
+
+.file input[type='file'] {
+    display: none;
+}

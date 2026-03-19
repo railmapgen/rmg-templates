@@ -1,5 +1,6 @@
-import { CompanyEntry } from '@railmapgen/rmg-templates-resources';
+import { CompanyEntry } from '../../package';
 import { Translation } from '@railmapgen/rmg-translate';
+import { logger } from '@railmapgen/rmg-runtime';
 
 export const convertCompanyEntry = (companyEntry: CompanyEntry): HTMLDetailsElement => {
     const element = document.createElement('details');
@@ -41,4 +42,23 @@ export const convertTemplateEntry = (company: string, line: string, major: boole
     element.append(paramBlock);
 
     return element;
+};
+
+export const readIssueBody = (body: string) => {
+    const element = document.createElement('div');
+    element.innerHTML = body;
+
+    return Array.from(element.querySelectorAll('details[type="name"]'))
+        .map(el => {
+            if (el.textContent) {
+                try {
+                    return JSON.parse(el.textContent);
+                } catch (e) {
+                    logger.warn('Failed to read issue body', e);
+                    return null;
+                }
+            }
+            return null;
+        })
+        .filter(Boolean);
 };

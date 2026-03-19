@@ -1,14 +1,8 @@
 #!/bin/bash
 set -eux
 
-# build local resources
-cd ./package
-npm install
-npm run build
-cd ..
-
-# npm install
-npm install
+# patch authors
+npm run patch
 
 # run tests
 npm run lint
@@ -17,6 +11,10 @@ npm run test
 # git config
 git config --global user.name 'github-actions[bot]'
 git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+# commit patched files
+git add .
+git commit -m 'Patch config files' || { echo "It's normal :)"; }
 
 # variables
 export APP_NAME=$(node -p "require('./package.json').name")

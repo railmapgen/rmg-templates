@@ -1,5 +1,5 @@
 import { useRootDispatch, useRootSelector } from '../../redux';
-import { TemplateEntry } from '@railmapgen/rmg-templates-resources';
+import { TemplateEntry } from '../../package';
 import { useEffect, useState } from 'react';
 import { setTemplateListByCompany } from '../../redux/app/app-slice';
 

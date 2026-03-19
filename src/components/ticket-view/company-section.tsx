@@ -1,6 +1,4 @@
-import { chakra, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { RmgCard, RmgFields, RmgFieldsField, RmgSection, RmgSectionHeader } from '@railmapgen/rmg-components';
 import { useRootDispatch, useRootSelector } from '../../redux';
 import useTranslatedName from '../hooks/use-translated-name';
 import {
@@ -12,6 +10,8 @@ import {
 import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import OptionalLanguageEntries from './optional-language-entries';
 import useCompanyOptions from '../hooks/use-company-options';
+import { RMSection, RMSectionHeader } from '@railmapgen/mantine-components';
+import { Group, Select, Stack, TextInput, Title } from '@mantine/core';
 
 export default function CompanySection() {
     const { t } = useTranslation();
@@ -22,54 +22,55 @@ export default function CompanySection() {
 
     const companyOptions = useCompanyOptions();
 
-    const fields: RmgFieldsField[] = [
-        {
-            type: 'select',
-            label: t('Company'),
-            value: company,
-            options: { ...companyOptions, [t('New')]: { new: t('Add a company...') } },
-            disabledOptions: [''],
-            onChange: value => dispatch(setCompany(value as string)),
-        },
-        {
-            type: 'input',
-            label: t('Company code'),
-            placeholder: 'e.g. mtr, gzmtr, shmetro',
-            value: newCompany,
-            onChange: value => dispatch(setNewCompany(value)),
-            hidden: company !== 'new',
-        },
-    ];
-
-    const languageFields: RmgFieldsField[] = SUPPORTED_LANGUAGES.map(lang => {
-        return {
-            type: 'input',
-            label: translateName(LANGUAGE_NAMES[lang]),
-            value: companyName[lang],
-            onChange: value => dispatch(setCompanyNameByLang({ lang, name: value })),
-        };
-    });
-
     return (
-        <RmgSection>
-            <RmgSectionHeader>
-                <Heading as="h5" size="sm">
+        <RMSection>
+            <RMSectionHeader>
+                <Title order={2} size="h4">
                     {t('Railway company')}
-                </Heading>
-            </RmgSectionHeader>
+                </Title>
+            </RMSectionHeader>
 
-            <chakra.div px={1}>
-                <RmgCard direction="column">
-                    <RmgFields fields={fields} />
-                    {company === 'new' && <RmgFields fields={languageFields} />}
+            <Stack py="xs" gap="xs">
+                <Group gap="xs" grow>
+                    <Select
+                        label={t('Company')}
+                        value={company}
+                        onChange={value => dispatch(setCompany(value as string))}
+                        data={[...companyOptions, { value: 'new', label: t('Add a company...') }]}
+                        searchable
+                    />
                     {company === 'new' && (
-                        <OptionalLanguageEntries
-                            optionalName={companyOptionalName}
-                            onChange={optionalName => dispatch(setCompanyOptionalName(optionalName))}
+                        <TextInput
+                            label={t('Company code')}
+                            placeholder="e.g. mtr, gzmtr, shmetro"
+                            value={newCompany}
+                            onChange={({ currentTarget: { value } }) => dispatch(setNewCompany(value))}
                         />
                     )}
-                </RmgCard>
-            </chakra.div>
-        </RmgSection>
+                </Group>
+
+                {company === 'new' && (
+                    <Group gap="xs" grow>
+                        {SUPPORTED_LANGUAGES.map(lang => (
+                            <TextInput
+                                key={lang}
+                                label={translateName(LANGUAGE_NAMES[lang])}
+                                value={companyName[lang]}
+                                onChange={({ currentTarget: { value } }) =>
+                                    dispatch(setCompanyNameByLang({ lang, name: value }))
+                                }
+                            />
+                        ))}
+                    </Group>
+                )}
+
+                {company === 'new' && (
+                    <OptionalLanguageEntries
+                        optionalName={companyOptionalName}
+                        onChange={optionalName => dispatch(setCompanyOptionalName(optionalName))}
+                    />
+                )}
+            </Stack>
+        </RMSection>
     );
 }

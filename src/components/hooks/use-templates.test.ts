@@ -13,7 +13,7 @@ const mockFetch = vi.fn();
 describe('useTempaltes', () => {
     beforeEach(() => {
         mockStore = createTestStore({
-            app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {} }] } },
+            app: { ...realStore.app, templateList: { mtr: [{ filename: 'twl', name: {}, authors: [] }] } },
         });
     });
 
@@ -47,7 +47,7 @@ describe('useTempaltes', () => {
         expect(mockFetch).lastCalledWith(expect.stringContaining('/fmetro/00config.json'));
 
         // receive result
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
         const { templates } = renderHookResult!.result.current;
         expect(templates).toHaveLength(1);
         expect(templates).toContainEqual(expect.objectContaining({ filename: 'gf' }));

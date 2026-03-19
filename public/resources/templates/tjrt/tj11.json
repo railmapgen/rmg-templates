@@ -15,7 +15,7 @@
     "theme": [
         "tianjin",
         "tj11",
-        "#ed0066",
+        "#002D72",
         "#fff"
     ],
     "line_name": [
@@ -25,17 +25,13 @@
     "current_stn_idx": "0L8a_b",
     "stn_list": {
         "linestart": {
-            "name": [
-                "RIGHT END",
-                "RIGHT END"
-            ],
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [],
             "children": [
-                "ORHuoQ"
+                "L1pZ0e"
             ],
             "transfer": {
                 "groups": [
@@ -46,13 +42,13 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "RIGHT END",
+                "en": "RIGHT END"
+            }
         },
         "lineend": {
-            "name": [
-                "LEFT END",
-                "LEFT END"
-            ],
             "num": "00",
             "services": [
                 "local"
@@ -70,19 +66,338 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "LEFT END",
+                "en": "LEFT END"
+            }
         },
-        "ORHuoQ": {
-            "name": [
-                "东江道",
-                "DONGJIANGDAO"
-            ],
+        "L1pZ0e": {
             "num": "01",
             "services": [
                 "local"
             ],
             "parents": [
                 "linestart"
+            ],
+            "children": [
+                "-PHYVW"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "水上公园西路",
+                "en": "SHUISHANGONGYUANXILU"
+            }
+        },
+        "-PHYVW": {
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "L1pZ0e"
+            ],
+            "children": [
+                "qRhMlO"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "南开大学八里台",
+                "en": "NANKAIDAXUEBALITAI"
+            }
+        },
+        "qRhMlO": {
+            "num": "03",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "-PHYVW"
+            ],
+            "children": [
+                "6BtLYu"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tianjin",
+                                    "tj3",
+                                    "#0081A6",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "吴家窑",
+                "en": "WUJIAOYAO"
+            }
+        },
+        "6BtLYu": {
+            "num": "04",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "qRhMlO"
+            ],
+            "children": [
+                "pYGyEV"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "佟楼",
+                "en": "TONGLOU"
+            }
+        },
+        "pYGyEV": {
+            "num": "05",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "6BtLYu"
+            ],
+            "children": [
+                "xPnA4T"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "迎宾馆",
+                "en": "YINGBINGUAN"
+            }
+        },
+        "xPnA4T": {
+            "num": "06",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "pYGyEV"
+            ],
+            "children": [
+                "fVAxqT"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tianjin",
+                                    "tj5",
+                                    "#E35205",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "5号线",
+                                    "Line 5"
+                                ]
+                            },
+                            {
+                                "theme": [
+                                    "tianjin",
+                                    "tj6",
+                                    "#994878",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "6号线",
+                                    "Line 6"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "文化中心",
+                "en": "WENHUAZHONGXIN"
+            }
+        },
+        "fVAxqT": {
+            "num": "07",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "xPnA4T"
+            ],
+            "children": [
+                "300N3b"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "tianjin",
+                                    "tj6",
+                                    "#994878",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "6号线",
+                                    "Line 6"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "医大二院",
+                "en": "YIDAERYUAN"
+            }
+        },
+        "300N3b": {
+            "num": "08",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fVAxqT"
+            ],
+            "children": [
+                "zsnf6y"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "澧水道",
+                "en": "LISHUIDAO"
+            }
+        },
+        "zsnf6y": {
+            "num": "09",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "300N3b"
+            ],
+            "children": [
+                "gJszGG"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "内江路",
+                "en": "NEIJIANGLU"
+            }
+        },
+        "gJszGG": {
+            "num": "10",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "zsnf6y"
+            ],
+            "children": [
+                "ORHuoQ"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "陈塘",
+                "en": "CHENTANG"
+            }
+        },
+        "ORHuoQ": {
+            "num": "11",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gJszGG"
             ],
             "children": [
                 "Va5MAi"
@@ -96,14 +411,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "东江道",
+                "en": "DONGJIANGDAO"
+            }
         },
         "Va5MAi": {
-            "name": [
-                "学苑北路",
-                "XUEYUANBEILU"
-            ],
-            "num": "02",
+            "num": "12",
             "services": [
                 "local"
             ],
@@ -122,14 +437,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "学苑北路",
+                "en": "XUEYUANBEILU"
+            }
         },
         "BSnkPJ": {
-            "name": [
-                "海河东路",
-                "HAIHEDONGLU"
-            ],
-            "num": "03",
+            "num": "13",
             "services": [
                 "local"
             ],
@@ -148,14 +463,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "海河东路",
+                "en": "HAIHEDONGLU"
+            }
         },
         "hPQ7vL": {
-            "name": [
-                "环宇道",
-                "HUANYUDAO"
-            ],
-            "num": "04",
+            "num": "14",
             "services": [
                 "local"
             ],
@@ -173,7 +488,7 @@
                                 "theme": [
                                     "tianjin",
                                     "tj10",
-                                    "#b9cf09",
+                                    "#C4D600",
                                     "#fff"
                                 ],
                                 "name": [
@@ -189,14 +504,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "环宇道",
+                "en": "HUANYUDAO"
+            }
         },
         "5gs8sq": {
-            "name": [
-                "雪莲南路",
-                "XUELIANNANLU"
-            ],
-            "num": "05",
+            "num": "15",
             "services": [
                 "local"
             ],
@@ -215,14 +530,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "雪莲南路",
+                "en": "XUELIANNANLU"
+            }
         },
         "074wJA": {
-            "name": [
-                "招远路",
-                "ZHAOYUANLU"
-            ],
-            "num": "06",
+            "num": "16",
             "services": [
                 "local"
             ],
@@ -241,14 +556,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "招远路",
+                "en": "ZHAOYUANLU"
+            }
         },
         "rUVRsH": {
-            "name": [
-                "东丽文体中心",
-                "DONGLIWENTIZHONGXIN"
-            ],
-            "num": "07",
+            "num": "17",
             "services": [
                 "local"
             ],
@@ -267,14 +582,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "东丽文体中心",
+                "en": "DONGLIWENTIZHONGXIN"
+            }
         },
         "JEquGW": {
-            "name": [
-                "驯海路",
-                "XUNHAILU"
-            ],
-            "num": "08",
+            "num": "18",
             "services": [
                 "local"
             ],
@@ -293,14 +608,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "驯海路",
+                "en": "XUNHAILU"
+            }
         },
         "amQnLW": {
-            "name": [
-                "东丽一经路",
-                "DONGLIYIJINGLU"
-            ],
-            "num": "09",
+            "num": "19",
             "services": [
                 "local"
             ],
@@ -319,14 +634,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "东丽一经路",
+                "en": "DONGLIYIJINGLU"
+            }
         },
         "qc_Bkx": {
-            "name": [
-                "东丽三经路",
-                "DONGLISANJINGLU"
-            ],
-            "num": "10",
+            "num": "20",
             "services": [
                 "local"
             ],
@@ -345,14 +660,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "东丽三经路",
+                "en": "DONGLISANJINGLU"
+            }
         },
         "0L8a_b": {
-            "name": [
-                "东丽六经路",
-                "DONGLILIUJINGLU"
-            ],
-            "num": "11",
+            "num": "21",
             "services": [
                 "local"
             ],
@@ -371,7 +686,11 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "东丽六经路",
+                "en": "DONGLILIUJINGLU"
+            }
         }
     },
     "namePosMTR": {
@@ -385,7 +704,7 @@
     "line_num": "11",
     "psd_num": "1",
     "info_panel_type": "gz5",
-    "direction_gz_x": 47,
+    "direction_gz_x": 43,
     "direction_gz_y": 79,
     "coline": {},
     "loop": false,
@@ -394,12 +713,12 @@
         "left_and_right_factor": 1,
         "bottom_factor": 1
     },
-    "version": "5.14.16",
+    "version": "5.16.3",
     "notesGZMTR": [
         [
             "11号线东江道站可站外换乘1号线华山里站，30分钟内站外联程，可享受1元联程优惠",
             "Line 11 DONGJIANGDAO Station can transfer to Line 1 HUASHANLI Station outside the station. You can enjoy a 1 yuan connection discount within 30 minutes",
-            61,
+            59,
             88,
             true
         ]

@@ -1,7 +1,7 @@
 ---
 name: New Templates Request
 about: Upload templates for RMG
-title: 'Resources: New templates of [RAILWAY COMPANY]'
+title: 'Resources: New templates of '
 labels: resources
 assignees: ''
 

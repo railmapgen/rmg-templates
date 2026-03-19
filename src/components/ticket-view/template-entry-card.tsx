@@ -1,40 +1,20 @@
+import classes from './template-entry-card.module.css';
 import { TemplateTicketEntry } from '../../redux/ticket/ticket-slice';
 import useTranslatedName from '../hooks/use-translated-name';
 import { useTranslation } from 'react-i18next';
-import { RmgButtonGroup, RmgCard, RmgFields, RmgFieldsField } from '@railmapgen/rmg-components';
-import { Button, HStack, Icon, IconButton, SystemStyleObject, Text, VStack } from '@chakra-ui/react';
 import { ChangeEvent, useRef } from 'react';
 import { readFileAsText } from '../../util/utils';
-import { MdClose, MdInsertDriveFile } from 'react-icons/md';
+import { MdInsertDriveFile } from 'react-icons/md';
 import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import useTemplates from '../hooks/use-templates';
 import OptionalLanguageEntries from './optional-language-entries';
-
-const style: SystemStyleObject = {
-    position: 'relative',
-
-    '& > div': {
-        overflow: 'hidden',
-    },
-
-    '& > div:last-of-type': {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        minW: 120,
-
-        '& input': {
-            display: 'none',
-        },
-    },
-};
+import { Button, Card, CloseButton, Group, NativeSelect, Stack, Text, TextInput } from '@mantine/core';
 
 interface TemplateEntryCardProps {
     company: string;
     templateEntry: TemplateTicketEntry;
     onLineChange: (line: string) => void;
     onNewLineChange: (newLine: string) => void;
-    onMajorFlagChange: (majorUpdate: boolean) => void;
     onLineNameChange: (lang: string, name: string) => void;
     onOptionalNameChange: (optionalName: [LanguageCode, string][]) => void;
     onParamChange: (param?: Record<string, any>) => void;
@@ -48,14 +28,13 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         templateEntry,
         onLineChange,
         onNewLineChange,
-        onMajorFlagChange,
         onLineNameChange,
         onOptionalNameChange,
         onParamChange,
         onParamImport,
         onRemove,
     } = props;
-    const { line, newLine, majorUpdate, templateName, optionalName, param } = templateEntry;
+    const { line, newLine, templateName, optionalName, param } = templateEntry;
 
     const { t } = useTranslation();
     const translateName = useTranslatedName();
@@ -80,114 +59,88 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         try {
             const paramStr = await readFileAsText(file);
             onParamChange(JSON.parse(paramStr));
-        } catch (err) {
+        } catch {
             alert('Invalid file!');
             event.target.value = '';
         }
     };
 
-    const lineOptions: Record<string, string> = {
-        '': t('Please select...'),
+    const lineOptions = [
+        { value: '', label: t('Please select...'), disabled: true },
         ...(company === '' || company === 'new'
-            ? {}
-            : templates.reduce((acc, cur) => {
-                  return { ...acc, [cur.filename]: translateName(cur.name) };
-              }, {})),
-        new: t('Add a line...'),
-    };
-
-    const fields: RmgFieldsField[] = [
-        {
-            type: 'select',
-            label: t('Line'),
-            value: line,
-            options: lineOptions,
-            disabledOptions: [''],
-            onChange: value => onLineChange(value as string),
-            minW: 150,
-        },
-        {
-            type: 'input',
-            label: t('Line code'),
-            placeholder: 'e.g. twl, gz1, sh1',
-            value: newLine,
-            onChange: value => onNewLineChange(value as string),
-            hidden: line !== 'new',
-        },
-        {
-            type: 'custom',
-            label: t('Major update'),
-            component: (
-                <RmgButtonGroup
-                    selections={[
-                        { label: t('Yes'), value: true },
-                        { label: t('No'), value: false },
-                    ]}
-                    defaultValue={majorUpdate}
-                    onChange={value => onMajorFlagChange(value)}
-                />
-            ),
-            hidden: line === 'new',
-        },
+            ? []
+            : templates.map(template => ({ value: template.filename, label: translateName(template.name) }))),
+        { value: 'new', label: t('Add a line...') },
     ];
 
-    const languageFields: RmgFieldsField[] = SUPPORTED_LANGUAGES.map(lang => {
-        return {
-            type: 'input',
-            label: translateName(LANGUAGE_NAMES[lang]),
-            value: templateName[lang],
-            onChange: value => onLineNameChange(lang, value),
-        };
-    });
-
     return (
-        <RmgCard sx={style}>
-            <IconButton
-                size="sm"
-                variant="ghost"
-                icon={<MdClose />}
+        <Card withBorder className={classes.root}>
+            <CloseButton
+                className={classes['close-btn']}
                 aria-label={t('Remove this line')}
                 title={t('Remove this line')}
-                position="absolute"
-                top={0}
-                right={0}
-                zIndex={5}
                 onClick={onRemove}
             />
 
-            <VStack spacing={0}>
-                <RmgFields fields={[...fields, ...languageFields]} minW={110} />
-                <OptionalLanguageEntries optionalName={optionalName} onChange={onOptionalNameChange} />
-            </VStack>
+            <Stack gap="xs">
+                <Group gap="xs" grow>
+                    <NativeSelect
+                        label={t('Line')}
+                        value={line}
+                        onChange={({ currentTarget: { value } }) => onLineChange(value)}
+                        data={lineOptions}
+                    />
+                    {line === 'new' && (
+                        <TextInput
+                            label={t('Line code')}
+                            placeholder="e.g. twl, gz1, sh1"
+                            value={newLine}
+                            onChange={({ currentTarget: { value } }) => onNewLineChange(value)}
+                        />
+                    )}
+                </Group>
 
-            <VStack>
-                {param ? (
-                    <>
-                        <Icon as={MdInsertDriveFile} boxSize={10} />
-                        <Text as="i" fontSize="xs">
-                            ({t('Size')}: {JSON.stringify(param).length} {t('chars')})
-                        </Text>
-                        <Button size="sm" onClick={() => onParamChange(undefined)}>
-                            {t('Remove')}
-                        </Button>
-                    </>
-                ) : (
-                    <>
-                        <Text as="i" fontSize="sm">
-                            {t('Import from')}
-                        </Text>
-                        <HStack spacing={1}>
-                            <Button size="sm" onClick={onParamImport}>
+                <Group gap="xs" align="center" justify="center" className={classes.file}>
+                    {param ? (
+                        <>
+                            <Text style={{ fontSize: 32 }}>
+                                <MdInsertDriveFile />
+                            </Text>
+                            <Text component="span" fs="italic" size="xs">
+                                ({JSON.stringify(param).length} {t('chars')})
+                            </Text>
+                            <Button variant="default" size="xs" onClick={() => onParamChange(undefined)}>
+                                {t('Remove')}
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Text component="span" fs="italic" size="sm">
+                                {t('Import from')}
+                            </Text>
+                            <Button variant="light" size="xs" onClick={onParamImport}>
                                 RMG
                             </Button>
-                            <Button size="sm" onClick={() => inputRef.current?.click()}>
+                            <Button variant="light" size="xs" onClick={() => inputRef.current?.click()}>
                                 {t('Local')}
                             </Button>
                             <input ref={inputRef} type="file" accept=".json" onChange={handleFileUpload} />
-                        </HStack>
-                    </>
-                )}
-            </VStack>
-        </RmgCard>
+                        </>
+                    )}
+                </Group>
+
+                <Group gap="xs" grow>
+                    {SUPPORTED_LANGUAGES.map(lang => (
+                        <TextInput
+                            key={lang}
+                            label={translateName(LANGUAGE_NAMES[lang])}
+                            value={templateName[lang]}
+                            onChange={({ currentTarget: { value } }) => onLineNameChange(lang, value)}
+                        />
+                    ))}
+                </Group>
+                <OptionalLanguageEntries optionalName={optionalName} onChange={onOptionalNameChange} />
+            </Stack>
+        </Card>
     );
 }

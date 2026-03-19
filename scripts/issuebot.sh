@@ -20,22 +20,19 @@ BRANCH_NAME="bot-$ISSUE_NUMBER"
 }
 
 # Update templates
-cd package
+npm run patch
 BOT_RUN_LOG=$(npm run issuebot)
-cd ..
 
 # Commit
 git add .
 git commit -m "#$ISSUE_NUMBER $ISSUE_TITLE" --author="$USER_LOGIN <$USER_ID+$USER_LOGIN@users.noreply.github.com>"
 
-# Build to check
-cd package
-CI='' npm run build
+# No need to build to check -- covered by PR code check
 
 # Generate review url
 GITHASH=$(git log -n 1 --pretty=%H)
 AFFECTED_FILES=$(echo $BOT_RUN_LOG | grep --color=never "AFFECTED_FILES")
-node ./issuebot/generate-review-url.js "$GITHASH" "$AFFECTED_FILES" >> $GITHUB_OUTPUT
+node ./tooling/generate-review-url.js "$GITHASH" "$AFFECTED_FILES" >> $GITHUB_OUTPUT
 
 # Push
 git push --set-upstream origin $BRANCH_NAME

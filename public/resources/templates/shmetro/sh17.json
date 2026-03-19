@@ -9,18 +9,14 @@
         "#BC796F",
         "#fff"
     ],
-    "direction": "l",
+    "direction": "r",
     "current_stn_idx": "l1mz",
     "platform_num": "",
     "stn_list": {
         "linestart": {
             "parents": [],
             "children": [
-                "iwf6"
-            ],
-            "name": [
-                "路綫右端",
-                "RIGHT END"
+                "l1mz"
             ],
             "transfer": {
                 "tick_direc": "r",
@@ -35,17 +31,17 @@
             "num": "00",
             "loop_pivot": false,
             "one_line": false,
-            "int_padding": 355
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "路綫左端",
+                "en": "LEFT END"
+            }
         },
         "lineend": {
             "parents": [
-                "l1mz"
+                "NzB-VP"
             ],
             "children": [],
-            "name": [
-                "路綫左端",
-                "LEFT END"
-            ],
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -59,18 +55,18 @@
             "num": "00",
             "loop_pivot": false,
             "one_line": false,
-            "int_padding": 355
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "路綫右端",
+                "en": "RIGHT END"
+            }
         },
         "l1mz": {
             "parents": [
-                "dmjl"
+                "linestart"
             ],
             "children": [
-                "lineend"
-            ],
-            "name": [
-                "虹桥火车站",
-                "Hongqiao Railway Station"
+                "dmjl"
             ],
             "num": "02",
             "transfer": {
@@ -112,18 +108,18 @@
             ],
             "int_padding": 250,
             "loop_pivot": false,
-            "one_line": false
+            "one_line": true,
+            "localisedName": {
+                "zh": "虹桥火车站",
+                "en": "Hongqiao Railway Station"
+            }
         },
         "iwf6": {
             "children": [
-                "eelz"
+                "NzB-VP"
             ],
             "parents": [
-                "linestart"
-            ],
-            "name": [
-                "东方绿舟",
-                "Oriental Land"
+                "eelz"
             ],
             "num": "01",
             "transfer": {
@@ -137,14 +133,322 @@
                 "local"
             ],
             "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "东方绿舟",
+                "en": "Oriental Land"
+            }
         },
         "eelz": {
-            "name": [
-                "朱家角",
-                "Zhujiajiao"
+            "num": "00",
+            "services": [
+                "local"
             ],
+            "parents": [
+                "s15s"
+            ],
+            "children": [
+                "iwf6"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "朱家角",
+                "en": "Zhujiajiao"
+            }
+        },
+        "s15s": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "g2gh"
+            ],
+            "children": [
+                "eelz"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "淀山湖大道",
+                "en": "Dianshanhu Avenue"
+            }
+        },
+        "g2gh": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "4t0p"
+            ],
+            "children": [
+                "s15s"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "漕盈路",
+                "en": "Caoying Road"
+            }
+        },
+        "4t0p": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "lcg3"
+            ],
+            "children": [
+                "g2gh"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "青浦新城",
+                "en": "Qingpu Xincheng"
+            }
+        },
+        "lcg3": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "v3sa"
+            ],
+            "children": [
+                "4t0p"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "汇金路",
+                "en": "Huijin Road"
+            }
+        },
+        "v3sa": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "f0yz"
+            ],
+            "children": [
+                "lcg3"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "赵巷",
+                "en": "Zhaoxiang"
+            }
+        },
+        "f0yz": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "kzgx"
+            ],
+            "children": [
+                "v3sa"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "嘉松中路",
+                "en": "Middle Jiasong Road"
+            }
+        },
+        "kzgx": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "9i3j"
+            ],
+            "children": [
+                "f0yz"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "徐泾北城",
+                "en": "Xujingbeicheng"
+            }
+        },
+        "9i3j": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "8mb1"
+            ],
+            "children": [
+                "kzgx"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "徐盈路",
+                "en": "Xuying Road"
+            }
+        },
+        "8mb1": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "dmjl"
+            ],
+            "children": [
+                "9i3j"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "蟠龙路",
+                "en": "Panlong Road"
+            }
+        },
+        "dmjl": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "l1mz"
+            ],
+            "children": [
+                "8mb1"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shanghai",
+                                    "sh2",
+                                    "#82bf25",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "2号线",
+                                    "Line 2"
+                                ]
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 280,
+            "localisedName": {
+                "zh": "国家会展中心",
+                "en": "National Exhibition and Convention Center"
+            }
+        },
+        "NzB-VP": {
+            "localisedName": {
+                "zh": "西岑",
+                "en": "Xicen"
+            },
+            "localisedSecondaryName": {},
             "num": "00",
             "services": [
                 "local"
@@ -153,278 +457,18 @@
                 "iwf6"
             ],
             "children": [
-                "s15s"
+                "lineend"
             ],
             "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
                 "groups": [
                     {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "s15s": {
-            "name": [
-                "淀山湖大道",
-                "Dianshanhu Avenue"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "eelz"
-            ],
-            "children": [
-                "g2gh"
-            ],
-            "transfer": {
+                ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
+                "paid_area": true
             },
             "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "g2gh": {
-            "name": [
-                "漕盈路",
-                "Caoying Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "s15s"
-            ],
-            "children": [
-                "4t0p"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "4t0p": {
-            "name": [
-                "青浦新城",
-                "Qingpu Xincheng"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "g2gh"
-            ],
-            "children": [
-                "lcg3"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "lcg3": {
-            "name": [
-                "汇金路",
-                "Huijin Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "4t0p"
-            ],
-            "children": [
-                "v3sa"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "v3sa": {
-            "name": [
-                "赵巷",
-                "Zhaoxiang"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "lcg3"
-            ],
-            "children": [
-                "f0yz"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "f0yz": {
-            "name": [
-                "嘉松中路",
-                "Middle Jiasong Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "v3sa"
-            ],
-            "children": [
-                "kzgx"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "kzgx": {
-            "name": [
-                "徐泾北城",
-                "Xujingbeicheng"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "f0yz"
-            ],
-            "children": [
-                "9i3j"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "9i3j": {
-            "name": [
-                "徐盈路",
-                "Xuying Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "kzgx"
-            ],
-            "children": [
-                "8mb1"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "8mb1": {
-            "name": [
-                "蟠龙路",
-                "Panlong Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "9i3j"
-            ],
-            "children": [
-                "dmjl"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
-        },
-        "dmjl": {
-            "name": [
-                "诸光路",
-                "Zhuguang Road"
-            ],
-            "num": "00",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "8mb1"
-            ],
-            "children": [
-                "l1mz"
-            ],
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "groups": [
-                    {}
-                ]
-            },
-            "loop_pivot": false,
-            "one_line": false,
-            "int_padding": 355
+            "one_line": true,
+            "int_padding": 250
         }
     },
     "line_name": [
@@ -458,5 +502,5 @@
         "bottom_factor": 1
     },
     "branchSpacingPct": 34,
-    "version": "5.14.12"
+    "version": "5.17.0"
 }
