@@ -3,25 +3,26 @@
         "destination": 1500,
         "runin": 1200,
         "railmap": 1500,
-        "indoor": 4000
+        "indoor": 4000,
+        "platform": 1200
     },
-    "svg_height": 380,
+    "svg_height": 375,
     "style": "shmetro",
     "y_pc": 40,
-    "padding": 8,
+    "padding": 10,
     "direction": "r",
     "platform_num": "",
     "theme": [
         "beijing",
         "bj5",
-        "#AA0061",
+        "#a6217f",
         "#fff"
     ],
     "line_name": [
         "5号线",
         "Line 5"
     ],
-    "current_stn_idx": "NrI7z9",
+    "current_stn_idx": "Uo1cC5",
     "stn_list": {
         "linestart": {
             "num": "00",
@@ -32,7 +33,6 @@
             "children": [
                 "NrI7z9"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -46,7 +46,8 @@
             "localisedName": {
                 "zh": "LEFT END",
                 "en": "LEFT END"
-            }
+            },
+            "character_spacing": 75
         },
         "NrI7z9": {
             "num": "01",
@@ -59,7 +60,6 @@
             "children": [
                 "Uo1cC5"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -68,12 +68,13 @@
                 ]
             },
             "loop_pivot": false,
-            "one_line": true,
+            "one_line": false,
             "int_padding": 225,
             "localisedName": {
                 "zh": "天通苑北",
-                "en": "Tiantongyuan Bei (N)"
-            }
+                "en": "TIANTONGYUAN North"
+            },
+            "character_spacing": 75
         },
         "lineend": {
             "num": "00",
@@ -84,7 +85,6 @@
                 "Nlf0SU"
             ],
             "children": [],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -98,7 +98,8 @@
             "localisedName": {
                 "zh": "RIGHT END",
                 "en": "RIGHT END"
-            }
+            },
+            "character_spacing": 75
         },
         "Uo1cC5": {
             "num": "02",
@@ -111,21 +112,36 @@
             "children": [
                 "fL5ELd"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
                 "groups": [
-                    {}
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "beijing",
+                                    "bj18",
+                                    "#776cb1",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "18号线",
+                                    "Line 18"
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 225,
+            "int_padding": 150,
             "localisedName": {
                 "zh": "天通苑",
-                "en": "Tiantong Yuan"
-            }
+                "en": "TIANTONGYUAN"
+            },
+            "character_spacing": 75
         },
         "fL5ELd": {
             "num": "03",
@@ -138,7 +154,6 @@
             "children": [
                 "FVyQ3t"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -151,8 +166,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "天通苑南",
-                "en": "Tiantongyuan Nan (S)"
-            }
+                "en": "TIANTONGYUAN South"
+            },
+            "character_spacing": 75
         },
         "FVyQ3t": {
             "num": "04",
@@ -165,7 +181,6 @@
             "children": [
                 "FJojl5"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -176,7 +191,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj13",
-                                    "#F4DA40",
+                                    "#f9e700",
                                     "#000"
                                 ],
                                 "name": [
@@ -193,8 +208,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "立水桥",
-                "en": "Lishui Qiao"
-            }
+                "en": "LISHUIQIAO"
+            },
+            "character_spacing": 75
         },
         "FJojl5": {
             "num": "05",
@@ -207,7 +223,6 @@
             "children": [
                 "S6FPka"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -220,8 +235,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "立水桥南",
-                "en": "Lishuiqiao Na (S)"
-            }
+                "en": "LISHUIQIAO South"
+            },
+            "character_spacing": 75
         },
         "S6FPka": {
             "num": "06",
@@ -234,7 +250,6 @@
             "children": [
                 "irH2uP"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -247,8 +262,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "北苑路北",
-                "en": "Beiyuanlu Bei (N)"
-            }
+                "en": "BEIYUANLU North"
+            },
+            "character_spacing": 75
         },
         "irH2uP": {
             "num": "07",
@@ -261,7 +277,6 @@
             "children": [
                 "fEIHP3"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -272,12 +287,12 @@
                                 "theme": [
                                     "beijing",
                                     "bj15",
-                                    "#653379",
+                                    "#5b2c68",
                                     "#fff"
                                 ],
                                 "name": [
                                     "15号线",
-                                    ""
+                                    "Line 15"
                                 ]
                             }
                         ]
@@ -289,8 +304,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "大屯路东",
-                "en": "Datunludong"
-            }
+                "en": "DATUNLU East"
+            },
+            "character_spacing": 75
         },
         "fEIHP3": {
             "num": "08",
@@ -303,7 +319,6 @@
             "children": [
                 "yPhwqR"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -316,8 +331,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "惠新西街北口",
-                "en": "Huixin Xijie Beikou"
-            }
+                "en": "HUIXINXIJIE\\ BEIKOU"
+            },
+            "character_spacing": 75
         },
         "yPhwqR": {
             "num": "09",
@@ -330,7 +346,6 @@
             "children": [
                 "X45KgT"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -341,7 +356,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj10",
-                                    "#0092BC",
+                                    "#009bc0",
                                     "#fff"
                                 ],
                                 "name": [
@@ -358,8 +373,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "惠新西街南口",
-                "en": "Huixin Xijie Nankou"
-            }
+                "en": "HUIXINXIJIE\\ NANKOU"
+            },
+            "character_spacing": 75
         },
         "X45KgT": {
             "num": "10",
@@ -372,7 +388,6 @@
             "children": [
                 "6d0ki4"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -383,7 +398,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj12",
-                                    "#9b5a1a",
+                                    "#bd6f16",
                                     "#fff"
                                 ],
                                 "name": [
@@ -400,8 +415,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "和平西桥",
-                "en": "Heping Xiqiao"
-            }
+                "en": "HEPINGXIQIAO"
+            },
+            "character_spacing": 75
         },
         "6d0ki4": {
             "num": "11",
@@ -414,7 +430,6 @@
             "children": [
                 "6PbW06"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -427,8 +442,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "和平里北街",
-                "en": "Hepingli Beijie"
-            }
+                "en": "HEPINGLI BEIJIE"
+            },
+            "character_spacing": 75
         },
         "6PbW06": {
             "num": "12",
@@ -441,7 +457,6 @@
             "children": [
                 "2cUeFz"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -452,7 +467,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj2",
-                                    "#004B87",
+                                    "#006098",
                                     "#fff"
                                 ],
                                 "name": [
@@ -469,8 +484,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "雍和宫",
-                "en": "Yonghegong\\ Lama Temple"
-            }
+                "en": "YONGHEGONG\\ Lama Temple"
+            },
+            "character_spacing": 75
         },
         "2cUeFz": {
             "num": "13",
@@ -483,7 +499,6 @@
             "children": [
                 "Dfj16a"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -494,7 +509,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj34sj",
-                                    "#A192B2",
+                                    "#a29bbb",
                                     "#000"
                                 ],
                                 "name": [
@@ -513,8 +528,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "北新桥",
-                "en": "Beixinqiao"
-            }
+                "en": "BEIXINQIAO"
+            },
+            "character_spacing": 75
         },
         "Dfj16a": {
             "num": "14",
@@ -527,7 +543,6 @@
             "children": [
                 "O2q6ar"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -540,8 +555,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "张自忠路",
-                "en": "Zhangzizhong Lu"
-            }
+                "en": "ZHANGZIZHONGLU"
+            },
+            "character_spacing": 75
         },
         "O2q6ar": {
             "num": "15",
@@ -554,7 +570,6 @@
             "children": [
                 "U-LIyq"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -565,7 +580,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj6",
-                                    "#B58500",
+                                    "#d29700",
                                     "#fff"
                                 ],
                                 "name": [
@@ -582,8 +597,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "东四",
-                "en": "Dongsi"
-            }
+                "en": "DONGSI"
+            },
+            "character_spacing": 75
         },
         "U-LIyq": {
             "num": "16",
@@ -596,7 +612,6 @@
             "children": [
                 "K_MGjP"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -609,8 +624,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "灯市口",
-                "en": "Dengshi Kou"
-            }
+                "en": "DENGSHIKOU"
+            },
+            "character_spacing": 75
         },
         "K_MGjP": {
             "num": "17",
@@ -623,7 +639,6 @@
             "children": [
                 "9O1Ei2"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -634,7 +649,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj1",
-                                    "#A4343A",
+                                    "#c23a30",
                                     "#fff"
                                 ],
                                 "name": [
@@ -651,8 +666,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "东单",
-                "en": "Dongdan"
-            }
+                "en": "DONGDAN"
+            },
+            "character_spacing": 75
         },
         "9O1Ei2": {
             "num": "18",
@@ -665,7 +681,6 @@
             "children": [
                 "MkhPKB"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -676,7 +691,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj2",
-                                    "#004B87",
+                                    "#006098",
                                     "#fff"
                                 ],
                                 "name": [
@@ -693,8 +708,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "崇文门",
-                "en": "Chongwen Men"
-            }
+                "en": "CHONGWENMEN"
+            },
+            "character_spacing": 75
         },
         "MkhPKB": {
             "num": "19",
@@ -707,7 +723,6 @@
             "children": [
                 "YUk8sW"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -718,7 +733,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj7",
-                                    "#FFC56E",
+                                    "#f6c582",
                                     "#000"
                                 ],
                                 "name": [
@@ -735,8 +750,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "磁器口",
-                "en": "Ciqi Kou"
-            }
+                "en": "CIQIKOU"
+            },
+            "character_spacing": 75
         },
         "YUk8sW": {
             "num": "20",
@@ -749,7 +765,6 @@
             "children": [
                 "mS0eD4"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -762,8 +777,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "天坛东门",
-                "en": "Temple of Heaven East Gate"
-            }
+                "en": "TIANTANDONGMEN"
+            },
+            "character_spacing": 75
         },
         "mS0eD4": {
             "num": "21",
@@ -776,7 +792,6 @@
             "children": [
                 "U3x5hl"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -787,7 +802,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj14",
-                                    "#CA9A8E",
+                                    "#d5a7a1",
                                     "#000"
                                 ],
                                 "name": [
@@ -804,8 +819,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "蒲黄榆",
-                "en": "Puhuangyu"
-            }
+                "en": "PUHUANGYU"
+            },
+            "character_spacing": 75
         },
         "U3x5hl": {
             "num": "22",
@@ -818,7 +834,6 @@
             "children": [
                 "Nlf0SU"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -831,8 +846,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "刘家窑",
-                "en": "Liujiayao"
-            }
+                "en": "LIUJIAYAO"
+            },
+            "character_spacing": 75
         },
         "Nlf0SU": {
             "num": "23",
@@ -845,7 +861,6 @@
             "children": [
                 "lineend"
             ],
-            "branch": {},
             "transfer": {
                 "tick_direc": "r",
                 "paid_area": true,
@@ -856,7 +871,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj10",
-                                    "#0092BC",
+                                    "#009bc0",
                                     "#fff"
                                 ],
                                 "name": [
@@ -868,7 +883,7 @@
                                 "theme": [
                                     "beijing",
                                     "bj24yz",
-                                    "#D00070",
+                                    "#e40077",
                                     "#fff"
                                 ],
                                 "name": [
@@ -885,8 +900,9 @@
             "int_padding": 225,
             "localisedName": {
                 "zh": "宋家庄",
-                "en": "Songjiazhuang"
-            }
+                "en": "SONGJIAZHUANG"
+            },
+            "character_spacing": 75
         }
     },
     "namePosMTR": {
@@ -899,8 +915,8 @@
     },
     "line_num": "5",
     "psd_num": "12",
-    "info_panel_type": "sh2020",
-    "direction_gz_x": 95,
+    "info_panel_type": "sh",
+    "direction_gz_x": 94,
     "direction_gz_y": 79.666667,
     "coline": {},
     "loop": false,
@@ -910,5 +926,7 @@
         "bottom_factor": 1
     },
     "branchSpacingPct": 40,
-    "version": "5.17.1"
+    "version": "5.20.5.#705-Shanghai-Metro-2024-style.39f2d96",
+    "psdLabel": "screen",
+    "spanLineNum": true
 }
