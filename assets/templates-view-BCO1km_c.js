@@ -1,0 +1,1 @@
+import{j as e,e as r}from"./mantine-BawCybNt.js";import{P as s,T as t}from"./templates-grid-Bk6z7WT8.js";import"./react-Dw9VWYhr.js";import"./index-qN7wzm0B.js";import"./use-templates-Q7JF8prx.js";function x(){return e.jsxs(r,{children:[e.jsx(s,{}),e.jsx(t,{})]})}export{x as default};
