@@ -1,0 +1,258 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200,
+        "platform": 1200
+    },
+    "svg_height": 400,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 11,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "",
+    "theme": [
+        "other",
+        "other",
+        "#ff8300",
+        "#fff"
+    ],
+    "line_name": [
+        " A1线",
+        "Line A1"
+    ],
+    "current_stn_idx": "SzeCeh",
+    "stn_list": {
+        "linestart": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "qA_xIR"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "LEFT END",
+                "en": "LEFT END"
+            },
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "DjbqCy": {
+            "num": "01",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "qA_xIR"
+            ],
+            "children": [
+                "hL5shT"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#0d00ff",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "A2线",
+                                    "Line A2"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 250,
+            "localisedName": {
+                "zh": "神农大剧院",
+                "en": "Shennong Grand Theater"
+            },
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "hL5shT": {
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "DjbqCy"
+            ],
+            "children": [
+                "rWbi3g"
+            ],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "珠江北路",
+                "en": "Zhujiang North Road"
+            },
+            "character_spacing": 75
+        },
+        "lineend": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "SzeCeh"
+            ],
+            "children": [],
+            "transfer": {
+                "tick_direc": "r",
+                "paid_area": true,
+                "groups": [
+                    {}
+                ]
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "RIGHT END",
+                "en": "RIGHT END"
+            },
+            "character_spacing": 75
+        },
+        "rWbi3g": {
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "hL5shT"
+            ],
+            "children": [
+                "SzeCeh"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "黄河北路",
+                "en": "Huanghe North Road"
+            },
+            "character_spacing": 75
+        },
+        "SzeCeh": {
+            "num": "00",
+            "services": [
+                "local",
+                "direct"
+            ],
+            "parents": [
+                "rWbi3g"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "体育中心",
+                "en": "Sports Center"
+            },
+            "character_spacing": 75
+        },
+        "qA_xIR": {
+            "localisedName": {
+                "zh": "湖南工大（A2线）",
+                "en": "Hunan University of technology（A2 Line）"
+            },
+            "num": "00",
+            "services": [
+                "direct",
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "DjbqCy"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": false,
+            "int_padding": 355,
+            "character_spacing": 75
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "1",
+    "psd_num": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    },
+    "version": "5.14.12",
+    "psdLabel": "screen"
+}
