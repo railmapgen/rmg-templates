@@ -1,0 +1,237 @@
+{
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1200,
+        "indoor": 1200,
+        "platform": 1200
+    },
+    "svg_height": 300,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "1",
+    "theme": [
+        "kansai",
+        "s",
+        "#007ac2",
+        "#fff"
+    ],
+    "line_name": [
+        "关西机场线",
+        "Kansai Airport Line"
+    ],
+    "current_stn_idx": "HkD2wt",
+    "stn_list": {
+        "linestart": {
+            "localisedName": {
+                "en": "LEFT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [],
+            "children": [
+                "BAxsSa"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 205,
+            "character_spacing": 75
+        },
+        "BAxsSa": {
+            "localisedName": {
+                "zh": "日根野",
+                "en": "Hineno"
+            },
+            "num": "45",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "linestart"
+            ],
+            "children": [
+                "On2Shm"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "kansai",
+                                    "r",
+                                    "#f89c1c",
+                                    "#000"
+                                ],
+                                "name": [
+                                    "阪和线",
+                                    "Hanwa Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 205,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "HkD2wt": {
+            "localisedName": {
+                "zh": "关西机场",
+                "en": "Kansai Airport"
+            },
+            "num": "47",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "On2Shm"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#5346a0",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "南海电气铁道机场线",
+                                    "Nankai Airport Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 205,
+            "character_spacing": 75,
+            "branch": {},
+            "facility": "airport"
+        },
+        "lineend": {
+            "localisedName": {
+                "en": "RIGHT END"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "HkD2wt"
+            ],
+            "children": [],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 205,
+            "character_spacing": 75
+        },
+        "On2Shm": {
+            "localisedName": {
+                "zh": "临空城",
+                "en": "Rinkū Town"
+            },
+            "num": "46",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "BAxsSa"
+            ],
+            "children": [
+                "HkD2wt"
+            ],
+            "transfer": {
+                "groups": [
+                    {},
+                    {
+                        "lines": []
+                    },
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "other",
+                                    "other",
+                                    "#5346a0",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "南海电气铁道机场线",
+                                    "Nankai Airport Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 205,
+            "character_spacing": 75
+        }
+    },
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
+    "customiseMTRDest": {
+        "isLegacy": false,
+        "terminal": false
+    },
+    "line_num": "S",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "psdLabel": "platform",
+    "coachNum": "1",
+    "info_panel_type": "gz1",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
+    }
+}
