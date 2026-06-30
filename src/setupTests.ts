@@ -1,12 +1,9 @@
 import { createStore } from './redux';
 import crypto from 'node:crypto';
-import { MockBroadcastChannel } from './mock-broadcast-channel';
 import { setupTest } from '@railmapgen/mantine-components/utils';
 
 setupTest();
 export const createTestStore = createStore;
-
-vi.stubGlobal('BroadcastChannel', MockBroadcastChannel);
 
 const originalFetch = global.fetch;
 global.fetch = vi.fn().mockImplementation((...args: any[]) => {
