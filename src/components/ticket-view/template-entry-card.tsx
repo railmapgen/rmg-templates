@@ -51,7 +51,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
         }
 
         if (file.type !== 'application/json') {
-            alert('Invalid file type!');
+            alert(t('Invalid file type!'));
             event.target.value = '';
             return;
         }
@@ -60,7 +60,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
             const paramStr = await readFileAsText(file);
             onParamChange(JSON.parse(paramStr));
         } catch {
-            alert('Invalid file!');
+            alert(t('Invalid file!'));
             event.target.value = '';
         }
     };
@@ -93,7 +93,7 @@ export default function TemplateEntryCard(props: TemplateEntryCardProps) {
                     {line === 'new' && (
                         <TextInput
                             label={t('Line code')}
-                            placeholder="e.g. twl, gz1, sh1"
+                            placeholder={t('e.g. twl, gz1, sh1')}
                             value={newLine}
                             onChange={({ currentTarget: { value } }) => onNewLineChange(value)}
                         />
