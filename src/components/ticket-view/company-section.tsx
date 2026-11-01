@@ -42,7 +42,7 @@ export default function CompanySection() {
                     {company === 'new' && (
                         <TextInput
                             label={t('Company code')}
-                            placeholder="e.g. mtr, gzmtr, shmetro"
+                            placeholder={t('e.g. mtr, gzmtr, shmetro')}
                             value={newCompany}
                             onChange={({ currentTarget: { value } }) => dispatch(setNewCompany(value))}
                         />
