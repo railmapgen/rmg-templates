@@ -3,7 +3,8 @@
         "destination": 2000,
         "runin": 2000,
         "railmap": 3500,
-        "indoor": 1800
+        "indoor": 2000,
+        "platform": 1200
     },
     "svg_height": 600,
     "style": "shmetro",
@@ -15,7 +16,7 @@
     "theme": [
         "chongqing",
         "loop",
-        "#f2a900",
+        "#F2A900",
         "#fff"
     ],
     "line_name": [
@@ -25,10 +26,6 @@
     "current_stn_idx": "D7ZUkA",
     "stn_list": {
         "linestart": {
-            "name": [
-                "LEFT END",
-                "LEFT END"
-            ],
             "num": "00",
             "services": [
                 "local"
@@ -46,13 +43,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "LEFT END",
+                "en": "LEFT END"
+            },
+            "character_spacing": 75
         },
         "3M83aM": {
-            "name": [
-                "上桥",
-                "Shangqiao"
-            ],
             "num": "02",
             "services": [
                 "local"
@@ -72,13 +70,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "上桥",
+                "en": "Shangqiao"
+            },
+            "character_spacing": 75
         },
         "VjbEzw": {
-            "name": [
-                "重庆西站",
-                "Chongqing West Station"
-            ],
             "num": "01",
             "services": [
                 "local"
@@ -113,14 +112,15 @@
             },
             "loop_pivot": true,
             "one_line": true,
-            "int_padding": 210,
-            "facility": "railway"
+            "int_padding": 215,
+            "facility": "railway",
+            "localisedName": {
+                "zh": "重庆西站",
+                "en": "Chongqing West Station"
+            },
+            "character_spacing": 75
         },
         "lineend": {
-            "name": [
-                "RIGHT END",
-                "RIGHT END"
-            ],
             "num": "00",
             "services": [
                 "local"
@@ -138,13 +138,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "RIGHT END",
+                "en": "RIGHT END"
+            },
+            "character_spacing": 75
         },
         "E6wGmT": {
-            "name": [
-                "凤鸣山",
-                "Fengmingshan"
-            ],
             "num": "03",
             "services": [
                 "local"
@@ -164,13 +165,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "凤鸣山",
+                "en": "Fengmingshan"
+            },
+            "character_spacing": 75
         },
         "D7ZUkA": {
-            "name": [
-                "重庆图书馆",
-                "Chongqing Library"
-            ],
             "num": "04",
             "services": [
                 "local"
@@ -190,13 +192,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "重庆图书馆",
+                "en": "Chongqing Library"
+            },
+            "character_spacing": 75
         },
         "g0vyxB": {
-            "name": [
-                "天星桥",
-                "Tianxingqiao"
-            ],
             "num": "05",
             "services": [
                 "local"
@@ -216,13 +219,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "天星桥",
+                "en": "Tianxingqiao"
+            },
+            "character_spacing": 75
         },
         "4fA6Cc": {
-            "name": [
-                "沙坪坝",
-                "Shapingba"
-            ],
             "num": "06",
             "services": [
                 "local"
@@ -253,7 +257,7 @@
                                 "theme": [
                                     "chongqing",
                                     "cq9",
-                                    "#861f41",
+                                    "#862041",
                                     "#fff"
                                 ],
                                 "name": [
@@ -269,14 +273,15 @@
             },
             "loop_pivot": true,
             "one_line": true,
-            "int_padding": 175,
-            "facility": "railway"
+            "int_padding": 215,
+            "facility": "railway",
+            "localisedName": {
+                "zh": "沙坪坝",
+                "en": "Shapingba"
+            },
+            "character_spacing": 75
         },
         "jUocfM": {
-            "name": [
-                "重庆大学",
-                "Chongqing University"
-            ],
             "num": "07",
             "services": [
                 "local"
@@ -296,13 +301,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "重庆大学",
+                "en": "Chongqing University"
+            },
+            "character_spacing": 75
         },
         "m5w7Ar": {
-            "name": [
-                "玉带山",
-                "Yudaishan"
-            ],
             "num": "08",
             "services": [
                 "local"
@@ -315,20 +321,37 @@
             ],
             "transfer": {
                 "groups": [
-                    {}
+                    {},
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "chongqing",
+                                    "cq4",
+                                    "#DC8633",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
                 "paid_area": true
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "玉带山",
+                "en": "Yudaishan"
+            },
+            "character_spacing": 75
         },
         "wINLf_": {
-            "name": [
-                "南桥寺",
-                "Nanqiaosi"
-            ],
             "num": "09",
             "services": [
                 "local"
@@ -348,13 +371,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "南桥寺",
+                "en": "Nanqiaosi"
+            },
+            "character_spacing": 75
         },
         "DibB2B": {
-            "name": [
-                "体育公园",
-                "Sports Park"
-            ],
             "num": "10",
             "services": [
                 "local"
@@ -374,13 +398,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "体育公园",
+                "en": "Sports Park"
+            },
+            "character_spacing": 75
         },
         "KjNMCh": {
-            "name": [
-                "冉家坝",
-                "Ranjiaba"
-            ],
             "num": "11",
             "services": [
                 "local"
@@ -427,13 +452,14 @@
             },
             "loop_pivot": true,
             "one_line": true,
-            "int_padding": 135
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "冉家坝",
+                "en": "Ranjiaba"
+            },
+            "character_spacing": 75
         },
         "VrKLiC": {
-            "name": [
-                "动步公园",
-                "Dongbu Park"
-            ],
             "num": "12",
             "services": [
                 "local"
@@ -453,13 +479,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "动步公园",
+                "en": "Dongbu Park"
+            },
+            "character_spacing": 75
         },
         "tBsI-k": {
-            "name": [
-                "洪湖东路",
-                "Honghudonglu"
-            ],
             "num": "13",
             "services": [
                 "local"
@@ -479,13 +506,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "洪湖东路",
+                "en": "Honghudonglu"
+            },
+            "character_spacing": 75
         },
         "4h-kYZ": {
-            "name": [
-                "重庆北站南广场",
-                "Chongqing North Station\\South Square"
-            ],
             "num": "15",
             "services": [
                 "local"
@@ -516,7 +544,7 @@
                                 "theme": [
                                     "chongqing",
                                     "cq10",
-                                    "#5f259f",
+                                    "#5F249F",
                                     "#fff"
                                 ],
                                 "name": [
@@ -532,14 +560,15 @@
             },
             "loop_pivot": true,
             "one_line": true,
-            "int_padding": 285,
-            "facility": "railway"
+            "int_padding": 300,
+            "facility": "railway",
+            "localisedName": {
+                "zh": "重庆北站南广场",
+                "en": "Chongqing North Station\\South Square"
+            },
+            "character_spacing": 75
         },
         "EgT7xy": {
-            "name": [
-                "渝鲁",
-                "Yulu"
-            ],
             "num": "16",
             "services": [
                 "local"
@@ -559,13 +588,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "渝鲁",
+                "en": "Yulu"
+            },
+            "character_spacing": 75
         },
         "4Vm_fp": {
-            "name": [
-                "五里店",
-                "Wulidian"
-            ],
             "num": "17",
             "services": [
                 "local"
@@ -596,7 +626,7 @@
                                 "theme": [
                                     "chongqing",
                                     "cq9",
-                                    "#861f41",
+                                    "#862041",
                                     "#fff"
                                 ],
                                 "name": [
@@ -612,13 +642,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 135
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "五里店",
+                "en": "Wulidian"
+            },
+            "character_spacing": 75
         },
         "aP1tkp": {
-            "name": [
-                "弹子石",
-                "Danzishi"
-            ],
             "num": "18",
             "services": [
                 "local"
@@ -638,13 +669,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "弹子石",
+                "en": "Danzishi"
+            },
+            "character_spacing": 75
         },
         "_BXVju": {
-            "name": [
-                "涂山",
-                "Tushan"
-            ],
             "num": "19",
             "services": [
                 "local"
@@ -664,13 +696,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "涂山",
+                "en": "Tushan"
+            },
+            "character_spacing": 75
         },
         "PWB_UK": {
-            "name": [
-                "仁济",
-                "Renji"
-            ],
             "num": "20",
             "services": [
                 "local"
@@ -690,13 +723,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "仁济",
+                "en": "Renji"
+            },
+            "character_spacing": 75
         },
         "jn2Ek3": {
-            "name": [
-                "上新街",
-                "Shangxinjie"
-            ],
             "num": "21",
             "services": [
                 "local"
@@ -731,13 +765,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 120
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "上新街",
+                "en": "Shangxinjie"
+            },
+            "character_spacing": 75
         },
         "-du1xp": {
-            "name": [
-                "上浩",
-                "Shanghao"
-            ],
             "num": "22",
             "services": [
                 "local"
@@ -757,13 +792,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "上浩",
+                "en": "Shanghao"
+            },
+            "character_spacing": 75
         },
         "FeKmiO": {
-            "name": [
-                "海棠溪",
-                "Haitangxi"
-            ],
             "num": "23",
             "services": [
                 "local"
@@ -783,13 +819,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "海棠溪",
+                "en": "Haitangxi"
+            },
+            "character_spacing": 75
         },
         "OSyXVM": {
-            "name": [
-                "罗家坝",
-                "Luojiaba"
-            ],
             "num": "24",
             "services": [
                 "local"
@@ -809,13 +846,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "罗家坝",
+                "en": "Luojiaba"
+            },
+            "character_spacing": 75
         },
         "9HcSEv": {
-            "name": [
-                "四公里",
-                "Sigongli"
-            ],
             "num": "25",
             "services": [
                 "local"
@@ -850,13 +888,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 105
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "四公里",
+                "en": "Sigongli"
+            },
+            "character_spacing": 75
         },
         "BGW9Q3": {
-            "name": [
-                "海峡路",
-                "Haixialu"
-            ],
             "num": "27",
             "services": [
                 "local"
@@ -876,13 +915,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "海峡路",
+                "en": "Haixialu"
+            },
+            "character_spacing": 75
         },
         "ikdjh1": {
-            "name": [
-                "谢家湾",
-                "Xiejiawan"
-            ],
             "num": "28",
             "services": [
                 "local"
@@ -901,7 +941,7 @@
                                 "theme": [
                                     "chongqing",
                                     "cq2",
-                                    "#007033",
+                                    "#007A33",
                                     "#fff"
                                 ],
                                 "name": [
@@ -917,13 +957,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 115
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "谢家湾",
+                "en": "Xiejiawan"
+            },
+            "character_spacing": 75
         },
         "dlKE2u": {
-            "name": [
-                "奥体中心",
-                "Olympic Sports Center"
-            ],
             "num": "29",
             "services": [
                 "local"
@@ -942,7 +983,7 @@
                                 "theme": [
                                     "chongqing",
                                     "cq18",
-                                    "#2ad2c9",
+                                    "#2CD5C4",
                                     "#fff"
                                 ],
                                 "name": [
@@ -958,13 +999,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 175
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "奥体中心",
+                "en": "Olympic Sports Center"
+            },
+            "character_spacing": 75
         },
         "PyjWXM": {
-            "name": [
-                "陈家坪",
-                "Chenjiaping"
-            ],
             "num": "30",
             "services": [
                 "local"
@@ -984,13 +1026,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "陈家坪",
+                "en": "Chenjiaping"
+            },
+            "character_spacing": 75
         },
         "M39bOH": {
-            "name": [
-                "彩云湖",
-                "Caiyunhu"
-            ],
             "num": "31",
             "services": [
                 "local"
@@ -1010,13 +1053,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "彩云湖",
+                "en": "Caiyunhu"
+            },
+            "character_spacing": 75
         },
         "BOMsKz": {
-            "name": [
-                "二郎",
-                "Erlang"
-            ],
             "num": "32",
             "services": [
                 "local"
@@ -1036,13 +1080,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "二郎",
+                "en": "Erlang"
+            },
+            "character_spacing": 75
         },
         "WpAI55": {
-            "name": [
-                "华龙",
-                "Hualong"
-            ],
             "num": "33",
             "services": [
                 "local"
@@ -1062,13 +1107,14 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "华龙",
+                "en": "Hualong"
+            },
+            "character_spacing": 75
         },
         "N3-uHL": {
-            "name": [
-                "民安大道",
-                "Min'an Ave."
-            ],
             "num": "14",
             "services": [
                 "local"
@@ -1103,7 +1149,12 @@
             },
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 135
+            "int_padding": 215,
+            "localisedName": {
+                "zh": "民安大道",
+                "en": "Min'an Ave."
+            },
+            "character_spacing": 75
         }
     },
     "namePosMTR": {
@@ -1123,8 +1174,9 @@
     "loop": true,
     "loop_info": {
         "bank": true,
-        "left_and_right_factor": 3,
+        "left_and_right_factor": 0,
         "bottom_factor": 13
     },
-    "version": "5.15.3"
+    "version": "6.0.5",
+    "psdLabel": "screen"
 }
