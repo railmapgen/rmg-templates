@@ -26,7 +26,7 @@ export default function SubmitModalStepError(props: SubmitModalStepErrorProps) {
                         <Title order={3} size="h5">
                             {t('Railway company')}
                         </Title>
-                        <List size="sm" withPadding aria-label="List of company errors">
+                        <List size="sm" withPadding aria-label={t('List of company errors')}>
                             {companyErrors.map((e, i) => (
                                 <List.Item key={i}>{translateName(INVALID_REASON[e])}</List.Item>
                             ))}
@@ -39,10 +39,10 @@ export default function SubmitModalStepError(props: SubmitModalStepErrorProps) {
                         <Title order={3} size="h5">
                             {t('Templates')}
                         </Title>
-                        <List size="sm" withPadding aria-label="List of template errors">
+                        <List size="sm" withPadding aria-label={t('List of template errors')}>
                             {Object.entries(templateErrors).map(([item, errors]) => (
                                 <List.Item key={item}>
-                                    {item}
+                                    {item === 'Overall' ? t('Overall') : `${t('Line')} ${item.slice('Line '.length)}`}
                                     <List size="sm" withPadding>
                                         {errors.map((e, i) => (
                                             <List.Item key={i}>{translateName(INVALID_REASON[e])}</List.Item>

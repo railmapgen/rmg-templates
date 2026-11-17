@@ -10,6 +10,8 @@ import { formatDistanceToNow } from 'date-fns';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { zhCN } from 'date-fns/locale/zh-CN';
 import { zhHK } from 'date-fns/locale/zh-HK';
+import { ja } from 'date-fns/locale/ja';
+import { ko } from 'date-fns/locale/ko';
 import useTranslatedName from '../hooks/use-translated-name';
 import { readIssueBody } from '../../redux/ticket/ticket-converters';
 
@@ -19,6 +21,10 @@ const getLocale = () => {
             return zhCN;
         case 'zh-Hant':
             return zhHK;
+        case 'ja':
+            return ja;
+        case 'ko':
+            return ko;
         default:
             return undefined;
     }
