@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {
-    CompanyEntry,
-    coreCompanyConfig,
-    coreTemplateList,
-    otherCompanyConfig,
-    TemplateEntry,
-} from '@railmapgen/rmg-templates-resources';
+import { CompanyEntry, coreCompanyConfig, coreTemplateList, otherCompanyConfig, TemplateEntry } from '../../package';
 
 interface AppState {
     coreCompanyConfig: CompanyEntry[];

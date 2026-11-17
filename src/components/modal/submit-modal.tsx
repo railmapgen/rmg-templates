@@ -1,12 +1,14 @@
+import classes from './submit-modal.module.css';
 import { useTranslation } from 'react-i18next';
 import { useRootSelector } from '../../redux';
 import { useEffect, useState } from 'react';
 import { InvalidReasonType } from '../../util/constant';
 import { ticketSelectors } from '../../redux/ticket/ticket-slice';
-import { Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 import SubmitModalStepError from './submit-modal-step-error';
 import SubmitModalStepJustification from './submit-modal-step-justification';
 import SubmitModalStepSubmit from './submit-modal-step-submit';
+import { getInitialJustification, JustificationUpdateHandler } from './justification';
+import { Modal, Stepper } from '@mantine/core';
 
 interface SubmitModalProps {
     isOpen: boolean;
@@ -20,8 +22,8 @@ export default function SubmitModal(props: SubmitModalProps) {
 
     const [companyErrors, setCompanyErrors] = useState<InvalidReasonType[]>([]);
     const [templateErrors, setTemplateErrors] = useState<Record<string, InvalidReasonType[]>>({});
-    const [justification, setJustification] = useState('');
-    const [majorUpdateJustifications, setMajorUpdateJustifications] = useState<Record<string, string>>({});
+
+    const [justification, setJustification] = useState(getInitialJustification());
     const [isFinishJustification, setIsFinishJustification] = useState(false);
 
     const { coreCompanyConfig, otherCompanyConfig, templateList } = useRootSelector(state => state.app);
@@ -29,6 +31,10 @@ export default function SubmitModal(props: SubmitModalProps) {
     const companyName = ticketSelectors.getCompanyEnglishName(ticket, [...coreCompanyConfig, ...otherCompanyConfig]);
     const companyBlock = ticketSelectors.getCompanyBlock(ticket);
     const templateBlocks = ticketSelectors.getTemplateBlocks(ticket);
+
+    const handleUpdateJustification: JustificationUpdateHandler = (key, value) => {
+        setJustification(prevState => ({ ...prevState, [key]: value }));
+    };
 
     useEffect(() => {
         if (isOpen) {
@@ -44,11 +50,9 @@ export default function SubmitModal(props: SubmitModalProps) {
                     }),
                     {}
                 );
-            setMajorUpdateJustifications(majorJustificationsHolder);
+            handleUpdateJustification('majorUpdateComments', majorJustificationsHolder);
         } else {
             // reset modal
-            setJustification('');
-            setMajorUpdateJustifications({});
             setIsFinishJustification(false);
         }
     }, [isOpen]);
@@ -56,48 +60,52 @@ export default function SubmitModal(props: SubmitModalProps) {
     const isContainError = companyErrors.length > 0 || Object.values(templateErrors).flat().length > 0;
     const isShowStepJustification = !isContainError && !isFinishJustification;
 
-    return (
-        <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose} scrollBehavior="inside">
-            <ModalOverlay />
-            <ModalContent>
-                <ModalHeader>{t('Submit templates')}</ModalHeader>
-                <ModalCloseButton />
+    const getActiveStep = () => {
+        if (isContainError) {
+            return 0;
+        }
+        if (isShowStepJustification) {
+            return 1;
+        }
+        return 2;
+    };
 
-                {isContainError && (
+    return (
+        <Modal
+            classNames={{ content: classes.content, body: classes.body }}
+            opened={isOpen}
+            onClose={onClose}
+            title={t('Submit templates')}
+        >
+            <Stepper
+                active={getActiveStep()}
+                classNames={{ root: classes['stepper-root'], content: classes['stepper-content'] }}
+            >
+                <Stepper.Step label={t('Validate')}>
                     <SubmitModalStepError
                         companyErrors={companyErrors}
                         templateErrors={templateErrors}
                         onClose={onClose}
                     />
-                )}
-
-                {isShowStepJustification && (
+                </Stepper.Step>
+                <Stepper.Step label={t('Justify')}>
                     <SubmitModalStepJustification
                         justification={justification}
-                        majorUpdateJustifications={majorUpdateJustifications}
-                        onJustificationChange={setJustification}
-                        onMajorUpdateJustificationChange={(id, value) =>
-                            setMajorUpdateJustifications(prevState => ({
-                                ...prevState,
-                                [id]: value,
-                            }))
-                        }
+                        onJustificationUpdate={handleUpdateJustification}
                         onNext={() => setIsFinishJustification(true)}
                     />
-                )}
-
-                {!isContainError && isFinishJustification && (
+                </Stepper.Step>
+                <Stepper.Step label={t('Submit')}>
                     <SubmitModalStepSubmit
                         companyName={companyName}
                         companyBlock={companyBlock}
                         templateBlocks={templateBlocks}
                         justification={justification}
-                        majorUpdateJustifications={majorUpdateJustifications}
                         onPrev={() => setIsFinishJustification(false)}
                         onClose={onClose}
                     />
-                )}
-            </ModalContent>
+                </Stepper.Step>
+            </Stepper>
         </Modal>
     );
 }

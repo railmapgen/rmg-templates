@@ -1,502 +1,719 @@
 {
-    "style": "gzmtr",
-    "svg_height": 311,
-    "padding": 3.37,
-    "y_pc": 47.22,
-    "branch_spacing": 40.67,
+    "svgWidth": {
+        "destination": 1200,
+        "runin": 1200,
+        "railmap": 1800,
+        "indoor": 2200
+    },
+    "svg_height": 340,
+    "style": "shmetro",
+    "y_pc": 50,
+    "padding": 10,
+    "branchSpacingPct": 33,
+    "direction": "l",
+    "platform_num": "",
     "theme": [
         "qingdao",
         "qd2",
         "#AF272F",
         "#fff"
     ],
-    "direction": "l",
-    "current_stn_idx": "mwh9",
-    "platform_num": "3",
+    "line_name": [
+        "2号线",
+        "Line 2"
+    ],
+    "current_stn_idx": "aFoYb1",
     "stn_list": {
         "linestart": {
-            "parents": [],
-            "children": [
-                "naqs"
-            ],
             "name": [
-                "路綫左端",
+                "LEFT END",
                 "LEFT END"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
-            "services": [
-                "local"
-            ],
-            "facility": "",
             "num": "00",
-            "secondaryName": false
-        },
-        "lineend": {
-            "parents": [
-                "mwh9"
-            ],
-            "children": [],
-            "name": [
-                "路綫右端",
-                "RIGHT END"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
             "services": [
                 "local"
             ],
-            "facility": "",
-            "num": "26",
-            "secondaryName": false
-        },
-        "l1mz": {
-            "parents": [
-                "iwf6"
-            ],
+            "parents": [],
             "children": [
-                "lyqw"
+                "hHDiPz"
             ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "CG4iVd": {
             "name": [
                 "浮山所",
                 "Fushansuo"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "num": "10",
-            "transfer": {
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    []
-                ]
-            },
+            "num": "01",
             "services": [
                 "local"
             ],
-            "facility": "",
-            "secondaryName": false
-        },
-        "iwf6": {
-            "children": [
-                "l1mz"
-            ],
             "parents": [
-                "0gcd"
+                "896q-l"
             ],
+            "children": [
+                "aFoYb1"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "aFoYb1": {
             "name": [
                 "五四广场",
-                "Ningxia Road"
+                "May 4th Square"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "num": "09",
+            "num": "02",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "CG4iVd"
+            ],
+            "children": [
+                "Jlm6IH"
+            ],
             "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd3",
+                                    "#0057B7",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": [],
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd3",
-                            "#0057B7",
-                            "#fff",
-                            "3号线",
-                            "Line 3"
-                        ]
-                    ]
-                ]
+                "paid_area": true
             },
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
         },
-        "ei9t": {
-            "parents": [
-                "qbbb"
-            ],
-            "children": [
-                "ov9v"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
+        "lineend": {
             "name": [
-                "石老人浴场",
-                "Shilaoren Beach"
+                "RIGHT END",
+                "RIGHT END"
             ],
-            "num": "17",
+            "num": "00",
             "services": [
                 "local"
             ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd5",
-                            "#981E97",
-                            "#fff",
-                            "5号线",
-                            "Line 5"
-                        ]
-                    ]
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "qbbb": {
             "parents": [
-                "tgp4"
+                "0yQU95"
             ],
-            "children": [
-                "ei9t"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "海安路",
-                "Hai'an Rd"
-            ],
-            "num": "16",
-            "services": [
-                "local"
-            ],
-            "facility": "",
+            "children": [],
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
+                "tick_direc": "r",
+                "paid_area": true
             },
-            "secondaryName": false
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         },
-        "tgp4": {
-            "parents": [
-                "su3g"
-            ],
-            "children": [
-                "qbbb"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "海川路",
-                "Haichuan Rd"
-            ],
-            "num": "15",
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "su3g": {
-            "parents": [
-                "dre1"
-            ],
-            "children": [
-                "tgp4"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "海游路",
-                "Haiyou Rd"
-            ],
-            "num": "14",
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "dre1": {
-            "parents": [
-                "9v64"
-            ],
-            "children": [
-                "su3g"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "麦岛",
-                "Maidao"
-            ],
-            "num": "13",
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd5",
-                            "#981E97",
-                            "#fff",
-                            "5号线",
-                            "Line 5"
-                        ]
-                    ]
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "9v64": {
-            "parents": [
-                "lyqw"
-            ],
-            "children": [
-                "dre1"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "高雄路",
-                "Gaoxiong Rd"
-            ],
-            "num": "12",
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "lyqw": {
-            "parents": [
-                "l1mz"
-            ],
-            "children": [
-                "9v64"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "name": [
-                "燕儿岛路",
-                "Yan'erdao Rd"
-            ],
-            "num": "11",
-            "services": [
-                "local"
-            ],
-            "facility": "",
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "osi_names": [],
-                "paid_area": true,
-                "tick_direc": "r"
-            },
-            "secondaryName": false
-        },
-        "0gcd": {
+        "Jlm6IH": {
             "name": [
                 "芝泉路",
                 "Zhiquan Rd"
             ],
-            "secondaryName": false,
-            "num": "08",
+            "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "svlx"
+                "aFoYb1"
             ],
             "children": [
-                "iwf6"
+                "40em5N"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         },
-        "svlx": {
+        "40em5N": {
             "name": [
                 "海信桥",
                 "Haixin Bridge"
             ],
-            "secondaryName": [
-                "暂缓开通",
-                "under construction"
-            ],
-            "num": "07",
+            "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "s08h"
+                "Jlm6IH"
             ],
             "children": [
-                "0gcd"
+                "oX_2_k"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         },
-        "s08h": {
+        "oX_2_k": {
             "name": [
                 "台东",
-                "Taidong "
+                "Taidong"
             ],
-            "secondaryName": false,
-            "num": "06",
+            "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "ojvh"
+                "40em5N"
             ],
             "children": [
-                "svlx"
+                "kyY0gB"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd1",
+                                    "#EAAA00",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "1号线",
+                                    "Line 1"
+                                ]
+                            }
+                        ]
+                    }
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
         },
-        "ojvh": {
+        "kyY0gB": {
             "name": [
                 "利津路",
                 "Lijin Rd"
             ],
-            "secondaryName": false,
-            "num": "05",
+            "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "naqs"
+                "oX_2_k"
             ],
             "children": [
-                "s08h"
+                "0yQU95"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    []
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         },
-        "naqs": {
+        "0yQU95": {
             "name": [
                 "泰山路",
                 "Taishan Rd"
             ],
-            "secondaryName": false,
-            "num": "04",
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "kyY0gB"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd4",
+                                    "#007A33",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "896q-l": {
+            "name": [
+                "燕儿岛路",
+                "Yan’erdao Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "qwutNg"
+            ],
+            "children": [
+                "CG4iVd"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "qwutNg": {
+            "name": [
+                "高雄路",
+                "Gaoxiong Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "gWcuox"
+            ],
+            "children": [
+                "896q-l"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "gWcuox": {
+            "name": [
+                "麦岛",
+                "Maidao"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ip_Jhh"
+            ],
+            "children": [
+                "qwutNg"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ip_Jhh": {
+            "name": [
+                "海游路",
+                "Haiyou Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "NwoLrP"
+            ],
+            "children": [
+                "gWcuox"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "NwoLrP": {
+            "name": [
+                "海川路",
+                "Haichuan Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "efy_Fl"
+            ],
+            "children": [
+                "ip_Jhh"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "efy_Fl": {
+            "name": [
+                "海安路",
+                "Hai’an Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "fj0xZd"
+            ],
+            "children": [
+                "NwoLrP"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "fj0xZd": {
+            "name": [
+                "石老人浴场",
+                "Shilaoren Beach"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "OwUe1K"
+            ],
+            "children": [
+                "efy_Fl"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "OwUe1K": {
+            "name": [
+                "苗岭路",
+                "Miaoling Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "5CIPXH"
+            ],
+            "children": [
+                "fj0xZd"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd11",
+                                    "#304199",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "蓝谷快线",
+                                    "Oceantec Valley Line"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "5CIPXH": {
+            "name": [
+                "同安路",
+                "Tong’an Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "eOo1tD"
+            ],
+            "children": [
+                "OwUe1K"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "eOo1tD": {
+            "name": [
+                "辽阳东路",
+                "Liaoyang East Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "wDQJBX"
+            ],
+            "children": [
+                "5CIPXH"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd4",
+                                    "#007A33",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "4号线",
+                                    "Line 4"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "wDQJBX": {
+            "name": [
+                "东韩",
+                "Donghan"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "tVCSAm"
+            ],
+            "children": [
+                "eOo1tD"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "tVCSAm": {
+            "name": [
+                "华楼山路",
+                "Hualoushan Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "ZuVDTz"
+            ],
+            "children": [
+                "wDQJBX"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "ZuVDTz": {
+            "name": [
+                "枣山路",
+                "Zaoshan Rd"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "CahH_s"
+            ],
+            "children": [
+                "tVCSAm"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
+        },
+        "CahH_s": {
+            "name": [
+                "李村",
+                "Licun"
+            ],
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "hHDiPz"
+            ],
+            "children": [
+                "ZuVDTz"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "qingdao",
+                                    "qd3",
+                                    "#0057B7",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "3号线",
+                                    "Line 3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 200
+        },
+        "hHDiPz": {
+            "name": [
+                "李村公园",
+                "Licun Park"
+            ],
+            "num": "00",
             "services": [
                 "local"
             ],
@@ -504,329 +721,40 @@
                 "linestart"
             ],
             "children": [
-                "ojvh"
+                "CahH_s"
             ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd4",
-                            "#007A33",
-                            "#fff",
-                            "4号线",
-                            "Line 4"
-                        ]
-                    ]
+                "groups": [
+                    {}
                 ],
                 "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
+                "paid_area": true
             },
-            "facility": ""
-        },
-        "6rgu": {
-            "name": [
-                "华楼山路",
-                "Hualoushan Rd"
-            ],
-            "secondaryName": false,
-            "num": "22",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "ezmz"
-            ],
-            "children": [
-                "tuys"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": "hsr"
-        },
-        "ezmz": {
-            "name": [
-                "东韩",
-                "Donghan"
-            ],
-            "secondaryName": false,
-            "num": "21",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "6ti2"
-            ],
-            "children": [
-                "6rgu"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "6ti2": {
-            "name": [
-                "辽阳东路",
-                "Liaoyang East Rd"
-            ],
-            "secondaryName": false,
-            "num": "20",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "l6b8"
-            ],
-            "children": [
-                "ezmz"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd4",
-                            "#007A33",
-                            "#fff",
-                            "4号线",
-                            "Line 4"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "l6b8": {
-            "name": [
-                "同安路",
-                "Tong'an Rd"
-            ],
-            "secondaryName": false,
-            "num": "19",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "ov9v"
-            ],
-            "children": [
-                "6ti2"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "ov9v": {
-            "name": [
-                "苗岭路",
-                "Miaoling Rd Station"
-            ],
-            "secondaryName": false,
-            "num": "18",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "ei9t"
-            ],
-            "children": [
-                "l6b8"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd11",
-                            "#304199",
-                            "#fff",
-                            "11号线",
-                            "Line 11"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "mwh9": {
-            "name": [
-                "李村公园",
-                "Licun Park"
-            ],
-            "secondaryName": false,
-            "num": "25",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "cfeo"
-            ],
-            "children": [
-                "lineend"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "cfeo": {
-            "name": [
-                "李村",
-                "Licun "
-            ],
-            "secondaryName": false,
-            "num": "24",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "tuys"
-            ],
-            "children": [
-                "mwh9"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    [
-                        [
-                            "qingdao",
-                            "qd3",
-                            "#0057B7",
-                            "#fff",
-                            "3号线",
-                            "Line 3"
-                        ]
-                    ]
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
-        },
-        "tuys": {
-            "name": [
-                "枣山路",
-                "Zaoshan Rd"
-            ],
-            "secondaryName": false,
-            "num": "23",
-            "services": [
-                "local"
-            ],
-            "parents": [
-                "6rgu"
-            ],
-            "children": [
-                "cfeo"
-            ],
-            "branch": {
-                "left": [],
-                "right": []
-            },
-            "transfer": {
-                "info": [
-                    []
-                ],
-                "tick_direc": "r",
-                "paid_area": true,
-                "osi_names": []
-            },
-            "facility": ""
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355
         }
     },
-    "line_name": [
-        "2号线",
-        "Line 2"
-    ],
-    "psd_num": "11",
-    "line_num": "2",
-    "info_panel_type": "gz1421",
-    "direction_gz_x": 21.28,
-    "direction_gz_y": 79.02,
+    "namePosMTR": {
+        "isStagger": true,
+        "isFlip": true
+    },
     "customiseMTRDest": {
         "isLegacy": false,
         "terminal": false
     },
-    "svgWidth": {
-        "destination": 1000,
-        "runin": 1023,
-        "railmap": 1510,
-        "indoor": 1000
+    "line_num": "1",
+    "spanLineNum": true,
+    "psd_num": "1",
+    "info_panel_type": "sh2020",
+    "direction_gz_x": 40,
+    "direction_gz_y": 70,
+    "coline": {},
+    "loop": false,
+    "loop_info": {
+        "bank": true,
+        "left_and_right_factor": 1,
+        "bottom_factor": 1
     },
-    "notesGZMTR": [
-        [
-            "四号线、五号线尚未开通。",
-            "Line 4 and Line 5 are under construction.",
-            50,
-            79.5,
-            true
-        ]
-    ],
-    "namePosMTR": {
-        "isStagger": true,
-        "isFlip": false
-    }
+    "version": "5.16.12"
 }

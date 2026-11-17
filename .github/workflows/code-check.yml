@@ -9,20 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: '18'
-
-      - name: Resources check
-        run: |
-          npm install
-          npm run check
-          npm run build
-        working-directory: ./package
+          fetch-depth: '0'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
 
       - name: Code check
         run: |
           npm install
+          npm run patch
           npm run lint
           npm run test

@@ -1,26 +1,36 @@
-import { configureStore, createListenerMiddleware, TypedStartListening } from '@reduxjs/toolkit';
+import {
+    addListener,
+    combineReducers,
+    configureStore,
+    createListenerMiddleware,
+    TypedAddListener,
+} from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import appReducer from './app/app-slice';
 import ticketReducer from './ticket/ticket-slice';
 
+const rootReducer = combineReducers({
+    app: appReducer,
+    ticket: ticketReducer,
+});
+export type RootState = ReturnType<typeof rootReducer>;
+
 const listenerMiddleware = createListenerMiddleware();
 
-const store = configureStore({
-    reducer: {
-        app: appReducer,
-        ticket: ticketReducer,
-    },
-    middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
-});
+export const createStore = (preloadedState: Partial<RootState> = {}) =>
+    configureStore({
+        reducer: rootReducer,
+        middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
+        preloadedState,
+    });
+const store = createStore();
 export type RootStore = typeof store;
-export type RootState = ReturnType<typeof store.getState>;
 
 export type RootDispatch = typeof store.dispatch;
 export const useRootDispatch = () => useDispatch<RootDispatch>();
 export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-type RootStartListening = TypedStartListening<RootState, RootDispatch>;
-export const startRootListening = listenerMiddleware.startListening as RootStartListening;
+export const addRootListener = addListener as TypedAddListener<RootState, RootDispatch>;
 
 (window as any).rmgStore = store;
 export default store;

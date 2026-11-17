@@ -3,10 +3,11 @@
         "destination": 1200,
         "runin": 1200,
         "railmap": 1200,
-        "indoor": 1200
+        "indoor": 1200,
+        "platform": 1200
     },
     "svg_height": 300,
-    "style": "shmetro",
+    "style": "mtr",
     "y_pc": 50,
     "padding": 10,
     "branchSpacingPct": 33,
@@ -22,14 +23,9 @@
         "6号线支线",
         "Branch Line 6"
     ],
-    "current_stn_idx": "6CVt5Y",
+    "current_stn_idx": "eEkVO2",
     "stn_list": {
         "linestart": {
-            "name": [
-                "LEFT END",
-                "LEFT END"
-            ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
@@ -43,24 +39,24 @@
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "LEFT END",
+                "en": "LEFT END"
+            },
+            "character_spacing": 75
         },
         "HUIabF": {
-            "name": [
-                "圳美",
-                "Zhenmei"
-            ],
-            "secondaryName": false,
             "num": "03",
             "services": [
                 "local"
@@ -76,24 +72,24 @@
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "圳美",
+                "en": "Zhenmei"
+            },
+            "character_spacing": 75
         },
         "6CVt5Y": {
-            "name": [
-                "光明",
-                "Guangming"
-            ],
-            "secondaryName": false,
             "num": "04",
             "services": [
                 "local"
@@ -102,46 +98,50 @@
                 "HUIabF"
             ],
             "children": [
-                "lineend"
+                "Nw5kwF"
             ],
             "branch": {
                 "left": [],
                 "right": []
             },
             "transfer": {
-                "info": [
-                    [
-                        [
-                            "shenzhen",
-                            "sz6",
-                            "#00C7B1",
-                            "#fff",
-                            "6号线",
-                            "Line 6"
-                        ]
-                    ]
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shenzhen",
+                                    "sz6",
+                                    "#00C7B1",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "6号线",
+                                    "Line 6"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "光明",
+                "en": "Guangming"
+            },
+            "character_spacing": 75
         },
         "lineend": {
-            "name": [
-                "RIGHT END",
-                "RIGHT END"
-            ],
-            "secondaryName": false,
             "num": "00",
             "services": [
                 "local"
             ],
             "parents": [
-                "6CVt5Y"
+                "eEkVO2"
             ],
             "children": [],
             "branch": {
@@ -149,24 +149,24 @@
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "RIGHT END",
+                "en": "RIGHT END"
+            },
+            "character_spacing": 75
         },
         "65wYJj": {
-            "name": [
-                "深理工",
-                "SIAT"
-            ],
-            "secondaryName": false,
             "num": "01",
             "services": [
                 "local"
@@ -182,24 +182,24 @@
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "深理工",
+                "en": "SUAT"
+            },
+            "character_spacing": 75
         },
         "4CRS6g": {
-            "name": [
-                "中大",
-                "Sun Yat-sen University"
-            ],
-            "secondaryName": false,
             "num": "02",
             "services": [
                 "local"
@@ -215,17 +215,121 @@
                 "right": []
             },
             "transfer": {
-                "info": [
-                    []
-                ],
                 "tick_direc": "r",
                 "paid_area": true,
-                "osi_names": []
+                "groups": [
+                    {
+                        "lines": []
+                    }
+                ]
             },
-            "facility": "",
             "loop_pivot": false,
             "one_line": true,
-            "int_padding": 355
+            "int_padding": 355,
+            "localisedName": {
+                "zh": "中大",
+                "en": "Sun Yat-sen University"
+            },
+            "character_spacing": 75
+        },
+        "Nw5kwF": {
+            "localisedName": {
+                "zh": "碧眼",
+                "en": "Biyan"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "6CVt5Y"
+            ],
+            "children": [
+                "WovWS9"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "WovWS9": {
+            "localisedName": {
+                "zh": "虹桥公园",
+                "en": "Hongqiao Park"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "Nw5kwF"
+            ],
+            "children": [
+                "eEkVO2"
+            ],
+            "transfer": {
+                "groups": [
+                    {}
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "branch": {}
+        },
+        "eEkVO2": {
+            "localisedName": {
+                "zh": "光明城",
+                "en": "Guangmingcheng"
+            },
+            "num": "00",
+            "services": [
+                "local"
+            ],
+            "parents": [
+                "WovWS9"
+            ],
+            "children": [
+                "lineend"
+            ],
+            "transfer": {
+                "groups": [
+                    {
+                        "lines": [
+                            {
+                                "theme": [
+                                    "shenzhen",
+                                    "sz13",
+                                    "#de7c00",
+                                    "#fff"
+                                ],
+                                "name": [
+                                    "13号线",
+                                    "Line 13"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tick_direc": "r",
+                "paid_area": true
+            },
+            "loop_pivot": false,
+            "one_line": true,
+            "int_padding": 355,
+            "character_spacing": 75,
+            "facility": "hsr"
         }
     },
     "namePosMTR": {
@@ -248,5 +352,6 @@
         "bank": true,
         "left_and_right_factor": 1,
         "bottom_factor": 1
-    }
+    },
+    "psdLabel": "screen"
 }

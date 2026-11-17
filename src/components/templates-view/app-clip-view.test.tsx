@@ -1,13 +1,11 @@
 import rootReducer from '../../redux';
-import { createMockRootStore } from '../../setupTests';
+import { createTestStore } from '../../setupTests';
 import { render } from '../../test-utils';
 import AppClipView from './app-clip-view';
-import { vi } from 'vitest';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 const realStore = rootReducer.getState();
-const mockStore = createMockRootStore({
-    ...realStore,
+const mockStore = createTestStore({
     app: {
         ...realStore.app,
         selectedCompany: 'mtr',
