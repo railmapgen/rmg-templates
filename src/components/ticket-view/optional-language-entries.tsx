@@ -55,7 +55,7 @@ export default function OptionalLanguageEntries(props: OptionalLanguageEntriesPr
                     <Group gap="xs" flex={1} grow>
                         <Select
                             size="xs"
-                            aria-label={t('Language')}
+                            aria-label={t('Translation language')}
                             value={lang}
                             onChange={value => handleLanguageSwitch(lang, value as LanguageCode)}
                             data={languageOptions}
